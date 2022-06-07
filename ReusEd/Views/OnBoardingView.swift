@@ -11,14 +11,15 @@ struct OnBoardingView: View {
     let backgroundColor = Color(#colorLiteral(red: 0.2705882353, green: 0.3019607843, blue: 0.3568627451, alpha: 1))
     let primaryMain = Color(#colorLiteral(red: 0.3803921569, green: 0.2745098039, blue: 0.7764705882, alpha: 1))
     
-    
     @State var isPresented =  UserDefaults.standard.bool(forKey: "OnBoardingPresented")
-    
+    @State var isPermissionGranted =  UserDefaults.standard.bool(forKey: "permissionGranted")
     var body: some View {
         NavigationView{
             Group{
-                if isPresented {
+                if isPermissionGranted  {
                     Test1View()
+                } else if isPresented {
+                    DailyNotificationsPermissionView()
                 } else {
                     pages()
                 }
@@ -85,22 +86,24 @@ struct pages: View {
                         .foregroundColor(selectedIndex == index ? primaryMain : primaryLighter)
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
-            }.onChange(of: selectedIndex) { newValue in
-                if selectedIndex == pagesData.count - 1 {
-                    UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
-                }
             }
+//                .onChange(of: selectedIndex) { newValue in
+//                    if selectedIndex == pagesData.count - 1 {
+//                        UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
+//                    }
+//                }
             
             
             
             
             Button(action: {
+                
                 if selectedIndex < pagesData.count - 1 {
                     withAnimation {
                         selectedIndex += 1
                     }
                 } else {
-                    UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
+//                    UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
                 }
             }, label: {
                 HStack {
@@ -127,7 +130,7 @@ struct pages: View {
             
 
             NavigationLink(
-                destination: Test1View().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                destination: DailyNotificationsPermissionView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                 label: {
                     HStack {
                         Text("Start")
@@ -139,10 +142,11 @@ struct pages: View {
                             .opacity(selectedIndex == pagesData.count - 1 ? 1 : 0)
                     }
 
-                    .frame(width:  UIScreen.main.bounds.width - 40, height: selectedIndex == pagesData.count - 1 ? 50 : 0, alignment: .center)
+                    .frame(width:  UIScreen.main.bounds.width - 60, height: selectedIndex == pagesData.count - 1 ? 50 : 0, alignment: .center)
                     .background(selectedIndex == pagesData.count - 1 ? primaryMain : Color.clear)
                     .cornerRadius(12)
-                    .padding(.top, 5)
+//                    .padding(.top, 5)
+                    .padding(.bottom, 100)
 
                 })
 
@@ -155,7 +159,7 @@ struct pages: View {
         
         .navigationBarItems(trailing:
                                 NavigationLink(
-                                    destination: Test1View().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                    destination: DailyNotificationsPermissionView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                                     label: {
                                         Text("skip")
                                             .foregroundColor(selectedIndex != pagesData.count - 1 ? grey2 : Color.clear)
@@ -165,5 +169,7 @@ struct pages: View {
         )
         .navigationBarBackButtonHidden(true)
     }
+    
+    
 }
 

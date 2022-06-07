@@ -28,6 +28,10 @@
 		7A038C34284F3B0F00B1376F /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C26284F3B0F00B1376F /* Rubik-SemiBoldItalic.ttf */; };
 		7A038C35284F3B0F00B1376F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C27284F3B0F00B1376F /* Rubik-Black.ttf */; };
 		7A038C37284F458400B1376F /* Test1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C36284F458400B1376F /* Test1View.swift */; };
+		7A038C39284F806500B1376F /* NotificationsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C38284F806500B1376F /* NotificationsPermission.swift */; };
+		7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */; };
+		7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3D284F824500B1376F /* NotificationHandler.swift */; };
+		7A038C40284F856800B1376F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3F284F856800B1376F /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		7A038C26284F3B0F00B1376F /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		7A038C27284F3B0F00B1376F /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		7A038C36284F458400B1376F /* Test1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1View.swift; sourceTree = "<group>"; };
+		7A038C38284F806500B1376F /* NotificationsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermission.swift; sourceTree = "<group>"; };
+		7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNotificationsPermissionView.swift; sourceTree = "<group>"; };
+		7A038C3D284F824500B1376F /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		7A038C3F284F856800B1376F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 		7A038C01284F324300B1376F /* ReusEd */ = {
 			isa = PBXGroup;
 			children = (
+				7A038C3C284F822100B1376F /* Shared */,
 				7A038C14284F35A900B1376F /* Resources */,
 				7A038C13284F35A100B1376F /* ViewModels */,
 				7A038C12284F359400B1376F /* Models */,
@@ -111,6 +120,7 @@
 			children = (
 				7A038C15284F36E300B1376F /* OnBoardingView.swift */,
 				7A038C36284F458400B1376F /* Test1View.swift */,
+				7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				7A038C17284F383900B1376F /* OnBoardingPages.swift */,
+				7A038C38284F806500B1376F /* NotificationsPermission.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +169,15 @@
 				7A038C26284F3B0F00B1376F /* Rubik-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7A038C3C284F822100B1376F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7A038C3D284F824500B1376F /* NotificationHandler.swift */,
+				7A038C3F284F856800B1376F /* AppDelegate.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A038C16284F36E300B1376F /* OnBoardingView.swift in Sources */,
+				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
+				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
+				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A038C05284F324300B1376F /* ContentView.swift in Sources */,
 				7A038C37284F458400B1376F /* Test1View.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
 				7A038C18284F383900B1376F /* OnBoardingPages.swift in Sources */,
+				7A038C39284F806500B1376F /* NotificationsPermission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
