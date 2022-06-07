@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            OnBoardingView()
-        }
+        Text("Hi, nice to meet you !")
+            .font(.custom("Rubik-Light", size: 20))
+//        VStack{
+//            OnBoardingView()
+//        }
     }
 }
 
