@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A37E6BD2850AD8E00D9E739 /* Test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BC2850AD8E00D9E739 /* Test2.swift */; };
 		7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C02284F324300B1376F /* ReusEdApp.swift */; };
 		7A038C05284F324300B1376F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C04284F324300B1376F /* ContentView.swift */; };
 		7A038C07284F324700B1376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C06284F324700B1376F /* Assets.xcassets */; };
@@ -44,7 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A37E6BC2850AD8E00D9E739 /* Test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Test2.swift; path = ../../../iOS/Internship/Internship/Test2.swift; sourceTree = "<group>"; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
 		7A038C04284F324300B1376F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			children = (
 				7A038C3C284F822100B1376F /* Shared */,
 				7A038C14284F35A900B1376F /* Resources */,
-				7A038C13284F35A100B1376F /* ViewModels */,
 				7A038C12284F359400B1376F /* Models */,
 				7A038C11284F357B00B1376F /* Views */,
 				7A038C10284F326700B1376F /* Info.plist */,
@@ -150,14 +147,6 @@
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		7A038C13284F35A100B1376F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2A37E6BC2850AD8E00D9E739 /* Test2.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		7A038C14284F35A900B1376F /* Resources */ = {
@@ -335,7 +324,6 @@
 				7A038C4F28509E4200B1376F /* SignInView.swift in Sources */,
 				7A038C582850A07100B1376F /* Question3View.swift in Sources */,
 				7A038C542850A05600B1376F /* Question1View.swift in Sources */,
-				2A37E6BD2850AD8E00D9E739 /* Test2.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
 				7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */,
 				7A038C18284F383900B1376F /* OnBoardingPagesModel.swift in Sources */,
