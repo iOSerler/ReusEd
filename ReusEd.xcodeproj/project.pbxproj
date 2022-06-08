@@ -40,6 +40,7 @@
 		7A038C562850A06300B1376F /* Question2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C552850A06300B1376F /* Question2View.swift */; };
 		7A038C582850A07100B1376F /* Question3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C572850A07100B1376F /* Question3View.swift */; };
 		7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* Question4View.swift */; };
+		7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5C2850B12A00B1376F /* TestViewModel1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		7A038C552850A06300B1376F /* Question2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2View.swift; sourceTree = "<group>"; };
 		7A038C572850A07100B1376F /* Question3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question3View.swift; sourceTree = "<group>"; };
 		7A038C592850A07E00B1376F /* Question4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question4View.swift; sourceTree = "<group>"; };
+		7A038C5C2850B12A00B1376F /* TestViewModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		7A038C01284F324300B1376F /* ReusEd */ = {
 			isa = PBXGroup;
 			children = (
+				7A038C5B2850B11500B1376F /* ViewModel */,
 				7A038C3C284F822100B1376F /* Shared */,
 				7A038C14284F35A900B1376F /* Resources */,
 				7A038C12284F359400B1376F /* Models */,
@@ -228,6 +231,14 @@
 			path = PersonalizationQuestions;
 			sourceTree = "<group>";
 		};
+		7A038C5B2850B11500B1376F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7A038C5C2850B12A00B1376F /* TestViewModel1.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,6 +337,7 @@
 				7A038C542850A05600B1376F /* Question1View.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
 				7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */,
+				7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */,
 				7A038C18284F383900B1376F /* OnBoardingPagesModel.swift in Sources */,
 				7A038C39284F806500B1376F /* NotificationsPermissionModel.swift in Sources */,
 				7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */,
