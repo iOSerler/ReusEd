@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewRouter = ViewRouter()
     var body: some View {
 
         VStack{
-            OnBoardingView()
+            OnBoardingView().environmentObject(viewRouter)
         }
     }
 }

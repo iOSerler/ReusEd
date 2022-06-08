@@ -7,13 +7,18 @@
 
 import Foundation
 import UserNotifications
-
+import SwiftUI
 class NotificationHandler {
-    func askPermission(){
+    func askPermission(viewRouter: ViewRouter){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
         { success, error in
                 if success {
                     print("authorization granted")
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            viewRouter.currentPage = .personalizationPages
+                        }
+                    }
 
                 } else if let error = error{
                     print(error.localizedDescription)
@@ -22,14 +27,14 @@ class NotificationHandler {
         }
     }
     
-    func sendNotification(date: Date, type: String, timeInterval: Double = 10, categoryIdentifier: String, title: String, body: String){
+    func sendNotification(date: Date, repeats: Bool, type: String, timeInterval: Double = 10, categoryIdentifier: String, title: String, body: String){
         var trigger : UNNotificationTrigger?
         
-        if type == "everyDay"{
+        if type == "date"{
             let dateComponente = Calendar.current.dateComponents([.hour, .minute], from: date)
-            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponente, repeats: true)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponente, repeats: repeats)
         }else if type == "time"{
-            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
         }
         
         let content = UNMutableNotificationContent()
@@ -43,3 +48,11 @@ class NotificationHandler {
         UNUserNotificationCenter.current().add(request)
     }
 }
+
+
+
+
+
+
+
+
