@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */; };
 		7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C02284F324300B1376F /* ReusEdApp.swift */; };
 		7A038C05284F324300B1376F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C04284F324300B1376F /* ContentView.swift */; };
 		7A038C07284F324700B1376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C06284F324700B1376F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
 		7A038C04284F324300B1376F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				7A038C17284F383900B1376F /* OnBoardingPagesModel.swift */,
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
+				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */,
 				7A038C16284F36E300B1376F /* OnBoardingView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
