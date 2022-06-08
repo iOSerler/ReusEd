@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum OnBoardingOptions {
+enum ViewRouterOptions {
     case introductionPages
     case notificationPermission
     case personalizationPages
@@ -18,9 +18,6 @@ enum OnBoardingOptions {
 
 
 class ViewRouter: ObservableObject {
-     // HERE TO SPECIFY THE STARTING POINT USING USERDEFAULTS
-    @State var isPresented =  UserDefaults.standard.bool(forKey: "OnBoardingPresented")
-    @State var isPermissionGranted =  UserDefaults.standard.bool(forKey: "permissionGranted")
-    @Published var currentPage: OnBoardingOptions = .introductionPages
+    @Published var currentPage: ViewRouterOptions = .introductionPages
     
 }

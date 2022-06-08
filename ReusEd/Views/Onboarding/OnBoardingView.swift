@@ -15,8 +15,6 @@ struct OnBoardingView: View {
     let backgroundColor = Color(#colorLiteral(red: 0.2705882353, green: 0.3019607843, blue: 0.3568627451, alpha: 1))
     let primaryMain = Color(#colorLiteral(red: 0.3803921569, green: 0.2745098039, blue: 0.7764705882, alpha: 1))
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var isPresented =  UserDefaults.standard.bool(forKey: "OnBoardingPresented")
-    @State var isPermissionGranted =  UserDefaults.standard.bool(forKey: "permissionGranted")
     var body: some View {
         NavigationView{
             
@@ -33,7 +31,7 @@ struct OnBoardingView: View {
             case .homeTabView:
                 HomeView().transition(.opacity)
             }
-        }
+        }.accentColor(Color(question1.titleColor))
     }
 }
 

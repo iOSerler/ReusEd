@@ -12,18 +12,17 @@ class NotificationHandler {
     func askPermission(viewRouter: ViewRouter){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
         { success, error in
-                if success {
-                    print("authorization granted")
-                    DispatchQueue.main.async {
-                        withAnimation {
-                            viewRouter.currentPage = .personalizationPages
-                        }
+            if success {
+                print("authorization granted")
+                DispatchQueue.main.async {
+                    withAnimation {
+                        viewRouter.currentPage = .personalizationPages
                     }
-
-                } else if let error = error{
-                    print(error.localizedDescription)
                 }
-            UserDefaults.standard.set(true, forKey: "permissionGranted")
+                
+            } else if let error = error{
+                print(error.localizedDescription)
+            }
         }
     }
     

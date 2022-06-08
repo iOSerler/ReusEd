@@ -12,7 +12,7 @@ struct DailyNotificationsPermissionView: View {
         ZStack {
             DailyNotificationsView()
         }.onAppear(){
-            UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
+            UserDefaults.standard.set(true, forKey: "IntroductionPagesPassed")
         }
     }
 }
@@ -40,31 +40,32 @@ struct DailyNotificationsView: View {
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(idealHeight: .infinity)
-                        
-                        
+                    
+                    
                     VStack(alignment: .center, spacing: 20){
                         Image(notificationPermissionData.alertImage)
-                    
+                        
                         Image(notificationPermissionData.arrowImage)
-                        .offset(x: UIScreen.main.bounds.width/8, y: 0)
-                    
+                            .offset(x: UIScreen.main.bounds.width/8, y: 0)
+                        
                         Text(notificationPermissionData.description)
-                        .font(Font.custom("Rubik-Regular", size: 14))
-                        .foregroundColor(Color(notificationPermissionData.descriptionColor))
-                        .multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(idealHeight: .infinity)
-                        .padding(.horizontal)
+                            .font(Font.custom("Rubik-Regular", size: 14))
+                            .foregroundColor(Color(notificationPermissionData.descriptionColor))
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(idealHeight: .infinity)
+                            .padding(.horizontal)
                         
                     }
                 }
                 
                 Spacer()
                 
-                Button(action: {
+                Button(action: {                    
                     notify.askPermission(viewRouter: viewRouter)
                 }) {
                     Text("Continue")
+                        .font(Font.custom("Rubik-Medium", size: 16))
                         .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
                         .background(Color(notificationPermissionData.buttonColor))
                         .accentColor(Color(notificationPermissionData.buttonTextColor))
@@ -73,7 +74,7 @@ struct DailyNotificationsView: View {
                 }
             }
             .padding(.top, UIScreen.main.bounds.height/20)
-//            .padding(.all)
+            //            .padding(.all)
             
         }
     }

@@ -16,47 +16,47 @@ struct IntroductionPagesView: View {
     @State private var selectedIndex: Int = 0
     var body: some View {
         VStack {
-                TabView(selection: $selectedIndex) {
-                    ForEach(introductionPagesData) { page in
-                        GeometryReader { g in
-                            VStack(alignment: .center) {
-                                Image(page.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: UIScreen.main.bounds.height / 3)
-//                                    .padding(.top, UIScreen.main.bounds.height / 15)
-                                
-                                Text(page.title)
-                                    .font(.custom("Rubik-Medium", size: 18))
-                                    .foregroundColor(mainText)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.top , 30)
-                                
-                                Text(page.description)
-                                    .font(.custom("Rubik-Regular", size: 14))
-                                    .foregroundColor(grey2)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.top, 12)
-                                    .padding(.horizontal, 20)
-                            }
-                            .opacity(Double(g.frame(in : . global).minX)/200+1)
+            TabView(selection: $selectedIndex) {
+                ForEach(introductionPagesData) { page in
+                    GeometryReader { g in
+                        VStack(alignment: .center) {
+                            Image(page.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: UIScreen.main.bounds.height / 3)
+                            //                                    .padding(.top, UIScreen.main.bounds.height / 15)
+                            
+                            Text(page.title)
+                                .font(.custom("Rubik-Medium", size: 18))
+                                .foregroundColor(mainText)
+                                .multilineTextAlignment(.center)
+                                .padding(.top , 30)
+                            
+                            Text(page.description)
+                                .font(.custom("Rubik-Regular", size: 14))
+                                .foregroundColor(grey2)
+                                .multilineTextAlignment(.center)
+                                .padding(.top, 12)
+                                .padding(.horizontal, 20)
                         }
+                        .opacity(Double(g.frame(in : . global).minX)/200+1)
                     }
                 }
-                .edgesIgnoringSafeArea(.top)
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                
+            }
+            .edgesIgnoringSafeArea(.top)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
-                
+            
+            
             HStack(spacing: 12) {
-               
+                
                 ForEach(0..<introductionPagesData.count) { index in
                     Capsule()
                         .foregroundColor(selectedIndex == index ? primaryMain : primaryLighter)
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
             }
-
+            
             
             
             
@@ -66,7 +66,6 @@ struct IntroductionPagesView: View {
                         selectedIndex += 1
                     }
                 } else {
-//                    UserDefaults.standard.set(true, forKey: "OnBoardingPresented")
                     DispatchQueue.main.async {
                         withAnimation {
                             viewRouter.currentPage = .notificationPermission
@@ -75,8 +74,8 @@ struct IntroductionPagesView: View {
                 }
             }, label: {
                 HStack {
-                    Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Start")
-                        .font(.custom("Rubik-Medium", size: 14))
+                    Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
+                        .font(.custom("Rubik-Medium", size: 16))
                         .foregroundColor(.white)
                     
                     Image("fi-rr-arrow-right")
@@ -85,23 +84,23 @@ struct IntroductionPagesView: View {
             })
             
             
-                .background(primaryMain)
-                .foregroundColor(.white)
-                .cornerRadius(12)
-                .padding(.top, 15)
-                .padding(.bottom, UIScreen.main.bounds.height/30)
+            .background(primaryMain)
+            .foregroundColor(.white)
+            .cornerRadius(12)
+            .padding(.top, 15)
+            .padding(.bottom, UIScreen.main.bounds.height/30)
             
-        
+            
             
         }
-            .navigationBarItems(trailing:
+        .navigationBarItems(trailing:
                                 NavigationLink(
                                     destination: DailyNotificationsPermissionView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                                     label: {
                                         Text("skip")
                                             .foregroundColor(selectedIndex != introductionPagesData.count - 1 ? grey2 : Color.clear)
                                             .font(.custom("Rubik-Regular", size: 14))
-
+                                        
                                     }).disabled(selectedIndex == introductionPagesData.count - 1)
         )
         .navigationBarBackButtonHidden(true)

@@ -7,72 +7,87 @@
 
 import SwiftUI
 
-var selectedItems = [Int]()
+
+
 
 struct Question1View: View {
     
-    //selectedItems =  UserDefaults.standard.value(forKey: "question1Answers")
     
     var body: some View {
-        NavigationView{
-            VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15){
-                Image(question1.stepsImage)
-                
-                Text(question1.title)
-                    .font(Font.custom(question1.titleFont, size: 20))
-                    .foregroundColor(Color(question1.titleColor))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(idealHeight: .infinity)
-                
-                Text(question1.description)
-                    .font(Font.custom(question1.descriptionFont, size: 14))
-                    .foregroundColor(Color(question1.descriptionColor))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(idealHeight: .infinity)
-                    .padding(.horizontal)
-                
-                
-                List{
-                    ForEach(question1.optionsData){ info in
-                        RowView(id: question1.optionsData.firstIndex(of: info)!,firstPart: info.firstPart, secondPart: info.secondPart)
-                            .padding()
-                            .listRowSeparator(.visible, edges: .bottom)
-                            .listRowSeparator(.hidden, edges: .all)
-                           
-                    }
-                }.listStyle(.plain)
-                 .onAppear(){
-                     if let selectedItems =  UserDefaults.standard.value(forKey:"question1Answers") {
-                         print(selectedItems)
-                     }
-                     
-                 }
-                    
-                
-                Spacer()
-                
-                NavigationLink(destination: Question2View()) {
-                    Text("Continue")
-                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                        .foregroundColor(Color(question1.buttonTextColor))
-                        .background(Color(question1.buttonColor))
-                        .cornerRadius(UIScreen.main.bounds.width/35)
-                        .padding(.bottom, UIScreen.main.bounds.height/30)
-                        
-                }.simultaneousGesture(TapGesture().onEnded{
-                    print(selectedItems)
-                    
-                    UserDefaults.standard.set(selectedItems, forKey: "question1Answers")
-                    selectedItems = []
-                })
-                
-            }.padding(.top, UIScreen.main.bounds.height/20)
-             .navigationBarTitleDisplayMode(.inline)
-             .navigationBarHidden(true).transition(.opacity)
+        
+        VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15){
+            Image(question1.stepsImage)
             
-        }.accentColor(Color(question1.titleColor))
+            Text(question1.title)
+                .font(Font.custom(question1.titleFont, size: 20))
+                .foregroundColor(Color(question1.titleColor))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(idealHeight: .infinity)
+            
+            Text(question1.description)
+                .font(Font.custom(question1.descriptionFont, size: 14))
+                .foregroundColor(Color(question1.descriptionColor))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(idealHeight: .infinity)
+                .padding(.horizontal)
+            
+            
+            List{
+                
+                ForEach(question1.optionsData.indices){ index in
+                    RowView(id: question1.optionsData.firstIndex(of: question1.optionsData[index])!,firstPart: question1.optionsData[index].firstPart, secondPart: question1.optionsData[index].secondPart, tapped: question1SelectedItemsBool[index], questionId: 1)
+                        .padding()
+                        .listRowSeparator(.visible, edges: .bottom)
+                        .listRowSeparator(.hidden, edges: .all)
+                    
+                }
+            }.listStyle(.plain)
+            
+                .onAppear(){
+                    
+                    
+                }
+            
+            
+            
+            
+            Spacer()
+            
+            NavigationLink(destination: Question2View()) {
+                Text("Continue")
+                    .font(Font.custom(question1.titleFont, size: 16))
+                    .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                    .foregroundColor(Color(question1.buttonTextColor))
+                    .background(Color(question1.buttonColor))
+                    .cornerRadius(UIScreen.main.bounds.width/35)
+                    .padding(.bottom, UIScreen.main.bounds.height/30)
+                
+            }.simultaneousGesture(TapGesture().onEnded{
+                
+                
+                // saving question 1 answers to global variable
+                question1SelectedItemsIdx = question1SelectedItemsIdxTemp
+                question1SelectedItemsBool = [Bool]()
+                for _ in 0...question1.optionsData.count - 1 {
+                    question1SelectedItemsBool.append(false)
+                }
+                for item in question1SelectedItemsIdx {
+                    question1SelectedItemsBool[item] = true
+                }
+                //                    print(question1SelectedItemsBool)
+                UserDefaults.standard.set(question1SelectedItemsIdx, forKey: "question1SelectedIdx")
+                
+            })
+            
+        }.padding(.top, UIScreen.main.bounds.height/20)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true).transition(.opacity)
+            .onAppear(){
+                UserDefaults.standard.set(true, forKey: "NotificationPermissionPassed")
+            }
+        
     }
 }
 
@@ -80,8 +95,9 @@ struct RowView: View {
     var id: Int
     var firstPart: String
     var secondPart: String
+    @State var tapped: Bool
+    var questionId: Int
     
-    @State private var tapped = false
     
     var body: some View {
         HStack{
@@ -92,17 +108,46 @@ struct RowView: View {
         }.onTapGesture(perform: {
             tapped.toggle()
             
-            if self.tapped {
-                if let _ = selectedItems.firstIndex(of: id) {
-                    print("contains")
+            
+            
+            // question 1 updating default values
+            if questionId == 1 {
+                if self.tapped {
+                    if let _ = question1SelectedItemsIdxTemp.firstIndex(of: id) {
+                        print("contains")
+                    } else {
+                        question1SelectedItemsIdxTemp.append(id)
+                    }
                 } else {
-                    selectedItems.append(id)
-                }
-            } else {
-                if let index = selectedItems.firstIndex(of: id) {
-                    selectedItems.remove(at: index)
+                    if let index = question1SelectedItemsIdxTemp.firstIndex(of: id) {
+                        question1SelectedItemsIdxTemp.remove(at: index)
+                    }
                 }
             }
+            
+            
+            // question 2 updating default values
+            if questionId == 2 {
+                if self.tapped {
+                    if let _ = question2SelectedItemsIdxTemp.firstIndex(of: id) {
+                        print("contains")
+                    } else {
+                        question2SelectedItemsIdxTemp.append(id)
+                    }
+                } else {
+                    if let index = question2SelectedItemsIdxTemp.firstIndex(of: id) {
+                        question2SelectedItemsIdxTemp.remove(at: index)
+                    }
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
             
         })
     }
