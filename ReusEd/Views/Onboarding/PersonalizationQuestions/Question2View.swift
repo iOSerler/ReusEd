@@ -30,7 +30,7 @@ struct Question2View: View {
                 
                 List{
                     ForEach(question2.optionsData){ info in
-                            RowView(firstPart: info.firstPart, secondPart: info.secondPart)
+                        RowView(id: question2.optionsData.firstIndex(of: info)!, firstPart: info.firstPart, secondPart: info.secondPart)
                             .padding()
                             .listRowSeparator(.visible, edges: .bottom)
                             .listRowSeparator(.hidden, edges: .all)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OptionData: Identifiable{
+struct OptionData: Identifiable, Equatable{
     var id = UUID()
     var firstPart: String
     var secondPart: String

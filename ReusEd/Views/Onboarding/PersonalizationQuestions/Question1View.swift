@@ -7,7 +7,12 @@
 
 import SwiftUI
 
+var selectedItems = [Int]()
+
 struct Question1View: View {
+    
+    //selectedItems =  UserDefaults.standard.value(forKey: "question1Answers")
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15){
@@ -31,13 +36,19 @@ struct Question1View: View {
                 
                 List{
                     ForEach(question1.optionsData){ info in
-                            RowView(firstPart: info.firstPart, secondPart: info.secondPart)
+                        RowView(id: question1.optionsData.firstIndex(of: info)!,firstPart: info.firstPart, secondPart: info.secondPart)
                             .padding()
                             .listRowSeparator(.visible, edges: .bottom)
                             .listRowSeparator(.hidden, edges: .all)
                            
                     }
                 }.listStyle(.plain)
+                 .onAppear(){
+                     if let selectedItems =  UserDefaults.standard.value(forKey:"question1Answers") {
+                         print(selectedItems)
+                     }
+                     
+                 }
                     
                 
                 Spacer()
@@ -51,8 +62,10 @@ struct Question1View: View {
                         .padding(.bottom, UIScreen.main.bounds.height/30)
                         
                 }.simultaneousGesture(TapGesture().onEnded{
-                    ////
+                    print(selectedItems)
                     
+                    UserDefaults.standard.set(selectedItems, forKey: "question1Answers")
+                    selectedItems = []
                 })
                 
             }.padding(.top, UIScreen.main.bounds.height/20)
@@ -64,6 +77,7 @@ struct Question1View: View {
 }
 
 struct RowView: View {
+    var id: Int
     var firstPart: String
     var secondPart: String
     
@@ -78,8 +92,16 @@ struct RowView: View {
         }.onTapGesture(perform: {
             tapped.toggle()
             
-            if self.tapped{
-                print(secondPart)
+            if self.tapped {
+                if let _ = selectedItems.firstIndex(of: id) {
+                    print("contains")
+                } else {
+                    selectedItems.append(id)
+                }
+            } else {
+                if let index = selectedItems.firstIndex(of: id) {
+                    selectedItems.remove(at: index)
+                }
             }
             
         })
