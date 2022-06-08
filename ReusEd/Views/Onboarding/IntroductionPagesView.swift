@@ -94,8 +94,7 @@ struct IntroductionPagesView: View {
         
             
         }
-        
-        .navigationBarItems(trailing:
+            .navigationBarItems(trailing:
                                 NavigationLink(
                                     destination: DailyNotificationsPermissionView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                                     label: {
