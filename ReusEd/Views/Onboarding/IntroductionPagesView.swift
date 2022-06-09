@@ -80,15 +80,22 @@ struct IntroductionPagesView: View {
                     
                     Image("fi-rr-arrow-right")
                         .padding(.leading, 20)
-                }.frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                }
+
+                    .font(Font.custom("Rubik-Medium", size: 16))
+                    .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                    .background(Color(notificationPermissionData.buttonColor))
+                    .accentColor(Color(notificationPermissionData.buttonTextColor))
+                    .cornerRadius(UIScreen.main.bounds.width/35)
             })
             
             
-            .background(primaryMain)
-            .foregroundColor(.white)
-            .cornerRadius(12)
+
             .padding(.top, 15)
             .padding(.bottom, UIScreen.main.bounds.height/30)
+            
+          
+            
             
             
             
