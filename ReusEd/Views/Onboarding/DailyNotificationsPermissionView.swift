@@ -63,6 +63,7 @@ struct DailyNotificationsView: View {
                 
                 Button(action: {                    
                     notify.askPermission(viewRouter: viewRouter)
+                    //notify.sendNotification(date: Date(), repeats: false, type: "time", timeInterval: 5, categoryIdentifier: "TestNOtification", title: "Test", body: "some text.....")
                 }) {
                     Text("Continue")
                         .font(Font.custom("Rubik-Medium", size: 16))
