@@ -24,4 +24,4 @@ struct TabBarData{
     var titleOffColor: String
 }
 
-//var tabBar = TabBarData(tab1OnImage: <#T##String#>, tab1OffImage: <#T##String#>, tab1Title: <#T##String#>, tab2OnImage: <#T##String#>, tab2OffImage: <#T##String#>, tab2Title: <#T##String#>, tab3OnImage: <#T##String#>, tab3OffImage: <#T##String#>, tab3Title: <#T##String#>, tab4OnImage: <#T##String#>, tab4OffImage: <#T##String#>, tab4Title: <#T##String#>, titleOnColor: <#T##String#>, titleOffColor: <#T##String#>)
+var tabBar = TabBarData(tab1OnImage: "tab1OnImage", tab1OffImage: "tab1OffImage", tab1Title: "Courses", tab2OnImage: "tab2OnImage", tab2OffImage: "tab2OffImage", tab2Title: "Quizzes", tab3OnImage: "tab3OnImage", tab3OffImage: "tab3OffImage", tab3Title: "Score", tab4OnImage: "tab4OnImage", tab4OffImage: "tab4OffImage", tab4Title: "Profile", titleOnColor: "Primary", titleOffColor: "Placeholder")
