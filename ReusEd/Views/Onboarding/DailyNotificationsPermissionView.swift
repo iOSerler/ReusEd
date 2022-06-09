@@ -35,7 +35,7 @@ struct DailyNotificationsView: View {
                     Image(notificationPermissionData.logoImage)
                     
                     Text(notificationPermissionData.title)
-                        .font(Font.custom("Rubik-Medium", size: 20))
+                        .font(Font.custom(notificationPermissionData.titleFont, size: 20))
                         .foregroundColor(Color(notificationPermissionData.titleColor))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
@@ -49,7 +49,7 @@ struct DailyNotificationsView: View {
                             .offset(x: UIScreen.main.bounds.width/8, y: 0)
                         
                         Text(notificationPermissionData.description)
-                            .font(Font.custom("Rubik-Regular", size: 14))
+                            .font(Font.custom(notificationPermissionData.titleFont, size: 14))
                             .foregroundColor(Color(notificationPermissionData.descriptionColor))
                             .multilineTextAlignment(.center)
                             .fixedSize(horizontal: false, vertical: true)
