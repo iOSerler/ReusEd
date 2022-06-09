@@ -27,14 +27,14 @@ struct IntroductionPagesView: View {
                             //                                    .padding(.top, UIScreen.main.bounds.height / 15)
                             
                             Text(page.title)
-                                .font(.custom("Rubik-Medium", size: 18))
-                                .foregroundColor(mainText)
+                                .font(.custom(page.titleFont, size: 18))
+                                .foregroundColor(Color(page.titleColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top , 30)
                             
                             Text(page.description)
-                                .font(.custom("Rubik-Regular", size: 14))
-                                .foregroundColor(grey2)
+                                .font(.custom(page.descriptionFont, size: 14))
+                                .foregroundColor(Color(page.descriptionColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top, 12)
                                 .padding(.horizontal, 20)
@@ -52,7 +52,7 @@ struct IntroductionPagesView: View {
                 
                 ForEach(0..<introductionPagesData.count) { index in
                     Capsule()
-                        .foregroundColor(selectedIndex == index ? primaryMain : primaryLighter)
+                        .foregroundColor(selectedIndex == index ? Color(introductionPagesData[0].buttonColor) : Color(introductionPagesData[0].capsuleOffColor))
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
             }
@@ -75,17 +75,17 @@ struct IntroductionPagesView: View {
             }, label: {
                 HStack {
                     Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
-                        .font(.custom("Rubik-Medium", size: 16))
-                        .foregroundColor(.white)
+                        .font(.custom(introductionPagesData[0].titleFont, size: 16))
+                        .foregroundColor(Color(introductionPagesData[0].buttonTextColor))
                     
-                    Image("fi-rr-arrow-right")
+                    Image(introductionPagesData[0].buttonImage)
                         .padding(.leading, 20)
                 }
 
                     .font(Font.custom("Rubik-Medium", size: 16))
                     .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                    .background(Color(notificationPermissionData.buttonColor))
-                    .accentColor(Color(notificationPermissionData.buttonTextColor))
+                    .background(Color(introductionPagesData[0].buttonColor))
+                    .accentColor(Color(introductionPagesData[0].buttonTextColor))
                     .cornerRadius(UIScreen.main.bounds.width/35)
             })
             

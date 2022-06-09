@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "fi-sr-trophy.png",
+      "filename" : "fi-sr-bell-ring.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "fi-sr-trophy@2x.png",
+      "filename" : "fi-sr-bell-ring@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "fi-sr-trophy@3x.png",
+      "filename" : "fi-sr-bell-ring@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
