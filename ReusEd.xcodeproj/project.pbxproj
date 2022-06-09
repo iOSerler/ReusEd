@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0A2851DCF100DB971B /* TabBarModel.swift */; };
+		2A105B0D2851DE8500DB971B /* Tab1TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0C2851DE8500DB971B /* Tab1TestView.swift */; };
+		2A105B0F2851DE9000DB971B /* Tab2TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0E2851DE9000DB971B /* Tab2TestView.swift */; };
+		2A105B112851DEA700DB971B /* Tab3TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B102851DEA700DB971B /* Tab3TestView.swift */; };
+		2A105B132851DEB400DB971B /* Tab4TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B122851DEB400DB971B /* Tab4TestView.swift */; };
 		2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */; };
 		7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C02284F324300B1376F /* ReusEdApp.swift */; };
 		7A038C05284F324300B1376F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C04284F324300B1376F /* ContentView.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		2A105B0C2851DE8500DB971B /* Tab1TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1TestView.swift; sourceTree = "<group>"; };
+		2A105B0E2851DE9000DB971B /* Tab2TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2TestView.swift; sourceTree = "<group>"; };
+		2A105B102851DEA700DB971B /* Tab3TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3TestView.swift; sourceTree = "<group>"; };
+		2A105B122851DEB400DB971B /* Tab4TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4TestView.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
@@ -151,6 +161,7 @@
 				7A038C17284F383900B1376F /* OnBoardingPagesModel.swift */,
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
 				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
+				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +230,10 @@
 			isa = PBXGroup;
 			children = (
 				7A038C4C28509DDD00B1376F /* HomeView.swift */,
+				2A105B0C2851DE8500DB971B /* Tab1TestView.swift */,
+				2A105B0E2851DE9000DB971B /* Tab2TestView.swift */,
+				2A105B102851DEA700DB971B /* Tab3TestView.swift */,
+				2A105B122851DEB400DB971B /* Tab4TestView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -328,15 +343,20 @@
 			files = (
 				2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */,
 				7A038C16284F36E300B1376F /* OnBoardingView.swift in Sources */,
+				2A105B0D2851DE8500DB971B /* Tab1TestView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
 				7A038C562850A06300B1376F /* Question2View.swift in Sources */,
 				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
 				7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */,
 				7A038C44285088E400B1376F /* Helpers.swift in Sources */,
+				2A105B112851DEA700DB971B /* Tab3TestView.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
+				2A105B132851DEB400DB971B /* Tab4TestView.swift in Sources */,
+				2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */,
 				7A038C05284F324300B1376F /* ContentView.swift in Sources */,
 				7A038C4F28509E4200B1376F /* SignInView.swift in Sources */,
+				2A105B0F2851DE9000DB971B /* Tab2TestView.swift in Sources */,
 				7A038C582850A07100B1376F /* Question3View.swift in Sources */,
 				7A038C542850A05600B1376F /* Question1View.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
