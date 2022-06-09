@@ -11,8 +11,6 @@ import SwiftUI
 
 
 struct Question1View: View {
-    
-    
     var body: some View {
         
         VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15){
@@ -44,14 +42,6 @@ struct Question1View: View {
                     
                 }
             }.listStyle(.plain)
-            
-                .onAppear(){
-                    
-                    
-                }
-            
-            
-            
             
             Spacer()
             
