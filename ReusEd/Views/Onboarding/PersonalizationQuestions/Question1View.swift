@@ -95,7 +95,9 @@ struct RowView: View {
             Text(firstPart)
                 .padding(.leading,10)
             Text(secondPart)
-        }.onTapGesture(perform: {
+            Spacer()
+        }.contentShape(Rectangle())
+        .onTapGesture(perform: {
             tapped.toggle()
             
             
