@@ -134,10 +134,7 @@ struct RowView: View {
             
             
             
-            
-            
-            
-            
+  
             
         })
     }
