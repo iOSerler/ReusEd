@@ -47,15 +47,18 @@
 		7A038C582850A07100B1376F /* Question3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C572850A07100B1376F /* Question3View.swift */; };
 		7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* Question4View.swift */; };
 		7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5C2850B12A00B1376F /* TestViewModel1.swift */; };
+		CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
 		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		2A105B0C2851DE8500DB971B /* Tab1TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1TestView.swift; sourceTree = "<group>"; };
 		2A105B0E2851DE9000DB971B /* Tab2TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2TestView.swift; sourceTree = "<group>"; };
 		2A105B102851DEA700DB971B /* Tab3TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3TestView.swift; sourceTree = "<group>"; };
 		2A105B122851DEB400DB971B /* Tab4TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4TestView.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
+		39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReusEd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
 		7A038C04284F324300B1376F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		7A038C572850A07100B1376F /* Question3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question3View.swift; sourceTree = "<group>"; };
 		7A038C592850A07E00B1376F /* Question4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question4View.swift; sourceTree = "<group>"; };
 		7A038C5C2850B12A00B1376F /* TestViewModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel1.swift; sourceTree = "<group>"; };
+		AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,17 +103,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE1280EB741DC4B55AC01E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A038BF6284F324300B1376F = {
 			isa = PBXGroup;
 			children = (
 				7A038C01284F324300B1376F /* ReusEd */,
 				7A038C00284F324300B1376F /* Products */,
+				E2F9127AB2743844FAA99DBE /* Pods */,
+				0EE1280EB741DC4B55AC01E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,6 +272,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E2F9127AB2743844FAA99DBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */,
+				0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +288,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A038C0D284F324700B1376F /* Build configuration list for PBXNativeTarget "ReusEd" */;
 			buildPhases = (
+				833C462D2853D1DB00FAA3E7 /* SwiftLint */,
+				3D64452A49C27152FA137508 /* [CP] Check Pods Manifest.lock */,
 				7A038BFB284F324300B1376F /* Sources */,
 				7A038BFC284F324300B1376F /* Frameworks */,
 				7A038BFD284F324300B1376F /* Resources */,
@@ -335,6 +361,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D64452A49C27152FA137508 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReusEd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		833C462D2853D1DB00FAA3E7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A038BFB284F324300B1376F /* Sources */ = {
@@ -487,13 +556,15 @@
 		};
 		7A038C0E284F324700B1376F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TNZ35SGHD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -511,6 +582,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -519,13 +591,15 @@
 		};
 		7A038C0F284F324700B1376F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TNZ35SGHD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -543,6 +617,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
