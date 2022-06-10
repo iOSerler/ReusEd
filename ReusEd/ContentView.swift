@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewRouter = ViewRouter()
-    var isAppBeingTested = true
+    var isAppBeingTested = false
     var body: some View {
         
         VStack{
