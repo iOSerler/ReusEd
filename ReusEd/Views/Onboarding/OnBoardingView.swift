@@ -7,16 +7,11 @@
 
 import SwiftUI
 
-
-
-
-
 struct OnBoardingView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
-        NavigationView{
-            
-            
+        NavigationView {
+
             switch viewRouter.currentPage {
             case .introductionPages:
                 IntroductionPagesView().transition(.opacity)
@@ -38,6 +33,3 @@ struct OnBoardingView_Previews: PreviewProvider {
         OnBoardingView()
     }
 }
-
-
-

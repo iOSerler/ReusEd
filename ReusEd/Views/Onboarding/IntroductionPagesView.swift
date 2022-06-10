@@ -18,20 +18,20 @@ struct IntroductionPagesView: View {
         VStack {
             TabView(selection: $selectedIndex) {
                 ForEach(introductionPagesData) { page in
-                    GeometryReader { g in
+                    GeometryReader { geom in
                         VStack(alignment: .center) {
                             Image(page.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: UIScreen.main.bounds.height / 3)
                             //                                    .padding(.top, UIScreen.main.bounds.height / 15)
-                            
+
                             Text(page.title)
                                 .font(.custom(page.titleFont, size: 18))
                                 .foregroundColor(Color(page.titleColor))
                                 .multilineTextAlignment(.center)
-                                .padding(.top , 30)
-                            
+                                .padding(.top, 30)
+
                             Text(page.description)
                                 .font(.custom(page.descriptionFont, size: 14))
                                 .foregroundColor(Color(page.descriptionColor))
@@ -39,27 +39,26 @@ struct IntroductionPagesView: View {
                                 .padding(.top, 12)
                                 .padding(.horizontal, 20)
                         }
-                        .opacity(Double(g.frame(in : . global).minX)/200+1)
+                        .opacity(Double(geom.frame(in: . global).minX)/200+1)
                     }
                 }
             }
             .edgesIgnoringSafeArea(.top)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            
-            
-            
+
             HStack(spacing: 12) {
-                
-                ForEach(0..<introductionPagesData.count) { index in
+
+                ForEach(0..<introductionPagesData.count, id: \.self) { index in
                     Capsule()
-                        .foregroundColor(selectedIndex == index ? Color(introductionPagesData[0].buttonColor) : Color(introductionPagesData[0].capsuleOffColor))
+                        .foregroundColor(
+                            selectedIndex == index ?
+                            Color(introductionPagesData[0].buttonColor) :
+                                Color(introductionPagesData[0].capsuleOffColor)
+                        )
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
             }
-            
-            
-            
-            
+
             Button(action: {
                 if selectedIndex < introductionPagesData.count - 1 {
                     withAnimation {
@@ -77,7 +76,7 @@ struct IntroductionPagesView: View {
                     Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
                         .font(.custom(introductionPagesData[0].titleFont, size: 16))
                         .foregroundColor(Color(introductionPagesData[0].buttonTextColor))
-                    
+
                     Image(introductionPagesData[0].buttonImage)
                         .padding(.leading, 20)
                 }
@@ -88,26 +87,21 @@ struct IntroductionPagesView: View {
                     .accentColor(Color(introductionPagesData[0].buttonTextColor))
                     .cornerRadius(UIScreen.main.bounds.width/35)
             })
-            
-            
-
             .padding(.top, 15)
             .padding(.bottom, UIScreen.main.bounds.height/30)
-            
-          
-            
-            
-            
-            
         }
         .navigationBarItems(trailing:
                                 NavigationLink(
-                                    destination: DailyNotificationsPermissionView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                    destination:
+                                        DailyNotificationsPermissionView()
+                                        .navigationBarBackButtonHidden(true)
+                                        .navigationBarHidden(true),
                                     label: {
                                         Text("skip")
-                                            .foregroundColor(selectedIndex != introductionPagesData.count - 1 ? grey2 : Color.clear)
+                                            .foregroundColor(
+                                                selectedIndex != introductionPagesData.count - 1 ? grey2 : Color.clear
+                                            )
                                             .font(.custom("Rubik-Regular", size: 14))
-                                        
                                     }).disabled(selectedIndex == introductionPagesData.count - 1)
         )
         .navigationBarBackButtonHidden(true)
