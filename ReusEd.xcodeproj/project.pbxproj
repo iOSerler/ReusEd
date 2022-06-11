@@ -288,8 +288,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A038C0D284F324700B1376F /* Build configuration list for PBXNativeTarget "ReusEd" */;
 			buildPhases = (
-				833C462D2853D1DB00FAA3E7 /* SwiftLint */,
 				3D64452A49C27152FA137508 /* [CP] Check Pods Manifest.lock */,
+				833C462D2853D1DB00FAA3E7 /* SwiftLint */,
 				7A038BFB284F324300B1376F /* Sources */,
 				7A038BFC284F324300B1376F /* Frameworks */,
 				7A038BFD284F324300B1376F /* Resources */,
@@ -564,7 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = 3TNZ35SGHD;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -599,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = 3TNZ35SGHD;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
