@@ -18,7 +18,7 @@ struct OnBoardingView: View {
             case .notificationPermission:
                 DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
             case .personalizationPages:
-                Question1View().transition(.opacity)
+                CheckboxQuestionView(question: question1).transition(.opacity)
             case .authorization:
                 SignInView().transition(.opacity)
             case .homeTabView:

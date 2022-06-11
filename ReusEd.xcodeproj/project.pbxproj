@@ -42,8 +42,7 @@
 		7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4C28509DDD00B1376F /* HomeView.swift */; };
 		7A038C4F28509E4200B1376F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4E28509E4200B1376F /* SignInView.swift */; };
 		7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5028509F0E00B1376F /* SignUpView.swift */; };
-		7A038C542850A05600B1376F /* Question1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C532850A05600B1376F /* Question1View.swift */; };
-		7A038C562850A06300B1376F /* Question2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C552850A06300B1376F /* Question2View.swift */; };
+		7A038C542850A05600B1376F /* CheckboxQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C532850A05600B1376F /* CheckboxQuestionView.swift */; };
 		7A038C582850A07100B1376F /* Question3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C572850A07100B1376F /* Question3View.swift */; };
 		7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* Question4View.swift */; };
 		7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5C2850B12A00B1376F /* TestViewModel1.swift */; };
@@ -90,8 +89,7 @@
 		7A038C4C28509DDD00B1376F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A038C4E28509E4200B1376F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		7A038C5028509F0E00B1376F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		7A038C532850A05600B1376F /* Question1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1View.swift; sourceTree = "<group>"; };
-		7A038C552850A06300B1376F /* Question2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2View.swift; sourceTree = "<group>"; };
+		7A038C532850A05600B1376F /* CheckboxQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxQuestionView.swift; sourceTree = "<group>"; };
 		7A038C572850A07100B1376F /* Question3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question3View.swift; sourceTree = "<group>"; };
 		7A038C592850A07E00B1376F /* Question4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question4View.swift; sourceTree = "<group>"; };
 		7A038C5C2850B12A00B1376F /* TestViewModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel1.swift; sourceTree = "<group>"; };
@@ -256,8 +254,7 @@
 		7A038C522850A02B00B1376F /* PersonalizationQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				7A038C532850A05600B1376F /* Question1View.swift */,
-				7A038C552850A06300B1376F /* Question2View.swift */,
+				7A038C532850A05600B1376F /* CheckboxQuestionView.swift */,
 				7A038C572850A07100B1376F /* Question3View.swift */,
 				7A038C592850A07E00B1376F /* Question4View.swift */,
 			);
@@ -415,7 +412,6 @@
 				2A105B0D2851DE8500DB971B /* Tab1TestView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
-				7A038C562850A06300B1376F /* Question2View.swift in Sources */,
 				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
 				7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */,
 				7A038C44285088E400B1376F /* Helpers.swift in Sources */,
@@ -427,7 +423,7 @@
 				7A038C4F28509E4200B1376F /* SignInView.swift in Sources */,
 				2A105B0F2851DE9000DB971B /* Tab2TestView.swift in Sources */,
 				7A038C582850A07100B1376F /* Question3View.swift in Sources */,
-				7A038C542850A05600B1376F /* Question1View.swift in Sources */,
+				7A038C542850A05600B1376F /* CheckboxQuestionView.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
 				7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */,
 				7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */,

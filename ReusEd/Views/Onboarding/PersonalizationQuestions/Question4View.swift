@@ -35,23 +35,7 @@ struct Question4View: View {
             Spacer()
 
             Button(action: {
-
-                // saving all data
-
-                for index in question1SelectedItemsIdx {
-                    question1Answers.append(question1.optionsData[index].secondPart)
-                }
-                for index in question2SelectedItemsIdx {
-                    question2Answers.append(question2.optionsData[index].secondPart)
-                }
-                question3Answer = question3.optionsData[question3SelectedItemIdx - 1].firstPart
-                print(question1Answers)
-                print(question2Answers)
-                print(question3Answer)
-
-                UserDefaults.standard.set(question1Answers, forKey: "question1Answers")
-                UserDefaults.standard.set(question2Answers, forKey: "question2Answers")
-                UserDefaults.standard.set(question3Answer, forKey: "question3Answer")
+                self.saveAnswerData()
 
                 DispatchQueue.main.async {
                     withAnimation {
@@ -71,6 +55,17 @@ struct Question4View: View {
         //        .padding(.top)
         .navigationBarTitleDisplayMode(.inline)
     }
+
+    func saveAnswerData() {
+
+        // FIXME: add saving onboarding data
+
+        for key in checkboxQuestionSelectedItemsDict.keys {
+            print(checkboxQuestionSelectedItemsDict[key] ?? "")
+        }
+
+    }
+
 }
 
 struct Question4View_Previews: PreviewProvider {

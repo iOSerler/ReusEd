@@ -8,12 +8,13 @@
 import Foundation
 
 struct OptionData: Identifiable, Equatable {
-    var id = UUID()
+    var id: Int
     var firstPart: String
     var secondPart: String
 }
 
 struct QuestionData {
+    var id: Int
     var stepsImage: String
     var title: String
     var titleFont: String
@@ -28,6 +29,8 @@ struct QuestionData {
 }
 
 var question1 = QuestionData(
+    id: 1,
+    // FIXME should NOT be a hardcoded image, rather a custom view
     stepsImage: "Question1",
     title: "How did your hear about us?",
     titleFont: "Rubik-Medium",
@@ -36,13 +39,13 @@ var question1 = QuestionData(
     descriptionFont: "Rubik-Regular",
     descriptionColor: "Gray",
     optionsData: [
-        OptionData(firstPart: "🤗", secondPart: "Friends/Family"),
-        OptionData(firstPart: "🔎", secondPart: "Google Search"),
-        OptionData(firstPart: "🏪", secondPart: "App Store"),
-        OptionData(firstPart: "📖", secondPart: "News/Arcticle/Blog"),
-        OptionData(firstPart: "📱", secondPart: "Facebook/Instagram"),
-        OptionData(firstPart: "🕺", secondPart: "TikTok"),
-        OptionData(firstPart: "🤔", secondPart: "Other")
+        OptionData(id: 1, firstPart: "🤗", secondPart: "Friends/Family"),
+        OptionData(id: 2, firstPart: "🔎", secondPart: "Google Search"),
+        OptionData(id: 3, firstPart: "🏪", secondPart: "App Store"),
+        OptionData(id: 4, firstPart: "📖", secondPart: "News/Arcticle/Blog"),
+        OptionData(id: 5, firstPart: "📱", secondPart: "Facebook/Instagram"),
+        OptionData(id: 6, firstPart: "🕺", secondPart: "TikTok"),
+        OptionData(id: 7, firstPart: "🤔", secondPart: "Other")
     ],
     optionsColor: "MainText",
     buttonColor: "Primary",
@@ -50,6 +53,7 @@ var question1 = QuestionData(
 )
 
 var question2 = QuestionData(
+    id: 2,
     stepsImage: "Question2",
     title: "What’s your interest?",
     titleFont: "Rubik-Medium",
@@ -58,12 +62,12 @@ var question2 = QuestionData(
     descriptionFont: "Rubik-Regular",
     descriptionColor: "Gray",
     optionsData: [
-        OptionData(firstPart: "🎓", secondPart: "Computer Science"),
-        OptionData(firstPart: "⚗️", secondPart: "Chemistry"),
-        OptionData(firstPart: "🔬", secondPart: "Biology"),
-        OptionData(firstPart: "📸", secondPart: "Cinematography"),
-        OptionData(firstPart: "➗", secondPart: "Mathematics"),
-        OptionData(firstPart: "🤔", secondPart: "Other")
+        OptionData(id: 1, firstPart: "🎓", secondPart: "Computer Science"),
+        OptionData(id: 2, firstPart: "⚗️", secondPart: "Chemistry"),
+        OptionData(id: 3, firstPart: "🔬", secondPart: "Biology"),
+        OptionData(id: 4, firstPart: "📸", secondPart: "Cinematography"),
+        OptionData(id: 5, firstPart: "➗", secondPart: "Mathematics"),
+        OptionData(id: 6, firstPart: "🤔", secondPart: "Other")
     ],
     optionsColor: "MainText",
     buttonColor: "Primary",
@@ -71,6 +75,7 @@ var question2 = QuestionData(
 )
 
 var question3 = QuestionData(
+    id: 3,
     stepsImage: "Question3",
     title: "Pick your learning goal",
     titleFont: "Rubik-Medium",
@@ -79,10 +84,10 @@ var question3 = QuestionData(
     descriptionFont: "Rubik-Regular",
     descriptionColor: "Gray",
     optionsData: [
-        OptionData(firstPart: "Casual", secondPart: "5 min / day"),
-        OptionData(firstPart: "Regular", secondPart: "10 min / day"),
-        OptionData(firstPart: "Serious", secondPart: "15 min / day"),
-        OptionData(firstPart: "Intense", secondPart: "20 min / day")
+        OptionData(id: 1, firstPart: "Casual", secondPart: "5 min / day"),
+        OptionData(id: 2, firstPart: "Regular", secondPart: "10 min / day"),
+        OptionData(id: 3, firstPart: "Serious", secondPart: "15 min / day"),
+        OptionData(id: 4, firstPart: "Intense", secondPart: "20 min / day")
     ],
     optionsColor: "MainText",
     buttonColor: "Primary",
@@ -90,6 +95,7 @@ var question3 = QuestionData(
 )
 
 var question4 = QuestionData(
+    id: 4,
     stepsImage: "Question4",
     title: "You’re all set!",
     titleFont: "Rubik-Medium",
@@ -103,13 +109,7 @@ var question4 = QuestionData(
     buttonTextColor: "White"
 )
 
-var question1SelectedItemsIdx = [Int]()
-var question1SelectedItemsIdxTemp = [Int]()
-var question1SelectedItemsBool = [Bool]()
-
-var question2SelectedItemsIdx = [Int]()
-var question2SelectedItemsIdxTemp = [Int]()
-var question2SelectedItemsBool = [Bool]()
+var checkboxQuestionSelectedItemsDict = [Int: Set<Int>]()
 
 var question3SelectedItemIdx = Int()
 
