@@ -14,43 +14,42 @@ struct ContentView: View {
 
         VStack {
             OnBoardingView().environmentObject(viewRouter)
-        }.onAppear() {
+        }.onAppear {
 
             // Here we are identifying the initial entry point for the main navigation view
 
             if isAppBeingTested {
                 viewRouter.currentPage = .introductionPages
             } else {
-                if let introductionPagesPassed = UserDefaults.standard.value(forKey: "IntroductionPagesPassed") {
-                    if (introductionPagesPassed as? Bool) ?? false {
-                        if let notificationPermissionPassed =
-                            UserDefaults.standard.value(forKey: "NotificationPermissionPassed") {
-                            if (notificationPermissionPassed as? Bool) ?? false {
-                                if let personalizationPassed = UserDefaults.standard.value(forKey: "OnBoardingPassed") {
-                                    if (personalizationPassed as? Bool) ?? false {
-                                        if UserDefaults.standard.value(forKey: "userToken") != nil {
-                                            viewRouter.currentPage = .homeTabView
-                                        } else {
-                                            viewRouter.currentPage = .authorization
-                                        }
-                                    } else {
-                                        viewRouter.currentPage = .personalizationPages
-                                    }
-                                } else {
-                                    viewRouter.currentPage = .personalizationPages
-                                }
-                            } else {
-                                viewRouter.currentPage = .notificationPermission
-                            }
-                        } else {
-                            viewRouter.currentPage = .notificationPermission
-                        }
-                    } else {
-                        viewRouter.currentPage = .introductionPages
-                    }
-                } else {
+
+                let introductionPagesPassed = UserDefaults.standard.bool(forKey: "IntroductionPagesPassed")
+
+                guard introductionPagesPassed else {
                     viewRouter.currentPage = .introductionPages
+                    return
                 }
+
+                let notificationPermissionPassed =
+                UserDefaults.standard.bool(forKey: "NotificationPermissionPassed")
+
+                guard notificationPermissionPassed else {
+                    viewRouter.currentPage = .notificationPermission
+                    return
+                }
+
+                let personalizationPassed = UserDefaults.standard.bool(forKey: "OnBoardingPassed")
+
+                guard personalizationPassed else {
+                    viewRouter.currentPage = .personalizationPages
+                    return
+                }
+
+                if let _ = UserDefaults.standard.value(forKey: "userToken") {
+                    viewRouter.currentPage = .homeTabView
+                } else {
+                    viewRouter.currentPage = .authorization
+                }
+
             }
 
             // Here Default / saved values for personalization questions are specified
