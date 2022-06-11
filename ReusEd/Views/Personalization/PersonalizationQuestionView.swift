@@ -9,12 +9,19 @@ import SwiftUI
 
 struct PersonalizationQuestionView: View {
 
+    @EnvironmentObject var viewRouter: ViewRouter
+
     let question: QuestionData
 
     var body: some View {
 
         VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
             Image(question.stepsImage)
+
+            if !question.image.isEmpty {
+                Image(question.image)
+                    .padding(.top, UIScreen.main.bounds.height / 10)
+            }
 
             Text(question.title)
                 .font(Font.custom(question.titleFont, size: 20))
@@ -38,37 +45,66 @@ struct PersonalizationQuestionView: View {
             }
             Spacer()
 
-            // FIXME: add generic transition to the next view in line
-            
-            NavigationLink(destination: PersonalizationQuestionView(question: questions.removeFirst())) {
-                Text("Continue")
-                    .font(Font.custom(question1.titleFont, size: 16))
-                    .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                    .foregroundColor(Color(question1.buttonTextColor))
-                    .background(Color(question1.buttonColor))
-                    .cornerRadius(UIScreen.main.bounds.width/35)
-                    .padding(.bottom, UIScreen.main.bounds.height/30)
-            }.simultaneousGesture(TapGesture().onEnded {
+            if questions.count > 0 {
 
-                guard let selectedItems = checkboxQuestionSelectedItemsDict[question.id] else {
-                    return
-                }
+                NavigationLink(destination: PersonalizationQuestionView(question: questions.removeFirst())) {
+                    Text("Continue")
+                        .font(Font.custom(question1.titleFont, size: 16))
+                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                        .foregroundColor(Color(question1.buttonTextColor))
+                        .background(Color(question1.buttonColor))
+                        .cornerRadius(UIScreen.main.bounds.width/35)
+                        .padding(.bottom, UIScreen.main.bounds.height/30)
+                }.simultaneousGesture(TapGesture().onEnded {
 
-                UserDefaults.standard.set(selectedItems, forKey: "checkBoxQuestionID_\(question.id)")
-            })
+                    guard let selectedItems = personalizationQuestionSelectedItemsDict[question.id] else {
+                        return
+                    }
+
+                    UserDefaults.standard.set(selectedItems, forKey: "checkBoxQuestionID_\(question.id)")
+                })
+
+            } else {
+                Button(action: {
+                    self.saveAnswerData()
+
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            // FIXME: should not know about authorization
+                            viewRouter.completePersonalization()
+                        }
+                    }
+                }, label: {
+                    Text("Done")
+                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                        .font(Font.custom(question4.titleFont, size: 16))
+                        .background(Color(notificationPermissionData.buttonColor))
+                        .accentColor(Color(notificationPermissionData.buttonTextColor))
+                        .cornerRadius(UIScreen.main.bounds.width/35)
+                        .padding(.bottom, UIScreen.main.bounds.height/30)
+                })
+            }
+
         }.padding(.top, UIScreen.main.bounds.height/20)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true).transition(.opacity)
-            .onAppear {
-                UserDefaults.standard.set(true, forKey: "NotificationPermissionPassed")
-            }
+    }
+
+    func saveAnswerData() {
+
+        // FIXME: add saving onboarding data
+
+        for key in personalizationQuestionSelectedItemsDict.keys {
+            print(personalizationQuestionSelectedItemsDict[key] ?? "")
+        }
+
     }
 }
 
 struct CheckboxList: View {
-    
+
     let question: QuestionData
-    
+
     var body: some View {
         List {
             ForEach(question.optionsData) { optionData in
@@ -77,13 +113,13 @@ struct CheckboxList: View {
                     optionData: optionData,
                     tapAction: { checked in
                         if checked {
-                            checkboxQuestionSelectedItemsDict[question.id]?.insert(optionData.id)
+                            personalizationQuestionSelectedItemsDict[question.id]?.insert(optionData.id)
 
                         } else {
-                            checkboxQuestionSelectedItemsDict[question.id]?.remove(optionData.id)
+                            personalizationQuestionSelectedItemsDict[question.id]?.remove(optionData.id)
                         }
                     },
-                    checked: checkboxQuestionSelectedItemsDict[question.id]?.contains(optionData.id) ?? false
+                    checked: personalizationQuestionSelectedItemsDict[question.id]?.contains(optionData.id) ?? false
                 )
                     .padding()
                     .listRowSeparator(.visible, edges: .bottom)
@@ -153,10 +189,10 @@ struct RadioButtonRow: View {
 }
 
 struct RadioButtonList: View {
-    
+
     let question: QuestionData
     @State var chosenOptionId: Int = 1
-    
+
     var body: some View {
         ScrollView {
             ForEach(question.optionsData) { optionData in

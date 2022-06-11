@@ -15,7 +15,7 @@ class NotificationHandler {
                 print("authorization granted")
                 DispatchQueue.main.async {
                     withAnimation {
-                        viewRouter.currentPage = .personalizationPages
+                        viewRouter.completeNotificationPermission()
                     }
                 }
 

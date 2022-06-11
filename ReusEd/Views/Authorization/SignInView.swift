@@ -117,10 +117,9 @@ struct SignInView: View {
                 }
 
                 if  !self.showingAlert {
-                    UserDefaults.standard.set("token", forKey: "userToken")
                     DispatchQueue.main.async {
                         withAnimation {
-                            viewRouter.currentPage = .homeTabView
+                            viewRouter.completeAuthorization(with: "token")
                         }
                     }
                 }
@@ -133,9 +132,6 @@ struct SignInView: View {
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/60)
             })
-            .onAppear {
-                UserDefaults.standard.set(true, forKey: "OnBoardingPassed")
-            }
             .alert("Wrong email or password", isPresented: $showingAlert) {
                        Button("OK", role: .cancel) { }
                    }

@@ -37,13 +37,13 @@
 		7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */; };
 		7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3D284F824500B1376F /* NotificationHandler.swift */; };
 		7A038C40284F856800B1376F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C3F284F856800B1376F /* AppDelegate.swift */; };
-		7A038C44285088E400B1376F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C43285088E400B1376F /* Helpers.swift */; };
+		7A038C44285088E400B1376F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C43285088E400B1376F /* ViewRouter.swift */; };
 		7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4528508ADB00B1376F /* IntroductionPagesView.swift */; };
 		7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4C28509DDD00B1376F /* HomeView.swift */; };
 		7A038C4F28509E4200B1376F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4E28509E4200B1376F /* SignInView.swift */; };
 		7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5028509F0E00B1376F /* SignUpView.swift */; };
 		7A038C542850A05600B1376F /* PersonalizationQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */; };
-		7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* Question4View.swift */; };
+		7A038C5A2850A07E00B1376F /* PersonalizationCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* PersonalizationCompleteView.swift */; };
 		7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5C2850B12A00B1376F /* TestViewModel1.swift */; };
 		B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */; };
 		CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */; };
@@ -84,13 +84,13 @@
 		7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNotificationsPermissionView.swift; sourceTree = "<group>"; };
 		7A038C3D284F824500B1376F /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		7A038C3F284F856800B1376F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A038C43285088E400B1376F /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7A038C43285088E400B1376F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		7A038C4528508ADB00B1376F /* IntroductionPagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPagesView.swift; sourceTree = "<group>"; };
 		7A038C4C28509DDD00B1376F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A038C4E28509E4200B1376F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		7A038C5028509F0E00B1376F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationQuestionView.swift; sourceTree = "<group>"; };
-		7A038C592850A07E00B1376F /* Question4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question4View.swift; sourceTree = "<group>"; };
+		7A038C592850A07E00B1376F /* PersonalizationCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationCompleteView.swift; sourceTree = "<group>"; };
 		7A038C5C2850B12A00B1376F /* TestViewModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel1.swift; sourceTree = "<group>"; };
 		AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
 		B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationStorage.swift; sourceTree = "<group>"; };
@@ -162,8 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				7A038C4928508F1600B1376F /* Home */,
-				7A038C422850870B00B1376F /* Authorization */,
 				7A038C41285086F500B1376F /* Onboarding */,
+				7A038C422850870B00B1376F /* Authorization */,
+				7A038C522850A02B00B1376F /* Personalization */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +215,7 @@
 			children = (
 				7A038C3D284F824500B1376F /* NotificationHandler.swift */,
 				7A038C3F284F856800B1376F /* AppDelegate.swift */,
-				7A038C43285088E400B1376F /* Helpers.swift */,
+				7A038C43285088E400B1376F /* ViewRouter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -222,7 +223,6 @@
 		7A038C41285086F500B1376F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				7A038C522850A02B00B1376F /* PersonalizationQuestions */,
 				7A038C15284F36E300B1376F /* OnBoardingView.swift */,
 				7A038C3A284F81F000B1376F /* DailyNotificationsPermissionView.swift */,
 				7A038C4528508ADB00B1376F /* IntroductionPagesView.swift */,
@@ -251,14 +251,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		7A038C522850A02B00B1376F /* PersonalizationQuestions */ = {
+		7A038C522850A02B00B1376F /* Personalization */ = {
 			isa = PBXGroup;
 			children = (
 				B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */,
 				7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */,
-				7A038C592850A07E00B1376F /* Question4View.swift */,
+				7A038C592850A07E00B1376F /* PersonalizationCompleteView.swift */,
 			);
-			path = PersonalizationQuestions;
+			path = Personalization;
 			sourceTree = "<group>";
 		};
 		7A038C5B2850B11500B1376F /* ViewModel */ = {
@@ -413,8 +413,8 @@
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
 				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
-				7A038C5A2850A07E00B1376F /* Question4View.swift in Sources */,
-				7A038C44285088E400B1376F /* Helpers.swift in Sources */,
+				7A038C5A2850A07E00B1376F /* PersonalizationCompleteView.swift in Sources */,
+				7A038C44285088E400B1376F /* ViewRouter.swift in Sources */,
 				2A105B112851DEA700DB971B /* Tab3TestView.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,

@@ -37,7 +37,7 @@ struct ContentView: View {
                     return
                 }
 
-                let personalizationPassed = UserDefaults.standard.bool(forKey: "OnBoardingPassed")
+                let personalizationPassed = UserDefaults.standard.bool(forKey: "PersonalizationPassed")
 
                 guard personalizationPassed else {
                     viewRouter.currentPage = .personalizationPages
@@ -52,7 +52,7 @@ struct ContentView: View {
                     return
                 }
 
-                viewRouter.currentPage = .homeTabView
+                viewRouter.showIntroduction()
 
             }
 

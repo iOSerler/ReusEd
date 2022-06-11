@@ -1,5 +1,5 @@
 //
-//  Question4View.swift
+//  PersonalizationCompleteView.swift
 //  ReusEd
 //
 //  Created by Ahror Jabborov on 6/8/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Question4View: View {
+struct PersonalizationCompleteView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
         VStack(alignment: .center) {
@@ -39,7 +39,7 @@ struct Question4View: View {
 
                 DispatchQueue.main.async {
                     withAnimation {
-                        /// FIXME: should not know about authorization
+                        // FIXME: should not know about authorization
                         viewRouter.currentPage = .authorization
                     }
                 }
@@ -61,8 +61,8 @@ struct Question4View: View {
 
         // FIXME: add saving onboarding data
 
-        for key in checkboxQuestionSelectedItemsDict.keys {
-            print(checkboxQuestionSelectedItemsDict[key] ?? "")
+        for key in personalizationQuestionSelectedItemsDict.keys {
+            print(personalizationQuestionSelectedItemsDict[key] ?? "")
         }
 
     }
@@ -71,6 +71,6 @@ struct Question4View: View {
 
 struct Question4View_Previews: PreviewProvider {
     static var previews: some View {
-        Question4View()
+        PersonalizationCompleteView()
     }
 }

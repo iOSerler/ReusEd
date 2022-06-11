@@ -14,6 +14,7 @@ var question1 = QuestionData(
     type: "checkbox",
     // FIXME should NOT be a hardcoded image, rather a custom view
     stepsImage: "Question1",
+    image: "",
     title: "How did your hear about us?",
     titleFont: "Rubik-Medium",
     titleColor: "MainText",
@@ -38,6 +39,7 @@ var question2 = QuestionData(
     id: 2,
     type: "checkbox",
     stepsImage: "Question2",
+    image: "",
     title: "What’s your interest?",
     titleFont: "Rubik-Medium",
     titleColor: "MainText",
@@ -61,6 +63,7 @@ var question3 = QuestionData(
     id: 3,
     type: "singleChoice",
     stepsImage: "Question3",
+    image: "",
     title: "Pick your learning goal",
     titleFont: "Rubik-Medium",
     titleColor: "MainText",
@@ -80,8 +83,9 @@ var question3 = QuestionData(
 
 var question4 = QuestionData(
     id: 4,
-    type: "plain",
+    type: "image",
     stepsImage: "Question4",
+    image: "All-set",
     title: "You’re all set!",
     titleFont: "Rubik-Medium",
     titleColor: "MainText",
@@ -94,10 +98,4 @@ var question4 = QuestionData(
     buttonTextColor: "White"
 )
 
-var checkboxQuestionSelectedItemsDict = [Int: Set<Int>]()
-
-var question3SelectedItemIdx = Int()
-
-var question1Answers = [String]()
-var question2Answers = [String]()
-var question3Answer = String()
+var personalizationQuestionSelectedItemsDict = [Int: Set<Int>]()
