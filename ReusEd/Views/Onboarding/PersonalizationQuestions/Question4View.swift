@@ -39,6 +39,7 @@ struct Question4View: View {
 
                 DispatchQueue.main.async {
                     withAnimation {
+                        /// FIXME: should not know about authorization
                         viewRouter.currentPage = .authorization
                     }
                 }
