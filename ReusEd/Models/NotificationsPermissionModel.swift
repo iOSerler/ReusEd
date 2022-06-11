@@ -4,7 +4,6 @@
 //
 //  Created by Ahror Jabborov on 6/7/22.
 
-
 import Foundation
 
 struct NotificationPermission {
@@ -21,5 +20,16 @@ struct NotificationPermission {
     var buttonTextColor: String
 }
 
-var notificationPermissionData = NotificationPermission(logoImage: "bookLogo", title: "Get daily reminders to meet your personal goals.", titleFont: "Rubik-Medium", description: "You’ll get daily reminders about your courses and new daily deals from our shop.",descriptionFont: "Rubik-Regular", alertImage: "NotificationFrame", arrowImage: "up-arrow", buttonColor: "Primary", titleColor: "MainText", descriptionColor: "Gray", buttonTextColor: "White")
-
+var notificationPermissionData = NotificationPermission(
+    logoImage: "bookLogo",
+    title: "Get daily reminders to meet your personal goals.",
+    titleFont: "Rubik-Medium",
+    description: "You’ll get daily reminders about your courses and new daily deals from our shop.",
+    descriptionFont: "Rubik-Regular",
+    alertImage: "NotificationFrame",
+    arrowImage: "up-arrow",
+    buttonColor: "Primary",
+    titleColor: "MainText",
+    descriptionColor: "Gray",
+    buttonTextColor: "White"
+)

@@ -11,7 +11,7 @@ struct DailyNotificationsPermissionView: View {
     var body: some View {
         ZStack {
             DailyNotificationsView()
-        }.onAppear(){
+        }.onAppear() {
             UserDefaults.standard.set(true, forKey: "IntroductionPagesPassed")
         }
     }
@@ -23,31 +23,29 @@ struct DailyNotificationsPermissionView_Previews: PreviewProvider {
     }
 }
 
-
 struct DailyNotificationsView: View {
     let notify = NotificationHandler()
     @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
         ZStack {
-            
+
             VStack(alignment: .center) {
-                VStack(alignment: .center, spacing: UIScreen.main.bounds.width/7){
+                VStack(alignment: .center, spacing: UIScreen.main.bounds.width / 7) {
                     Image(notificationPermissionData.logoImage)
-                    
+
                     Text(notificationPermissionData.title)
                         .font(Font.custom(notificationPermissionData.titleFont, size: 20))
                         .foregroundColor(Color(notificationPermissionData.titleColor))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(idealHeight: .infinity)
-                    
-                    
-                    VStack(alignment: .center, spacing: 20){
+
+                    VStack(alignment: .center, spacing: 20) {
                         Image(notificationPermissionData.alertImage)
-                        
+
                         Image(notificationPermissionData.arrowImage)
                             .offset(x: UIScreen.main.bounds.width/8, y: 0)
-                        
+
                         Text(notificationPermissionData.description)
                             .font(Font.custom(notificationPermissionData.titleFont, size: 14))
                             .foregroundColor(Color(notificationPermissionData.descriptionColor))
@@ -55,32 +53,27 @@ struct DailyNotificationsView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(idealHeight: .infinity)
                             .padding(.horizontal)
-                        
                     }
                 }
-                
+
                 Spacer()
-                
-                Button(action: {                    
-                    notify.askPermission(viewRouter: viewRouter)
-                    //notify.sendNotification(date: Date(), repeats: false, type: "time", timeInterval: 5, categoryIdentifier: "TestNOtification", title: "Test", body: "some text.....")
-                }) {
-                    Text("Continue")
-                        .font(Font.custom("Rubik-Medium", size: 16))
-                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                        .background(Color(notificationPermissionData.buttonColor))
-                        .accentColor(Color(notificationPermissionData.buttonTextColor))
-                        .cornerRadius(UIScreen.main.bounds.width/35)
-                        .padding(.bottom, UIScreen.main.bounds.height/30)
-                }
+
+                Button(
+                    action: {
+                        notify.askPermission(viewRouter: viewRouter)
+                    }, label: {
+                        Text("Continue")
+                            .font(Font.custom("Rubik-Medium", size: 16))
+                            .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                            .background(Color(notificationPermissionData.buttonColor))
+                            .accentColor(Color(notificationPermissionData.buttonTextColor))
+                            .cornerRadius(UIScreen.main.bounds.width/35)
+                            .padding(.bottom, UIScreen.main.bounds.height/30)
+                    }
+                )
             }
             .padding(.top, UIScreen.main.bounds.height/20)
             //            .padding(.all)
-            
         }
     }
 }
-
-
-
-

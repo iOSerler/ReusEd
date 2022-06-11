@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TabBarData{
+struct TabBarData {
     var tab1OnImage: String
     var tab1OffImage: String
     var tab1Title: String
@@ -24,4 +24,19 @@ struct TabBarData{
     var textColor: String
 }
 
-var tabBar = TabBarData(tab1OnImage: "tab1OnImage", tab1OffImage: "tab1OffImage", tab1Title: "Courses", tab2OnImage: "tab2OnImage", tab2OffImage: "tab2OffImage", tab2Title: "Scores", tab3OnImage: "tab3OnImage", tab3OffImage: "tab3OffImage", tab3Title: "Notifications", tab4OnImage: "tab4OnImage", tab4OffImage: "tab4OffImage", tab4Title: "Profile", textFont: "Rubik-Regular", textColor: "Primary")
+var tabBar = TabBarData(
+    tab1OnImage: "tab1OnImage",
+    tab1OffImage: "tab1OffImage",
+    tab1Title: "Courses",
+    tab2OnImage: "tab2OnImage",
+    tab2OffImage: "tab2OffImage",
+    tab2Title: "Scores",
+    tab3OnImage: "tab3OnImage",
+    tab3OffImage: "tab3OffImage",
+    tab3Title: "Notifications",
+    tab4OnImage: "tab4OnImage",
+    tab4OffImage: "tab4OffImage",
+    tab4Title: "Profile",
+    textFont: "Rubik-Regular",
+    textColor: "Primary"
+)

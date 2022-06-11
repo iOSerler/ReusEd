@@ -16,8 +16,6 @@ enum ViewRouterOptions {
     case homeTabView
 }
 
-
 class ViewRouter: ObservableObject {
     @Published var currentPage: ViewRouterOptions = .introductionPages
-    
 }

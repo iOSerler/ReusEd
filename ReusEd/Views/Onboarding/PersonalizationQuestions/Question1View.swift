@@ -7,22 +7,19 @@
 
 import SwiftUI
 
-
-
-
 struct Question1View: View {
     var body: some View {
-        
-        VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15){
+
+        VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
             Image(question1.stepsImage)
-            
+
             Text(question1.title)
                 .font(Font.custom(question1.titleFont, size: 20))
                 .foregroundColor(Color(question1.titleColor))
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(idealHeight: .infinity)
-            
+
             Text(question1.description)
                 .font(Font.custom(question1.descriptionFont, size: 14))
                 .foregroundColor(Color(question1.descriptionColor))
@@ -30,21 +27,24 @@ struct Question1View: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(idealHeight: .infinity)
                 .padding(.horizontal)
-            
-            
-            List{
-                
-                ForEach(question1.optionsData.indices){ index in
-                    RowView(id: question1.optionsData.firstIndex(of: question1.optionsData[index])!,firstPart: question1.optionsData[index].firstPart, secondPart: question1.optionsData[index].secondPart, tapped: question1SelectedItemsBool[index], questionId: 1)
+
+            List {
+                ForEach(question1.optionsData.indices, id: \.self) { index in
+                    RowView(
+                        id: question1.optionsData.firstIndex(of: question1.optionsData[index])!,
+                        firstPart: question1.optionsData[index].firstPart,
+                        secondPart: question1.optionsData[index].secondPart,
+                        tapped: question1SelectedItemsBool[index],
+                        questionId: 1
+                    )
                         .padding()
                         .listRowSeparator(.visible, edges: .bottom)
                         .listRowSeparator(.hidden, edges: .all)
-                    
                 }
             }.listStyle(.plain)
-            
+
             Spacer()
-            
+
             NavigationLink(destination: Question2View()) {
                 Text("Continue")
                     .font(Font.custom(question1.titleFont, size: 16))
@@ -53,10 +53,8 @@ struct Question1View: View {
                     .background(Color(question1.buttonColor))
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/30)
-                
-            }.simultaneousGesture(TapGesture().onEnded{
-                
-                
+            }.simultaneousGesture(TapGesture().onEnded {
+
                 // saving question 1 answers to global variable
                 question1SelectedItemsIdx = question1SelectedItemsIdxTemp
                 question1SelectedItemsBool = [Bool]()
@@ -68,16 +66,13 @@ struct Question1View: View {
                 }
                 //                    print(question1SelectedItemsBool)
                 UserDefaults.standard.set(question1SelectedItemsIdx, forKey: "question1SelectedIdx")
-                
             })
-            
         }.padding(.top, UIScreen.main.bounds.height/20)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true).transition(.opacity)
-            .onAppear(){
+            .onAppear() {
                 UserDefaults.standard.set(true, forKey: "NotificationPermissionPassed")
             }
-        
     }
 }
 
@@ -87,25 +82,22 @@ struct RowView: View {
     var secondPart: String
     @State var tapped: Bool
     var questionId: Int
-    
-    
+
     var body: some View {
-        HStack{
+        HStack {
             self.tapped ? Image("checkbox-full") : Image("checkbox-empty")
             Text(firstPart)
-                .padding(.leading,10)
+                .padding(.leading, 10)
             Text(secondPart)
             Spacer()
         }.contentShape(Rectangle())
         .onTapGesture(perform: {
             tapped.toggle()
-            
-            
-            
+
             // question 1 updating default values
             if questionId == 1 {
                 if self.tapped {
-                    if let _ = question1SelectedItemsIdxTemp.firstIndex(of: id) {
+                    if question1SelectedItemsIdxTemp.firstIndex(of: id) != nil {
                         print("contains")
                     } else {
                         question1SelectedItemsIdxTemp.append(id)
@@ -116,12 +108,11 @@ struct RowView: View {
                     }
                 }
             }
-            
-            
+
             // question 2 updating default values
             if questionId == 2 {
                 if self.tapped {
-                    if let _ = question2SelectedItemsIdxTemp.firstIndex(of: id) {
+                    if question2SelectedItemsIdxTemp.firstIndex(of: id) != nil {
                         print("contains")
                     } else {
                         question2SelectedItemsIdxTemp.append(id)
@@ -132,12 +123,6 @@ struct RowView: View {
                     }
                 }
             }
-            
-            
-            
-            
-  
-            
         })
     }
 }

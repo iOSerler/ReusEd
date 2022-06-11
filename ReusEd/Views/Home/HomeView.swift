@@ -26,7 +26,7 @@ struct HomeView: View {
                             .font(.custom(tabBar.textFont, size: 14))
                     }
                     .tag(1)
-                
+
                 Tab3TestView()
                     .tabItem {
                         selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
@@ -34,7 +34,7 @@ struct HomeView: View {
                             .font(.custom(tabBar.textFont, size: 14))
                     }
                     .tag(2)
-                
+
                 Tab4TestView()
                     .tabItem {
                         selection == 3 ? Image( tabBar.tab4OnImage) : Image(tabBar.tab4OffImage)
