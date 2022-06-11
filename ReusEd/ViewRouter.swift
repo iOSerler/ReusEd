@@ -17,10 +17,53 @@ enum ViewRouterOptions {
 }
 
 class ViewRouter: ObservableObject {
-    @Published var currentPage: ViewRouterOptions = .introductionPages
 
+    @Published var currentPage: ViewRouterOptions = .introductionPages
+    private var isAppBeingTested = false
+
+    func setStartingPage() {
+        if isAppBeingTested {
+            showIntroduction()
+        } else {
+
+            let introductionPagesPassed = UserDefaults.standard.bool(forKey: "IntroductionPagesPassed")
+
+            guard introductionPagesPassed else {
+                showIntroduction()
+                return
+            }
+
+            let notificationPermissionPassed =
+            UserDefaults.standard.bool(forKey: "NotificationPermissionPassed")
+
+            guard notificationPermissionPassed else {
+                showNotificationPermission()
+                return
+            }
+
+            let personalizationPassed = UserDefaults.standard.bool(forKey: "PersonalizationPassed")
+
+            guard personalizationPassed else {
+                showPersonalization()
+                return
+            }
+
+            /// FIXME: should check authorization with authorization service, not in user defaults
+            let userToken = UserDefaults.standard.value(forKey: "userToken")
+
+            guard userToken != nil else {
+                showAuthorization()
+                return
+            }
+
+            showIntroduction()
+
+        }
+
+    }
+    
     func showIntroduction() {
-        currentPage = .homeTabView
+        currentPage = .introductionPages
     }
 
     func completeIntroduction() {

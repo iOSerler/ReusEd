@@ -8,57 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewRouter = ViewRouter()
-    var isAppBeingTested = false
+
+    @EnvironmentObject var viewRouter: ViewRouter
+
     var body: some View {
 
         VStack {
-            OnBoardingView().environmentObject(viewRouter)
+            NavigationView {
+                switch viewRouter.currentPage {
+                case .introductionPages:
+                    IntroductionPagesView().transition(.opacity)
+                case .notificationPermission:
+                    DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
+                case .personalizationPages:
+                    PersonalizationQuestionView(question: questions.removeFirst()).transition(.opacity)
+                case .authorization:
+                    SignInView().transition(.opacity)
+                case .homeTabView:
+                    HomeView().transition(.opacity)
+                }
+            }.accentColor(Color(question1.titleColor))
         }.onAppear {
-
-            // Here we are identifying the initial entry point for the main navigation view
-
-            if isAppBeingTested {
-                viewRouter.currentPage = .introductionPages
-            } else {
-
-                let introductionPagesPassed = UserDefaults.standard.bool(forKey: "IntroductionPagesPassed")
-
-                guard introductionPagesPassed else {
-                    viewRouter.currentPage = .introductionPages
-                    return
-                }
-
-                let notificationPermissionPassed =
-                UserDefaults.standard.bool(forKey: "NotificationPermissionPassed")
-
-                guard notificationPermissionPassed else {
-                    viewRouter.currentPage = .notificationPermission
-                    return
-                }
-
-                let personalizationPassed = UserDefaults.standard.bool(forKey: "PersonalizationPassed")
-
-                guard personalizationPassed else {
-                    viewRouter.currentPage = .personalizationPages
-                    return
-                }
-
-                /// FIXME: should check authorization with authorization service, not in user defaults
-                let userToken = UserDefaults.standard.value(forKey: "userToken")
-
-                guard userToken != nil else {
-                    viewRouter.currentPage = .authorization
-                    return
-                }
-
-                viewRouter.showIntroduction()
-
-            }
-
+            viewRouter.setStartingPage()
         }
-    }
 
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
