@@ -211,7 +211,7 @@ struct SignUpView: View {
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/60)
             })
-            .onAppear() {
+            .onAppear {
                 UserDefaults.standard.set(true, forKey: "OnBoardingPassed")
             }
             .alert(self.alertText, isPresented: $showAlert) {

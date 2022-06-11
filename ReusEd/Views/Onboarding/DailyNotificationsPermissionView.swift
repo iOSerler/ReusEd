@@ -11,7 +11,7 @@ struct DailyNotificationsPermissionView: View {
     var body: some View {
         ZStack {
             DailyNotificationsView()
-        }.onAppear() {
+        }.onAppear {
             UserDefaults.standard.set(true, forKey: "IntroductionPagesPassed")
         }
     }

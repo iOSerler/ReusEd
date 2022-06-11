@@ -13,7 +13,7 @@ struct Question3View: View {
 
         VStack(alignment: .center) {
             Image(question3.stepsImage)
-                .onAppear() {
+                .onAppear {
                     if let temp =  UserDefaults.standard.value(forKey: "question3SelectedIdx") {
                         self.selectedIndex = (temp as? Int) ?? 0
                     }
