@@ -14,20 +14,24 @@ struct ContentView: View {
     var body: some View {
 
         VStack {
-            NavigationView {
-                switch viewRouter.currentPage {
-                case .introductionPages:
-                    IntroductionPagesView().transition(.opacity)
-                case .notificationPermission:
-                    DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
-                case .personalizationPages:
-                    PersonalizationQuestionView(question: questions.removeFirst()).transition(.opacity)
-                case .authorization:
-                    SignInView().transition(.opacity)
-                case .homeTabView:
-                    HomeView().transition(.opacity)
-                }
-            }.accentColor(Color(question1.titleColor))
+            if viewRouter.currentPage == .homeTabView {
+                HomeView().transition(.opacity)
+            } else {
+                NavigationView {
+                    switch viewRouter.currentPage {
+                    case .introductionPages:
+                        IntroductionPagesView().transition(.opacity)
+                    case .notificationPermission:
+                        DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
+                    case .personalizationPages:
+                        PersonalizationQuestionView(question: questions.removeFirst()).transition(.opacity)
+                    case .authorization:
+                        SignInView().transition(.opacity)
+                    case .homeTabView:
+                        HomeView().transition(.opacity)
+                    }
+                }.accentColor(Color(question1.titleColor))
+            }
         }.onAppear {
             viewRouter.setStartingPage()
         }

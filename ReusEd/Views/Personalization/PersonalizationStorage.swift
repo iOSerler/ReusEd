@@ -98,4 +98,4 @@ var question4 = QuestionData(
     buttonTextColor: "White"
 )
 
-var personalizationQuestionSelectedItemsDict = [Int: Set<Int>]()
+var personalizationQuestionSelectedItemsDict: [Int: Set<Int>] = [1: [], 2: [], 3: []]

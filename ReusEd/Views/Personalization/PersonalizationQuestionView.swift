@@ -45,9 +45,9 @@ struct PersonalizationQuestionView: View {
             }
             Spacer()
 
-            if questions.count > 0 {
+            if question.id < 4 {
 
-                NavigationLink(destination: PersonalizationQuestionView(question: questions.removeFirst())) {
+                NavigationLink(destination: PersonalizationQuestionView(question: questions[question.id - 1])) {
                     Text("Continue")
                         .font(Font.custom(question1.titleFont, size: 16))
                         .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
@@ -61,7 +61,7 @@ struct PersonalizationQuestionView: View {
                         return
                     }
 
-                    UserDefaults.standard.set(selectedItems, forKey: "checkBoxQuestionID_\(question.id)")
+                    UserDefaults.standard.set(Array(selectedItems), forKey: "checkBoxQuestionID_\(question.id)")
                 })
 
             } else {
@@ -85,17 +85,21 @@ struct PersonalizationQuestionView: View {
                 })
             }
 
-        }.padding(.top, UIScreen.main.bounds.height/20)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true).transition(.opacity)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(false).transition(.opacity)
     }
 
     func saveAnswerData() {
 
-        // FIXME: add saving onboarding data
+        for ind in personalizationQuestionSelectedItemsDict.keys {
+            if let answers  = UserDefaults.standard.value(forKey: "checkBoxQuestionID_\(ind)") as? [Int] {
 
-        for key in personalizationQuestionSelectedItemsDict.keys {
-            print(personalizationQuestionSelectedItemsDict[key] ?? "")
+                for answer in answers {
+//                    print(ind, answer)
+                }
+            }
+
         }
 
     }

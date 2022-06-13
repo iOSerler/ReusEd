@@ -119,7 +119,7 @@ struct SignInView: View {
                 if  !self.showingAlert {
                     DispatchQueue.main.async {
                         withAnimation {
-                            viewRouter.completeAuthorization(with: "token")
+                            viewRouter.completeAuthorization(with: "token", and: "signIn")
                         }
                     }
                 }

@@ -19,7 +19,7 @@ enum ViewRouterOptions {
 class ViewRouter: ObservableObject {
 
     @Published var currentPage: ViewRouterOptions = .introductionPages
-    private var isAppBeingTested = false
+    private var isAppBeingTested = true
 
     func setStartingPage() {
         if isAppBeingTested {
@@ -41,12 +41,6 @@ class ViewRouter: ObservableObject {
                 return
             }
 
-            let personalizationPassed = UserDefaults.standard.bool(forKey: "PersonalizationPassed")
-
-            guard personalizationPassed else {
-                showPersonalization()
-                return
-            }
 
             /// FIXME: should check authorization with authorization service, not in user defaults
             let userToken = UserDefaults.standard.value(forKey: "userToken")
@@ -56,12 +50,19 @@ class ViewRouter: ObservableObject {
                 return
             }
 
+            let personalizationPassed = UserDefaults.standard.bool(forKey: "PersonalizationPassed")
+
+            guard personalizationPassed else {
+                showPersonalization()
+                return
+            }
+
             showIntroduction()
 
         }
 
     }
-    
+
     func showIntroduction() {
         currentPage = .introductionPages
     }
@@ -77,25 +78,36 @@ class ViewRouter: ObservableObject {
 
     func completeNotificationPermission() {
         UserDefaults.standard.set(true, forKey: "NotificationPermissionPassed")
-        showPersonalization()
+        showAuthorization()
+
     }
 
     func showPersonalization() {
+        for ind in personalizationQuestionSelectedItemsDict.keys {
+            if let answers  = UserDefaults.standard.value(forKey: "checkBoxQuestionID_\(ind)") as? [Int] {
+        
+                for answer in answers {
+//                    print(ind, answer)
+                    personalizationQuestionSelectedItemsDict[ind]?.insert(answer)
+                }
+            }
+
+        }
         currentPage = .personalizationPages
     }
 
     func completePersonalization() {
         UserDefaults.standard.set(true, forKey: "PersonalizationPassed")
-        showAuthorization()
+        showHomeTab()
     }
 
     func showAuthorization() {
         currentPage = .authorization
     }
 
-    func completeAuthorization(with token: String) {
+    func completeAuthorization(with token: String, and type: String) {
         UserDefaults.standard.set(token, forKey: "userToken")
-        showHomeTab()
+        type == "signIn" ? showHomeTab() : showPersonalization()
     }
 
     func showHomeTab() {

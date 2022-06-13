@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct IntroductionPagesView: View {
-    let grey2 = Color(#colorLiteral(red: 0.6078431373, green: 0.6196078431, blue: 0.662745098, alpha: 1))
-    let mainText = Color(#colorLiteral(red: 0.2117647059, green: 0.2117647059, blue: 0.3607843137, alpha: 1))
-    let primaryMain = Color(#colorLiteral(red: 0.3803921569, green: 0.2745098039, blue: 0.7764705882, alpha: 1))
-    let primaryLighter = Color(#colorLiteral(red: 0.8745098039, green: 0.8549019608, blue: 0.9568627451, alpha: 1))
     @EnvironmentObject var viewRouter: ViewRouter
     @State private var selectedIndex: Int = 0
     var body: some View {
@@ -99,7 +95,8 @@ struct IntroductionPagesView: View {
                                     label: {
                                         Text("skip")
                                             .foregroundColor(
-                                                selectedIndex != introductionPagesData.count - 1 ? grey2 : Color.clear
+                                                selectedIndex != introductionPagesData.count - 1 ?
+                                                    Color(introductionPagesData[0].descriptionColor) : Color.clear
                                             )
                                             .font(.custom("Rubik-Regular", size: 14))
                                     }).disabled(selectedIndex == introductionPagesData.count - 1)

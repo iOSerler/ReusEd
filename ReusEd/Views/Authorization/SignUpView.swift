@@ -181,7 +181,7 @@ struct SignUpView: View {
 
                             DispatchQueue.main.async {
                                 withAnimation {
-                                    viewRouter.completeAuthorization(with: "token")
+                                    viewRouter.completeAuthorization(with: "token", and: "signUp")
                                 }
                             }
                         } else {

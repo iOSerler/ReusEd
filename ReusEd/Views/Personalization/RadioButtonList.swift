@@ -10,7 +10,7 @@ import SwiftUI
 struct RadioButtonList: View {
 
     let question: QuestionData
-    @State var chosenOptionId: Int = 1
+    @State var chosenOptionId = 0
 
     var body: some View {
         ScrollView {
@@ -20,11 +20,14 @@ struct RadioButtonList: View {
                     optionData: optionData,
                     tapAction: {
                         self.chosenOptionId = optionData.id
+                        personalizationQuestionSelectedItemsDict[question.id]? = [self.chosenOptionId]
                     },
                     chosen: self.chosenOptionId == optionData.id
                     )
             }
             .padding(0)
+        }.onAppear {
+            self.chosenOptionId = personalizationQuestionSelectedItemsDict[question.id]?.first ?? 0
         }
     }
 }
