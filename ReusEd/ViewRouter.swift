@@ -19,7 +19,7 @@ enum ViewRouterOptions {
 class ViewRouter: ObservableObject {
 
     @Published var currentPage: ViewRouterOptions = .introductionPages
-    private var isAppBeingTested = true
+    private var isAppBeingTested = false
 
     func setStartingPage() {
         if isAppBeingTested {
@@ -41,7 +41,6 @@ class ViewRouter: ObservableObject {
                 return
             }
 
-
             /// FIXME: should check authorization with authorization service, not in user defaults
             let userToken = UserDefaults.standard.value(forKey: "userToken")
 
@@ -57,7 +56,7 @@ class ViewRouter: ObservableObject {
                 return
             }
 
-            showIntroduction()
+            showHomeTab()
 
         }
 
@@ -85,7 +84,7 @@ class ViewRouter: ObservableObject {
     func showPersonalization() {
         for ind in personalizationQuestionSelectedItemsDict.keys {
             if let answers  = UserDefaults.standard.value(forKey: "checkBoxQuestionID_\(ind)") as? [Int] {
-        
+
                 for answer in answers {
 //                    print(ind, answer)
                     personalizationQuestionSelectedItemsDict[ind]?.insert(answer)

@@ -96,7 +96,7 @@ struct PersonalizationQuestionView: View {
             if let answers  = UserDefaults.standard.value(forKey: "checkBoxQuestionID_\(ind)") as? [Int] {
 
                 for answer in answers {
-//                    print(ind, answer)
+                    print(ind, answer)
                 }
             }
 
