@@ -179,13 +179,9 @@ struct SignUpView: View {
                             UserDefaults.standard.set(self.email, forKey: "Email")
                             UserDefaults.standard.set(self.password, forKey: "Password")
 
-                            // saving token
-
-                            UserDefaults.standard.set("token", forKey: "userToken")
-
                             DispatchQueue.main.async {
                                 withAnimation {
-                                    viewRouter.currentPage = .homeTabView
+                                    viewRouter.completeAuthorization(with: "token")
                                 }
                             }
                         } else {
@@ -211,9 +207,7 @@ struct SignUpView: View {
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/60)
             })
-            .onAppear() {
-                UserDefaults.standard.set(true, forKey: "OnBoardingPassed")
-            }
+
             .alert(self.alertText, isPresented: $showAlert) {
                 Button("OK", role: .cancel) { }
             }

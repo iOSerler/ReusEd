@@ -10,9 +10,6 @@ import SwiftUI
 struct Tab1TestView: View {
     var body: some View {
         Text("Tab 1")
-            .onAppear() {
-                UserDefaults.standard.set(nil, forKey: "userToken")
-            }
     }
 }
 

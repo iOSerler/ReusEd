@@ -67,7 +67,7 @@ struct IntroductionPagesView: View {
                 } else {
                     DispatchQueue.main.async {
                         withAnimation {
-                            viewRouter.currentPage = .notificationPermission
+                            viewRouter.completeIntroduction()
                         }
                     }
                 }
