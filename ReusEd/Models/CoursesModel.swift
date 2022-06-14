@@ -15,7 +15,7 @@ struct Course: Identifiable {
     var posterSmall: String
     var duration: String
     var isSaved: Bool = false
-    var progress: Double? = 0.5
+    var progress: Double = 0.5
     var isPopular: Bool = false
 }
 
