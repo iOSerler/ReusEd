@@ -30,7 +30,7 @@ struct CourseSectionView: View {
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
+                HStack(spacing:  UIScreen.main.bounds.width/20){
                     ForEach(0..<10) {_ in
                         CourseCardView()
                     }

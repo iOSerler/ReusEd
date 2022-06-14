@@ -9,14 +9,36 @@ import SwiftUI
 
 struct CourseCardView: View {
     var body: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/4)
-                .foregroundColor(.white)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color("Gray"), lineWidth: 1))
+        VStack(alignment: .center, spacing: 10) {
+            Image("bigPoster1")
             
-        }
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Typography")
+                    .font(Font.custom("Rubik-Medium", size: 14))
+                    .foregroundColor(Color("MainText"))
+                
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting.")
+                    .font(Font.custom("Rubik-Regular", size: 12))
+                    .foregroundColor(Color("Gray"))
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: false)
+                
+                HStack {
+                    Image("timer")
+                    Text("3h 15 min")
+                        .font(Font.custom("Rubik-Regular", size: 12))
+                        .foregroundColor(Color("Primary"))
+                        .padding(.leading, 5)
+                    
+                }
+            }.padding([.leading, .bottom], 10)
+            
+        }.frame(width: UIScreen.main.bounds.width/2.5)
+         .cornerRadius(UIScreen.main.bounds.width/30)
+         .overlay(
+                 RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/30)
+                    .stroke(Color("Gray"), lineWidth: 0.4)
+             )
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Course: Identifiable{
+struct Course: Identifiable {
     var id: Int
     var title: String
     var description: String
@@ -36,8 +36,6 @@ var categories = [
         title: "Design"
     )
 ]
-
-
 
 var courses = [
     Course(
@@ -104,7 +102,6 @@ var courses = [
         isSaved: false
     )
 ]
-
 
 var categoryCourse = [
     1: [1, 3, 4],
