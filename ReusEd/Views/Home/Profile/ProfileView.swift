@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        VStack {
-            ProfileHeaderView(image: "Anna",
-                              text1: "Hello 👋",
-                              text2: "Anna Dluzhinskaya",
-                              settings: mainPageData)
-            Text("Hello, World! This is Profile View")
-            Spacer()
+        NavigationView {
+            VStack {
+                ProfileHeaderView(image: "Anna",
+                                  text1: "Hello 👋",
+                                  text2: "Anna Dluzhinskaya",
+                                  settings: mainPageData)
+                Text("Hello, World! This is Profile View")
+                Spacer()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Profile")
         }
         
     }

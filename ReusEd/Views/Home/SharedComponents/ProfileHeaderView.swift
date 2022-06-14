@@ -35,7 +35,7 @@ struct ProfileHeaderView: View {
                     .foregroundColor(Color(settings.titleColor))
             }
             Spacer()
-            NavigationLink(destination: FilterView()) {
+            NavigationLink(destination: NotificationsView()) {
                 Image("tab3OffImage")
                     .foregroundColor(Color("Primary"))
                     .padding(.trailing, 20)

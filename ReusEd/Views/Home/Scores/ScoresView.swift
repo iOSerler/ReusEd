@@ -9,7 +9,12 @@ import SwiftUI
 
 struct ScoresView: View {
     var body: some View {
-        Text("Hello, World! This is Scores View")
+        NavigationView {
+            Text("Hello, World! This is Scores View")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Scores")
+        }
+        
     }
 }
 
