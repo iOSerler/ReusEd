@@ -19,7 +19,7 @@ struct SearchBarView: View {
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 100: 40))
                 .foregroundColor(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(settings.descriptionColor), lineWidth: 1))
+                    .stroke(Color(settings.descriptionColor), lineWidth: 0.4))
             HStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -45,7 +45,7 @@ struct SearchBarView: View {
                             .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) : nil
             }
-        }.frame(height: UIScreen.main.bounds.height/25)
-            .padding()
+        }.frame(height: UIScreen.main.bounds.height/22)
+         .padding([.leading, .trailing], UIScreen.main.bounds.width/25)
     }
 }

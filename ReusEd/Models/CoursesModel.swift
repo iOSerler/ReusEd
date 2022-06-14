@@ -26,7 +26,7 @@ struct Category {
 var categories = [
     Category(
         id: 1,
-        title: "Popular"
+        title: "Popular Courses"
     ),
     Category(
         id: 2,
@@ -37,7 +37,6 @@ var categories = [
         title: "Design"
     )
 ]
-
 
 var courses = [
     Course(
