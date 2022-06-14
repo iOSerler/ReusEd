@@ -10,12 +10,16 @@ import SwiftUI
 struct CourseSectionView: View {
     
     var settings: MainPageData
-    var sectionTitle: String = "Design"
+    var categoryId: Int
+    @ObservedObject var coursesViewModel = CoursesViewModel(
+        courses: courses,
+        categories: categories,
+        categoryCourses: categoryCourse)
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 20) {
             HStack {
-                Text(sectionTitle)
+                Text(coursesViewModel.categories[categoryId-1].title)
                     .font(Font.custom(settings.titleFont, size: 16))
                     .foregroundColor(Color(settings.titleColor))
                     .multilineTextAlignment(.center)
@@ -33,8 +37,8 @@ struct CourseSectionView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: UIScreen.main.bounds.width/20) {
-                    ForEach(0..<10) {_ in
-                        CourseCardView(settings: settings)
+                    ForEach(Array(coursesViewModel.categoryCourses[categoryId]!).sorted(by: >), id: \.self) {ind in
+                        CourseCardView(course: coursesViewModel.courses[ind - 1], settings: settings)
                     }
                 }
             }

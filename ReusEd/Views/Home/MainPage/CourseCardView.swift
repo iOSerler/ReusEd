@@ -9,33 +9,37 @@ import SwiftUI
 
 struct CourseCardView: View {
     
+    var course: Course
     var settings: MainPageData
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            Image("bigPoster1")
+        VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
+            Image(course.posterBig)
+                .resizable()
             
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Typography")
+            VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
+                Text(course.title)
                     .font(Font.custom(settings.titleFont, size: 14))
                     .foregroundColor(Color(settings.titleColor))
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading, 7)
                 
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting.")
+                Text(course.description)
                     .font(Font.custom(settings.descriptionFont, size: 12))
                     .foregroundColor(Color(settings.descriptionColor))
                     .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: false)
+                    .padding(.leading, 7)
                 
                 HStack {
                     Image(settings.timeImage)
-                    Text("3h 15 min")
+                    Text(course.duration)
                         .font(Font.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.additionalTextColor))
                         .padding(.leading, 5)
                     
-                }
-            }.padding([.leading, .bottom], 10)
+                }.padding([.leading, .bottom], 7)
+            }.frame(width: UIScreen.main.bounds.width/2.5, alignment: .leading)
             
-        }.frame(width: UIScreen.main.bounds.width/2.5)
+        }.frame(width: UIScreen.main.bounds.width/2.5, height: UIScreen.main.bounds.height/4)
          .cornerRadius(UIScreen.main.bounds.width/30)
          .overlay(
                  RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/30)
@@ -43,3 +47,10 @@ struct CourseCardView: View {
              )
     }
 }
+
+struct CourseCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainPageView()
+    }
+}
+

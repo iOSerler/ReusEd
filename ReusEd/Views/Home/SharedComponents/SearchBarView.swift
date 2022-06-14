@@ -45,7 +45,7 @@ struct SearchBarView: View {
                             .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) : nil
             }
-        }.frame(height: 40)
+        }.frame(height: UIScreen.main.bounds.height/25)
             .padding()
     }
 }

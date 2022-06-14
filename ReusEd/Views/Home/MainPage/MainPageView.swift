@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct MainPageView: View {
-    var pageSettings: MainPageData
+    var pageSettings: MainPageData = mainPageData
+    @ObservedObject var coursesViewModel = CoursesViewModel(
+        courses: courses,
+        categories: categories,
+        categoryCourses: categoryCourse)
     @State private var searchText: String = ""
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 5) {
             SearchBarView(settings: pageSettings,
                           searchText: $searchText)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 30) {
-                    ForEach(0..<3) {_ in
-                        CourseSectionView(settings: pageSettings)
+                    ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
+                        CourseSectionView(settings: pageSettings, categoryId: key)
                     }
                 }
             }
@@ -27,6 +31,6 @@ struct MainPageView: View {
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView(pageSettings: mainPageData)
+        MainPageView()
     }
 }

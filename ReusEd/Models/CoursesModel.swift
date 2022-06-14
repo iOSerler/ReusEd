@@ -14,8 +14,9 @@ struct Course: Identifiable {
     var posterBig: String
     var posterSmall: String
     var duration: String
-    var isSaved: Bool
+    var isSaved: Bool = false
     var progress: Double? = 0.5
+    var isPopular: Bool = false
 }
 
 struct Category {
@@ -37,60 +38,61 @@ var categories = [
     )
 ]
 
+
 var courses = [
     Course(
         id: 1,
         title: "Python Porgramming",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdffgh dhdfghdfsghdsfghfdghsdfh kehrbg websdsh",
         posterBig: "bigPoster1",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
-        isSaved: false
+        isPopular: true
     ),
     Course(
         id: 2,
         title: "C++ Porgramming",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdf kehrdfghdsfgh dfsgh dsfghdfgbg websdsh",
         posterBig: "bigPoster2",
         posterSmall: "smallPoster2",
         duration: "3h 45 min",
-        isSaved: false
+        isPopular: true
     ),
     Course(
         id: 3,
         title: "Swift Porgramming",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdf kehrdsfghdsfh dsfhbg websdsh",
         posterBig: "bigPoster3",
         posterSmall: "smallPoster3",
         duration: "3h 45 min",
-        isSaved: false
+        isPopular: true
     ),
     Course(
         id: 4,
         title: "Java Porgramming",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdf kehdfgh dfgrbg websdsh",
         posterBig: "bigPoster4",
         posterSmall: "smallPoster4",
         duration: "3h 45 min",
-        isSaved: false
+        isSaved: true
     ),
     Course(
         id: 5,
         title: "Drawing",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdf kehrdfgh dfgbg websdsh",
         posterBig: "bigPoster2",
         posterSmall: "smallPoster5",
         duration: "3h 45 min",
-        isSaved: false
+        isPopular: true
     ),
     Course(
         id: 6,
         title: "Snowboarding",
-        description: "Lorusd sdfgweirdf kehrbg websdsh",
+        description: "Lorusd sdfgweirdf dfgh dfgh dgfh websdsh",
         posterBig: "bigPoster1",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
-        isSaved: false
+        isSaved: true
     ),
     Course(
         id: 7,
@@ -99,12 +101,21 @@ var courses = [
         posterBig: "bigPoster2",
         posterSmall: "smallPoster2",
         duration: "3h 45 min",
-        isSaved: false
+        isSaved: true
+        
     )
 ]
 
-var categoryCourse = [
+
+var categoryCourses = [
     1: [1, 3, 4],
     2: [2, 5, 7],
     3: [6]
 ]
+
+
+enum CoursesListType {
+    case saved
+    case popular
+    case category
+}
