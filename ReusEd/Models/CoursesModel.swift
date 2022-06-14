@@ -106,13 +106,11 @@ var courses = [
     )
 ]
 
-
 var categoryCourses = [
     1: [1, 3, 4],
     2: [2, 5, 7],
     3: [6]
 ]
-
 
 enum CoursesListType {
     case saved

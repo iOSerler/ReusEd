@@ -12,7 +12,7 @@ struct MainPageView: View {
     @ObservedObject var coursesViewModel = CoursesViewModel(
         courses: courses,
         categories: categories,
-        categoryCourses: categoryCourse)
+        categoryCourses: categoryCourses)
     @State private var searchText: String = ""
     var body: some View {
         VStack(spacing: 5) {

@@ -53,4 +53,3 @@ struct CourseCardView_Previews: PreviewProvider {
         MainPageView()
     }
 }
-

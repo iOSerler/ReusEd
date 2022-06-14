@@ -14,7 +14,7 @@ struct CourseSectionView: View {
     @ObservedObject var coursesViewModel = CoursesViewModel(
         courses: courses,
         categories: categories,
-        categoryCourses: categoryCourse)
+        categoryCourses: categoryCourses)
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 20) {
