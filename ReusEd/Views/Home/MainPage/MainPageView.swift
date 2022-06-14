@@ -15,44 +15,48 @@ struct MainPageView: View {
         categoryCourses: categoryCourses)
     @State private var searchText: String = ""
     var body: some View {
-        VStack(spacing: 20) {
-            ProfileHeaderView(image: "person.crop.circle",
-                              text1: "Hello 👋",
-                              text2: "John Doe",
-                              settings: pageSettings)
-            
-            SearchBarView(settings: pageSettings,
-                          searchText: $searchText)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 15) {
-                    FilterButtonView(type: "image",
-                                     titleOrImageName: "filter")
-                    
-                    FilterButtonView(type: "text",
-                                     titleOrImageName: "🔥 All",
-                                     titleFont: pageSettings.descriptionFont,
-                                     titleColor: pageSettings.descriptionColor)
-                    
-                    FilterButtonView(type: "text",
-                                     titleOrImageName: "🎨 Design",
-                                     titleFont: pageSettings.descriptionFont,
-                                     titleColor: pageSettings.descriptionColor)
-                    
-                    FilterButtonView(type: "text",
-                                     titleOrImageName: "⌨️ Programming",
-                                     titleFont: pageSettings.descriptionFont,
-                                     titleColor: pageSettings.descriptionColor)
-                }.padding(.leading, 20)
-            }
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 30) {
-                    ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
-                        CourseSectionView(settings: pageSettings, categoryId: key)
+        NavigationView {
+            VStack(spacing: 20) {
+                ProfileHeaderView(image: "person.crop.circle",
+                                  text1: "Hello 👋",
+                                  text2: "John Doe",
+                                  settings: pageSettings)
+                
+                SearchBarView(settings: pageSettings,
+                              searchText: $searchText)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 15) {
+                        FilterButtonView(type: "image",
+                                         titleOrImageName: "filter")
+                        
+                        FilterButtonView(type: "text",
+                                         titleOrImageName: "🔥 All",
+                                         titleFont: pageSettings.descriptionFont,
+                                         titleColor: pageSettings.descriptionColor)
+                        
+                        FilterButtonView(type: "text",
+                                         titleOrImageName: "🎨 Design",
+                                         titleFont: pageSettings.descriptionFont,
+                                         titleColor: pageSettings.descriptionColor)
+                        
+                        FilterButtonView(type: "text",
+                                         titleOrImageName: "⌨️ Programming",
+                                         titleFont: pageSettings.descriptionFont,
+                                         titleColor: pageSettings.descriptionColor)
+                    }.padding(.leading, 20)
+                }
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 30) {
+                        ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
+                            CourseSectionView(settings: pageSettings, categoryId: key)
+                        }
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
 }

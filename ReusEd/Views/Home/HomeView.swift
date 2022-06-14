@@ -29,7 +29,7 @@ struct HomeView: View {
                         }
                         .tag(1)
 
-                    CourseListView(courses: courses, coursesListType: .saved)
+                    SavedCoursesListView(courses: courses, coursesListType: .saved)
                         .tabItem {
                             selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
                             Text(tabBar.tab3Title)

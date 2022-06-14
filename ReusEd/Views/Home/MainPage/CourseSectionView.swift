@@ -26,13 +26,18 @@ struct CourseSectionView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.leading, 10)
                 Spacer()
-                Text("View All")
-                    .font(Font.custom(settings.descriptionFont, size: 14))
-                    .foregroundColor(Color(settings.additionalTextColor))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding(.trailing, 10)
-                
+                NavigationLink(destination: CourseListView(
+                    courses: coursesViewModel.getCoursesByCategory(categoryId: categoryId),
+                    coursesListType: .category,
+                    title: coursesViewModel.categories[categoryId-1].title)) {
+                    Text("View All")
+                        .font(Font.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.additionalTextColor))
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.trailing, 10)
+                    }.navigationBarHidden(true)
+               
             }
             
             ScrollView(.horizontal, showsIndicators: false) {

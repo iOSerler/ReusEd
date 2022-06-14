@@ -14,8 +14,8 @@ struct Course: Identifiable {
     var posterBig: String
     var posterSmall: String
     var duration: String
-    var isSaved: Bool = false
     var progress: Double = 0.5
+    var isSaved: Bool = true
     var isPopular: Bool = false
 }
 
@@ -26,7 +26,7 @@ struct Category {
 var categories = [
     Category(
         id: 1,
-        title: "Popular Courses"
+        title: "New Courses"
     ),
     Category(
         id: 2,
@@ -46,6 +46,7 @@ var courses = [
         posterBig: "bigPoster1",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
+        progress: 0.7,
         isPopular: true
     ),
     Course(
@@ -64,6 +65,7 @@ var courses = [
         posterBig: "bigPoster3",
         posterSmall: "smallPoster3",
         duration: "3h 45 min",
+        progress: 0.4,
         isPopular: true
     ),
     Course(
@@ -73,6 +75,7 @@ var courses = [
         posterBig: "bigPoster4",
         posterSmall: "smallPoster4",
         duration: "3h 45 min",
+        progress: 0.3,
         isSaved: true
     ),
     Course(
@@ -82,6 +85,7 @@ var courses = [
         posterBig: "bigPoster2",
         posterSmall: "smallPoster5",
         duration: "3h 45 min",
+        progress: 0.9,
         isPopular: true
     ),
     Course(
@@ -91,6 +95,7 @@ var courses = [
         posterBig: "bigPoster1",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
+        progress: 0.7,
         isSaved: true
     ),
     Course(
