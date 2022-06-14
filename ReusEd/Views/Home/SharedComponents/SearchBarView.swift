@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    var settings: MainPageData
     
-    var font: String
-    var placeholderColor: String
-    var cancelButtonColor: String
     @Binding var searchText: String
     @State private var isEditing: Bool = false
     
@@ -21,16 +19,16 @@ struct SearchBarView: View {
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 100: 40))
                 .foregroundColor(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(placeholderColor), lineWidth: 1))
+                    .stroke(Color(settings.descriptionColor), lineWidth: 1))
             HStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     TextField("Search for courses ...", text: $searchText)
-                        .font(Font.custom(font, size: 14))
-                        .foregroundColor(Color(placeholderColor))
+                        .font(Font.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.descriptionColor))
                 }
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 120: 80))
-                .foregroundColor(Color(placeholderColor))
+                .foregroundColor(Color(settings.descriptionColor))
                 .padding(.leading, 13)
                 .onTapGesture(perform: {
                     isEditing = true
@@ -38,8 +36,8 @@ struct SearchBarView: View {
                 
                 Spacer()
                 isEditing ? Text("Cancel")
-                    .font(Font.custom(font, size: 16))
-                    .foregroundColor(Color(cancelButtonColor))
+                    .font(Font.custom(settings.descriptionFont, size: 16))
+                    .foregroundColor(Color(settings.additionalTextColor))
                     .padding(.trailing, 5)
                     .onTapGesture(perform: {
                         isEditing = false

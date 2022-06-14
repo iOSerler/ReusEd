@@ -12,14 +12,12 @@ struct MainPageView: View {
     @State private var searchText: String = ""
     var body: some View {
         VStack(spacing: 10) {
-            SearchBarView(font: pageSettings.descriptionFont,
-                          placeholderColor: pageSettings.descriptionColor,
-                          cancelButtonColor: pageSettings.additionalTextColor,
+            SearchBarView(settings: pageSettings,
                           searchText: $searchText)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 30) {
                     ForEach(0..<3) {_ in
-                        CourseSectionView()
+                        CourseSectionView(settings: pageSettings)
                     }
                 }
             }

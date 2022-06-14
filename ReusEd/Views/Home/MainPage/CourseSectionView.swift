@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct CourseSectionView: View {
+    
+    var settings: MainPageData
     var sectionTitle: String = "Design"
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 20) {
             HStack {
                 Text(sectionTitle)
-                    .font(Font.custom("Rubik-Medium", size: 16))
-                    .foregroundColor(Color("MainText"))
+                    .font(Font.custom(settings.titleFont, size: 16))
+                    .foregroundColor(Color(settings.titleColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.leading, 10)
                 Spacer()
                 Text("View All")
-                    .font(Font.custom("Rubik-Regular", size: 14))
-                    .foregroundColor(Color("MainText"))
+                    .font(Font.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.additionalTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.trailing, 10)
@@ -30,19 +32,13 @@ struct CourseSectionView: View {
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing:  UIScreen.main.bounds.width/20){
+                HStack(spacing: UIScreen.main.bounds.width/20) {
                     ForEach(0..<10) {_ in
-                        CourseCardView()
+                        CourseCardView(settings: settings)
                     }
                 }
             }
             
         }.frame(width: UIScreen.main.bounds.width - 20)
-    }
-}
-
-struct CourseSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseSectionView()
     }
 }
