@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @Binding var _searchText: String
+    
+    var font: String
+    var placeholderColor: String
+    var cancelButtonColor: String
+    @Binding var searchText: String
     @State private var isEditing: Bool = false
     
     var body: some View {
@@ -17,23 +21,30 @@ struct SearchBarView: View {
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 100: 40))
                 .foregroundColor(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("Gray"), lineWidth: 1))
+                    .stroke(Color(placeholderColor), lineWidth: 1))
             HStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search for courses ...", text: $_searchText)
+                    TextField("Search for courses ...", text: $searchText)
+                        .font(Font.custom(font, size: 14))
+                        .foregroundColor(Color(placeholderColor))
                 }
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 120: 80))
-                .foregroundColor(.gray)
+                .foregroundColor(Color(placeholderColor))
                 .padding(.leading, 13)
                 .onTapGesture(perform: {
                     isEditing = true
                 })
                 
                 Spacer()
-                isEditing ? Text("Cancel").onTapGesture(perform: {
-                    isEditing = false
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                isEditing ? Text("Cancel")
+                    .font(Font.custom(font, size: 16))
+                    .foregroundColor(Color(cancelButtonColor))
+                    .padding(.trailing, 5)
+                    .onTapGesture(perform: {
+                        isEditing = false
+                        UIApplication.shared
+                            .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) : nil
             }
         }.frame(height: 40)

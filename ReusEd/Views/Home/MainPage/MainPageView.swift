@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct MainPageView: View {
+    var pageSettings: MainPageData
     @State private var searchText: String = ""
     var body: some View {
-        
-        VStack(spacing: 20){
-            SearchBarView(_searchText: $searchText)
-            ScrollView(.vertical, showsIndicators: false){
-                VStack{
-                    ForEach(0..<10){_ in
+        VStack(spacing: 20) {
+            SearchBarView(font: pageSettings.descriptionFont,
+                          placeholderColor: pageSettings.descriptionColor,
+                          cancelButtonColor: pageSettings.additionalTextColor,
+                          searchText: $searchText)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    ForEach(0..<10) {_ in
                         CourseSectionView()
                     }
                 }
@@ -26,6 +29,6 @@ struct MainPageView: View {
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView()
+        MainPageView(pageSettings: mainPageData)
     }
 }

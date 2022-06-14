@@ -11,7 +11,7 @@ struct CourseSectionView: View {
     var sectionTitle: String = "Design"
     
     var body: some View {
-        VStack(alignment: .leading ,spacing: 20){
+        VStack(alignment: .trailing, spacing: 20) {
             HStack {
                 Text(sectionTitle)
                     .font(Font.custom("Rubik-Medium", size: 16))
@@ -29,15 +29,15 @@ struct CourseSectionView: View {
                 
             }
             
-            ScrollView(.horizontal, showsIndicators: false){
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(0..<10){_ in
+                    ForEach(0..<10) {_ in
                         CourseCardView()
                     }
                 }
             }
             
-        }
+        }.frame(width: UIScreen.main.bounds.width - 20)
     }
 }
 
