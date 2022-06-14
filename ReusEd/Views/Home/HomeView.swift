@@ -21,7 +21,7 @@ struct HomeView: View {
                         }
                         .tag(0)
 
-                    Tab2TestView()
+                    ScoresView()
                         .tabItem {
                             selection == 1 ? Image( tabBar.tab2OnImage) : Image( tabBar.tab2OffImage)
                             Text(tabBar.tab2Title)
@@ -29,15 +29,17 @@ struct HomeView: View {
                         }
                         .tag(1)
 
-                    CourseListView(courses: courses, coursesListType: .saved)
+                    SavedCoursesListView(courses: courses, coursesListType: .saved)
                         .tabItem {
-                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
+//                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
+                            selection == 2 ?
+                                Image(systemName: "arrow.down.to.line.circle") : Image(systemName: "arrow.down.to.line")
                             Text(tabBar.tab3Title)
                                 .font(.custom(tabBar.textFont, size: 14))
                         }
                         .tag(2)
 
-                    Tab4TestView()
+                    ProfileView()
                         .tabItem {
                             selection == 3 ? Image( tabBar.tab4OnImage) : Image(tabBar.tab4OffImage)
                             Text(tabBar.tab4Title)
@@ -46,7 +48,6 @@ struct HomeView: View {
                         .tag(3)
                 }.accentColor(Color(tabBar.textColor))
 
-            
         }
 
 }

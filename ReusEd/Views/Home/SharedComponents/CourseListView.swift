@@ -35,26 +35,25 @@ struct CourseListView: View {
         }
     }
     var body: some View {
-        NavigationView {
-            VStack(alignment: .center, spacing: 5) {
-                SearchBarView(settings: pageSettings,
-                              searchText: $searchText)
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .center, spacing: 10) {
-                        ForEach(displayCourses) { course in
-                            NavigationLink {
-                                CourseDetailView(courseId: course.id)
-                            } label: {
-                                CourseListCellView(course: course)
-                            }
-                            Divider()
-                                .padding(.horizontal, 20)
+        
+        VStack(alignment: .center, spacing: 5) {
+            SearchBarView(settings: pageSettings,
+                          searchText: $searchText)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 10) {
+                    ForEach(displayCourses) { course in
+                        NavigationLink {
+                            CourseDetailView(courseId: course.id)
+                        } label: {
+                            CourseListCellView(course: course)
                         }
+                        Divider()
+                            .padding(.horizontal, 20)
                     }
                 }
-            }.navigationTitle(title2)
-                .navigationBarTitleDisplayMode(.inline)
-        }
+            }
+        }.navigationTitle(title2)
+            .navigationBarTitleDisplayMode(.inline)
         
     }
 }

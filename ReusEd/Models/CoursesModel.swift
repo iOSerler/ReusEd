@@ -14,8 +14,8 @@ struct Course: Identifiable {
     var posterBig: String
     var posterSmall: String
     var duration: String
-    var isSaved: Bool = false
     var progress: Double = 0.5
+    var isSaved: Bool = true
     var isPopular: Bool = false
 }
 
@@ -26,7 +26,7 @@ struct Category {
 var categories = [
     Category(
         id: 1,
-        title: "Popular Courses"
+        title: "New Courses"
     ),
     Category(
         id: 2,
@@ -43,16 +43,17 @@ var courses = [
         id: 1,
         title: "Python Porgramming",
         description: "Lorusd sdfgweirdffgh dhdfghdfsghdsfghfdghsdfh kehrbg websdsh",
-        posterBig: "bigPoster1",
+        posterBig: "bigPoster3",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
+        progress: 0.7,
         isPopular: true
     ),
     Course(
         id: 2,
         title: "C++ Porgramming",
         description: "Lorusd sdfgweirdf kehrdfghdsfgh dfsgh dsfghdfgbg websdsh",
-        posterBig: "bigPoster2",
+        posterBig: "bigPoster1",
         posterSmall: "smallPoster2",
         duration: "3h 45 min",
         isPopular: true
@@ -61,18 +62,20 @@ var courses = [
         id: 3,
         title: "Swift Porgramming",
         description: "Lorusd sdfgweirdf kehrdsfghdsfh dsfhbg websdsh",
-        posterBig: "bigPoster3",
+        posterBig: "bigPoster4",
         posterSmall: "smallPoster3",
         duration: "3h 45 min",
+        progress: 0.4,
         isPopular: true
     ),
     Course(
         id: 4,
         title: "Java Porgramming",
         description: "Lorusd sdfgweirdf kehdfgh dfgrbg websdsh",
-        posterBig: "bigPoster4",
+        posterBig: "bigPoster1",
         posterSmall: "smallPoster4",
         duration: "3h 45 min",
+        progress: 0.3,
         isSaved: true
     ),
     Course(
@@ -82,22 +85,24 @@ var courses = [
         posterBig: "bigPoster2",
         posterSmall: "smallPoster5",
         duration: "3h 45 min",
+        progress: 0.9,
         isPopular: true
     ),
     Course(
         id: 6,
         title: "Snowboarding",
         description: "Lorusd sdfgweirdf dfgh dfgh dgfh websdsh",
-        posterBig: "bigPoster1",
+        posterBig: "bigPoster3",
         posterSmall: "smallPoster1",
         duration: "3h 45 min",
+        progress: 0.7,
         isSaved: true
     ),
     Course(
         id: 7,
         title: "Dancing",
         description: "Lorusd sdfgweirdf kehrbg websdsh",
-        posterBig: "bigPoster2",
+        posterBig: "bigPoster3",
         posterSmall: "smallPoster2",
         duration: "3h 45 min",
         isSaved: true
