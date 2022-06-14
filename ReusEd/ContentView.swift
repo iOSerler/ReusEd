@@ -26,7 +26,15 @@ struct ContentView: View {
                     case .personalizationPages:
                         PersonalizationQuestionView(question: questions.removeFirst()).transition(.opacity)
                     case .authorization:
-                        SignInView().transition(.opacity)
+                        // TODO: Fix viewRouter Authorization
+                        AuthorizationView() { result in
+                            viewRouter.completeAuthorization(
+                                with: result.token,
+                                and: result.type.rawValue
+                            )
+                        }
+                        .navigationBarHidden(true)
+                        .transition(.opacity)
                     case .homeTabView:
                         HomeView().transition(.opacity)
                     }
