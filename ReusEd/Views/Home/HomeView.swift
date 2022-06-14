@@ -11,7 +11,7 @@ struct HomeView: View {
     @State private var selection = 0
         var body: some View {
             TabView(selection: $selection) {
-                Tab1TestView()
+                MainPageView(pageSettings: mainPageData)
                     .tabItem {
                         selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
                         Text(tabBar.tab1Title)

@@ -8,41 +8,41 @@
 import SwiftUI
 
 struct CourseSectionView: View {
-    var sectionTitle: String = "Design"
+    
+    var settings: MainPageData
+    var categoryId: Int
+    @ObservedObject var coursesViewModel = CoursesViewModel(
+        courses: courses,
+        categories: categories,
+        categoryCourses: categoryCourses)
     
     var body: some View {
-        VStack(alignment: .leading ,spacing: 20){
+        VStack(alignment: .trailing, spacing: 20) {
             HStack {
-                Text(sectionTitle)
-                    .font(Font.custom("Rubik-Medium", size: 16))
-                    .foregroundColor(Color("MainText"))
+                Text(coursesViewModel.categories[categoryId-1].title)
+                    .font(Font.custom(settings.titleFont, size: 16))
+                    .foregroundColor(Color(settings.titleColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.leading, 10)
                 Spacer()
                 Text("View All")
-                    .font(Font.custom("Rubik-Regular", size: 14))
-                    .foregroundColor(Color("MainText"))
+                    .font(Font.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.additionalTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.trailing, 10)
                 
             }
             
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack {
-                    ForEach(0..<10){_ in
-                        CourseCardView()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: UIScreen.main.bounds.width/20) {
+                    ForEach(Array(coursesViewModel.categoryCourses[categoryId]!).sorted(by: >), id: \.self) {ind in
+                        CourseCardView(course: coursesViewModel.courses[ind - 1], settings: settings)
                     }
                 }
             }
             
-        }
-    }
-}
-
-struct CourseSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseSectionView()
+        }.frame(width: UIScreen.main.bounds.width - 20)
     }
 }

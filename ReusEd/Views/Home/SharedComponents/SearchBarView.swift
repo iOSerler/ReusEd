@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @Binding var _searchText: String
+    var settings: MainPageData
+    
+    @Binding var searchText: String
     @State private var isEditing: Bool = false
     
     var body: some View {
@@ -17,26 +19,33 @@ struct SearchBarView: View {
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 100: 40))
                 .foregroundColor(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("Gray"), lineWidth: 1))
+                    .stroke(Color(settings.descriptionColor), lineWidth: 0.4))
             HStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search for courses ...", text: $_searchText)
+                    TextField("Search for courses ...", text: $searchText)
+                        .font(Font.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.descriptionColor))
                 }
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 120: 80))
-                .foregroundColor(.gray)
+                .foregroundColor(Color(settings.descriptionColor))
                 .padding(.leading, 13)
                 .onTapGesture(perform: {
                     isEditing = true
                 })
                 
                 Spacer()
-                isEditing ? Text("Cancel").onTapGesture(perform: {
-                    isEditing = false
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                isEditing ? Text("Cancel")
+                    .font(Font.custom(settings.descriptionFont, size: 16))
+                    .foregroundColor(Color(settings.additionalTextColor))
+                    .padding(.trailing, 5)
+                    .onTapGesture(perform: {
+                        isEditing = false
+                        UIApplication.shared
+                            .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) : nil
             }
-        }.frame(height: 40)
-            .padding()
+        }.frame(height: UIScreen.main.bounds.height/22)
+         .padding([.leading, .trailing], UIScreen.main.bounds.width/25)
     }
 }
