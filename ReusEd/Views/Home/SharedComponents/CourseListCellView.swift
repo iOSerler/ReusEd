@@ -11,43 +11,45 @@ struct CourseListCellView: View {
     @State var course: Course
     var body: some View {
         VStack(alignment: .center) {
-            HStack(alignment: .top) {
+            HStack(alignment: .center) {
                 Image(course.posterSmall)
                 VStack(alignment: .leading) {
                     Text(course.title)
-                        .font(.custom("Rubik-Medium", size: 14))
+                        .font(.custom(mainPageData.titleFont, size: 14))
                         .foregroundColor(.black)
                     Text(course.description)
-                        .font(.custom("Rubik-Regular", size: 12))
-                        .foregroundColor(Color("Gray"))
+                        .font(.custom(mainPageData.descriptionFont, size: 12))
+                        .foregroundColor(Color(mainPageData.descriptionColor))
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
-                        .padding(.top, 0.1)
 
                     Spacer()
                     HStack(alignment: .center, spacing: 1) {
-                        Image("timer")
+                        Image(mainPageData.timeImage)
                         Text(course.duration)
-                            .font(.custom("Rubik-Regular", size: 12))
-                            .foregroundColor(Color("Primary"))
+                            .font(.custom(mainPageData.descriptionFont, size: 12))
+                            .foregroundColor(Color(mainPageData.additionalTextColor))
+                            .padding(.leading, 5)
                         Spacer()
-                        ProgressView(value: course.progress)
+                        ProgressView(value: course.progress * 100, total: 100)
                             .scaleEffect(1.5, anchor: .center)
-                            .accentColor(Color("Primary"))
+                            .accentColor(Color(mainPageData.additionalTextColor))
                             .frame(width: UIScreen.main.bounds.width / 5)
                             .padding(.trailing, 30)
-                        Text("50 %")
-                            .font(.custom("Rubik-Medium", size: 12))
+                        Text("\(Int((course.progress * 100).rounded())) %")
+                            .font(.custom(mainPageData.descriptionFont, size: 12))
                             .foregroundColor(.black)
                     }
                     .padding(.bottom, 1)
                     
                 }
+                .frame(height: 80)
+                .padding(.leading, 10)
                 
             }
             .padding(.horizontal, 20)
-            .frame(height: 80)
-            Spacer()
+            .frame(height: 100)
+            
         }
     }
 }
