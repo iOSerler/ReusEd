@@ -95,7 +95,7 @@ struct SignInView: View {
             .padding(.top, 50)
             .padding(.horizontal, 20)
 
-            NavigationLink(destination: Tab1TestView()) {
+            NavigationLink(destination: HomeView()) {
                 HStack {
                     Spacer()
                     Text("Forgot password?")
