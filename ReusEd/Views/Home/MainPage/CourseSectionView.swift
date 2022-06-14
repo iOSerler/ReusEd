@@ -42,7 +42,7 @@ struct CourseSectionView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: UIScreen.main.bounds.width/20) {
-                    ForEach(Array(coursesViewModel.categoryCourses[categoryId]!).sorted(by: >), id: \.self) {ind in
+                    ForEach(Array(coursesViewModel.categoryCourses[categoryId]!).sorted(by: <), id: \.self) {ind in
                         CourseCardView(course: coursesViewModel.courses[ind - 1], settings: settings)
                     }
                 }

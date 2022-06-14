@@ -17,9 +17,9 @@ struct MainPageView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                ProfileHeaderView(image: "person.crop.circle",
+                ProfileHeaderView(image: "Anna",
                                   text1: "Hello 👋",
-                                  text2: "John Doe",
+                                  text2: "Anna Dluzhinskaya",
                                   settings: pageSettings)
                 
                 SearchBarView(settings: pageSettings,

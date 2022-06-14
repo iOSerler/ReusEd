@@ -14,10 +14,17 @@ struct ProfileHeaderView: View {
     var settings: MainPageData
     var body: some View {
         HStack {
-            Image(systemName: image)
-                .scaleEffect(2.5)
+            Image(image)
+                .resizable()
+                .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width/7, height: UIScreen.main.bounds.width/7)
-                .foregroundColor(.purple)
+                .clipShape(Circle())
+                .shadow(radius: 10)
+                .overlay(Circle().stroke(.purple, lineWidth: 2))
+//            Image(systemName: image)
+//                .scaleEffect(2.5)
+//                .frame(width: UIScreen.main.bounds.width/7, height: UIScreen.main.bounds.width/7)
+//                .foregroundColor(.purple)
             
             VStack(alignment: .leading) {
                 Text(text1)
