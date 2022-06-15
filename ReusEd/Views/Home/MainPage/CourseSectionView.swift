@@ -45,7 +45,7 @@ struct CourseSectionView: View {
                     ForEach(Array(coursesViewModel.categoryCourses[categoryId]!).sorted(by: <), id: \.self) {ind in
                         CourseCardView(course: coursesViewModel.courses[ind - 1], settings: settings)
                     }
-                }
+                }.frame(height: UIScreen.main.bounds.height/3.9)
             }
             
         }.frame(width: UIScreen.main.bounds.width - 20)

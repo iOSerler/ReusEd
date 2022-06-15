@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct FilterButtonView: View {
-    var type: String
-    var titleOrImageName: String
-    var titleFont: String = ""
-    var titleColor: String = ""
+    
+    var title: String
+    var titleFont: String
+    var titleColor: String
+    var pressColor: String 
     
     @State private var didTap: Bool = false
     
@@ -24,17 +25,11 @@ struct FilterButtonView: View {
                 },
                 label: {
                     VStack {
-                        if type == "text"{
-                            Text(titleOrImageName)
-                                .padding(.all, 10)
-                                .font(Font.custom(titleFont, size: 14))
-                                .foregroundColor(Color(titleColor))
-                                .background(didTap ?  Color("PrimaryLight"): Color.white)
-                        } else if type == "image"{
-                            Image(titleOrImageName)
-                                .padding(.all, 10)
-                                .background(didTap ? Color("PrimaryLight") : Color.white)
-                        }
+                        Text(title)
+                            .padding(.all, 10)
+                            .font(Font.custom(titleFont, size: 14))
+                            .foregroundColor(Color(titleColor))
+                            .background(didTap ?  Color(pressColor): Color.white)
                         
                     }.cornerRadius(UIScreen.main.bounds.width/40)
                         .overlay(

@@ -25,27 +25,7 @@ struct MainPageView: View {
                 SearchBarView(settings: pageSettings,
                               searchText: $searchText)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 15) {
-                        FilterButtonView(type: "image",
-                                         titleOrImageName: "filter")
-                        
-                        FilterButtonView(type: "text",
-                                         titleOrImageName: "🔥 All",
-                                         titleFont: pageSettings.descriptionFont,
-                                         titleColor: pageSettings.descriptionColor)
-                        
-                        FilterButtonView(type: "text",
-                                         titleOrImageName: "🎨 Design",
-                                         titleFont: pageSettings.descriptionFont,
-                                         titleColor: pageSettings.descriptionColor)
-                        
-                        FilterButtonView(type: "text",
-                                         titleOrImageName: "⌨️ Programming",
-                                         titleFont: pageSettings.descriptionFont,
-                                         titleColor: pageSettings.descriptionColor)
-                    }.padding(.leading, 20)
-                }
+                FilterBarView(settings: pageSettings)
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 30) {

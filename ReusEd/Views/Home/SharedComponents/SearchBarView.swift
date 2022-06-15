@@ -25,7 +25,7 @@ struct SearchBarView: View {
                     Image(systemName: "magnifyingglass")
                     TextField("Search for courses ...", text: $searchText)
                         .font(Font.custom(settings.descriptionFont, size: 14))
-                        .foregroundColor(Color(settings.descriptionColor))
+                        .foregroundColor(Color(settings.titleColor))
                 }
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 120: 80))
                 .foregroundColor(Color(settings.descriptionColor))

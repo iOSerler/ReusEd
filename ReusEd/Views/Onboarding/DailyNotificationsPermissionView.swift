@@ -61,7 +61,7 @@ struct DailyNotificationsView: View {
                         notify.askPermission(viewRouter: viewRouter)
                     }, label: {
                         Text("Continue")
-                            .font(Font.custom("Rubik-Medium", size: 16))
+                            .font(Font.custom(notificationPermissionData.titleFont, size: 16))
                             .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
                             .background(Color(notificationPermissionData.buttonColor))
                             .accentColor(Color(notificationPermissionData.buttonTextColor))

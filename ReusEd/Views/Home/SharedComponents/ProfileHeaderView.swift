@@ -21,10 +21,6 @@ struct ProfileHeaderView: View {
                 .clipShape(Circle())
                 .shadow(radius: 10)
                 .overlay(Circle().stroke(.purple, lineWidth: 2))
-//            Image(systemName: image)
-//                .scaleEffect(2.5)
-//                .frame(width: UIScreen.main.bounds.width/7, height: UIScreen.main.bounds.width/7)
-//                .foregroundColor(.purple)
             
             VStack(alignment: .leading) {
                 Text(text1)
