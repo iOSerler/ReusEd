@@ -19,7 +19,7 @@ struct Course: Identifiable {
     var isPopular: Bool = false
 }
 
-struct Category: Identifiable{
+struct Category: Identifiable {
     var id: Int
     var title: String
     var filterTitle: String?

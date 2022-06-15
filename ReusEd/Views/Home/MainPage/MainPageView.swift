@@ -14,6 +14,7 @@ struct MainPageView: View {
         categories: categories,
         categoryCourses: categoryCourses)
     @State private var searchText: String = ""
+    @State private var showCategory: Set<Int> = []
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -25,12 +26,16 @@ struct MainPageView: View {
                 SearchBarView(settings: pageSettings,
                               searchText: $searchText)
                 
-                FilterBarView(settings: pageSettings)
+                FilterBarView(showCategory: $showCategory, settings: pageSettings)
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 30) {
                         ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
-                            CourseSectionView(settings: pageSettings, categoryId: key)
+                            showCategory.count == 0 ?
+                            CourseSectionView(settings: pageSettings, categoryId: key) :
+                            (showCategory.contains(key) ?
+                             CourseSectionView(settings: pageSettings, categoryId: key) : nil)
+                            
                         }
                     }
                 }

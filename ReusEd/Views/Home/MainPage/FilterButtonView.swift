@@ -9,11 +9,13 @@ import SwiftUI
 
 struct FilterButtonView: View {
     
+    var id: Int
     var title: String
     var titleFont: String
     var titleColor: String
     var pressColor: String 
     
+    @Binding var showCategory: Set<Int>
     @State private var didTap: Bool = false
     
     var body: some View {
@@ -21,7 +23,11 @@ struct FilterButtonView: View {
             Button(
                 action: {
                     self.didTap.toggle()
-                    
+                    if didTap == true {
+                        self.showCategory.insert(id)
+                    } else {
+                        self.showCategory.remove(id)
+                    }
                 },
                 label: {
                     VStack {

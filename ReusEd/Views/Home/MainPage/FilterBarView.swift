@@ -16,7 +16,9 @@ struct FilterBarView: View {
     @State private var showingSheet: Bool = false
     @State private var applyFilter: Bool = false
     
+    @Binding var showCategory: Set<Int>
     var settings: MainPageData
+    
     var body: some View {
         
         HStack(alignment: .center, spacing: 15) {
@@ -41,17 +43,19 @@ struct FilterBarView: View {
                   }
         
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 15) {
+                HStack(spacing: 10) {
                     ForEach(coursesViewModel.categories) {category in
-                        FilterButtonView(title: category.filterTitle!,
+                        FilterButtonView(id: category.id,
+                                         title: category.filterTitle!,
                                          titleFont: settings.descriptionFont,
                                          titleColor: settings.descriptionColor,
-                                         pressColor: settings.filterButtonColor)
+                                         pressColor: settings.filterButtonColor,
+                                         showCategory: $showCategory)
                     }
-                }
+                }.frame(height: 50)
+                 .padding(.horizontal, 5)
             }
-        }.frame(height: 55)
-         .padding(.leading, 20)
+        }.padding(.leading, 20)
         
     }
 }
