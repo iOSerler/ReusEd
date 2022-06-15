@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0A2851DCF100DB971B /* TabBarModel.swift */; };
 		2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */; };
+		2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */; };
 		2AD95C1228587CC000E220E8 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1128587CC000E220E8 /* MainPageView.swift */; };
 		2AD95C1428587D4E00E220E8 /* CourseSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1328587D4E00E220E8 /* CourseSectionView.swift */; };
 		2AD95C1728587E3600E220E8 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1628587E3600E220E8 /* SearchBarView.swift */; };
@@ -68,6 +69,7 @@
 		0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
 		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
+		2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		2AD95C1128587CC000E220E8 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		2AD95C1328587D4E00E220E8 /* CourseSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSectionView.swift; sourceTree = "<group>"; };
 		2AD95C1628587E3600E220E8 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
 				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
 				2AD95C1C285890BE00E220E8 /* MainPageModel.swift */,
+				2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				2AD95C1F2858A7A300E220E8 /* CoursesViewModel.swift in Sources */,
 				7A1227752858BFD100536CC5 /* CourseListView.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
+				2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */,
 				7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */,
 				7A1227802859088700536CC5 /* ProfileView.swift in Sources */,
 				7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */,

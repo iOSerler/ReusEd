@@ -10,7 +10,7 @@ import AVKit
 
 struct VideoLessonView: View {
     
-    let url: URL?
+    var info: VideoLesson
     
     @State var player = AVPlayer()
     
@@ -22,24 +22,24 @@ struct VideoLessonView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("Summary")
+                    Text(info.title)
                     
                     HStack {
-                        Image("timer")
-                        Text("15 seconds video")
+                        Image(info.durationImage)
+                        Text(info.duration)
                     }
                     
-                    Text("Python programming language provides the following types of loops to handle looping requirements. Python provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.")
+                    Text(info.description)
                     
                     HStack {
                         Text("Video Stamps")
                         Text("- Click to watch directly")
                     }
                     
-                    ForEach(0..<5) { ind in
-                        Text(String(ind*2)+" Second")
+                    ForEach(0..<info.stamps.count) { ind in
+                        Text(String(info.stamps[ind].text))
                             .onTapGesture {
-                                player.seek(to: CMTime(seconds: Double(ind*2),
+                                player.seek(to: CMTime(seconds: info.stamps[ind].seconds,
                                                        preferredTimescale: player.currentTime().timescale))
                             }
                     }
@@ -51,14 +51,13 @@ struct VideoLessonView: View {
             
         }.ignoresSafeArea()
         .onAppear {
-            self.player = AVPlayer(url: url!)
+            self.player = AVPlayer(url: URL(string: info.url)!)
         }
     }
 }
 
 struct VideoLessonView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoLessonView(url:
-        URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"))
+        VideoLessonView(info: videoLesson)
     }
 }
