@@ -32,9 +32,9 @@ struct CourseDetailView: View {
                               
                     CourseDetailMainView(detail: detail)
                         
-                        .offset(y: -UIScreen.main.bounds.height / 10)
+                        .offset(y: -UIScreen.main.bounds.height / 5)
 //                        .padding()
-                        .padding(.bottom, -UIScreen.main.bounds.height / 6.4)
+                        .padding(.bottom, -UIScreen.main.bounds.height / 3.9)
                     Button {
                         print("sgfdfg")
                     } label: {
@@ -49,7 +49,7 @@ struct CourseDetailView: View {
                     .background(Color("Primary"))
                     .cornerRadius(25)
                     .shadow(color: Color("Primary"), radius: 10)
-                    .offset(y: -UIScreen.main.bounds.height / 1.75)
+                    .offset(y: -UIScreen.main.bounds.height / 1.48)
                    
 
                 }
