@@ -19,6 +19,7 @@
 		2AD95C212858C20500E220E8 /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C202858C20400E220E8 /* FilterButtonView.swift */; };
 		2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */; };
 		2ADB399F2859C63900A7992D /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB399E2859C63900A7992D /* FilterBarView.swift */; };
+		2ADB39A62859FA2400A7992D /* VideoLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB39A52859FA2400A7992D /* VideoLessonView.swift */; };
 		7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C02284F324300B1376F /* ReusEdApp.swift */; };
 		7A038C05284F324300B1376F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C04284F324300B1376F /* ContentView.swift */; };
 		7A038C07284F324700B1376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C06284F324700B1376F /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		2AD95C202858C20400E220E8 /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2ADB399E2859C63900A7992D /* FilterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
+		2ADB39A52859FA2400A7992D /* VideoLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonView.swift; sourceTree = "<group>"; };
 		39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReusEd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 				2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */,
 			);
 			path = SharedComponents;
+			sourceTree = "<group>";
+		};
+		2ADB39A42859F9C800A7992D /* VideoLessons */ = {
+			isa = PBXGroup;
+			children = (
+				2ADB39A52859FA2400A7992D /* VideoLessonView.swift */,
+			);
+			path = VideoLessons;
 			sourceTree = "<group>";
 		};
 		7A038BF6284F324300B1376F = {
@@ -338,6 +348,7 @@
 		7A1227762858CA3D00536CC5 /* CourseContentViews */ = {
 			isa = PBXGroup;
 			children = (
+				2ADB39A42859F9C800A7992D /* VideoLessons */,
 				7A1227772858CA5400536CC5 /* CourseDetailView.swift */,
 			);
 			path = CourseContentViews;
@@ -509,6 +520,7 @@
 				2AD95C1B28587FEE00E220E8 /* CourseCardView.swift in Sources */,
 				2AD95C1D285890BE00E220E8 /* MainPageModel.swift in Sources */,
 				2AD95C1228587CC000E220E8 /* MainPageView.swift in Sources */,
+				2ADB39A62859FA2400A7992D /* VideoLessonView.swift in Sources */,
 				2AD95C1428587D4E00E220E8 /* CourseSectionView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */,
