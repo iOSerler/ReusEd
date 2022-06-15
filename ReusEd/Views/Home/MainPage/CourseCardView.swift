@@ -12,7 +12,9 @@ struct CourseCardView: View {
     var course: Course
     var settings: MainPageData
     var body: some View {
-        NavigationLink(destination: CourseDetailView(courseId: course.id)) {
+        NavigationLink(
+            destination: CourseDetailView(courseId: course.id, isText: false, detail: course.detail)
+        ) {
             VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
                 Image(course.posterBig)
                     .resizable()
