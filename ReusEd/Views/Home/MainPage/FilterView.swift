@@ -8,13 +8,47 @@
 import SwiftUI
 
 struct FilterView: View {
+    
+    @Binding var applyFilter: Bool
+    @State var type: CoursesListType = .popular
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text("Hello, World! This is Filter View")
-    }
-}
+        VStack {
+            
+            Spacer()
+            
+            Button(
+                action: {
+                    self.type = .saved
+                }, label: {
+                    Text("Show me saved")
+                        .font(Font.custom(notificationPermissionData.titleFont, size: 16))
+                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                        .background(Color(notificationPermissionData.buttonColor))
+                        .accentColor(Color(notificationPermissionData.buttonTextColor))
+                        .cornerRadius(UIScreen.main.bounds.width/35)
+                        .padding(.bottom, UIScreen.main.bounds.height/30)
+                }
+            )
 
-struct FilterView_Previews: PreviewProvider {
-    static var previews: some View {
-        FilterView()
+            Button(
+                action: {
+                    if self.type != .popular {
+                        self.applyFilter = true
+                    }
+                    dismiss()
+                    
+                }, label: {
+                    Text("Filter Courses")
+                        .font(Font.custom(notificationPermissionData.titleFont, size: 16))
+                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                        .background(Color(notificationPermissionData.buttonColor))
+                        .accentColor(Color(notificationPermissionData.buttonTextColor))
+                        .cornerRadius(UIScreen.main.bounds.width/35)
+                        .padding(.bottom, UIScreen.main.bounds.height/30)
+                }
+            )
+        }
     }
 }

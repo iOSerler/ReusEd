@@ -18,6 +18,7 @@
 		2AD95C1F2858A7A300E220E8 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1E2858A7A300E220E8 /* CoursesViewModel.swift */; };
 		2AD95C212858C20500E220E8 /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C202858C20400E220E8 /* FilterButtonView.swift */; };
 		2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */; };
+		2ADB399F2859C63900A7992D /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB399E2859C63900A7992D /* FilterBarView.swift */; };
 		7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C02284F324300B1376F /* ReusEdApp.swift */; };
 		7A038C05284F324300B1376F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C04284F324300B1376F /* ContentView.swift */; };
 		7A038C07284F324700B1376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A038C06284F324700B1376F /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		2AD95C1E2858A7A300E220E8 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		2AD95C202858C20400E220E8 /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		2ADB399E2859C63900A7992D /* FilterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 		39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReusEd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2AD95C1A28587FEE00E220E8 /* CourseCardView.swift */,
 				2AD95C202858C20400E220E8 /* FilterButtonView.swift */,
 				7A12277B285900D700536CC5 /* FilterView.swift */,
+				2ADB399E2859C63900A7992D /* FilterBarView.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
 				7A1227722858BE9900536CC5 /* CourseListCellView.swift in Sources */,
 				7A038C5A2850A07E00B1376F /* CheckboxList.swift in Sources */,
+				2ADB399F2859C63900A7992D /* FilterBarView.swift in Sources */,
 				7A038C44285088E400B1376F /* ViewRouter.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,

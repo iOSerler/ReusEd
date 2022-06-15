@@ -19,22 +19,26 @@ struct Course: Identifiable {
     var isPopular: Bool = false
 }
 
-struct Category {
+struct Category: Identifiable {
     var id: Int
     var title: String
+    var filterTitle: String?
 }
 var categories = [
     Category(
         id: 1,
-        title: "New Courses"
+        title: "New Courses",
+        filterTitle: "🔥 New"
     ),
     Category(
         id: 2,
-        title: "Programming"
+        title: "Programming",
+        filterTitle: "⌨️ Programming"
     ),
     Category(
         id: 3,
-        title: "Design"
+        title: "Design",
+        filterTitle: "🎨 Design"
     )
 ]
 

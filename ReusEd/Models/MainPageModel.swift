@@ -14,6 +14,7 @@ struct MainPageData {
     var descriptionColor: String
     var timeImage: String
     var additionalTextColor: String
+    var filterButtonImage: String
     var filterButtonColor: String
 }
 
@@ -24,4 +25,5 @@ var mainPageData = MainPageData(
     descriptionColor: "Gray",
     timeImage: "timer",
     additionalTextColor: "Primary",
+    filterButtonImage: "filter",
     filterButtonColor: "PrimaryLight")
