@@ -12,9 +12,9 @@ public struct AuthorizationView: View {
     @StateObject var viewModel = AuthorizationViewModel()
     @StateObject var viewConfiguration = AuthorizationViewConfiguration()
 
-    private var onCompletion: (AuthorizationViewModel.AuthorizationResult) -> Void
+    private var onCompletion: (AuthorizationResult) -> Void
 
-    init(onCompletion: @escaping (AuthorizationViewModel.AuthorizationResult) -> Void) {
+    init(onCompletion: @escaping (AuthorizationResult) -> Void) {
         self.onCompletion = onCompletion
     }
 

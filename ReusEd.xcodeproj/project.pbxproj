@@ -58,7 +58,7 @@
 		833C46952857C54500FAA3E7 /* AuthorizationMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C46862857C54500FAA3E7 /* AuthorizationMainButton.swift */; };
 		833C46962857C54500FAA3E7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C46882857C54500FAA3E7 /* SignInView.swift */; };
 		833C46972857C54500FAA3E7 /* SignInInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C46892857C54500FAA3E7 /* SignInInputs.swift */; };
-		833C46992859059F00FAA3E7 /* AuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C46982859059F00FAA3E7 /* AuthorizationType.swift */; };
+		833C46992859059F00FAA3E7 /* AuthorizationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C46982859059F00FAA3E7 /* AuthorizationResult.swift */; };
 		83D5EECA2859154700DFCB8E /* FlexibleSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5EEC92859154700DFCB8E /* FlexibleSpacer.swift */; };
 		83D5EECC28592D1400DFCB8E /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5EECB28592D1400DFCB8E /* ColorButton.swift */; };
 		B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */; };
@@ -122,7 +122,7 @@
 		833C46862857C54500FAA3E7 /* AuthorizationMainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationMainButton.swift; sourceTree = "<group>"; };
 		833C46882857C54500FAA3E7 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		833C46892857C54500FAA3E7 /* SignInInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInInputs.swift; sourceTree = "<group>"; };
-		833C46982859059F00FAA3E7 /* AuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationType.swift; sourceTree = "<group>"; };
+		833C46982859059F00FAA3E7 /* AuthorizationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResult.swift; sourceTree = "<group>"; };
 		83D5EEC92859154700DFCB8E /* FlexibleSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleSpacer.swift; sourceTree = "<group>"; };
 		83D5EECB28592D1400DFCB8E /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
 				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
-				833C46982859059F00FAA3E7 /* AuthorizationType.swift */,
+				833C46982859059F00FAA3E7 /* AuthorizationResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 				833C468F2857C54500FAA3E7 /* AuthorizationEmailInput.swift in Sources */,
 				2A105B112851DEA700DB971B /* Tab3TestView.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
-				833C46992859059F00FAA3E7 /* AuthorizationType.swift in Sources */,
+				833C46992859059F00FAA3E7 /* AuthorizationResult.swift in Sources */,
 				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,
 				833C46912857C54500FAA3E7 /* AuthorizationPasswordInput.swift in Sources */,
 				2A105B132851DEB400DB971B /* Tab4TestView.swift in Sources */,

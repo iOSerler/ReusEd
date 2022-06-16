@@ -9,12 +9,6 @@ import Foundation
 
 class AuthorizationViewModel: ObservableObject {
 
-    // TODO:
-    struct AuthorizationResult {
-        let token: String
-        let type: AuthorizationType
-    }
-
     enum AuthorizationForm {
         case signIn, signUp
     }
