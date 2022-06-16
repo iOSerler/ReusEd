@@ -12,15 +12,17 @@ struct VideoLessonView: View {
     
     var settings: LessonSettingsData = lessonSettingsData
     
-    var info: VideoLesson
+    var info: VideoLesson = videoLesson
     
     @State var player = AVPlayer()
     
     var body: some View {
         VStack {
-            VideoPlayer(player: self.player)
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3, alignment: .center)
-            .scaledToFit()
+            
+            AutoRotateVideoPlayerView(player: $player)
+                .frame(width: UIScreen.main.bounds.width,
+                       height: UIScreen.main.bounds.height/3,
+                       alignment: .center)
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
@@ -39,7 +41,7 @@ struct VideoLessonView: View {
                         .font(Font.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.descriptionColor))
                     
-                    HStack {
+                    HStack(alignment: .firstTextBaseline) {
                         Text("Video Stamps")
                             .font(Font.custom(settings.titleFont, size: 18))
                             .foregroundColor(Color(settings.titleColor))
@@ -57,7 +59,7 @@ struct VideoLessonView: View {
                                 .foregroundColor(Color(settings.timeStampsColor))
                                 .onTapGesture {
                                     player.seek(to: CMTime(seconds: info.stamps[ind].seconds,
-                                                           preferredTimescale: player.currentTime().timescale))
+                                                           preferredTimescale: 1))
                                 }
                             
                             Text(": "+String(info.stamps[ind].textDescription))
@@ -81,6 +83,6 @@ struct VideoLessonView: View {
 
 struct VideoLessonView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoLessonView(info: videoLesson)
+        VideoLessonView()
     }
 }
