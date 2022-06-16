@@ -20,7 +20,7 @@ var question1 = QuestionData(
     titleColor: "MainText",
     description: "Tell us how you new about ReusEd to recommend it to more learners like you.",
     descriptionFont: "Rubik-Regular",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "🤗", secondPart: "Friends/Family"),
         OptionData(id: 2, firstPart: "🔎", secondPart: "Google Search"),
@@ -45,7 +45,7 @@ var question2 = QuestionData(
     titleColor: "MainText",
     description: "Please tell us your interests to make sure we know your field of work.",
     descriptionFont: "Rubik-Regular",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "🎓", secondPart: "Computer Science"),
         OptionData(id: 2, firstPart: "⚗️", secondPart: "Chemistry"),
@@ -69,7 +69,7 @@ var question3 = QuestionData(
     titleColor: "MainText",
     description: "Tell us how much time you’re willing to spend during your day learing.",
     descriptionFont: "Rubik-Regular",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "Casual", secondPart: "5 min / day"),
         OptionData(id: 2, firstPart: "Regular", secondPart: "10 min / day"),
@@ -91,7 +91,7 @@ var question4 = QuestionData(
     titleColor: "MainText",
     description: "Welcome to ReusEd and enjoy your learning with our personalized courses.",
     descriptionFont: "Rubik-Regular",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     optionsData: [OptionData](),
     optionsColor: String(),
     buttonColor: "Primary",

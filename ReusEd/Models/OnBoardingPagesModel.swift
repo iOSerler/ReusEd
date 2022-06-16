@@ -31,7 +31,7 @@ var introductionPagesData = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
             "Lorem Ipsum has been the industry's standard dummy text ever.",
         titleColor: "MainText",
-        descriptionColor: "Gray",
+        descriptionColor: "Grey",
         buttonColor: "Primary",
         buttonTextColor: "White",
         buttonImage: "arrow-right",
@@ -47,7 +47,7 @@ var introductionPagesData = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
             "Lorem Ipsum has been the industry's standard dummy text ever.",
         titleColor: "MainText",
-        descriptionColor: "Gray",
+        descriptionColor: "Grey",
         buttonColor: "Primary",
         buttonTextColor: "White",
         buttonImage: "arrow-right",
@@ -63,7 +63,7 @@ var introductionPagesData = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
             "Lorem Ipsum has been the industry's standard dummy text ever.",
         titleColor: "MainText",
-        descriptionColor: "Gray",
+        descriptionColor: "Grey",
         buttonColor: "Primary",
         buttonTextColor: "White",
         buttonImage: "arrow-right",
