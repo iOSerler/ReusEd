@@ -25,21 +25,21 @@ struct Stamp {
 
 var videoLesson = VideoLesson(
     id: 1,
-    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
     title: "Summary",
     description: """
     Python programming language provides the following types of loops to handle looping requirements.
     Python provides three ways for executing the loops. While all the ways provide similar basic functionality,
     they differ in their syntax and condition checking time.
     """,
-    duration: "15 seconds video",
+    duration: "15 min video",
     durationImage: "timer",
     stamps: [Stamp(seconds: 0, textTime: "0:00", textDescription: "Introduction to Loops"),
-             Stamp(seconds: 2, textTime: "2:00", textDescription: "While Loop"),
-             Stamp(seconds: 3, textTime: "3:00", textDescription: "For Loop - 1"),
-             Stamp(seconds: 3, textTime: "3:00", textDescription: "For Loop - 2"),
-             Stamp(seconds: 4, textTime: "4:00", textDescription: "For Loop - 3"),
-             Stamp(seconds: 8, textTime: "8:00", textDescription: "Conclusion and Recap")]
+             Stamp(seconds: 120, textTime: "2:00", textDescription: "While Loop"),
+             Stamp(seconds: 180, textTime: "3:00", textDescription: "For Loop - 1"),
+             Stamp(seconds: 195, textTime: "3:15", textDescription: "For Loop - 2"),
+             Stamp(seconds: 240, textTime: "4:00", textDescription: "For Loop - 3"),
+             Stamp(seconds: 480, textTime: "8:00", textDescription: "Conclusion and Recap")]
 )
 
 struct LessonSettingsData {
