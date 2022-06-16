@@ -19,7 +19,8 @@ struct VideoLesson: Identifiable {
 
 struct Stamp {
     var seconds: Double
-    var text: String
+    var textTime: String
+    var textDescription: String
 }
 
 var videoLesson = VideoLesson(
@@ -31,12 +32,31 @@ var videoLesson = VideoLesson(
     Python provides three ways for executing the loops. While all the ways provide similar basic functionality,
     they differ in their syntax and condition checking time.
     """,
-    duration: "15 seconds",
+    duration: "15 seconds video",
     durationImage: "timer",
-    stamps: [Stamp(seconds: 1, text: "0:00 : Introduction to Loops"),
-             Stamp(seconds: 2, text: "2:00 : While Loop"),
-             Stamp(seconds: 3, text: "3:00 : For Loop - 1"),
-             Stamp(seconds: 4, text: "3:00 : For Loop - 2"),
-             Stamp(seconds: 5, text: "4:00 : For Loop - 3"),
-             Stamp(seconds: 8, text: "8:00 : Conclusion and Recap")]
+    stamps: [Stamp(seconds: 0, textTime: "0:00", textDescription: "Introduction to Loops"),
+             Stamp(seconds: 2, textTime: "2:00", textDescription: "While Loop"),
+             Stamp(seconds: 3, textTime: "3:00", textDescription: "For Loop - 1"),
+             Stamp(seconds: 3, textTime: "3:00", textDescription: "For Loop - 2"),
+             Stamp(seconds: 4, textTime: "4:00", textDescription: "For Loop - 3"),
+             Stamp(seconds: 8, textTime: "8:00", textDescription: "Conclusion and Recap")]
 )
+
+struct LessonSettingsData {
+    var titleFont: String
+    var descriptionFont: String
+    var titleColor: String
+    var descriptionColor: String
+    var timeImage: String
+    var additionalTextColor: String
+    var timeStampsColor: String
+}
+
+var lessonSettingsData = LessonSettingsData(
+    titleFont: "Rubik-Medium",
+    descriptionFont: "Rubik-Regular",
+    titleColor: "MainText",
+    descriptionColor: "Grey",
+    timeImage: "timer",
+    additionalTextColor: "Grey2",
+    timeStampsColor: "Primary")

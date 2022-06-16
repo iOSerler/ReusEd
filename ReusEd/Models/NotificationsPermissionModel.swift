@@ -30,6 +30,6 @@ var notificationPermissionData = NotificationPermission(
     arrowImage: "up-arrow",
     buttonColor: "Primary",
     titleColor: "MainText",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     buttonTextColor: "White"
 )

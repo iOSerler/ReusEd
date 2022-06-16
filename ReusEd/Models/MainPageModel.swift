@@ -22,7 +22,7 @@ var mainPageData = MainPageData(
     titleFont: "Rubik-Medium",
     descriptionFont: "Rubik-Regular",
     titleColor: "MainText",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     timeImage: "timer",
     additionalTextColor: "Primary",
     filterButtonImage: "filter",
