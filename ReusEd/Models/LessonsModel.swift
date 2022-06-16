@@ -50,6 +50,12 @@ struct LessonSettingsData {
     var timeImage: String
     var additionalTextColor: String
     var timeStampsColor: String
+    var copyrightText: String
+    var copyrightColor: String
+    var previousBottonImage: String
+    var nextButtonImage: String
+    var priviousButtonText: String
+    var nextButtonText: String
 }
 
 var lessonSettingsData = LessonSettingsData(
@@ -59,7 +65,15 @@ var lessonSettingsData = LessonSettingsData(
     descriptionColor: "Grey",
     timeImage: "timer",
     additionalTextColor: "Grey2",
-    timeStampsColor: "Primary")
+    timeStampsColor: "Primary",
+    timeStampsColor: "Primary",
+    copyrightText: "Copyright © ReusEd 2022, Inc. All rights reserved worldwide",
+    copyrightColor: "Grey3",
+    previousBottonImage: "Previous",
+    nextButtonImage: "Next",
+    priviousButtonText: "Previous",
+    nextButtonText: "Next"
+    )
 
 
 struct TextImageLesson: Identifiable {
