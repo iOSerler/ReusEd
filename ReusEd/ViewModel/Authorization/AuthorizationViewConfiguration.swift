@@ -43,7 +43,7 @@ class AuthorizationViewConfiguration: ObservableObject {
 
     struct Colors {
 
-        var subMessage = Color("Gray")
+        var subMessage = Color("Grey2")
         var accent = Color("Primary")
     }
 

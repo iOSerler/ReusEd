@@ -10,39 +10,44 @@ import SwiftUI
 struct HomeView: View {
     @State private var selection = 0
         var body: some View {
-            TabView(selection: $selection) {
-                Tab1TestView()
-                    .tabItem {
-                        selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
-                        Text(tabBar.tab1Title)
-                            .font(.custom(tabBar.textFont, size: 14))
-                    }
-                    .tag(0)
 
-                Tab2TestView()
-                    .tabItem {
-                        selection == 1 ? Image( tabBar.tab2OnImage) : Image( tabBar.tab2OffImage)
-                        Text(tabBar.tab2Title)
-                            .font(.custom(tabBar.textFont, size: 14))
-                    }
-                    .tag(1)
+                TabView(selection: $selection) {
+                    
+                    MainPageView(pageSettings: mainPageData)
+                        .tabItem {
+                            selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
+                            Text(tabBar.tab1Title)
+                                .font(.custom(tabBar.textFont, size: 14))
+                        }
+                        .tag(0)
 
-                Tab3TestView()
-                    .tabItem {
-                        selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
-                        Text(tabBar.tab3Title)
-                            .font(.custom(tabBar.textFont, size: 14))
-                    }
-                    .tag(2)
+                    ScoresView()
+                        .tabItem {
+                            selection == 1 ? Image( tabBar.tab2OnImage) : Image( tabBar.tab2OffImage)
+                            Text(tabBar.tab2Title)
+                                .font(.custom(tabBar.textFont, size: 14))
+                        }
+                        .tag(1)
 
-                Tab4TestView()
-                    .tabItem {
-                        selection == 3 ? Image( tabBar.tab4OnImage) : Image(tabBar.tab4OffImage)
-                        Text(tabBar.tab4Title)
-                            .font(.custom(tabBar.textFont, size: 14))
-                    }
-                    .tag(3)
-            }.accentColor(Color(tabBar.textColor))
+                    SavedCoursesListView(courses: courses, coursesListType: .saved)
+                        .tabItem {
+//                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
+                            selection == 2 ?
+                                Image(systemName: "arrow.down.to.line.circle") : Image(systemName: "arrow.down.to.line")
+                            Text(tabBar.tab3Title)
+                                .font(.custom(tabBar.textFont, size: 14))
+                        }
+                        .tag(2)
+
+                    ProfileView()
+                        .tabItem {
+                            selection == 3 ? Image( tabBar.tab4OnImage) : Image(tabBar.tab4OffImage)
+                            Text(tabBar.tab4Title)
+                                .font(.custom(tabBar.textFont, size: 14))
+                        }
+                        .tag(3)
+                }.accentColor(Color(tabBar.textColor))
+
         }
 
 }
