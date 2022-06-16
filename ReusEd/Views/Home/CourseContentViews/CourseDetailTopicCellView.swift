@@ -24,7 +24,7 @@ struct CourseDetailTopicCellView: View {
     var body: some View {
         HStack(alignment: .top) {
             Image(icon)
-                .padding(.leading, 20)
+//                .padding(.leading, 20)
             VStack(alignment: .leading) {
                 Text(topic.title)
                     .font(.custom(courseDetailAssets.topicTitleFont!, size: 14))

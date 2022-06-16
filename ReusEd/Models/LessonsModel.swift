@@ -60,3 +60,70 @@ var lessonSettingsData = LessonSettingsData(
     timeImage: "timer",
     additionalTextColor: "Grey2",
     timeStampsColor: "Primary")
+
+
+struct TextImageLesson: Identifiable {
+    var id: Int
+    var title: String
+    var description: String
+    var textImageSections: [TextImageSection]
+    
+}
+
+struct TextImageSection: Identifiable {
+    var id: Int?
+    var title: String
+    var textImages: [TextImage]
+    
+}
+
+struct TextImage: Identifiable {
+    var id: Int?
+    var text: String? = ""
+    var image: String? = ""
+}
+
+
+var textImageLesson = TextImageLesson(
+    id: 1,
+    title: "Control Flow",
+    description: "dfgthdsfghdfghdf dfht dfgthdfhrdhd fdsfsdf sdfhsdfdfh",
+    textImageSections: [
+        TextImageSection(
+            title: "1. dsfgbs sdfgsfdg", textImages: [
+                TextImage(text: "skdhfbgklssdfgsdfgsdfgsdfg serfg sdfgsdfg sdfg sdfg sdfg sdfg sdfgdfhbgk sdhfbg isdfgikshbhdfkbglskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "bigPoster2"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg ifgj dfgyj dfyhj frhjdfhykj dfgjnxdgjdftjdfsdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg")
+            ]
+        ),
+        TextImageSection(
+            title: "2. sdfgrsdfgsdfg", textImages: [
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgiksdfgsdfg sdfg sdfgsdfgs drtgsdfgsdf gsdfg sdfgsdfg sdfgsdfgsdfgshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna")
+            ]
+        ),
+        TextImageSection(
+            title: "3. dsfgrefrtghsdfghdsf", textImages: [
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna")
+            ]
+        ),
+        TextImageSection(
+            title: "4. sdfrg sdrthygsdfg sdf", textImages: [
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbsdgrsdrf gsdfgsdfgsdf gsdfhsd hdfyghikj fcghk fgjxdfgjdfgjdfgjgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna"),
+                TextImage(text: "skdhfbgklsdfhbgk sdhfbg isdfgikshbhdfkbgfk hbgsio drghdlskfjbg skldfjg ikdssdfg sdfg sdfgsdfg sdfg sdfgsdfgsdfg sdfg", image: "Anna")
+            ]
+        )
+    ]
+)

@@ -17,9 +17,12 @@ struct CourseDetailSectionCellView: View {
                     .font(.custom(courseDetailAssets.sectionNameFont!, size: 14))
                     .foregroundColor(Color(courseDetailAssets.sectionNameColor!))
                 ForEach(section.topics) { topic in
-                    CourseDetailTopicCellView(topic: topic)
-                    Divider()
-                        .padding(.vertical, 20)
+                    NavigationLink(destination: TextImageLessonView(textImageLesson: textImageLesson)) {
+                        CourseDetailTopicCellView(topic: topic)
+                        Divider()
+                            .padding(.vertical, 20)
+                    }
+                    
                 }
                 
             }
