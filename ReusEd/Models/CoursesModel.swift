@@ -92,11 +92,11 @@ struct CourseAssets {
 var courseDetailAssets = CourseAssets(
     authorIcon: "author",
     authorTextFont: "Rubik-Regular",
-    authorTextColor: "Gray2",
+    authorTextColor: "Grey2",
     titleFont: "Rubik-Medium",
     descriptionFont: "Rubik-Regular",
     titleColor: "MainText",
-    descriptionColor: "Gray",
+    descriptionColor: "Grey",
     durationOffIcon: "time-past",
     beginCourseButtonIcon: "Polygon",
     beginCourseButtonFont: "Rubik-Medium",
@@ -108,8 +108,8 @@ var courseDetailAssets = CourseAssets(
     topicTitleFont: "Rubik-Medium",
     topicTitleColor: "MainText",
     topicDescriptionFont: "Rubik-Regular",
-    topicDescriptionColor: "Gray",
+    topicDescriptionColor: "Grey",
     sectionNameFont: "Rubik-Regular",
-    sectionNameColor: "Gray"
+    sectionNameColor: "Grey"
 )
 

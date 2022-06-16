@@ -26,55 +26,25 @@ struct VideoLessonView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(info.title)
-                        .font(Font.custom(settings.titleFont, size: 18))
-                        .foregroundColor(Color(settings.titleColor))
                     
-                    HStack {
-                        Image(info.durationImage)
-                        Text(info.duration)
-                            .font(Font.custom(settings.descriptionFont, size: 14))
-                            .foregroundColor(Color(settings.additionalTextColor))
-                    }
+                    VideoDescriptionView(settings: settings,
+                                         title: info.title,
+                                         durationImage: info.durationImage,
+                                         duration: info.duration,
+                                         description: info.description)
                     
-                    Text(info.description)
-                        .font(Font.custom(settings.descriptionFont, size: 14))
-                        .foregroundColor(Color(settings.descriptionColor))
+                    VideoStampsIView(settings: settings,
+                                     stamps: info.stamps,
+                                     player: $player)
                     
-                    HStack(alignment: .firstTextBaseline) {
-                        Text("Video Stamps")
-                            .font(Font.custom(settings.titleFont, size: 18))
-                            .foregroundColor(Color(settings.titleColor))
-                        Text("- Click to watch directly")
-                            .font(Font.custom(settings.descriptionFont, size: 12))
-                            .foregroundColor(Color(settings.additionalTextColor))
-                    }
-                    
-                    ForEach(0..<info.stamps.count) { ind in
-                        HStack {
-                            Text("\u{2022}")
-                                .foregroundColor(Color(settings.titleColor))
-                            Text(String(info.stamps[ind].textTime))
-                                .font(Font.custom(settings.descriptionFont, size: 14))
-                                .foregroundColor(Color(settings.timeStampsColor))
-                                .onTapGesture {
-                                    player.seek(to: CMTime(seconds: info.stamps[ind].seconds,
-                                                           preferredTimescale: 1))
-                                }
-                            
-                            Text(": "+String(info.stamps[ind].textDescription))
-                                .font(Font.custom(settings.descriptionFont, size: 14))
-                                .foregroundColor(Color(settings.titleColor))
-                            
-                        }
-                    }
+                    LessonFooterView(settings: settings)
+                        .padding(.leading, 8)
+                       
                     
                 }.padding()
             }
             
-            Spacer()
-            
-        }.ignoresSafeArea()
+        }
         .onAppear {
             self.player = AVPlayer(url: URL(string: info.url)!)
         }
