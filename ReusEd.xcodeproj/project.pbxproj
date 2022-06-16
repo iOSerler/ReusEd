@@ -61,6 +61,10 @@
 		7A1227802859088700536CC5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12277F2859088700536CC5 /* ProfileView.swift */; };
 		7A122782285908D200536CC5 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A122781285908D200536CC5 /* ScoresView.swift */; };
 		7A12278528590DCB00536CC5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12278428590DCB00536CC5 /* NotificationsView.swift */; };
+		7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */; };
+		7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */; };
+		7AF7450A2859F2C20075B429 /* CoursesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745092859F2C20075B429 /* CoursesDetailModel.swift */; };
+		7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */; };
 		B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */; };
 		B7E0D5C22855432E0051E70B /* RadioButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5C12855432E0051E70B /* RadioButtonList.swift */; };
 		CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */; };
@@ -125,6 +129,10 @@
 		7A12277F2859088700536CC5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		7A122781285908D200536CC5 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		7A12278428590DCB00536CC5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailTopicCellView.swift; sourceTree = "<group>"; };
+		7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailSectionCellView.swift; sourceTree = "<group>"; };
+		7AF745092859F2C20075B429 /* CoursesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDetailModel.swift; sourceTree = "<group>"; };
+		7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCoursesData.swift; sourceTree = "<group>"; };
 		AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
 		B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationStorage.swift; sourceTree = "<group>"; };
 		B7E0D5C12855432E0051E70B /* RadioButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonList.swift; sourceTree = "<group>"; };
@@ -245,9 +253,11 @@
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
 				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
-				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
 				2AD95C1C285890BE00E220E8 /* MainPageModel.swift */,
 				2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */,
+				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
+				7AF745092859F2C20075B429 /* CoursesDetailModel.swift */,
+				7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +366,8 @@
 			children = (
 				2ADB39A42859F9C800A7992D /* VideoLessons */,
 				7A1227772858CA5400536CC5 /* CourseDetailView.swift */,
+				7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */,
+				7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */,
 			);
 			path = CourseContentViews;
 			sourceTree = "<group>";
@@ -540,6 +552,7 @@
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,
 				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,
+				7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */,
 				2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */,
 				2AD95C212858C20500E220E8 /* FilterButtonView.swift in Sources */,
 				7A038C05284F324300B1376F /* ContentView.swift in Sources */,
@@ -551,7 +564,10 @@
 				7A1227752858BFD100536CC5 /* CourseListView.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
 				2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */,
+				7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */,
+				7AF7450A2859F2C20075B429 /* CoursesDetailModel.swift in Sources */,
 				7A038C5128509F0E00B1376F /* SignUpView.swift in Sources */,
+				7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */,
 				7A1227802859088700536CC5 /* ProfileView.swift in Sources */,
 				7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */,
 				7A122782285908D200536CC5 /* ScoresView.swift in Sources */,

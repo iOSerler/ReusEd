@@ -43,7 +43,8 @@ struct CourseListView: View {
                 VStack(alignment: .center, spacing: 10) {
                     ForEach(displayCourses) { course in
                         NavigationLink {
-                            CourseDetailView(courseId: course.id)
+//                            CourseDetailView(courseId: course.id)
+                            CourseDetailView(courseId: course.id, isText: false, detail: course.detail)
                         } label: {
                             CourseListCellView(course: course)
                         }
