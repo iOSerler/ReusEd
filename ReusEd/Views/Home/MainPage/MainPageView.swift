@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct MainPageView: View {
-    var pageSettings: MainPageData = mainPageData
-    @ObservedObject var coursesViewModel = CoursesViewModel(
-        courses: courses,
-        categories: categories,
-        categoryCourses: categoryCourses)
+    var pageSettings: MainPageData
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var searchText: String = ""
     @State private var showCategory: Set<Int> = []
     var body: some View {
@@ -40,6 +37,9 @@ struct MainPageView: View {
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView()
+        MainPageView(pageSettings: mainPageData, coursesViewModel: CoursesViewModel(
+            courses: courses,
+            categories: categories,
+            categoryCourses: categoryCourses))
     }
 }
