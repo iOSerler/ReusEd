@@ -103,7 +103,7 @@ struct SignUpView: View {
                                 },
                            label: {
                                     Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
-                                        .accentColor(Color("Gray"))
+                                        .accentColor(Color("Grey"))
                                 })
                 }
                 .padding(.top, 20)
@@ -140,7 +140,7 @@ struct SignUpView: View {
                                 },
                            label: {
                                     Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
-                                        .accentColor(Color("Gray"))
+                                        .accentColor(Color("Grey"))
                                 })
                 }
                 .padding(.top, 20)
@@ -154,7 +154,7 @@ struct SignUpView: View {
 
             Text("By continuing, you agree to our")
                 .font(.custom("Rubik-Regular", size: 12))
-                .foregroundColor(Color("Gray"))
+                .foregroundColor(Color("Grey"))
 
             HStack {
                 Link("Terms of Service", destination: URL(string: "https://www.apple.com")!)

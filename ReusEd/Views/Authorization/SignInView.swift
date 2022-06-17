@@ -85,7 +85,7 @@ struct SignInView: View {
                                 },
                          label: {
                                   Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                      .accentColor(Color("Gray"))
+                                      .accentColor(Color("Grey"))
                               }
                     )
                 }
