@@ -20,8 +20,8 @@ struct AuthorizationResult {
         case auto
     }
     
-    /// User token
-    let token: String
+    /// User
+    let user: AppUser
     
     /// Type by which user was authorized
     let type: AuthorizationType

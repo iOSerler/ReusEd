@@ -5,7 +5,7 @@
 //  Created by Danila on 13.06.2022.
 //
 
-import Foundation
+import FirebaseAuth
 
 class AuthorizationViewModel: ObservableObject {
 
@@ -15,23 +15,43 @@ class AuthorizationViewModel: ObservableObject {
 
     @Published var currentType: AuthorizationForm =
         AuthorizationViewModel.wasAuthorized ? .signIn : .signUp
+    
+    @Published var isLoading = false
 
     var onAuthorized: ((AuthorizationResult) -> Void)?
 
-    // TODO:
     func signUp(name: String, email: String, password: String) {
-        let result = AuthorizationResult(token: "", type: .signUp)
-        completeAuthorization(with: result)
+        isLoading = true
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            guard error == nil, let authResult = authResult else {
+                return
+            }
+            
+            let result = AuthorizationResult(
+                user: AppUser(authResult.user),
+                type: .signIn
+            )
+            self?.completeAuthorization(with: result)
+        }
     }
 
-    // TODO:
     func signIn(email: String, password: String) {
-        let result = AuthorizationResult(token: "", type: .signIn)
-        completeAuthorization(with: result)
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard error == nil, let authResult = authResult  else {
+                return
+            }
+            
+            let result = AuthorizationResult(
+                user: AppUser(authResult.user),
+                type: .signIn
+            )
+            self?.completeAuthorization(with: result)
+        }
     }
 
     private func completeAuthorization(with result: AuthorizationResult) {
         AuthorizationViewModel.wasAuthorized = true
+        isLoading = false
         onAuthorized?(result)
     }
 }
@@ -49,5 +69,13 @@ extension AuthorizationViewModel {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultKeys.wasAuthorized)
         }
+    }
+}
+
+fileprivate extension AppUser {
+    init(_ user: User) {
+        self.id = user.uid
+        self.displayName = user.displayName
+        self.email = user.email
     }
 }
