@@ -16,7 +16,6 @@ struct OptionData: Identifiable, Equatable {
 struct QuestionData {
     var id: Int
     var type: String
-    var stepsImage: String
     var image: String
     var title: String
     var titleFont: String

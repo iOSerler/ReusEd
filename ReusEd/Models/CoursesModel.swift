@@ -112,4 +112,3 @@ var courseDetailAssets = CourseAssets(
     sectionNameFont: "Rubik-Regular",
     sectionNameColor: "Grey"
 )
-

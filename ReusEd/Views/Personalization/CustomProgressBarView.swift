@@ -15,7 +15,7 @@ struct CustomProgressBarView: View {
         HStack {
             Spacer()
             
-            ForEach(0..<numQuestions, id: \.self) { ind in
+            ForEach(1..<numQuestions, id: \.self) { ind in
                 HStack {
                     ZStack {
                         Circle()
@@ -23,7 +23,7 @@ struct CustomProgressBarView: View {
                             .foregroundColor(ind > self.progress ?
                                              Color(progressBarData.passiveBackgroundColor) :
                                              Color(progressBarData.activeBackgroundColor))
-                        Text(String(ind+1))
+                        Text(String(ind))
                             .font(Font.custom(progressBarData.font, size: 12))
                             .foregroundColor(ind > self.progress ?
                                                 Color(progressBarData.passiveTextColor) :
@@ -31,11 +31,24 @@ struct CustomProgressBarView: View {
                     }.frame(height: 20, alignment: .center)
                      
                     
-                    (ind+1) != numQuestions ?
-                        Divider()
-                        .rotationEffect(.degrees(90)) : nil
+                    Divider()
+                    .rotationEffect(.degrees(90))
                 }
             }
+            
+            ZStack {
+                Circle()
+                    .scale(x: 1, y: 1)
+                    .foregroundColor(numQuestions > self.progress ?
+                                     Color(progressBarData.passiveBackgroundColor) :
+                                     Color(progressBarData.activeBackgroundColor))
+                Image(systemName: "checkmark")
+                    .font(Font.custom(progressBarData.font, size: 12))
+                    .foregroundColor(numQuestions > self.progress ?
+                                        Color(progressBarData.passiveTextColor) :
+                                        Color(progressBarData.activeTextColor))
+            }.frame(height: 20, alignment: .center)
+            
             
             Spacer()
             

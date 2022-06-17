@@ -12,8 +12,6 @@ var questions = [question1, question2, question3, question4]
 var question1 = QuestionData(
     id: 1,
     type: "checkbox",
-    // FIXME should NOT be a hardcoded image, rather a custom view
-    stepsImage: "Question1",
     image: "",
     title: "How did your hear about us?",
     titleFont: "Rubik-Medium",
@@ -38,7 +36,6 @@ var question1 = QuestionData(
 var question2 = QuestionData(
     id: 2,
     type: "checkbox",
-    stepsImage: "Question2",
     image: "",
     title: "What’s your interest?",
     titleFont: "Rubik-Medium",
@@ -62,7 +59,6 @@ var question2 = QuestionData(
 var question3 = QuestionData(
     id: 3,
     type: "singleChoice",
-    stepsImage: "Question3",
     image: "",
     title: "Pick your learning goal",
     titleFont: "Rubik-Medium",
@@ -84,7 +80,6 @@ var question3 = QuestionData(
 var question4 = QuestionData(
     id: 4,
     type: "image",
-    stepsImage: "Question4",
     image: "All-set",
     title: "You’re all set!",
     titleFont: "Rubik-Medium",

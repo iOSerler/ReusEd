@@ -12,11 +12,14 @@ struct PersonalizationQuestionView: View {
     @EnvironmentObject var viewRouter: ViewRouter
 
     let question: QuestionData
+    @Binding var progress: Int
 
     var body: some View {
 
         VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
-            Image(question.stepsImage)
+            CustomProgressBarView(progressBarData: progressBarData,
+                                  numQuestions: questions.count,
+                                  progress: $progress)
 
             if !question.image.isEmpty {
                 Image(question.image)
@@ -47,7 +50,7 @@ struct PersonalizationQuestionView: View {
 
             if question.id < 4 {
 
-                NavigationLink(destination: PersonalizationQuestionView(question: questions[question.id - 1])) {
+                NavigationLink(destination: PersonalizationQuestionView(question: questions[question.id], progress: $progress)) {
                     Text("Continue")
                         .font(Font.custom(question1.titleFont, size: 16))
                         .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
@@ -88,6 +91,9 @@ struct PersonalizationQuestionView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(false).transition(.opacity)
+        .onAppear {
+            self.progress = question.id
+        }
     }
 
     func saveAnswerData() {
@@ -102,11 +108,5 @@ struct PersonalizationQuestionView: View {
 
         }
 
-    }
-}
-
-struct Question1View_Previews: PreviewProvider {
-    static var previews: some View {
-        PersonalizationQuestionView(question: question1)
     }
 }
