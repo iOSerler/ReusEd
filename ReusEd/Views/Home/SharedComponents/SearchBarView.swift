@@ -41,6 +41,7 @@ struct SearchBarView: View {
                     .padding(.trailing, 5)
                     .onTapGesture(perform: {
                         isEditing = false
+                        self.searchText = ""
                         UIApplication.shared
                             .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) : nil
