@@ -52,9 +52,3 @@ struct CourseCardView: View {
         
     }
 }
-
-struct CourseCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPageView()
-    }
-}
