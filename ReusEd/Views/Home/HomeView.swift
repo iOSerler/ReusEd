@@ -13,7 +13,11 @@ struct HomeView: View {
 
                 TabView(selection: $selection) {
                     
-                    MainPageView(pageSettings: mainPageData)
+                    MainPageView(pageSettings: mainPageData,
+                                 coursesViewModel: CoursesViewModel(
+                                    courses: courses,
+                                    categories: categories,
+                                    categoryCourses: categoryCourses))
                         .tabItem {
                             selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
                             Text(tabBar.tab1Title)

@@ -15,11 +15,11 @@ struct CourseListView: View {
     var displayCourses: [Course] {
         switch coursesListType {
         case .popular:
-            return courses.filter { $0.isPopular }
+            return courses.filter { $0.isPopular && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case .saved:
-            return courses.filter { $0.isSaved }
+            return courses.filter { $0.isSaved && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case .category:
-            return courses
+            return courses.filter { searchText.isEmpty ? true : $0.title.contains(searchText) }
         }
     }
     
