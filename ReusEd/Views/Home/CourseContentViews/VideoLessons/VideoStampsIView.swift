@@ -23,7 +23,7 @@ struct VideoStampsIView: View {
                     .foregroundColor(Color(settings.additionalTextColor))
             }
             
-            ForEach(0..<stamps.count) { ind in
+            ForEach(0..<stamps.count, id: \.self) { ind in
                 HStack {
                     Text("\u{2022}")
                         .foregroundColor(Color(settings.titleColor))

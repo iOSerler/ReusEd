@@ -16,7 +16,7 @@ struct TextImageLessonSectionView: View {
                     .font(.custom(lessonSettingsData.titleFont, size: 16))
                     .padding(.bottom, 20)
                 
-                ForEach(0..<textImageSection.textImages.count) { ind in
+                ForEach(0..<textImageSection.textImages.count, id: \.self) { ind in
                     TextImageView(textImage: textImageSection.textImages[ind])
                 }
             }
@@ -24,9 +24,3 @@ struct TextImageLessonSectionView: View {
        
     }
 }
-
-//struct TextImageLessonSectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TextImageLessonSectionView(textImageSection: textImageLesson.textImageSections[0])
-//    }
-//}

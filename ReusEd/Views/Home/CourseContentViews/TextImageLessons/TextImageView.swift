@@ -31,7 +31,7 @@ struct TextImageView: View {
 //                        .aspectRatio(contentMode: .fit)
                 )
                     
-                ////                        .padding(.horizontal, 20)
+                // .padding(.horizontal, 20)
             } else {
                 EmptyView()
             }

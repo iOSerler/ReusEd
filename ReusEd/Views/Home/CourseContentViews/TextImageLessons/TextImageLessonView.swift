@@ -12,7 +12,7 @@ struct TextImageLessonView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                ForEach(0..<textImageLesson.textImageSections.count) { ind in
+                ForEach(0..<textImageLesson.textImageSections.count, id: \.self) { ind in
                     TextImageLessonSectionView(textImageSection: textImageLesson.textImageSections[ind])
                 }
             }.navigationTitle(textImageLesson.title)
