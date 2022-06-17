@@ -19,7 +19,7 @@ struct CourseListView: View {
         case .saved:
             return courses.filter { $0.isSaved && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case .category:
-            return courses
+            return courses.filter { searchText.isEmpty ? true : $0.title.contains(searchText) }
         }
     }
     
