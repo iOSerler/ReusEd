@@ -66,7 +66,6 @@ var lessonSettingsData = LessonSettingsData(
     timeImage: "timer",
     additionalTextColor: "Grey2",
     timeStampsColor: "Primary",
-    timeStampsColor: "Primary",
     copyrightText: "Copyright © ReusEd 2022, Inc. All rights reserved worldwide",
     copyrightColor: "Grey3",
     previousBottonImage: "Previous",
