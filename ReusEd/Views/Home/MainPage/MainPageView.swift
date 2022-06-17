@@ -19,26 +19,18 @@ struct MainPageView: View {
         NavigationView {
             VStack(spacing: 20) {
                 ProfileHeaderView(image: "Anna",
-                                  text1: "Hello 👋",
-                                  text2: "Anna Dluzhinskaya",
-                                  settings: pageSettings)
+                                text1: "Hello 👋",
+                                text2: "Anna Dluzhinskaya",
+                                settings: pageSettings)
                 
                 SearchBarView(settings: pageSettings,
                               searchText: $searchText)
                 
                 FilterBarView(showCategory: $showCategory, settings: pageSettings)
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 30) {
-                        ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
-                            showCategory.count == 0 ?
-                            CourseSectionView(settings: pageSettings, categoryId: key) :
-                            (showCategory.contains(key) ?
-                             CourseSectionView(settings: pageSettings, categoryId: key) : nil)
-                            
-                        }
-                    }
-                }
+                ScrollCourseSectionView(settings: pageSettings,
+                                        categoriesId: Array(coursesViewModel.categoryCourses.keys).sorted(by: <),
+                                        showCategory: $showCategory)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
