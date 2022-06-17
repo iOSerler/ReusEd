@@ -98,4 +98,20 @@ var question4 = QuestionData(
     buttonTextColor: "White"
 )
 
+struct ProgressBarData {
+    var font: String
+    var activeTextColor: String
+    var passiveTextColor: String
+    var activeBackgroundColor: String
+    var passiveBackgroundColor: String
+}
+
+var progressBarData = ProgressBarData(
+    font: "Rubik-Regular",
+    activeTextColor: "White",
+    passiveTextColor: "Primary2",
+    activeBackgroundColor: "Primary",
+    passiveBackgroundColor: "PrimaryLight")
+
+
 var personalizationQuestionSelectedItemsDict: [Int: Set<Int>] = [1: [], 2: [], 3: []]
