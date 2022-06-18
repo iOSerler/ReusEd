@@ -113,7 +113,7 @@ struct SignInView: View {
                 if self.email == "11" && self.password == "11" {
                     self.showingAlert = false
                 } else {
-                    self.showingAlert = password != self.password || email != self.email ? true : false
+                    self.showingAlert = password != self.password || email != self.email || email.isEmpty ? true : false
                 }
 
                 if  !self.showingAlert {

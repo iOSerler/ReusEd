@@ -73,7 +73,6 @@ struct PersonalizationQuestionView: View {
 
                     DispatchQueue.main.async {
                         withAnimation {
-                            // FIXME: should not know about authorization
                             viewRouter.completePersonalization()
                         }
                     }
