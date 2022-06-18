@@ -35,7 +35,7 @@ struct FilterView: View {
             Button(
                 action: {
                     if self.type != .popular {
-                        self.applyFilter = true
+                        self.applyFilter.toggle()
                     }
                     dismiss()
                     

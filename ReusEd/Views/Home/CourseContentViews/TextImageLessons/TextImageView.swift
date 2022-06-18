@@ -11,52 +11,28 @@ struct TextImageView: View {
     var textImage: TextImage
     
     var body: some View {
-        
-        //        ScrollView(.vertical, showsIndicators: false) {
-        VStack(alignment: .center) {
+        VStack(alignment: .leading) {
             if let text = textImage.text {
                 
                 Text(text)
                     .font(.custom(lessonSettingsData.descriptionFont, size: 14))
+                    .foregroundColor(Color(lessonSettingsData.titleColor))
                     .padding(.horizontal, 0)
+                    .multilineTextAlignment(.leading)
             }
             
-          
-            
+
             if let image = textImage.image {
-                AnyView(
-                    Image(image)
-                        .resizable()
-                        .scaledToFit()
-//                        .aspectRatio(contentMode: .fit)
-                )
-                    
-                // .padding(.horizontal, 20)
-            } else {
-                EmptyView()
+                Image(image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
-            
         }
-        //            .padding()
-        //        }
-        
-        
     }
 }
 
 struct TextImageView_Previews: PreviewProvider {
     static var previews: some View {
         TextImageView(textImage: textImageLesson.textImageSections[0].textImages[0])
-    }
-}
-
-extension Image {
-
-    public init?(data: Data?) {
-        guard let data = data,
-            let uiImage = UIImage(data: data) else {
-                return nil
-        }
-        self = Image(uiImage: uiImage)
     }
 }
