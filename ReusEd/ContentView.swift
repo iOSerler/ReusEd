@@ -20,9 +20,9 @@ struct ContentView: View {
                 NavigationView {
                     switch viewRouter.currentPage {
                     case .introductionPages:
-                        IntroductionPagesView().transition(.opacity)
+                        IntroductionPagesView().navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
                     case .notificationPermission:
-                        DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
+                        DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity.animation(.easeIn))
                     case .personalizationPages:
                         PersonalizationQuestionView(question: questions[0], progress: $progress).transition(.opacity)
                     case .authorization:
@@ -30,7 +30,12 @@ struct ContentView: View {
                     case .homeTabView:
                         HomeView().transition(.opacity)
                     }
-                }.accentColor(Color(question1.titleColor))
+                }
+                .navigationBarHidden(true)
+                .accentColor(Color(question1.titleColor))
+                
+                
+                
             }
         }.onAppear {
             viewRouter.setStartingPage()

@@ -14,12 +14,13 @@ struct TextImageLessonSectionView: View {
             VStack(alignment: .leading) {
                 Text(textImageSection.title)
                     .font(.custom(lessonSettingsData.titleFont, size: 16))
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 1)
                 
                 ForEach(0..<textImageSection.textImages.count, id: \.self) { ind in
                     TextImageView(textImage: textImageSection.textImages[ind])
                 }
             }
+            .padding(.bottom, 30)
 //        }
        
     }

@@ -10,15 +10,6 @@
 		<string>Rubik-Regular.ttf</string>
 		<string>Rubik-Italic.ttf</string>
 	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string>background</string>
-		<key>UIImageName</key>
-		<string>Group 239</string>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
-	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
 </dict>

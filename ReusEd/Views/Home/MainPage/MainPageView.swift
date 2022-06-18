@@ -31,6 +31,7 @@ struct MainPageView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
+            .padding(.top, 7)
         }
     }
 }

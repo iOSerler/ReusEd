@@ -21,6 +21,14 @@ class NotificationHandler {
 
             } else if let error = error {
                 print(error.localizedDescription)
+                
+            } else {
+                print("authorization not granted")
+                DispatchQueue.main.async {
+                    withAnimation {
+                        viewRouter.completeNotificationPermission()
+                    }
+                }
             }
         }
     }

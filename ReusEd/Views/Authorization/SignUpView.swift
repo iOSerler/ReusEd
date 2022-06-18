@@ -18,6 +18,15 @@ struct SignUpView: View {
     @State private var alertText: String = ""
     @State private var isSecured1: Bool = true
     @State private var isSecured2: Bool = true
+    @FocusState  var focusedField: SignUpField?
+    
+    enum SignUpField {
+        case name
+        case email
+        case password
+        case confirmPassword
+    }
+    
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
@@ -43,6 +52,8 @@ struct SignUpView: View {
                     Image("user")
 
                     TextField("Name", text: $name)
+                        .focused($focusedField, equals: .name)
+                        .textContentType(.givenName)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.custom("Rubik-Regular", size: 14))
                         .autocapitalization(.none)
@@ -50,6 +61,7 @@ struct SignUpView: View {
                         .padding(.leading, 12)
                         .frame(width: UIScreen.main.bounds.width - 100, alignment: .leading)
                         .keyboardType(.default)
+                        .submitLabel(.next)
                     Spacer()
 
                 }
@@ -58,6 +70,8 @@ struct SignUpView: View {
                     Image("envelope")
 
                     TextField("Email", text: $email)
+                        .focused($focusedField, equals: .email)
+                        .textContentType(.emailAddress)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.custom("Rubik-Regular", size: 14))
                         .autocapitalization(.none)
@@ -65,6 +79,7 @@ struct SignUpView: View {
                         .padding(.leading, 12)
                         .frame(width: UIScreen.main.bounds.width - 100, alignment: .leading)
                         .keyboardType(.emailAddress)
+                        .submitLabel(.next)
                     Spacer()
 
                 }
@@ -74,9 +89,10 @@ struct SignUpView: View {
 
                 HStack {
                     Image("lock")
-
                     if self.isSecured1 {
                         SecureField("Password", text: $password)
+                            .focused($focusedField, equals: .password)
+                            .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
                             .font(.custom("Rubik-Regular", size: 14))
                             .autocapitalization(.none)
@@ -84,16 +100,19 @@ struct SignUpView: View {
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
                             .keyboardType(.default)
+                            .submitLabel(.next)
 
                     } else {
                         TextField("Password", text: $password)
+                            .focused($focusedField, equals: .password)
+                            .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
                             .font(.custom("Rubik-Regular", size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
-                            .keyboardType(.default)
+                            .submitLabel(.next)
                     }
 
                     Spacer()
@@ -112,25 +131,28 @@ struct SignUpView: View {
 
                 HStack {
                     Image("lock")
-
                     if self.isSecured2 {
                         SecureField("Confirm Password", text: $confirmPassword)
+                            .focused($focusedField, equals: .confirmPassword)
+                            .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
                             .font(.custom("Rubik-Regular", size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
-                            .keyboardType(.default)
+                            
                     } else {
                         TextField("Confirm Password", text: $confirmPassword)
+                            .focused($focusedField, equals: .confirmPassword)
+                            .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
                             .font(.custom("Rubik-Regular", size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
-                            .keyboardType(.default)
+                            
                     }
 
                     Spacer()
@@ -149,6 +171,18 @@ struct SignUpView: View {
             }
             .padding(.top, 50)
             .padding(.horizontal, 20)
+            .onSubmit {
+                switch focusedField {
+                case .name:
+                    focusedField = .email
+                case .email:
+                    focusedField = .password
+                case .password:
+                    focusedField = .confirmPassword
+                default:
+                    print("Creating account…")
+                }
+            }
 
             Spacer()
 

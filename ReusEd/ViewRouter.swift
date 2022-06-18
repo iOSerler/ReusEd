@@ -41,7 +41,6 @@ class ViewRouter: ObservableObject {
                 return
             }
 
-            /// FIXME: should check authorization with authorization service, not in user defaults
             let userToken = UserDefaults.standard.value(forKey: "userToken")
 
             guard userToken != nil else {
