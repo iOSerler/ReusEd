@@ -15,15 +15,14 @@ struct CourseDetailSectionCellView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(section.title)
-                    .font(.custom(courseDetailAssets.sectionNameFont!, size: 14))
-                    .foregroundColor(Color(courseDetailAssets.sectionNameColor!))
+                    .font(.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.detailsTextColor))
                 ForEach(section.topics) { topic in
                     NavigationLink(destination: TextImageLessonView(textImageLesson: textImageLesson)) {
                         CourseDetailTopicCellView(topic: topic, settings: settings)
-                        Divider()
-                            .padding(.vertical, 20)
+                            .padding(.vertical, 10)
                     }
-                    
+                    Divider()
                 }
                 
             }

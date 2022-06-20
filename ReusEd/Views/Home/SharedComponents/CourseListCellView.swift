@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CourseListCellView: View {
     var settings: ViewAssets
-    var icons: Icons
     @State var course: Course
     var body: some View {
         VStack(alignment: .center) {
@@ -40,7 +39,7 @@ struct CourseListCellView: View {
                             .padding(.trailing, 30)
                         Text("\(Int((course.progress * 100).rounded())) %")
                             .font(.custom(settings.descriptionFont, size: 12))
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(settings.mainTextColor))
                     }
                     .padding(.bottom, 1)
                     

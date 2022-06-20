@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScrollCourseSectionView: View {
     var settings: ViewAssets
-    var icons: Icons
     var categoriesId: [Int]
     @Binding var showCategory: Set<Int>
     var body: some View {
@@ -17,9 +16,9 @@ struct ScrollCourseSectionView: View {
             VStack(spacing: 30) {
                 ForEach(categoriesId, id: \.self) {ind in
                     showCategory.count == 0 ?
-                    CourseSectionView(settings: settings, icons: icons, categoryId: ind) :
+                    CourseSectionView(settings: settings, categoryId: ind) :
                     (showCategory.contains(ind) ?
-                     CourseSectionView(settings: settings, icons: icons, categoryId: ind) : nil)
+                     CourseSectionView(settings: settings, categoryId: ind) : nil)
                     
                 }
             }

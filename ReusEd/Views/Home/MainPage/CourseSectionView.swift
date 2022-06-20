@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CourseSectionView: View {
     var settings: ViewAssets
-    var icons: Icons
     var categoryId: Int
     @ObservedObject var coursesViewModel = CoursesViewModel(
         courses: courses,
@@ -28,7 +27,7 @@ struct CourseSectionView: View {
                 Spacer()
                 NavigationLink(destination: CourseListView(
                     courses: coursesViewModel.getCoursesByCategory(categoryId: categoryId),
-                    pageSettings: settings, icons: icons,
+                    pageSettings: settings,
                     coursesListType: .category,
                     title: coursesViewModel.categories[categoryId-1].title)) {
                     Text("View All")

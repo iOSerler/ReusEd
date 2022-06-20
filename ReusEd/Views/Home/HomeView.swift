@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var settings: ViewAssets
-    var icons: Icons
     var tabBarSettings: TabBarData
     @State private var selection = 0
         var body: some View {
@@ -17,7 +16,6 @@ struct HomeView: View {
                 TabView(selection: $selection) {
                     
                     MainPageView(settings: settings,
-                                 icons: icons,
                                  coursesViewModel: CoursesViewModel(
                                     courses: courses,
                                     categories: categories,
@@ -37,7 +35,7 @@ struct HomeView: View {
                         }
                         .tag(1)
 
-                    SavedCoursesListView(courses: courses, settings: settings, icons: icons, coursesListType: .saved)
+                    SavedCoursesListView(courses: courses, settings: settings, coursesListType: .saved)
                         .tabItem {
 //                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
                             selection == 2 ?
@@ -62,6 +60,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(settings: viewAssets, icons: icons, tabBarSettings: tabBar)
+        HomeView(settings: viewAssets, tabBarSettings: tabBar)
     }
 }

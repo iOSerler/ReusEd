@@ -40,9 +40,24 @@ var viewAssets = ViewAssets(
 struct Icons {
     var timeImage: String
     var filterButtonImage: String
+    var authorIcon: String?
+    var durationOnIcon: String?
+    var durationOffIcon: String?
+    var beginCourseButtonIcon: String?
+    var videoIcon: String?
+    var documentIcon: String?
+    var quizIcon: String?
+    var courseDetailBackground: String?
 }
 
 
 var icons = Icons(
     timeImage: "timer",
-    filterButtonImage: "filter")
+    filterButtonImage: "filter",
+    authorIcon: "author",
+    durationOffIcon: "time-past",
+    beginCourseButtonIcon: "Polygon",
+    videoIcon: "film",
+    documentIcon: "document",
+    quizIcon: "resources",
+    courseDetailBackground: "courseBackground")

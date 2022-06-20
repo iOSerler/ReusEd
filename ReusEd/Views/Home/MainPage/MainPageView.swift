@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainPageView: View {
     var settings: ViewAssets
-    var icons: Icons
     @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var searchText: String = ""
     @State private var showCategory: Set<Int> = []
@@ -29,7 +28,6 @@ struct MainPageView: View {
                               filterButtonImage: icons.filterButtonImage)
                 
                 ScrollCourseSectionView(settings: settings,
-                                        icons: icons,
                                         categoriesId: Array(coursesViewModel.categoryCourses.keys).sorted(by: <),
                                         showCategory: $showCategory)
             }
@@ -43,7 +41,6 @@ struct MainPageView: View {
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
         MainPageView(settings: viewAssets,
-                     icons: icons,
                      coursesViewModel: CoursesViewModel(
                         courses: courses,
                         categories: categories,

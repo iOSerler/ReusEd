@@ -11,7 +11,6 @@ struct CourseListView: View {
     @State var courses: [Course]
     @State private var searchText: String = ""
     var pageSettings: ViewAssets
-    var icons: Icons
     var coursesListType: CoursesListType
     var displayCourses: [Course] {
         switch coursesListType {
@@ -47,7 +46,7 @@ struct CourseListView: View {
 //                            CourseDetailView(courseId: course.id)
                             CourseDetailView(courseId: course.id, settings: pageSettings, isText: false, detail: course.detail)
                         } label: {
-                            CourseListCellView(settings: pageSettings, icons: icons, course: course)
+                            CourseListCellView(settings: pageSettings, course: course)
                         }
                         Divider()
                             .padding(.horizontal, 20)
@@ -62,6 +61,6 @@ struct CourseListView: View {
 
 struct CourseListView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseListView(courses: courses, pageSettings: viewAssets, icons: icons, coursesListType: .popular)
+        CourseListView(courses: courses, pageSettings: viewAssets, coursesListType: .popular)
     }
 }

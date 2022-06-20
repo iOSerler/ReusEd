@@ -10,7 +10,6 @@ import SwiftUI
 struct SavedCoursesListView: View {
     @State var courses: [Course]
     var settings: ViewAssets
-    var icons: Icons
     @State private var selectedSegment = 0
     var coursesListType: CoursesListType
     var body: some View {
@@ -24,7 +23,7 @@ struct SavedCoursesListView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                CourseListView(courses: courses, pageSettings: settings, icons: icons, coursesListType: {
+                CourseListView(courses: courses, pageSettings: settings, coursesListType: {
                     switch selectedSegment {
                     case 0:
                         return .saved
