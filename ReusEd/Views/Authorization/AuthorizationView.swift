@@ -28,6 +28,14 @@ public struct AuthorizationView: View {
                 SignUpView()
                     .transition(.slide)
             }
+
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(
+                        CircularProgressViewStyle(tint: viewConfiguration.colors.accent)
+                    )
+                    .scaleEffect(1.5)
+            }
         }
         .environmentObject(viewModel)
         .environmentObject(viewConfiguration)

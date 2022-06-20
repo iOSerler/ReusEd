@@ -23,6 +23,8 @@ class AuthorizationViewModel: ObservableObject {
     func signUp(name: String, email: String, password: String) {
         isLoading = true
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            defer { self?.isLoading = false }
+
             guard error == nil, let authResult = authResult else {
                 return
             }
@@ -36,7 +38,10 @@ class AuthorizationViewModel: ObservableObject {
     }
 
     func signIn(email: String, password: String) {
+        isLoading = true
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            defer { self?.isLoading = false }
+            
             guard error == nil, let authResult = authResult  else {
                 return
             }
@@ -51,7 +56,6 @@ class AuthorizationViewModel: ObservableObject {
 
     private func completeAuthorization(with result: AuthorizationResult) {
         AuthorizationViewModel.wasAuthorized = true
-        isLoading = false
         onAuthorized?(result)
     }
 }
