@@ -14,18 +14,18 @@ struct CourseDetailTopicCellView: View {
     var icon: String {
         switch topic.type {
         case .document:
-            return icons.videoIcon!
+            return icons.videoIcon
         case .video:
-            return icons.documentIcon!
+            return icons.documentIcon
         case .quiz:
-            return icons.quizIcon!
+            return icons.quizIcon
         }
     }
-
+    
     var body: some View {
         HStack(alignment: .top) {
             Image(icon)
-               .padding(.trailing, 10)
+                .padding(.trailing, 10)
             VStack(alignment: .leading) {
                 Text(topic.title)
                     .font(.custom(settings.titleFont, size: 14))
@@ -39,13 +39,13 @@ struct CourseDetailTopicCellView: View {
                     ProgressView(value: topic.progress * 100, total: 100)
                         .accentColor(topic.progress != 1 ? Color(settings.primaryColor) : Color(.green))
                         .padding(.trailing, 20)
-
+                    
                     Text("\(Int((topic.progress * 100).rounded())) %")
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.trailing, 20)
                 }
-              
+                
             }
             
             Spacer()

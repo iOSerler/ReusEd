@@ -22,6 +22,10 @@ struct CourseDetailSectionCellView: View {
                         CourseDetailTopicCellView(topic: topic, settings: settings)
                             .padding(.vertical, 10)
                     }
+//                    NavigationLink(destination: VideoLessonView(settings: settings)) {
+//                        CourseDetailTopicCellView(topic: topic, settings: settings)
+//                            .padding(.vertical, 10)
+//                    }
                     Divider()
                 }
                 

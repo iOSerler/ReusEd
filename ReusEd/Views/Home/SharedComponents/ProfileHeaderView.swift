@@ -40,7 +40,7 @@ struct ProfileHeaderView: View {
             }
             
             NavigationLink(destination: NotificationsView()) {
-                Image("tab3OffImage")
+                Image(icons.notificationIcon)
                     .foregroundColor(Color(settings.mainTextColor))
                     .padding(.trailing, 20)
             }
