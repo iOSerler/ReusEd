@@ -18,13 +18,7 @@ struct QuestionData {
     var type: String
     var image: String
     var title: String
-    var titleFont: String
-    var titleColor: String
     var description: String
-    var descriptionFont: String
-    var descriptionColor: String
     var optionsData: [OptionData]
-    var optionsColor: String
-    var buttonColor: String
-    var buttonTextColor: String
+    
 }

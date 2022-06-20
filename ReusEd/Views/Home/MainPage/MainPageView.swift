@@ -15,9 +15,9 @@ struct MainPageView: View {
         NavigationView {
             VStack(spacing: 20) {
                 ProfileHeaderView(image: "Anna",
-                                text1: "Hello 👋",
-                                text2: "Anna Dluzhinskaya",
-                                settings: settings)
+                                  text1: "Hello 👋",
+                                  text2: "Anna Dluzhinskaya",
+                                  settings: settings)
                 
                 FilterBarView(showCategory: $showCategory,
                               settings: settings,

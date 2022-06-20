@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
     @State var progress: Int = 1
     var body: some View {
-
+        
         VStack {
             if viewRouter.currentPage == .homeTabView {
                 HomeView(settings: viewAssets, tabBarSettings: tabBar).transition(.opacity)
@@ -20,19 +20,19 @@ struct ContentView: View {
                 NavigationView {
                     switch viewRouter.currentPage {
                     case .introductionPages:
-                        IntroductionPagesView().navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
+                        IntroductionPagesView(settings: viewAssets).navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
                     case .notificationPermission:
-                        DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity.animation(.easeIn))
+                        DailyNotificationsPermissionView(settings: viewAssets).navigationBarHidden(true).transition(.opacity.animation(.easeIn))
                     case .personalizationPages:
-                        PersonalizationQuestionView(question: questions[0], progress: $progress).transition(.opacity)
+                        PersonalizationQuestionView(settings: viewAssets, question: questions[0], progress: $progress).transition(.opacity)
                     case .authorization:
-                        SignInView().transition(.opacity)
+                        SignInView(settings: viewAssets).transition(.opacity)
                     case .homeTabView:
                         HomeView(settings: viewAssets, tabBarSettings: tabBar).transition(.opacity)
                     }
                 }
                 .navigationBarHidden(true)
-                .accentColor(Color(question1.titleColor))
+                .accentColor(Color(settings.mainTextColor))
                 
                 
                 
@@ -40,12 +40,12 @@ struct ContentView: View {
         }.onAppear {
             viewRouter.setStartingPage()
         }
-
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(settings: viewAssets)
     }
 }

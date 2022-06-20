@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct TextImageLessonSectionView: View {
+    var settings: ViewAssets
     @State var textImageSection: TextImageSection
     var body: some View {
-//        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-                Text(textImageSection.title)
-                    .font(.custom(lessonSettingsData.titleFont, size: 16))
-                    .padding(.bottom, 1)
-                
-                ForEach(0..<textImageSection.textImages.count, id: \.self) { ind in
-                    TextImageView(textImage: textImageSection.textImages[ind])
-                }
+        VStack(alignment: .leading) {
+            Text(textImageSection.title)
+                .font(.custom(settings.titleFont, size: 16))
+                .padding(.bottom, 1)
+            
+            ForEach(0..<textImageSection.textImages.count, id: \.self) { ind in
+                TextImageView(settings: settings, textImage: textImageSection.textImages[ind])
             }
-            .padding(.bottom, 30)
-//        }
-       
+        }
+        .padding(.bottom, 30)
     }
 }

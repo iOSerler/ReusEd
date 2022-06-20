@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct VideoStampsIView: View {
-    var settings: LessonSettingsData
+    var settings: ViewAssets
     var stamps: [Stamp]
     @Binding var player: AVPlayer
     var body: some View {
@@ -17,19 +17,19 @@ struct VideoStampsIView: View {
             HStack(alignment: .firstTextBaseline) {
                 Text("Video Stamps")
                     .font(Font.custom(settings.titleFont, size: 18))
-                    .foregroundColor(Color(settings.titleColor))
+                    .foregroundColor(Color(settings.mainTextColor))
                 Text("- Click to watch directly")
                     .font(Font.custom(settings.descriptionFont, size: 12))
-                    .foregroundColor(Color(settings.additionalTextColor))
+                    .foregroundColor(Color(settings.detailsTextColor))
             }
             
             ForEach(0..<stamps.count, id: \.self) { ind in
                 HStack {
                     Text("\u{2022}")
-                        .foregroundColor(Color(settings.titleColor))
+                        .foregroundColor(Color(settings.mainTextColor))
                     Text(String(stamps[ind].textTime))
                         .font(Font.custom(settings.descriptionFont, size: 14))
-                        .foregroundColor(Color(settings.timeStampsColor))
+                        .foregroundColor(Color(settings.primaryColor))
                         .onTapGesture {
                             player.seek(to: CMTime(seconds: stamps[ind].seconds,
                                                    preferredTimescale: 1))
@@ -37,7 +37,7 @@ struct VideoStampsIView: View {
                     
                     Text(": "+String(stamps[ind].textDescription))
                         .font(Font.custom(settings.descriptionFont, size: 14))
-                        .foregroundColor(Color(settings.titleColor))
+                        .foregroundColor(Color(settings.mainTextColor))
                     
                 }
             }

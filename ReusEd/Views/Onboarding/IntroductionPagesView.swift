@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroductionPagesView: View {
+    var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
     @State private var selectedIndex: Int = 0
     var body: some View {
@@ -23,14 +24,14 @@ struct IntroductionPagesView: View {
                             //                                    .padding(.top, UIScreen.main.bounds.height / 15)
                             
                             Text(page.title)
-                                .font(.custom(page.titleFont, size: 18))
-                                .foregroundColor(Color(page.titleColor))
+                                .font(.custom(settings.titleFont, size: 18))
+                                .foregroundColor(Color(settings.mainTextColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top, 30)
                             
                             Text(page.description)
-                                .font(.custom(page.descriptionFont, size: 14))
-                                .foregroundColor(Color(page.descriptionColor))
+                                .font(.custom(settings.descriptionFont, size: 14))
+                                .foregroundColor(Color(settings.descriptionTextColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top, 12)
                                 .padding(.horizontal, 20)
@@ -48,8 +49,8 @@ struct IntroductionPagesView: View {
                     Capsule()
                         .foregroundColor(
                             selectedIndex == index ?
-                            Color(introductionPagesData[0].buttonColor) :
-                                Color(introductionPagesData[0].capsuleOffColor)
+                            Color(settings.primaryColor) :
+                                Color(settings.primaryLighterColor)
                         )
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
@@ -70,17 +71,17 @@ struct IntroductionPagesView: View {
             }, label: {
                 HStack {
                     Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
-                        .font(.custom(introductionPagesData[0].titleFont, size: 16))
-                        .foregroundColor(Color(introductionPagesData[0].buttonTextColor))
+                        .font(.custom(settings.titleFont, size: 16))
+                        .foregroundColor(Color(settings.buttonTextColor))
                     
-                    Image(introductionPagesData[0].buttonImage)
+                    Image(icons.onBoardingButtonIcon)
                         .padding(.leading, 20)
                 }
                 
-                .font(Font.custom("Rubik-Medium", size: 16))
+                .font(Font.custom(settings.titleFont, size: 16))
                 .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                .background(Color(introductionPagesData[0].buttonColor))
-                .accentColor(Color(introductionPagesData[0].buttonTextColor))
+                .background(Color(settings.primaryColor))
+                .accentColor(Color(settings.buttonTextColor))
                 .cornerRadius(UIScreen.main.bounds.width/35)
             })
             .padding(.top, 15)
@@ -95,9 +96,9 @@ struct IntroductionPagesView: View {
             Text("skip")
                 .foregroundColor(
                     selectedIndex != introductionPagesData.count - 1 ?
-                    Color(introductionPagesData[0].descriptionColor) : Color.clear
+                    Color(settings.descriptionTextColor) : Color.clear
                 )
-                .font(.custom("Rubik-Regular", size: 14))
+                .font(.custom(settings.descriptionFont, size: 14))
         }).disabled(selectedIndex == introductionPagesData.count - 1)
                             
                             
@@ -108,6 +109,6 @@ struct IntroductionPagesView: View {
 
 struct IntroductionPagesView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroductionPagesView()
+        IntroductionPagesView(settings: viewAssets)
     }
 }

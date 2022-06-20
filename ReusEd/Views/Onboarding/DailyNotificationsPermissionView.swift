@@ -8,63 +8,65 @@
 import SwiftUI
 
 struct DailyNotificationsPermissionView: View {
+    var settings: ViewAssets
     var body: some View {
         ZStack {
-            DailyNotificationsView()
+            DailyNotificationsView(settings: settings)
         }
     }
 }
 
 struct DailyNotificationsPermissionView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyNotificationsPermissionView()
+        DailyNotificationsPermissionView(settings: viewAssets)
     }
 }
 
 struct DailyNotificationsView: View {
+    var settings: ViewAssets
     let notify = NotificationHandler()
     @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
         ZStack {
-
+            
             VStack(alignment: .center) {
                 VStack(alignment: .center, spacing: UIScreen.main.bounds.width / 7) {
-                    Image(notificationPermissionData.logoImage)
-
+                    Image(icons.bookLogo)
+                    
                     Text(notificationPermissionData.title)
-                        .font(Font.custom(notificationPermissionData.titleFont, size: 20))
-                        .foregroundColor(Color(notificationPermissionData.titleColor))
+                        .font(Font.custom(settings.titleFont, size: 20))
+                        .foregroundColor(Color(settings.mainTextColor))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(idealHeight: .infinity)
-
+                    
                     VStack(alignment: .center, spacing: 20) {
                         Image(notificationPermissionData.alertImage)
-
+                        
                         Image(notificationPermissionData.arrowImage)
                             .offset(x: UIScreen.main.bounds.width/8, y: 0)
-
+                        
                         Text(notificationPermissionData.description)
-                            .font(Font.custom(notificationPermissionData.titleFont, size: 14))
-                            .foregroundColor(Color(notificationPermissionData.descriptionColor))
+                            .font(Font.custom(settings.titleFont, size: 14))
+                            .foregroundColor(Color(settings.descriptionTextColor))
                             .multilineTextAlignment(.center)
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(idealHeight: .infinity)
                             .padding(.horizontal)
                     }
                 }
-
+                
                 Spacer()
-
+                
                 Button(
                     action: {
                         notify.askPermission(viewRouter: viewRouter)
                     }, label: {
                         Text("Continue")
-                            .font(Font.custom(notificationPermissionData.titleFont, size: 16))
+                            .font(Font.custom(settings.titleFont, size: 16))
                             .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                            .background(Color(notificationPermissionData.buttonColor))
-                            .accentColor(Color(notificationPermissionData.buttonTextColor))
+                            .background(Color(settings.primaryColor))
+                            .accentColor(Color(settings.buttonTextColor))
                             .cornerRadius(UIScreen.main.bounds.width/35)
                             .padding(.bottom, UIScreen.main.bounds.height/30)
                     }

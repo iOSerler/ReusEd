@@ -40,14 +40,22 @@ var viewAssets = ViewAssets(
 struct Icons {
     var timeImage: String
     var filterButtonImage: String
-    var authorIcon: String?
-    var durationOnIcon: String?
-    var durationOffIcon: String?
-    var beginCourseButtonIcon: String?
-    var videoIcon: String?
-    var documentIcon: String?
-    var quizIcon: String?
-    var courseDetailBackground: String?
+    var authorIcon: String
+    var durationOnIcon: String
+    var durationOffIcon: String
+    var beginCourseButtonIcon: String
+    var videoIcon: String
+    var documentIcon: String
+    var quizIcon: String
+    var courseDetailBackground: String
+    var onBoardingButtonIcon: String
+    var bookLogo: String
+    var notificationIcon: String
+    var email: String
+    var password: String
+    var user: String
+    var checkboxFull: String
+    var checkboxEmpty: String
 }
 
 
@@ -55,9 +63,20 @@ var icons = Icons(
     timeImage: "timer",
     filterButtonImage: "filter",
     authorIcon: "author",
+    durationOnIcon: "timer",
     durationOffIcon: "time-past",
     beginCourseButtonIcon: "Polygon",
     videoIcon: "film",
     documentIcon: "document",
     quizIcon: "resources",
-    courseDetailBackground: "courseBackground")
+    courseDetailBackground: "courseBackground",
+    onBoardingButtonIcon: "arrow-right",
+    bookLogo: "bookLogo",
+    notificationIcon: "tab3OffImage",
+    email: "envelope",
+    password: "lock",
+    user: "user",
+    checkboxFull: "checkbox-full",
+    checkboxEmpty: "checkbox-empty"
+    
+)

@@ -22,7 +22,7 @@ struct AutoRotateVideoPlayerView: View {
                         self.showFullScreen = false
                     }
                 }
-        }
+            }
     }
     
     private var playerView: some View {
@@ -51,7 +51,7 @@ struct AVPlayerControllerRepresentable: UIViewControllerRepresentable {
         showFullScreen ? controller.enterFullScreen(animated: true) : controller.exitFullScreen(animated: true)
         
     }
-        
+    
 }
 
 class AVPlayerViewControllerRotatable: AVPlayerViewController {

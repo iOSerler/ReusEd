@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct TextImageLessonView: View {
+    var settings: ViewAssets
     var textImageLesson: TextImageLesson
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             Text(textImageLesson.description)
-                .font(.custom(lessonSettingsData.descriptionFont, size: 14))
-                .foregroundColor(Color(lessonSettingsData.descriptionColor))
+                .font(.custom(settings.descriptionFont, size: 14))
+                .foregroundColor(Color(settings.descriptionTextColor))
                 .multilineTextAlignment(.leading)
             HStack {
-                Image("time-past")
+                Image(icons.durationOffIcon)
                 
                 Text(textImageLesson.duration)
-                    .font(.custom(lessonSettingsData.descriptionFont, size: 14))
-                    .foregroundColor(Color(lessonSettingsData.additionalTextColor))
+                    .font(.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.detailsTextColor))
                     .padding(.leading, 10)
                 Spacer()
             }
@@ -28,17 +29,11 @@ struct TextImageLessonView: View {
             
             VStack {
                 ForEach(0..<textImageLesson.textImageSections.count, id: \.self) { ind in
-                    TextImageLessonSectionView(textImageSection: textImageLesson.textImageSections[ind])
+                    TextImageLessonSectionView(settings: settings, textImageSection: textImageLesson.textImageSections[ind])
                 }
             }.navigationTitle(textImageLesson.title)
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.horizontal, 20)
         }
-    }
-}
-
-struct TextImageLessonView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextImageLessonView(textImageLesson: textImageLesson)
     }
 }

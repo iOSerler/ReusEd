@@ -13,7 +13,6 @@ struct VideoLesson: Identifiable {
     var title: String
     var description: String
     var duration: String
-    var durationImage: String
     var stamps: [Stamp]
 }
 
@@ -33,7 +32,6 @@ var videoLesson = VideoLesson(
     they differ in their syntax and condition checking time.
     """,
     duration: "15 min video",
-    durationImage: "timer",
     stamps: [Stamp(seconds: 0, textTime: "0:00", textDescription: "Introduction to Loops"),
              Stamp(seconds: 120, textTime: "2:00", textDescription: "While Loop"),
              Stamp(seconds: 180, textTime: "3:00", textDescription: "For Loop - 1"),
@@ -42,37 +40,21 @@ var videoLesson = VideoLesson(
              Stamp(seconds: 480, textTime: "8:00", textDescription: "Conclusion and Recap")]
 )
 
-struct LessonSettingsData {
-    var titleFont: String
-    var descriptionFont: String
-    var titleColor: String
-    var descriptionColor: String
-    var timeImage: String
-    var additionalTextColor: String
-    var timeStampsColor: String
+struct LessonFooter {
     var copyrightText: String
-    var copyrightColor: String
     var previousBottonImage: String
     var nextButtonImage: String
     var priviousButtonText: String
     var nextButtonText: String
 }
 
-var lessonSettingsData = LessonSettingsData(
-    titleFont: "Rubik-Medium",
-    descriptionFont: "Rubik-Regular",
-    titleColor: "MainText",
-    descriptionColor: "Grey",
-    timeImage: "timer",
-    additionalTextColor: "Grey2",
-    timeStampsColor: "Primary",
+var lessonFooter = LessonFooter(
     copyrightText: "Copyright © ReusEd 2022, Inc. All rights reserved worldwide",
-    copyrightColor: "Grey3",
     previousBottonImage: "Previous",
     nextButtonImage: "Next",
     priviousButtonText: "Previous",
     nextButtonText: "Next"
-    )
+)
 
 
 struct TextImageLesson: Identifiable {

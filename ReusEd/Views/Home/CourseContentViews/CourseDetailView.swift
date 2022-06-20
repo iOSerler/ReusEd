@@ -19,22 +19,18 @@ struct CourseDetailView: View {
             ZStack {
                 VStack {
                     
-                       
-                        Image(icons.courseDetailBackground!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .edgesIgnoringSafeArea(.all)
-                       
-                      
-                       
                     
-                  
+                    Image(icons.courseDetailBackground)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    
                     Spacer()
-                              
+                    
                     CourseDetailMainView(settings: settings, detail: detail)
-                        
+                    
                         .offset(y: -UIScreen.main.bounds.height / 5)
-//                        .padding()
                         .padding(.bottom, -UIScreen.main.bounds.height / 3.9)
                     Button {
                         print("sgfdfg")
@@ -42,7 +38,7 @@ struct CourseDetailView: View {
                         Text("Continue")
                             .font(.custom(settings.titleFont, size: 14))
                             .foregroundColor(Color(settings.buttonTextColor))
-                        Image(icons.beginCourseButtonIcon!)
+                        Image(icons.beginCourseButtonIcon)
                             .padding(.leading, 10)
                     }
                     
@@ -51,8 +47,8 @@ struct CourseDetailView: View {
                     .cornerRadius(25)
                     .shadow(color: Color(settings.primaryColor), radius: 10)
                     .offset(y: -UIScreen.main.bounds.height / 1.48)
-                   
-
+                    
+                    
                 }
                 
             }
@@ -69,7 +65,6 @@ struct CourseDetailMainView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 if let detail = detail {
-                    //                    Image(courseDetailAssets.courseDetailBackground)
                     Text(detail.title)
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
@@ -80,17 +75,17 @@ struct CourseDetailMainView: View {
                         .padding(.top, 20)
                     
                     HStack {
-                        Image(icons.authorIcon!)
+                        Image(icons.authorIcon)
                         Text(detail.authorName)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
-                        Image(icons.durationOffIcon!)
+                        Image(icons.durationOffIcon)
                             .padding(.leading, 20)
                         Text(detail.duration)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
-                                         
+                        
                         Spacer()
                     }
                     .padding(.top, 20)
@@ -110,8 +105,6 @@ struct CourseDetailMainView: View {
         }
         .background(.white)
         .cornerRadius(25)
-        
-        
     }
     
 }

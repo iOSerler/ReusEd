@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VideoDescriptionView: View {
-    var settings: LessonSettingsData
+    var settings: ViewAssets
     var title: String
     var durationImage: String
     var duration: String
@@ -17,18 +17,18 @@ struct VideoDescriptionView: View {
         VStack(alignment: .leading, spacing: 20) {
             Text(title)
                 .font(Font.custom(settings.titleFont, size: 18))
-                .foregroundColor(Color(settings.titleColor))
+                .foregroundColor(Color(settings.mainTextColor))
             
             HStack {
                 Image(durationImage)
                 Text(duration)
                     .font(Font.custom(settings.descriptionFont, size: 14))
-                    .foregroundColor(Color(settings.additionalTextColor))
+                    .foregroundColor(Color(settings.detailsTextColor))
             }
             
             Text(description)
                 .font(Font.custom(settings.descriptionFont, size: 14))
-                .foregroundColor(Color(settings.descriptionColor))
+                .foregroundColor(Color(settings.descriptionTextColor))
         }
     }
 }

@@ -44,9 +44,9 @@ struct SearchBarView: View {
                         self.searchText = ""
                         UIApplication.shared
                             .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }) : nil
+                    }) : nil
             }
         }.frame(height: UIScreen.main.bounds.height/22)
-         .padding([.leading, .trailing], UIScreen.main.bounds.width/25)
+            .padding([.leading, .trailing], UIScreen.main.bounds.width/25)
     }
 }

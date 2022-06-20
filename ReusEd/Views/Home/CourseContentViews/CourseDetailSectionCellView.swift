@@ -18,7 +18,7 @@ struct CourseDetailSectionCellView: View {
                     .font(.custom(settings.descriptionFont, size: 14))
                     .foregroundColor(Color(settings.detailsTextColor))
                 ForEach(section.topics) { topic in
-                    NavigationLink(destination: TextImageLessonView(textImageLesson: textImageLesson)) {
+                    NavigationLink(destination: TextImageLessonView(settings: settings, textImageLesson: textImageLesson)) {
                         CourseDetailTopicCellView(topic: topic, settings: settings)
                             .padding(.vertical, 10)
                     }
