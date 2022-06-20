@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct CourseDetailSectionCellView: View {
+    var settings: ViewAssets
     @State var section: CourseSection
     var body: some View {
         
         HStack {
             VStack(alignment: .leading) {
                 Text(section.title)
-                    .font(.custom(courseDetailAssets.sectionNameFont!, size: 14))
-                    .foregroundColor(Color(courseDetailAssets.sectionNameColor!))
+                    .font(.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.detailsTextColor))
                 ForEach(section.topics) { topic in
-                    CourseDetailTopicCellView(topic: topic)
+                    NavigationLink(destination: TextImageLessonView(settings: settings, textImageLesson: textImageLesson)) {
+                        CourseDetailTopicCellView(topic: topic, settings: settings)
+                            .padding(.vertical, 10)
+                    }
+//                    NavigationLink(destination: VideoLessonView(settings: settings)) {
+//                        CourseDetailTopicCellView(topic: topic, settings: settings)
+//                            .padding(.vertical, 10)
+//                    }
                     Divider()
-                        .padding(.vertical, 20)
                 }
                 
             }
@@ -28,11 +35,5 @@ struct CourseDetailSectionCellView: View {
         }
         
         
-    }
-}
-
-struct CourseDetailSectionCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailSectionCellView(section: courses[0].detail!.sections[0])
     }
 }

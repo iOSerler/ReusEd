@@ -33,18 +33,18 @@ class AuthorizationViewConfiguration: ObservableObject {
 
     struct Assets {
 
-        var logo = "bookLogo"
+        var logo = icons.bookLogo
 
-        var nameInputIcon = "user"
-        var emailInputIcon = "envelope"
-        var passwordInputIcon = "lock"
-        var passwordShowInputIcon = "eye-crossed"
+        var nameInputIcon = icons.user
+        var emailInputIcon = icons.email
+        var passwordInputIcon = icons.password
+        var passwordShowInputIcon = icons.eyeCrossed
     }
 
     struct Colors {
 
-        var subMessage = Color("Grey2")
-        var accent = Color("Primary")
+        var subMessage = Color(viewAssets.placeholderTextColor)
+        var accent = Color(viewAssets.primaryColor)
     }
 
     struct Fonts {

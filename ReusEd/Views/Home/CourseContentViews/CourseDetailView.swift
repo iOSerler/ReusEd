@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CourseDetailView: View {
     @State var courseId: Int
+    var settings: ViewAssets
     @State var isText: Bool = true
     @State var detail: CourseDetail?
     var body: some View {
@@ -18,40 +19,36 @@ struct CourseDetailView: View {
             ZStack {
                 VStack {
                     
-                       
-                        Image(courseDetailAssets.courseDetailBackground!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .edgesIgnoringSafeArea(.all)
-                       
-                      
-                       
                     
-                  
+                    Image(icons.courseDetailBackground)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    
                     Spacer()
-                              
-                    CourseDetailMainView(detail: detail)
-                        
+                    
+                    CourseDetailMainView(settings: settings, detail: detail)
+                    
                         .offset(y: -UIScreen.main.bounds.height / 5)
-//                        .padding()
                         .padding(.bottom, -UIScreen.main.bounds.height / 3.9)
                     Button {
                         print("sgfdfg")
                     } label: {
                         Text("Continue")
-                            .font(.custom(courseDetailAssets.beginCourseButtonFont!, size: 14))
-                            .foregroundColor(Color(courseDetailAssets.beginCourseButtonTextColor!))
-                        Image(courseDetailAssets.beginCourseButtonIcon!)
+                            .font(.custom(settings.titleFont, size: 14))
+                            .foregroundColor(Color(settings.buttonTextColor))
+                        Image(icons.beginCourseButtonIcon)
                             .padding(.leading, 10)
                     }
                     
                     .frame(width: UIScreen.main.bounds.width / 1.8, height: 40)
-                    .background(Color("Primary"))
+                    .background(Color(settings.primaryColor))
                     .cornerRadius(25)
-                    .shadow(color: Color("Primary"), radius: 10)
+                    .shadow(color: Color(settings.primaryColor), radius: 10)
                     .offset(y: -UIScreen.main.bounds.height / 1.48)
-                   
-
+                    
+                    
                 }
                 
             }
@@ -60,50 +57,44 @@ struct CourseDetailView: View {
     }
 }
 
-struct CourseDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailView(courseId: 1, isText: false, detail: courses[0].detail)
-    }
-}
-
 struct CourseDetailMainView: View {
+    var settings: ViewAssets
     @State var detail: CourseDetail?
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 if let detail = detail {
-                    //                    Image(courseDetailAssets.courseDetailBackground)
                     Text(detail.title)
-                        .font(.custom(courseDetailAssets.titleFont!, size: 20))
-                        .foregroundColor(Color(courseDetailAssets.titleColor!))
+                        .font(.custom(settings.titleFont, size: 20))
+                        .foregroundColor(Color(settings.mainTextColor))
                     
                     Text(detail.description)
-                        .font(.custom(courseDetailAssets.descriptionFont!, size: 14))
-                        .foregroundColor(Color(courseDetailAssets.descriptionColor!))
+                        .font(.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.descriptionTextColor))
                         .padding(.top, 20)
                     
                     HStack {
-                        Image(courseDetailAssets.authorIcon!)
+                        Image(icons.authorIcon)
                         Text(detail.authorName)
-                            .font(.custom(courseDetailAssets.authorTextFont!, size: 14))
-                            .foregroundColor(Color(courseDetailAssets.authorTextColor!))
+                            .font(.custom(settings.descriptionFont, size: 14))
+                            .foregroundColor(Color(settings.detailsTextColor))
                         
-                        Image(courseDetailAssets.durationOffIcon!)
+                        Image(icons.durationOffIcon)
                             .padding(.leading, 20)
                         Text(detail.duration)
-                            .font(.custom(courseDetailAssets.authorTextFont!, size: 14))
-                            .foregroundColor(Color(courseDetailAssets.authorTextColor!))
-                                         
+                            .font(.custom(settings.descriptionFont, size: 14))
+                            .foregroundColor(Color(settings.detailsTextColor))
+                        
                         Spacer()
                     }
                     .padding(.top, 20)
                     Text("Lessons & Topics")
-                        .font(.custom(courseDetailAssets.titleFont!, size: 20))
-                        .foregroundColor(Color(courseDetailAssets.titleColor!))
+                        .font(.custom(settings.titleFont, size: 20))
+                        .foregroundColor(Color(settings.mainTextColor))
                         .padding(.top, 30)
                     ForEach(detail.sections) { section in
-                        CourseDetailSectionCellView(section: section)
+                        CourseDetailSectionCellView(settings: settings, section: section)
                     }
                 }
                 Spacer()
@@ -114,8 +105,6 @@ struct CourseDetailMainView: View {
         }
         .background(.white)
         .cornerRadius(25)
-        
-        
     }
     
 }

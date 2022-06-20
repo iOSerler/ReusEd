@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroductionPagesView: View {
+    var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
     @State private var selectedIndex: Int = 0
     var body: some View {
@@ -21,16 +22,16 @@ struct IntroductionPagesView: View {
                                 .scaledToFit()
                                 .frame(height: UIScreen.main.bounds.height / 3)
                             //                                    .padding(.top, UIScreen.main.bounds.height / 15)
-
+                            
                             Text(page.title)
-                                .font(.custom(page.titleFont, size: 18))
-                                .foregroundColor(Color(page.titleColor))
+                                .font(.custom(settings.titleFont, size: 18))
+                                .foregroundColor(Color(settings.mainTextColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top, 30)
-
+                            
                             Text(page.description)
-                                .font(.custom(page.descriptionFont, size: 14))
-                                .foregroundColor(Color(page.descriptionColor))
+                                .font(.custom(settings.descriptionFont, size: 14))
+                                .foregroundColor(Color(settings.descriptionTextColor))
                                 .multilineTextAlignment(.center)
                                 .padding(.top, 12)
                                 .padding(.horizontal, 20)
@@ -41,20 +42,20 @@ struct IntroductionPagesView: View {
             }
             .edgesIgnoringSafeArea(.top)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-
+            
             HStack(spacing: 12) {
-
+                
                 ForEach(0..<introductionPagesData.count, id: \.self) { index in
                     Capsule()
                         .foregroundColor(
                             selectedIndex == index ?
-                            Color(introductionPagesData[0].buttonColor) :
-                                Color(introductionPagesData[0].capsuleOffColor)
+                            Color(settings.primaryColor) :
+                                Color(settings.primaryLighterColor)
                         )
                         .frame(width: selectedIndex == index ? 16 : 8, height: 8)
                 }
             }
-
+            
             Button(action: {
                 if selectedIndex < introductionPagesData.count - 1 {
                     withAnimation {
@@ -70,36 +71,37 @@ struct IntroductionPagesView: View {
             }, label: {
                 HStack {
                     Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
-                        .font(.custom(introductionPagesData[0].titleFont, size: 16))
-                        .foregroundColor(Color(introductionPagesData[0].buttonTextColor))
-
-                    Image(introductionPagesData[0].buttonImage)
+                        .font(.custom(settings.titleFont, size: 16))
+                        .foregroundColor(Color(settings.buttonTextColor))
+                    
+                    Image(icons.onBoardingButtonIcon)
                         .padding(.leading, 20)
                 }
-
-                    .font(Font.custom("Rubik-Medium", size: 16))
-                    .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                    .background(Color(introductionPagesData[0].buttonColor))
-                    .accentColor(Color(introductionPagesData[0].buttonTextColor))
-                    .cornerRadius(UIScreen.main.bounds.width/35)
+                
+                .font(Font.custom(settings.titleFont, size: 16))
+                .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                .background(Color(settings.primaryColor))
+                .accentColor(Color(settings.buttonTextColor))
+                .cornerRadius(UIScreen.main.bounds.width/35)
             })
             .padding(.top, 15)
             .padding(.bottom, UIScreen.main.bounds.height/30)
         }
         .navigationBarItems(trailing:
-                                NavigationLink(
-                                    destination:
-                                        DailyNotificationsPermissionView()
-                                        .navigationBarBackButtonHidden(true)
-                                        .navigationBarHidden(true),
-                                    label: {
-                                        Text("skip")
-                                            .foregroundColor(
-                                                selectedIndex != introductionPagesData.count - 1 ?
-                                                    Color(introductionPagesData[0].descriptionColor) : Color.clear
-                                            )
-                                            .font(.custom("Rubik-Regular", size: 14))
-                                    }).disabled(selectedIndex == introductionPagesData.count - 1)
+                                
+                                Button(action: {
+            viewRouter.showNotificationPermission()
+            
+        }, label: {
+            Text("skip")
+                .foregroundColor(
+                    selectedIndex != introductionPagesData.count - 1 ?
+                    Color(settings.descriptionTextColor) : Color.clear
+                )
+                .font(.custom(settings.descriptionFont, size: 14))
+        }).disabled(selectedIndex == introductionPagesData.count - 1)
+                            
+                            
         )
         .navigationBarBackButtonHidden(true)
     }
@@ -107,6 +109,6 @@ struct IntroductionPagesView: View {
 
 struct IntroductionPagesView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroductionPagesView()
+        IntroductionPagesView(settings: viewAssets)
     }
 }

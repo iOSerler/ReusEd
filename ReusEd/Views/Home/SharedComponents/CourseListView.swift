@@ -10,16 +10,16 @@ import SwiftUI
 struct CourseListView: View {
     @State var courses: [Course]
     @State private var searchText: String = ""
-    var pageSettings: MainPageData = mainPageData
+    var pageSettings: ViewAssets
     var coursesListType: CoursesListType
     var displayCourses: [Course] {
         switch coursesListType {
         case .popular:
-            return courses.filter { $0.isPopular }
+            return courses.filter { $0.isPopular && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case .saved:
-            return courses.filter { $0.isSaved }
+            return courses.filter { $0.isSaved && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case .category:
-            return courses
+            return courses.filter { searchText.isEmpty ? true : $0.title.contains(searchText) }
         }
     }
     
@@ -43,10 +43,9 @@ struct CourseListView: View {
                 VStack(alignment: .center, spacing: 10) {
                     ForEach(displayCourses) { course in
                         NavigationLink {
-//                            CourseDetailView(courseId: course.id)
-                            CourseDetailView(courseId: course.id, isText: false, detail: course.detail)
+                            CourseDetailView(courseId: course.id, settings: pageSettings, isText: false, detail: course.detail)
                         } label: {
-                            CourseListCellView(course: course)
+                            CourseListCellView(settings: pageSettings, course: course)
                         }
                         Divider()
                             .padding(.horizontal, 20)
@@ -61,6 +60,6 @@ struct CourseListView: View {
 
 struct CourseListView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseListView(courses: courses, coursesListType: .popular)
+        CourseListView(courses: courses, pageSettings: viewAssets, coursesListType: .popular)
     }
 }

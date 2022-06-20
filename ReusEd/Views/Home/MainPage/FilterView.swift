@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FilterView: View {
-    
+    var settings: ViewAssets
     @Binding var applyFilter: Bool
     @State var type: CoursesListType = .popular
     @Environment(\.dismiss) var dismiss
@@ -23,28 +23,28 @@ struct FilterView: View {
                     self.type = .saved
                 }, label: {
                     Text("Show me saved")
-                        .font(Font.custom(notificationPermissionData.titleFont, size: 16))
+                        .font(Font.custom(settings.titleFont, size: 16))
                         .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                        .background(Color(notificationPermissionData.buttonColor))
-                        .accentColor(Color(notificationPermissionData.buttonTextColor))
+                        .background(Color(settings.primaryColor))
+                        .accentColor(Color(settings.buttonTextColor))
                         .cornerRadius(UIScreen.main.bounds.width/35)
                         .padding(.bottom, UIScreen.main.bounds.height/30)
                 }
             )
-
+            
             Button(
                 action: {
                     if self.type != .popular {
-                        self.applyFilter = true
+                        self.applyFilter.toggle()
                     }
                     dismiss()
                     
                 }, label: {
                     Text("Filter Courses")
-                        .font(Font.custom(notificationPermissionData.titleFont, size: 16))
+                        .font(Font.custom(settings.titleFont, size: 16))
                         .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                        .background(Color(notificationPermissionData.buttonColor))
-                        .accentColor(Color(notificationPermissionData.buttonTextColor))
+                        .background(Color(settings.primaryColor))
+                        .accentColor(Color(settings.buttonTextColor))
                         .cornerRadius(UIScreen.main.bounds.width/35)
                         .padding(.bottom, UIScreen.main.bounds.height/30)
                 }

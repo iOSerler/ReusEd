@@ -17,7 +17,8 @@ struct FilterBarView: View {
     @State private var applyFilter: Bool = false
     
     @Binding var showCategory: Set<Int>
-    var settings: MainPageData
+    var settings: ViewAssets
+    var filterButtonImage: String
     
     var body: some View {
         
@@ -29,31 +30,31 @@ struct FilterBarView: View {
                 },
                 label: {
                     VStack {
-                        Image(settings.filterButtonImage)
+                        Image(filterButtonImage)
                             .padding(.all, 10)
-                            .background(applyFilter ? Color(settings.filterButtonColor) : Color.white)
+                            .background(applyFilter ? Color(settings.primaryLighterColor) : Color.white)
                         
                     }.cornerRadius(UIScreen.main.bounds.width/40)
-                     .overlay(
-                        RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/40)
-                            .stroke(.gray, lineWidth: 0.4)
-                    )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/40)
+                                .stroke(.gray, lineWidth: 0.4)
+                        )
                 }).sheet(isPresented: $showingSheet) {
-                    FilterView(applyFilter: $applyFilter)
-                  }
-        
+                    FilterView(settings: viewAssets, applyFilter: $applyFilter)
+                }
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(coursesViewModel.categories) {category in
                         FilterButtonView(id: category.id,
                                          title: category.filterTitle!,
                                          titleFont: settings.descriptionFont,
-                                         titleColor: settings.descriptionColor,
-                                         pressColor: settings.filterButtonColor,
+                                         titleColor: settings.descriptionTextColor,
+                                         pressColor: settings.primaryLighterColor,
                                          showCategory: $showCategory)
                     }
                 }.frame(height: 50)
-                 .padding(.horizontal, 5)
+                    .padding(.horizontal, 5)
             }
         }.padding(.leading, 20)
         

@@ -11,10 +11,10 @@ import FirebaseCore
 @main
 struct ReusEdApp: App {
     @UIApplicationDelegateAdaptor (AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(settings: viewAssets)
                 .environmentObject(ViewRouter())
                 .onAppear() {
                     FirebaseApp.configure()

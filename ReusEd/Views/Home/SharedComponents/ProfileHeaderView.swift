@@ -11,7 +11,8 @@ struct ProfileHeaderView: View {
     var image: String
     var text1: String
     var text2: String
-    var settings: MainPageData
+    var settings: ViewAssets
+    @State private var showSearchView: Bool = false
     var body: some View {
         HStack {
             Image(image)
@@ -25,15 +26,22 @@ struct ProfileHeaderView: View {
             VStack(alignment: .leading) {
                 Text(text1)
                     .font(Font.custom(settings.descriptionFont, size: 14))
-                    .foregroundColor(Color(settings.descriptionColor))
+                    .foregroundColor(Color(settings.descriptionTextColor))
                 Text(text2)
                     .font(Font.custom(settings.titleFont, size: 14))
-                    .foregroundColor(Color(settings.titleColor))
+                    .foregroundColor(Color(settings.mainTextColor))
             }
             Spacer()
+            
+            NavigationLink(destination: SearchView(settings: settings)) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(Color(settings.mainTextColor))
+                    .padding(.trailing, 10)
+            }
+            
             NavigationLink(destination: NotificationsView()) {
-                Image("tab3OffImage")
-                    .foregroundColor(Color("Primary"))
+                Image(icons.notificationIcon)
+                    .foregroundColor(Color(settings.mainTextColor))
                     .padding(.trailing, 20)
             }
         }

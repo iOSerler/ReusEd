@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
-
+    @State var progress: Int = 1
     var body: some View {
-
+        
         VStack {
             if viewRouter.currentPage == .homeTabView {
-                HomeView().transition(.opacity)
+                HomeView(settings: viewAssets, tabBarSettings: tabBar).transition(.opacity)
             } else {
                 NavigationView {
                     switch viewRouter.currentPage {
                     case .introductionPages:
-                        IntroductionPagesView().transition(.opacity)
+                        IntroductionPagesView(settings: viewAssets).navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
                     case .notificationPermission:
-                        DailyNotificationsPermissionView().navigationBarHidden(true).transition(.opacity)
+                        DailyNotificationsPermissionView(settings: viewAssets).navigationBarHidden(true).transition(.opacity.animation(.easeIn))
                     case .personalizationPages:
-                        PersonalizationQuestionView(question: questions.removeFirst()).transition(.opacity)
+                        PersonalizationQuestionView(settings: viewAssets, question: questions[0], progress: $progress).transition(.opacity)
                     case .authorization:
                         AuthorizationView() {
                             viewRouter.completeAuthorization(with: $0)
@@ -32,19 +32,24 @@ struct ContentView: View {
                         .navigationBarHidden(true)
                         .transition(.opacity)
                     case .homeTabView:
-                        HomeView().transition(.opacity)
+                        HomeView(settings: viewAssets, tabBarSettings: tabBar).transition(.opacity)
                     }
-                }.accentColor(Color(question1.titleColor))
+                }
+                .navigationBarHidden(true)
+                .accentColor(Color(settings.mainTextColor))
+                
+                
+                
             }
         }.onAppear {
             viewRouter.setStartingPage()
         }
-
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(settings: viewAssets)
     }
 }

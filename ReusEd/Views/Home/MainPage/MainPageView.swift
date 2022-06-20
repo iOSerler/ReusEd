@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct MainPageView: View {
-    var pageSettings: MainPageData = mainPageData
-    @ObservedObject var coursesViewModel = CoursesViewModel(
-        courses: courses,
-        categories: categories,
-        categoryCourses: categoryCourses)
-    @State private var searchText: String = ""
+    var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var showCategory: Set<Int> = []
     var body: some View {
         NavigationView {
@@ -21,33 +17,29 @@ struct MainPageView: View {
                 ProfileHeaderView(image: "Anna",
                                   text1: "Hello 👋",
                                   text2: "Anna Dluzhinskaya",
-                                  settings: pageSettings)
+                                  settings: settings)
                 
-                SearchBarView(settings: pageSettings,
-                              searchText: $searchText)
+                FilterBarView(showCategory: $showCategory,
+                              settings: settings,
+                              filterButtonImage: icons.filterButtonImage)
                 
-                FilterBarView(showCategory: $showCategory, settings: pageSettings)
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 30) {
-                        ForEach(Array(coursesViewModel.categoryCourses.keys).sorted(by: <), id: \.self) {key in
-                            showCategory.count == 0 ?
-                            CourseSectionView(settings: pageSettings, categoryId: key) :
-                            (showCategory.contains(key) ?
-                             CourseSectionView(settings: pageSettings, categoryId: key) : nil)
-                            
-                        }
-                    }
-                }
+                ScrollCourseSectionView(settings: settings,
+                                        categoriesId: Array(coursesViewModel.categoryCourses.keys).sorted(by: <),
+                                        showCategory: $showCategory)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
+            .padding(.top, 7)
         }
     }
 }
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView()
+        MainPageView(settings: viewAssets,
+                     coursesViewModel: CoursesViewModel(
+                        courses: courses,
+                        categories: categories,
+                        categoryCourses: categoryCourses))
     }
 }
