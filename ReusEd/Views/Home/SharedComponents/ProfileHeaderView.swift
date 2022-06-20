@@ -11,7 +11,7 @@ struct ProfileHeaderView: View {
     var image: String
     var text1: String
     var text2: String
-    var settings: MainPageData
+    var settings: ViewAssets
     var body: some View {
         HStack {
             Image(image)
@@ -25,10 +25,10 @@ struct ProfileHeaderView: View {
             VStack(alignment: .leading) {
                 Text(text1)
                     .font(Font.custom(settings.descriptionFont, size: 14))
-                    .foregroundColor(Color(settings.descriptionColor))
+                    .foregroundColor(Color(settings.descriptionTextColor))
                 Text(text2)
                     .font(Font.custom(settings.titleFont, size: 14))
-                    .foregroundColor(Color(settings.titleColor))
+                    .foregroundColor(Color(settings.mainTextColor))
             }
             Spacer()
             NavigationLink(destination: NotificationsView()) {

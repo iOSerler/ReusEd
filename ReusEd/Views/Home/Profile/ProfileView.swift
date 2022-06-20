@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ProfileView: View {
+    var settings: ViewAssets
     var body: some View {
         NavigationView {
             VStack {
                 ProfileHeaderView(image: "Anna",
                                   text1: "Hello 👋",
                                   text2: "Anna Dluzhinskaya",
-                                  settings: mainPageData)
+                                  settings: settings)
                 Text("Hello, World! This is Profile View")
                 Spacer()
             }
@@ -27,6 +28,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(settings: viewAssets)
     }
 }

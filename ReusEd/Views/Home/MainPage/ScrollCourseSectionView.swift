@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScrollCourseSectionView: View {
-    var settings: MainPageData
+    var settings: ViewAssets
     var categoriesId: [Int]
     @Binding var showCategory: Set<Int>
     var body: some View {

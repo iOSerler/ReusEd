@@ -20,8 +20,6 @@ struct TabBarData {
     var tab4OnImage: String
     var tab4OffImage: String
     var tab4Title: String
-    var textFont: String
-    var textColor: String
 }
 
 var tabBar = TabBarData(
@@ -36,7 +34,5 @@ var tabBar = TabBarData(
     tab3Title: "My Courses",
     tab4OnImage: "tab4OnImage",
     tab4OffImage: "tab4OffImage",
-    tab4Title: "Profile",
-    textFont: "Rubik-Regular",
-    textColor: "Primary"
+    tab4Title: "Profile"
 )

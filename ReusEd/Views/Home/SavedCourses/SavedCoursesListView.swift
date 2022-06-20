@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SavedCoursesListView: View {
     @State var courses: [Course]
+    var settings: ViewAssets
     @State private var selectedSegment = 0
     var coursesListType: CoursesListType
     var body: some View {
@@ -22,7 +23,7 @@ struct SavedCoursesListView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                CourseListView(courses: courses, coursesListType: {
+                CourseListView(courses: courses, pageSettings: settings, coursesListType: {
                     switch selectedSegment {
                     case 0:
                         return .saved
@@ -34,11 +35,5 @@ struct SavedCoursesListView: View {
                 }())
             }
         }
-    }
-}
-
-struct SavedCoursesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        SavedCoursesListView(courses: courses, coursesListType: .saved)
     }
 }
