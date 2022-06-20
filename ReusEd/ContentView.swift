@@ -26,7 +26,11 @@ struct ContentView: View {
                     case .personalizationPages:
                         PersonalizationQuestionView(settings: viewAssets, question: questions[0], progress: $progress).transition(.opacity)
                     case .authorization:
-                        SignInView(settings: viewAssets).transition(.opacity)
+                        AuthorizationView() {
+                            viewRouter.completeAuthorization(with: $0)
+                        }
+                        .navigationBarHidden(true)
+                        .transition(.opacity)
                     case .homeTabView:
                         HomeView(settings: viewAssets, tabBarSettings: tabBar).transition(.opacity)
                     }

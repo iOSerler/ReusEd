@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct ReusEdApp: App {
@@ -13,7 +14,11 @@ struct ReusEdApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(settings: viewAssets).environmentObject(ViewRouter())
+            ContentView(settings: viewAssets)
+                .environmentObject(ViewRouter())
+                .onAppear() {
+                    FirebaseApp.configure()
+                }
         }
     }
 }

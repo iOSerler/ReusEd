@@ -7,5 +7,8 @@ target 'ReusEd' do
 
   # Pods for ReusEd
   pod 'SwiftLint'
-  
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+
 end

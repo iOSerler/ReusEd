@@ -102,10 +102,10 @@ class ViewRouter: ObservableObject {
     func showAuthorization() {
         currentPage = .authorization
     }
-    
-    func completeAuthorization(with token: String, and type: String) {
-        UserDefaults.standard.set(token, forKey: "userToken")
-        type == "signIn" ? showHomeTab() : showPersonalization()
+
+    func completeAuthorization(with result: AuthorizationResult) {
+        UserDefaults.standard.set("test", forKey: "userToken")
+        result.type == .signUp ? showPersonalization() : showHomeTab()
     }
     
     func showHomeTab() {
