@@ -15,7 +15,7 @@ struct ContentView: View {
 
         VStack {
             if viewRouter.currentPage == .homeTabView {
-                HomeView().transition(.opacity)
+                HomeView(settings: viewAssets, icons: icons, tabBarSettings: tabBar).transition(.opacity)
             } else {
                 NavigationView {
                     switch viewRouter.currentPage {
@@ -28,7 +28,7 @@ struct ContentView: View {
                     case .authorization:
                         SignInView().transition(.opacity)
                     case .homeTabView:
-                        HomeView().transition(.opacity)
+                        HomeView(settings: viewAssets, icons: icons, tabBarSettings: tabBar).transition(.opacity)
                     }
                 }
                 .navigationBarHidden(true)

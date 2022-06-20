@@ -12,8 +12,8 @@ struct FilterButtonView: View {
     var id: Int
     var title: String
     var titleFont: String
-    var titleColor: String
-    var pressColor: String 
+    var titleColor: UIColor
+    var pressColor: UIColor
     
     @Binding var showCategory: Set<Int>
     @State private var didTap: Bool = false

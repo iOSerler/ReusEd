@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    var settings: MainPageData
+    var settings: ViewAssets
     
     @Binding var searchText: String
     @State private var isEditing: Bool = false
@@ -19,16 +19,16 @@ struct SearchBarView: View {
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 100: 40))
                 .foregroundColor(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(settings.descriptionColor), lineWidth: 0.4))
+                    .stroke(Color(settings.descriptionTextColor), lineWidth: 0.4))
             HStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     TextField("Search for courses ...", text: $searchText)
                         .font(Font.custom(settings.descriptionFont, size: 14))
-                        .foregroundColor(Color(settings.titleColor))
+                        .foregroundColor(Color(settings.mainTextColor))
                 }
                 .frame(width: UIScreen.main.bounds.width - (isEditing ? 120: 80))
-                .foregroundColor(Color(settings.descriptionColor))
+                .foregroundColor(Color(settings.descriptionTextColor))
                 .padding(.leading, 13)
                 .onTapGesture(perform: {
                     isEditing = true
@@ -37,7 +37,7 @@ struct SearchBarView: View {
                 Spacer()
                 isEditing ? Text("Cancel")
                     .font(Font.custom(settings.descriptionFont, size: 16))
-                    .foregroundColor(Color(settings.additionalTextColor))
+                    .foregroundColor(Color(settings.primaryLightColor))
                     .padding(.trailing, 5)
                     .onTapGesture(perform: {
                         isEditing = false

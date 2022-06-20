@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CourseDetailTopicCellView: View {
     @State var topic: CourseTopic
+    var settings: ViewAssets
     
     var icon: String {
         switch topic.type {
@@ -36,11 +37,11 @@ struct CourseDetailTopicCellView: View {
                 HStack(alignment: .center) {
                     
                     ProgressView(value: topic.progress * 100, total: 100)
-                        .accentColor(Color(mainPageData.additionalTextColor))
+                        .accentColor(Color(settings.primaryLightColor))
                         .padding(.trailing, 20)
 
                     Text("\(Int((topic.progress * 100).rounded())) %")
-                        .font(.custom(mainPageData.descriptionFont, size: 12))
+                        .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(.black)
                         .padding(.trailing, 20)
                 }
@@ -49,13 +50,5 @@ struct CourseDetailTopicCellView: View {
             
             Spacer()
         }
-    }
-}
-
-struct CourseDetailTopicCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailTopicCellView(
-            topic: courses[0].detail!.sections[0].topics[0]
-        )
     }
 }

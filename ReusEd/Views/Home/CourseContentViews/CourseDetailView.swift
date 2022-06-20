@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CourseDetailView: View {
     @State var courseId: Int
+    var settings: ViewAssets
     @State var isText: Bool = true
     @State var detail: CourseDetail?
     var body: some View {
@@ -30,7 +31,7 @@ struct CourseDetailView: View {
                   
                     Spacer()
                               
-                    CourseDetailMainView(detail: detail)
+                    CourseDetailMainView(settings: settings, detail: detail)
                         
                         .offset(y: -UIScreen.main.bounds.height / 5)
 //                        .padding()
@@ -60,13 +61,8 @@ struct CourseDetailView: View {
     }
 }
 
-struct CourseDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailView(courseId: 1, isText: false, detail: courses[0].detail)
-    }
-}
-
 struct CourseDetailMainView: View {
+    var settings: ViewAssets
     @State var detail: CourseDetail?
     var body: some View {
         
@@ -103,7 +99,7 @@ struct CourseDetailMainView: View {
                         .foregroundColor(Color(courseDetailAssets.titleColor!))
                         .padding(.top, 30)
                     ForEach(detail.sections) { section in
-                        CourseDetailSectionCellView(section: section)
+                        CourseDetailSectionCellView(settings: settings, section: section)
                     }
                 }
                 Spacer()

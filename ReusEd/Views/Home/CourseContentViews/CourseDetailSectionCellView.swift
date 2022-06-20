@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CourseDetailSectionCellView: View {
+    var settings: ViewAssets
     @State var section: CourseSection
     var body: some View {
         
@@ -18,7 +19,7 @@ struct CourseDetailSectionCellView: View {
                     .foregroundColor(Color(courseDetailAssets.sectionNameColor!))
                 ForEach(section.topics) { topic in
                     NavigationLink(destination: TextImageLessonView(textImageLesson: textImageLesson)) {
-                        CourseDetailTopicCellView(topic: topic)
+                        CourseDetailTopicCellView(topic: topic, settings: settings)
                         Divider()
                             .padding(.vertical, 20)
                     }
@@ -31,11 +32,5 @@ struct CourseDetailSectionCellView: View {
         }
         
         
-    }
-}
-
-struct CourseDetailSectionCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailSectionCellView(section: courses[0].detail!.sections[0])
     }
 }

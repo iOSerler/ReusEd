@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainPageView: View {
-    var pageSettings: MainPageData
+    var settings: ViewAssets
+    var icons: Icons
     @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var searchText: String = ""
     @State private var showCategory: Set<Int> = []
@@ -18,14 +19,17 @@ struct MainPageView: View {
                 ProfileHeaderView(image: "Anna",
                                 text1: "Hello 👋",
                                 text2: "Anna Dluzhinskaya",
-                                settings: pageSettings)
+                                settings: settings)
                 
-                SearchBarView(settings: pageSettings,
+                SearchBarView(settings: settings,
                               searchText: $searchText)
                 
-                FilterBarView(showCategory: $showCategory, settings: pageSettings)
+                FilterBarView(showCategory: $showCategory,
+                              settings: settings,
+                              filterButtonImage: icons.filterButtonImage)
                 
-                ScrollCourseSectionView(settings: pageSettings,
+                ScrollCourseSectionView(settings: settings,
+                                        icons: icons,
                                         categoriesId: Array(coursesViewModel.categoryCourses.keys).sorted(by: <),
                                         showCategory: $showCategory)
             }
@@ -38,9 +42,11 @@ struct MainPageView: View {
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView(pageSettings: mainPageData, coursesViewModel: CoursesViewModel(
-            courses: courses,
-            categories: categories,
-            categoryCourses: categoryCourses))
+        MainPageView(settings: viewAssets,
+                     icons: icons,
+                     coursesViewModel: CoursesViewModel(
+                        courses: courses,
+                        categories: categories,
+                        categoryCourses: categoryCourses))
     }
 }

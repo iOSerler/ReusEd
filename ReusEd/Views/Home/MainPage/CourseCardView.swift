@@ -10,10 +10,11 @@ import SwiftUI
 struct CourseCardView: View {
     
     var course: Course
-    var settings: MainPageData
+    var settings: ViewAssets
+    var timeImage: String
     var body: some View {
         NavigationLink(
-            destination: CourseDetailView(courseId: course.id, isText: false, detail: course.detail)
+            destination: CourseDetailView(courseId: course.id, settings: settings, isText: false, detail: course.detail)
         ) {
             VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
                 Image(course.posterBig)
@@ -22,21 +23,21 @@ struct CourseCardView: View {
                 VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
                     Text(course.title)
                         .font(Font.custom(settings.titleFont, size: 14))
-                        .foregroundColor(Color(settings.titleColor))
+                        .foregroundColor(Color(settings.mainTextColor))
                         .multilineTextAlignment(.leading)
                         .padding(.leading, 7)
                     
                     Text(course.description)
                         .font(Font.custom(settings.descriptionFont, size: 12))
-                        .foregroundColor(Color(settings.descriptionColor))
+                        .foregroundColor(Color(settings.descriptionTextColor))
                         .multilineTextAlignment(.leading)
                         .padding(.leading, 7)
                     
                     HStack {
-                        Image(settings.timeImage)
+                        Image(timeImage)
                         Text(course.duration)
                             .font(Font.custom(settings.descriptionFont, size: 12))
-                            .foregroundColor(Color(settings.additionalTextColor))
+                            .foregroundColor(Color(settings.primaryLightColor))
                             .padding(.leading, 5)
                         
                     }.padding([.leading, .bottom], 7)
@@ -46,7 +47,7 @@ struct CourseCardView: View {
                 .cornerRadius(UIScreen.main.bounds.width/30)
                 .overlay(
                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/30)
-                        .stroke(Color(settings.descriptionColor), lineWidth: 0.4)
+                        .stroke(Color(settings.descriptionTextColor), lineWidth: 0.4)
                 )
         }
         
