@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
+    var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
     @State private var name: String = ""
@@ -30,18 +31,18 @@ struct SignUpView: View {
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
-                Image(notificationPermissionData.logoImage)
-
+                Image(icons.bookLogo)
+                
                 Text("Get Started")
-                    .font(Font.custom(notificationPermissionData.titleFont, size: 20))
-                    .foregroundColor(Color(notificationPermissionData.titleColor))
+                    .font(Font.custom(settings.titleFont, size: 20))
+                    .foregroundColor(Color(settings.mainTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(idealHeight: .infinity)
-
+                
                 Text("Create your account and enjoy easy and intuitive learning with ReusEd.")
-                    .font(Font.custom(notificationPermissionData.titleFont, size: 14))
-                    .foregroundColor(Color(notificationPermissionData.descriptionColor))
+                    .font(Font.custom(settings.titleFont, size: 14))
+                    .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(idealHeight: .infinity)
@@ -49,13 +50,13 @@ struct SignUpView: View {
             }
             VStack {
                 HStack {
-                    Image("user")
-
+                    Image(icons.user)
+                    
                     TextField("Name", text: $name)
                         .focused($focusedField, equals: .name)
                         .textContentType(.givenName)
                         .textFieldStyle(PlainTextFieldStyle())
-                        .font(.custom("Rubik-Regular", size: 14))
+                        .font(.custom(settings.descriptionFont, size: 14))
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                         .padding(.leading, 12)
@@ -63,17 +64,17 @@ struct SignUpView: View {
                         .keyboardType(.default)
                         .submitLabel(.next)
                     Spacer()
-
+                    
                 }
                 Divider()
                 HStack {
-                    Image("envelope")
-
+                    Image(icons.email)
+                    
                     TextField("Email", text: $email)
                         .focused($focusedField, equals: .email)
                         .textContentType(.emailAddress)
                         .textFieldStyle(PlainTextFieldStyle())
-                        .font(.custom("Rubik-Regular", size: 14))
+                        .font(.custom(settings.descriptionFont, size: 14))
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                         .padding(.leading, 12)
@@ -81,93 +82,93 @@ struct SignUpView: View {
                         .keyboardType(.emailAddress)
                         .submitLabel(.next)
                     Spacer()
-
+                    
                 }
                 .padding(.top, 20)
-
+                
                 Divider()
-
+                
                 HStack {
-                    Image("lock")
+                    Image(icons.password)
                     if self.isSecured1 {
                         SecureField("Password", text: $password)
                             .focused($focusedField, equals: .password)
                             .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
                             .keyboardType(.default)
                             .submitLabel(.next)
-
+                        
                     } else {
                         TextField("Password", text: $password)
                             .focused($focusedField, equals: .password)
                             .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
                             .submitLabel(.next)
                     }
-
+                    
                     Spacer()
-
+                    
                     Button(action: {
-                                    isSecured1.toggle()
-                                },
+                        isSecured1.toggle()
+                    },
                            label: {
-                                    Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
-                                        .accentColor(Color("Grey"))
-                                })
+                        Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
+                            .accentColor(Color(settings.placeholderTextColor))
+                    })
                 }
                 .padding(.top, 20)
-
+                
                 Divider()
-
+                
                 HStack {
-                    Image("lock")
+                    Image(icons.password)
                     if self.isSecured2 {
                         SecureField("Confirm Password", text: $confirmPassword)
                             .focused($focusedField, equals: .confirmPassword)
                             .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
-                            
+                        
                     } else {
                         TextField("Confirm Password", text: $confirmPassword)
                             .focused($focusedField, equals: .confirmPassword)
                             .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
                             .frame(width: UIScreen.main.bounds.width / 1.6, alignment: .leading)
-                            
+                        
                     }
-
+                    
                     Spacer()
-
+                    
                     Button(action: {
-                                    isSecured2.toggle()
-                                },
+                        isSecured2.toggle()
+                    },
                            label: {
-                                    Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
-                                        .accentColor(Color("Grey"))
-                                })
+                        Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
+                            .accentColor(Color(settings.placeholderTextColor))
+                    })
                 }
                 .padding(.top, 20)
                 Divider()
-
+                
             }
             .padding(.top, 50)
             .padding(.horizontal, 20)
@@ -183,28 +184,28 @@ struct SignUpView: View {
                     print("Creating account…")
                 }
             }
-
+            
             Spacer()
-
+            
             Text("By continuing, you agree to our")
-                .font(.custom("Rubik-Regular", size: 12))
-                .foregroundColor(Color("Grey"))
-
+                .font(.custom(settings.descriptionFont, size: 12))
+                .foregroundColor(Color(settings.placeholderTextColor))
+            
             HStack {
                 Link("Terms of Service", destination: URL(string: "https://www.apple.com")!)
-                    .font(.custom("Rubik-Regular", size: 12))
-                    .foregroundColor(Color("Primary"))
+                    .font(.custom(settings.descriptionFont, size: 12))
+                    .foregroundColor(Color(settings.primaryColor))
                 Text("·")
                 Link("Privacy Policy", destination: URL(string: "https://www.apple.com")!)
-                    .font(.custom("Rubik-Regular", size: 12))
-                    .foregroundColor(Color("Primary"))
+                    .font(.custom(settings.descriptionFont, size: 12))
+                    .foregroundColor(Color(settings.primaryColor))
                 Text("·")
                 Link("Content Policy", destination: URL(string: "https://www.apple.com")!)
-                    .font(.custom("Rubik-Regular", size: 12))
-                    .foregroundColor(Color("Primary"))
-
+                    .font(.custom(settings.descriptionFont, size: 12))
+                    .foregroundColor(Color(settings.primaryColor))
+                
             }
-
+            
             Button(action: {
                 if !self.name.isEmpty {
                     if isValidString(string: self.email, regEx: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}") {
@@ -212,7 +213,7 @@ struct SignUpView: View {
                             UserDefaults.standard.set(self.name, forKey: "Name")
                             UserDefaults.standard.set(self.email, forKey: "Email")
                             UserDefaults.standard.set(self.password, forKey: "Password")
-
+                            
                             DispatchQueue.main.async {
                                 withAnimation {
                                     viewRouter.completeAuthorization(with: "token", and: "signUp")
@@ -231,47 +232,47 @@ struct SignUpView: View {
                     self.showAlert = true
                 }
                 // sdfhdfh@dfhfh.com
-               // Tsgsdg52435sfsadF
+                // Tsgsdg52435sfsadF
             }, label: {
                 Text("Continue")
                     .font(Font.custom("Rubik-Medium", size: 16))
                     .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                    .background(Color(notificationPermissionData.buttonColor))
-                    .accentColor(Color(notificationPermissionData.buttonTextColor))
+                    .background(Color(settings.primaryColor))
+                    .accentColor(Color(settings.buttonTextColor))
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/60)
             })
-
+            
             .alert(self.alertText, isPresented: $showAlert) {
                 Button("OK", role: .cancel) { }
             }
-
+            
             HStack(alignment: .center) {
                 Text("Already have an account? ")
-                    .font(Font.custom(notificationPermissionData.descriptionFont, size: 14))
-                    .foregroundColor(Color("MainText"))
-
+                    .font(Font.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.mainTextColor))
+                
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Sign In")
-                        .font(Font.custom(notificationPermissionData.descriptionFont, size: 14))
-                        .foregroundColor(Color(notificationPermissionData.titleColor))
+                        .font(Font.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.mainTextColor))
                 })
             }
             .padding(.bottom, 10)
         }.navigationBarTitleDisplayMode(.inline)
     }
-
+    
     func isValidString(string: String, regEx: String) -> Bool {
-            let pred = NSPredicate(format: "SELF MATCHES %@", regEx)
-            return pred.evaluate(with: string)
-        }
+        let pred = NSPredicate(format: "SELF MATCHES %@", regEx)
+        return pred.evaluate(with: string)
+    }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(settings: viewAssets)
     }
 }
 

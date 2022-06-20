@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct LessonFooterView: View {
-    var settings: LessonSettingsData
-    
+    var footer: LessonFooter = lessonFooter
+    var settings: ViewAssets
     var body: some View {
         VStack(alignment: .center) {
-            Text(settings.copyrightText)
+            Text(footer.copyrightText)
                 .font(Font.custom(settings.descriptionFont, size: 12))
-                .foregroundColor(Color(settings.copyrightColor))
+                .foregroundColor(Color(settings.copyrightTextColor))
                 .multilineTextAlignment(.center)
                 .frame(width: UIScreen.main.bounds.width/2,
                        alignment: .center)
@@ -25,11 +25,11 @@ struct LessonFooterView: View {
                         // do something
                     }, label: {
                         VStack(alignment: .leading) {
-                            Image(settings.previousBottonImage)
+                            Image(footer.previousBottonImage)
                                 .frame(width: 30, height: 30, alignment: .center)
-                            Text(settings.priviousButtonText)
+                            Text(footer.priviousButtonText)
                                 .font(Font.custom(settings.descriptionFont, size: 12))
-                                .foregroundColor(Color(settings.titleColor))
+                                .foregroundColor(Color(settings.mainTextColor))
                         }
                         
                     }
@@ -42,11 +42,11 @@ struct LessonFooterView: View {
                         // do something
                     }, label: {
                         VStack(alignment: .trailing) {
-                            Image(settings.nextButtonImage)
+                            Image(footer.nextButtonImage)
                                 .frame(width: 30, height: 30, alignment: .center)
-                            Text(settings.nextButtonText)
+                            Text(footer.nextButtonText)
                                 .font(Font.custom(settings.descriptionFont, size: 12))
-                                .foregroundColor(Color(settings.titleColor))
+                                .foregroundColor(Color(settings.mainTextColor))
                                 .padding(.trailing, 3)
                         }
                         

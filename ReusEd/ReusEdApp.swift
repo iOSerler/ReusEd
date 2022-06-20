@@ -10,10 +10,10 @@ import SwiftUI
 @main
 struct ReusEdApp: App {
     @UIApplicationDelegateAdaptor (AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(ViewRouter())
+            ContentView(settings: viewAssets).environmentObject(ViewRouter())
         }
     }
 }

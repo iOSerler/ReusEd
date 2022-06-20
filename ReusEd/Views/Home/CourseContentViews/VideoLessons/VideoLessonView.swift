@@ -9,8 +9,8 @@ import SwiftUI
 import AVKit
 
 struct VideoLessonView: View {
+    var settings: ViewAssets
     
-    var settings: LessonSettingsData = lessonSettingsData
     
     var info: VideoLesson = videoLesson
     
@@ -29,7 +29,7 @@ struct VideoLessonView: View {
                     
                     VideoDescriptionView(settings: settings,
                                          title: info.title,
-                                         durationImage: info.durationImage,
+                                         durationImage: icons.timeImage,
                                          duration: info.duration,
                                          description: info.description)
                     
@@ -39,7 +39,7 @@ struct VideoLessonView: View {
                     
                     LessonFooterView(settings: settings)
                         .padding(.leading, 8)
-                       
+                    
                     
                 }.padding()
             }
@@ -48,11 +48,5 @@ struct VideoLessonView: View {
         .onAppear {
             self.player = AVPlayer(url: URL(string: info.url)!)
         }
-    }
-}
-
-struct VideoLessonView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoLessonView()
     }
 }

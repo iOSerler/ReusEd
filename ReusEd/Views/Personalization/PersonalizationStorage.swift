@@ -14,11 +14,7 @@ var question1 = QuestionData(
     type: "checkbox",
     image: "",
     title: "How did your hear about us?",
-    titleFont: "Rubik-Medium",
-    titleColor: "MainText",
     description: "Tell us how you new about ReusEd to recommend it to more learners like you.",
-    descriptionFont: "Rubik-Regular",
-    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "🤗", secondPart: "Friends/Family"),
         OptionData(id: 2, firstPart: "🔎", secondPart: "Google Search"),
@@ -27,10 +23,8 @@ var question1 = QuestionData(
         OptionData(id: 5, firstPart: "📱", secondPart: "Facebook/Instagram"),
         OptionData(id: 6, firstPart: "🕺", secondPart: "TikTok"),
         OptionData(id: 7, firstPart: "🤔", secondPart: "Other")
-    ],
-    optionsColor: "MainText",
-    buttonColor: "Primary",
-    buttonTextColor: "White"
+    ]
+    
 )
 
 var question2 = QuestionData(
@@ -38,11 +32,7 @@ var question2 = QuestionData(
     type: "checkbox",
     image: "",
     title: "What’s your interest?",
-    titleFont: "Rubik-Medium",
-    titleColor: "MainText",
     description: "Please tell us your interests to make sure we know your field of work.",
-    descriptionFont: "Rubik-Regular",
-    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "🎓", secondPart: "Computer Science"),
         OptionData(id: 2, firstPart: "⚗️", secondPart: "Chemistry"),
@@ -50,10 +40,7 @@ var question2 = QuestionData(
         OptionData(id: 4, firstPart: "📸", secondPart: "Cinematography"),
         OptionData(id: 5, firstPart: "➗", secondPart: "Mathematics"),
         OptionData(id: 6, firstPart: "🤔", secondPart: "Other")
-    ],
-    optionsColor: "MainText",
-    buttonColor: "Primary",
-    buttonTextColor: "White"
+    ]
 )
 
 var question3 = QuestionData(
@@ -61,20 +48,13 @@ var question3 = QuestionData(
     type: "singleChoice",
     image: "",
     title: "Pick your learning goal",
-    titleFont: "Rubik-Medium",
-    titleColor: "MainText",
     description: "Tell us how much time you’re willing to spend during your day learing.",
-    descriptionFont: "Rubik-Regular",
-    descriptionColor: "Grey",
     optionsData: [
         OptionData(id: 1, firstPart: "Casual", secondPart: "5 min / day"),
         OptionData(id: 2, firstPart: "Regular", secondPart: "10 min / day"),
         OptionData(id: 3, firstPart: "Serious", secondPart: "15 min / day"),
         OptionData(id: 4, firstPart: "Intense", secondPart: "20 min / day")
-    ],
-    optionsColor: "MainText",
-    buttonColor: "Primary",
-    buttonTextColor: "White"
+    ]
 )
 
 var question4 = QuestionData(
@@ -82,31 +62,9 @@ var question4 = QuestionData(
     type: "image",
     image: "All-set",
     title: "You’re all set!",
-    titleFont: "Rubik-Medium",
-    titleColor: "MainText",
     description: "Welcome to ReusEd and enjoy your learning with our personalized courses.",
-    descriptionFont: "Rubik-Regular",
-    descriptionColor: "Grey",
-    optionsData: [OptionData](),
-    optionsColor: String(),
-    buttonColor: "Primary",
-    buttonTextColor: "White"
+    optionsData: [OptionData]()
 )
-
-struct ProgressBarData {
-    var font: String
-    var activeTextColor: String
-    var passiveTextColor: String
-    var activeBackgroundColor: String
-    var passiveBackgroundColor: String
-}
-
-var progressBarData = ProgressBarData(
-    font: "Rubik-Regular",
-    activeTextColor: "White",
-    passiveTextColor: "Primary2",
-    activeBackgroundColor: "Primary",
-    passiveBackgroundColor: "PrimaryLight")
 
 
 var personalizationQuestionSelectedItemsDict: [Int: Set<Int>] = [1: [], 2: [], 3: []]

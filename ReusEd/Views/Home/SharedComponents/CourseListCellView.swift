@@ -23,7 +23,7 @@ struct CourseListCellView: View {
                         .foregroundColor(Color(settings.descriptionTextColor))
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
-
+                    
                     Spacer()
                     HStack(alignment: .center, spacing: 1) {
                         Image(icons.timeImage)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomProgressBarView: View {
-    var progressBarData: ProgressBarData
+    var settings: ViewAssets
     var numQuestions: Int
     @Binding var progress: Int
     var body: some View {
@@ -21,18 +21,18 @@ struct CustomProgressBarView: View {
                         Circle()
                             .scale(x: 1, y: 1)
                             .foregroundColor(ind > self.progress ?
-                                             Color(progressBarData.passiveBackgroundColor) :
-                                             Color(progressBarData.activeBackgroundColor))
+                                             Color(settings.primaryLighterColor) :
+                                                Color(settings.primaryColor))
                         Text(String(ind))
-                            .font(Font.custom(progressBarData.font, size: 12))
+                            .font(Font.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(ind > self.progress ?
-                                                Color(progressBarData.passiveTextColor) :
-                                                Color(progressBarData.activeTextColor))
+                                             Color(settings.primaryLightColor) :
+                                                Color(settings.buttonTextColor))
                     }.frame(height: 20, alignment: .center)
-                     
+                    
                     
                     Divider()
-                    .rotationEffect(.degrees(90))
+                        .rotationEffect(.degrees(90))
                 }
             }
             
@@ -40,19 +40,19 @@ struct CustomProgressBarView: View {
                 Circle()
                     .scale(x: 1, y: 1)
                     .foregroundColor(numQuestions > self.progress ?
-                                     Color(progressBarData.passiveBackgroundColor) :
-                                     Color(progressBarData.activeBackgroundColor))
+                                     Color(settings.primaryLighterColor) :
+                                        Color(settings.primaryColor))
                 Image(systemName: "checkmark")
-                    .font(Font.custom(progressBarData.font, size: 12))
+                    .font(Font.custom(settings.descriptionFont, size: 12))
                     .foregroundColor(numQuestions > self.progress ?
-                                        Color(progressBarData.passiveTextColor) :
-                                        Color(progressBarData.activeTextColor))
+                                     Color(settings.primaryLightColor) :
+                                        Color(settings.buttonTextColor))
             }.frame(height: 20, alignment: .center)
             
             
             Spacer()
             
         }.frame(height: 45, alignment: .center)
-         .padding(.horizontal)
+            .padding(.horizontal)
     }
 }

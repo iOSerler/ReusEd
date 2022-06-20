@@ -24,122 +24,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
         
     ),
     Course(
@@ -157,122 +157,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
     ),
     Course(
         id: 3,
@@ -290,122 +290,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
     ),
     Course(
         id: 4,
@@ -423,122 +423,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
     ),
     Course(
         id: 5,
@@ -556,122 +556,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
     ),
     Course(
         id: 6,
@@ -689,122 +689,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
     ),
     Course(
         id: 7,
@@ -821,122 +821,122 @@ var courses = [
             authorName: "Nursultan",
             duration: "3h 45 min",
             sections: [
-            CourseSection(
-                id: 1,
-                title: "Section 1 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 2,
-                title: "Section 2 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 3,
-                title: "Section 3 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            ),
-            
-            CourseSection(
-                id: 4,
-                title: "Section 4 - Learning",
-                topics: [
-                    CourseTopic(
-                        id: 1,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 2,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    ),
-                    CourseTopic(
-                        id: 3,
-                        title: "Run Hello World",
-                        description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
-                        progress: 0.5,
-                        type: .document
-                    )
-                    
-                ]
-            )
-        ])
+                CourseSection(
+                    id: 1,
+                    title: "Section 1 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 2,
+                    title: "Section 2 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 3,
+                    title: "Section 3 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                ),
+                
+                CourseSection(
+                    id: 4,
+                    title: "Section 4 - Learning",
+                    topics: [
+                        CourseTopic(
+                            id: 1,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 2,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        ),
+                        CourseTopic(
+                            id: 3,
+                            title: "Run Hello World",
+                            description: "Herlloef sdgsdfgxdfhsdrfsdfgsdfg sfg sdfgsdfg",
+                            progress: 0.5,
+                            type: .document
+                        )
+                        
+                    ]
+                )
+            ])
         
     )
 ]

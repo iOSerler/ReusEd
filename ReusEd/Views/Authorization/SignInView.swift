@@ -15,7 +15,7 @@ struct SignInView: View {
     
     @State private var isSecured: Bool = true
     @FocusState private var focusedField: SignInField?
-    
+    var settings: ViewAssets
     enum SignInField {
         case email
         case password
@@ -27,17 +27,17 @@ struct SignInView: View {
         VStack {
             
             VStack(alignment: .center, spacing: UIScreen.main.bounds.width/15) {
-                Image(notificationPermissionData.logoImage)
+                Image(icons.bookLogo)
                 
                 Text("Welcome Back!")
-                    .font(Font.custom(notificationPermissionData.titleFont, size: 20))
-                    .foregroundColor(Color(notificationPermissionData.titleColor))
+                    .font(Font.custom(settings.titleFont, size: 20))
+                    .foregroundColor(Color(settings.mainTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(idealHeight: .infinity)
                 Text("Log In into your account and get back to your courses and topics.")
-                    .font(Font.custom(notificationPermissionData.titleFont, size: 14))
-                    .foregroundColor(Color(notificationPermissionData.descriptionColor))
+                    .font(Font.custom(settings.titleFont, size: 14))
+                    .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(idealHeight: .infinity)
@@ -46,13 +46,13 @@ struct SignInView: View {
             
             VStack {
                 HStack {
-                    Image("envelope")
+                    Image(icons.email)
                     
                     TextField("Email", text: $email)
                         .textFieldStyle(PlainTextFieldStyle())
                         .focused($focusedField, equals: .email)
                         .textContentType(.emailAddress)
-                        .font(.custom("Rubik-Regular", size: 14))
+                        .font(.custom(settings.descriptionFont, size: 14))
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                     
@@ -67,14 +67,14 @@ struct SignInView: View {
                 Divider()
                 
                 HStack {
-                    Image("lock")
+                    Image(icons.password)
                     
                     if self.isSecured {
                         SecureField("Password", text: $password)
                             .focused($focusedField, equals: .password)
                             .textContentType(.password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
@@ -85,7 +85,7 @@ struct SignInView: View {
                         TextField("Password", text: $password)
                             .focused($focusedField, equals: .password)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .font(.custom("Rubik-Regular", size: 14))
+                            .font(.custom(settings.descriptionFont, size: 14))
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .padding(.leading, 12)
@@ -101,7 +101,7 @@ struct SignInView: View {
                         },
                         label: {
                             Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                .accentColor(Color("Grey"))
+                                .accentColor(Color(settings.placeholderTextColor))
                         }
                     )
                 }
@@ -115,8 +115,8 @@ struct SignInView: View {
                 NavigationLink(destination: ForgotPasswordView()) {
                     
                     Text("Forgot password?")
-                        .font(Font.custom(notificationPermissionData.descriptionFont, size: 14))
-                        .foregroundColor(Color(notificationPermissionData.titleColor))
+                        .font(Font.custom(settings.descriptionFont, size: 14))
+                        .foregroundColor(Color(settings.mainTextColor))
                     
                 }
                 .frame(width: UIScreen.main.bounds.width / 3)
@@ -145,10 +145,10 @@ struct SignInView: View {
                 }
             }, label: {
                 Text("Sign In")
-                    .font(Font.custom("Rubik-Medium", size: 16))
+                    .font(Font.custom(settings.titleFont, size: 16))
                     .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                    .background(Color(notificationPermissionData.buttonColor))
-                    .accentColor(Color(notificationPermissionData.buttonTextColor))
+                    .background(Color(settings.primaryColor))
+                    .accentColor(Color(settings.buttonTextColor))
                     .cornerRadius(UIScreen.main.bounds.width/35)
                     .padding(.bottom, UIScreen.main.bounds.height/60)
             })
@@ -158,14 +158,14 @@ struct SignInView: View {
             
             HStack(alignment: .center) {
                 Text("Don’t have an account yet? ")
-                    .font(Font.custom(notificationPermissionData.descriptionFont, size: 14))
-                    .foregroundColor(Color("MainText"))
+                    .font(Font.custom(settings.descriptionFont, size: 14))
+                    .foregroundColor(Color(settings.mainTextColor))
                 
-                NavigationLink(destination: SignUpView()
+                NavigationLink(destination: SignUpView(settings: viewAssets)
                     .navigationBarBackButtonHidden(false).navigationBarHidden(false)) {
                         Text("Sign Up")
-                            .font(Font.custom(notificationPermissionData.descriptionFont, size: 14))
-                            .foregroundColor(Color(notificationPermissionData.titleColor))
+                            .font(Font.custom(settings.descriptionFont, size: 14))
+                            .foregroundColor(Color(settings.mainTextColor))
                     }
             }
             .padding(.bottom, 10)
@@ -184,7 +184,7 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(settings: viewAssets)
     }
 }
 

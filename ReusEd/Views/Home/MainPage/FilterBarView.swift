@@ -35,14 +35,14 @@ struct FilterBarView: View {
                             .background(applyFilter ? Color(settings.primaryLighterColor) : Color.white)
                         
                     }.cornerRadius(UIScreen.main.bounds.width/40)
-                     .overlay(
-                        RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/40)
-                            .stroke(.gray, lineWidth: 0.4)
-                    )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: UIScreen.main.bounds.width/40)
+                                .stroke(.gray, lineWidth: 0.4)
+                        )
                 }).sheet(isPresented: $showingSheet) {
-                    FilterView(applyFilter: $applyFilter)
-                  }
-        
+                    FilterView(settings: viewAssets, applyFilter: $applyFilter)
+                }
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(coursesViewModel.categories) {category in
@@ -54,7 +54,7 @@ struct FilterBarView: View {
                                          showCategory: $showCategory)
                     }
                 }.frame(height: 50)
-                 .padding(.horizontal, 5)
+                    .padding(.horizontal, 5)
             }
         }.padding(.leading, 20)
         
