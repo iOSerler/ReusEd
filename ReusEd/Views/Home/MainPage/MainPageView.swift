@@ -10,7 +10,6 @@ import SwiftUI
 struct MainPageView: View {
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
-    @State private var searchText: String = ""
     @State private var showCategory: Set<Int> = []
     var body: some View {
         NavigationView {
@@ -19,9 +18,6 @@ struct MainPageView: View {
                                 text1: "Hello 👋",
                                 text2: "Anna Dluzhinskaya",
                                 settings: settings)
-                
-                SearchBarView(settings: settings,
-                              searchText: $searchText)
                 
                 FilterBarView(showCategory: $showCategory,
                               settings: settings,

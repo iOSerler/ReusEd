@@ -16,6 +16,7 @@
 		2A5A80EB285B5CC500809CB2 /* VideoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EA285B5CC500809CB2 /* VideoDescriptionView.swift */; };
 		2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */; };
 		2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */; };
+		2A79FC502860ACB5002F737F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79FC4F2860ACB5002F737F /* SearchView.swift */; };
 		2AD42CEF285C6D7B00A92B4C /* ScrollCourseSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */; };
 		2AD42CF1285C963400A92B4C /* CustomProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */; };
 		2AD95C1228587CC000E220E8 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1128587CC000E220E8 /* MainPageView.swift */; };
@@ -93,6 +94,7 @@
 		2A5A80EA285B5CC500809CB2 /* VideoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionView.swift; sourceTree = "<group>"; };
 		2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStampsIView.swift; sourceTree = "<group>"; };
 		2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFooterView.swift; sourceTree = "<group>"; };
+		2A79FC4F2860ACB5002F737F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCourseSectionView.swift; sourceTree = "<group>"; };
 		2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
 		2AD95C1128587CC000E220E8 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				7A12277B285900D700536CC5 /* FilterView.swift */,
 				2ADB399E2859C63900A7992D /* FilterBarView.swift */,
 				2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */,
+				2A79FC4F2860ACB5002F737F /* SearchView.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				7A038C39284F806500B1376F /* NotificationsPermissionModel.swift in Sources */,
 				7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */,
 				B7E0D5C22855432E0051E70B /* RadioButtonList.swift in Sources */,
+				2A79FC502860ACB5002F737F /* SearchView.swift in Sources */,
 				7A12277C285900D700536CC5 /* FilterView.swift in Sources */,
 				7A12278528590DCB00536CC5 /* NotificationsView.swift in Sources */,
 				2AD42CEF285C6D7B00A92B4C /* ScrollCourseSectionView.swift in Sources */,
