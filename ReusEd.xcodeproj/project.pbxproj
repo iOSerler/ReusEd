@@ -75,6 +75,9 @@
 		7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */; };
 		7AF7450A2859F2C20075B429 /* CoursesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745092859F2C20075B429 /* CoursesDetailModel.swift */; };
 		7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */; };
+		7AFB162C2861AC6F00E9515E /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB16292861AC6F00E9515E /* categories.json */; };
+		7AFB162D2861AC6F00E9515E /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162A2861AC6F00E9515E /* lessons.json */; };
+		7AFB162E2861AC6F00E9515E /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162B2861AC6F00E9515E /* courses.json */; };
 		83B81EC12860F26800115E56 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC02860F26800115E56 /* AuthorizationView.swift */; };
 		83B81ED12860F26F00115E56 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC32860F26F00115E56 /* AuthorizationHeader.swift */; };
 		83B81ED22860F26F00115E56 /* AuthorizationInputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC52860F26F00115E56 /* AuthorizationInputItem.swift */; };
@@ -175,6 +178,9 @@
 		7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailSectionCellView.swift; sourceTree = "<group>"; };
 		7AF745092859F2C20075B429 /* CoursesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDetailModel.swift; sourceTree = "<group>"; };
 		7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCoursesData.swift; sourceTree = "<group>"; };
+		7AFB16292861AC6F00E9515E /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		7AFB162A2861AC6F00E9515E /* lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lessons.json; sourceTree = "<group>"; };
+		7AFB162B2861AC6F00E9515E /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
 		83B81EC02860F26800115E56 /* AuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		83B81EC32860F26F00115E56 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
 		83B81EC52860F26F00115E56 /* AuthorizationInputItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInputItem.swift; sourceTree = "<group>"; };
@@ -338,6 +344,9 @@
 		7A038C14284F35A900B1376F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AFB16292861AC6F00E9515E /* categories.json */,
+				7AFB162B2861AC6F00E9515E /* courses.json */,
+				7AFB162A2861AC6F00E9515E /* lessons.json */,
 				7A038C06284F324700B1376F /* Assets.xcassets */,
 				7A038C19284F3AA500B1376F /* Fonts */,
 			);
@@ -622,12 +631,15 @@
 				7A038C2B284F3B0F00B1376F /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				7A91B211285DB36F0049CE8C /* Launch Screen.storyboard in Resources */,
 				7A038C35284F3B0F00B1376F /* Rubik-Black.ttf in Resources */,
+				7AFB162E2861AC6F00E9515E /* courses.json in Resources */,
 				7A038C2E284F3B0F00B1376F /* Rubik-MediumItalic.ttf in Resources */,
 				7A038C2C284F3B0F00B1376F /* Rubik-Regular.ttf in Resources */,
 				7A038C29284F3B0F00B1376F /* Rubik-Italic.ttf in Resources */,
+				7AFB162D2861AC6F00E9515E /* lessons.json in Resources */,
 				7A038C0A284F324700B1376F /* Preview Assets.xcassets in Resources */,
 				7A038C28284F3B0F00B1376F /* Rubik-BoldItalic.ttf in Resources */,
 				7A038C32284F3B0F00B1376F /* Rubik-LightItalic.ttf in Resources */,
+				7AFB162C2861AC6F00E9515E /* categories.json in Resources */,
 				7A038C07284F324700B1376F /* Assets.xcassets in Resources */,
 				83B81EF12860F59200115E56 /* GoogleService-Info.plist in Resources */,
 				7A038C2A284F3B0F00B1376F /* Rubik-Bold.ttf in Resources */,

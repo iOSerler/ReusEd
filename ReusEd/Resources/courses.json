@@ -1,0 +1,250 @@
+"courses": [
+    {
+        "id": 1,
+        "title": "Python Programming",
+        "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+        "longDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+        "duration": "3h 45min",
+        "progress": 0.5,
+        "posterSmall": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseSmallPoster1.png",
+        "posterBig": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseBigPoster1.png",
+        "isSaved": false,
+        "isPopular": true,
+        "categories": [
+            1,
+            2
+        ],
+        "author": "Nursultan Askarbekuly",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Section 1 - Introduction",
+                "lessons": [
+                    1
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Section 2 - Python Basics",
+                "lessons": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Section 3 - Advanced Python",
+                "lessons": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Section 4 - Quiz",
+                "lessons": [
+                    4
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Mathematics",
+        "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+        "longDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+        "duration": "3h 45min",
+        "progress": 0.5,
+        "posterSmall": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseSmallPoster2.png",
+        "posterBig": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseBigPoster2.png",
+        "isSaved": true,
+        "isPopular": true,
+        "categories": [
+            1
+        ],
+        "author": "Anna Dluzhinskaya",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Section 1 - Introduction",
+                "lessons": [
+                    1
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Section 2 - Python Basics",
+                "lessons": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Section 3 - Advanced Python",
+                "lessons": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Section 4 - Quiz",
+                "lessons": [
+                    4
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Chemistry",
+        "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+        "longDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+        "duration": "3h 45min",
+        "progress": 0.5,
+        "posterSmall": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseSmallPoster3.png",
+        "posterBig": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseBigPoster3.png",
+        "isSaved": true,
+        "isPopular": false,
+        "categories": [
+            2
+        ],
+        "author": "Ahror Jabborov",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Section 1 - Introduction",
+                "lessons": [
+                    1
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Section 2 - Python Basics",
+                "lessons": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Section 3 - Advanced Python",
+                "lessons": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Section 4 - Quiz",
+                "lessons": [
+                    4
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Biology",
+        "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+        "longDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+        "duration": "3h 45min",
+        "progress": 0.5,
+        "posterSmall": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseSmallPoster4.png",
+        "posterBig": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseBigPoster4.png",
+        "isSaved": false,
+        "isPopular": true,
+        "categories": [
+            2,
+            3
+        ],
+        "author": "Karim ElDakroury",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Section 1 - Introduction",
+                "lessons": [
+                    1
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Section 2 - Python Basics",
+                "lessons": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Section 3 - Advanced Python",
+                "lessons": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Section 4 - Quiz",
+                "lessons": [
+                    4
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Graphics Design",
+        "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+        "longDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+        "duration": "3h 45min",
+        "progress": 0.5,
+        "posterSmall": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseSmallPoster5.png",
+        "posterBig": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/courseBigPoster5.png",
+        "isSaved": true,
+        "isPopular": true,
+        "categories": [
+            1,
+            2
+        ],
+        "author": "Igor the designer",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Section 1 - Introduction",
+                "lessons": [
+                    1
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Section 2 - Python Basics",
+                "lessons": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Section 3 - Advanced Python",
+                "lessons": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Section 4 - Quiz",
+                "lessons": [
+                    4
+                ]
+            }
+        ]
+    }
+]

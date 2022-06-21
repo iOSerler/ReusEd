@@ -1,0 +1,27 @@
+"categories": [
+    {
+        "id": 1,
+        "title": "Programming",
+        "courses": [
+            1,
+            2,
+            4
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Design",
+        "courses": [
+            3,
+            5
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Cooking",
+        "courses": [
+            1
+        ]
+    }
+]
+
