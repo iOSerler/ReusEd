@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0A2851DCF100DB971B /* TabBarModel.swift */; };
 		2A1B302C2860595500A2F20D /* ViewAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */; };
-		2A1B302E286069D400A2F20D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B302D286069D400A2F20D /* ColorExtension.swift */; };
 		2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */; };
 		2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */; };
 		2A5A80E9285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E8285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift */; };
@@ -17,6 +16,7 @@
 		2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */; };
 		2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */; };
 		2A79FC502860ACB5002F737F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79FC4F2860ACB5002F737F /* SearchView.swift */; };
+		2AD0E3032861B73000DD58D7 /* CompleteCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */; };
 		2AD42CEF285C6D7B00A92B4C /* ScrollCourseSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */; };
 		2AD42CF1285C963400A92B4C /* CustomProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */; };
 		2AD95C1228587CC000E220E8 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1128587CC000E220E8 /* MainPageView.swift */; };
@@ -109,7 +109,6 @@
 		0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
 		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssetsModel.swift; sourceTree = "<group>"; };
-		2A1B302D286069D400A2F20D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
 		2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		2A5A80E8285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotateVideoPlayerView.swift; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStampsIView.swift; sourceTree = "<group>"; };
 		2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFooterView.swift; sourceTree = "<group>"; };
 		2A79FC4F2860ACB5002F737F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteCourseView.swift; sourceTree = "<group>"; };
 		2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCourseSectionView.swift; sourceTree = "<group>"; };
 		2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
 		2AD95C1128587CC000E220E8 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -379,7 +379,6 @@
 			children = (
 				7A038C3D284F824500B1376F /* NotificationHandler.swift */,
 				7A038C3F284F856800B1376F /* AppDelegate.swift */,
-				2A1B302D286069D400A2F20D /* ColorExtension.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -457,6 +456,7 @@
 				7A1227772858CA5400536CC5 /* CourseDetailView.swift */,
 				7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */,
 				7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */,
+				2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */,
 			);
 			path = CourseContentViews;
 			sourceTree = "<group>";
@@ -730,7 +730,6 @@
 				2AD95C1428587D4E00E220E8 /* CourseSectionView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
 				83B81EC12860F26800115E56 /* AuthorizationView.swift in Sources */,
-				2A1B302E286069D400A2F20D /* ColorExtension.swift in Sources */,
 				2A1B302C2860595500A2F20D /* ViewAssetsModel.swift in Sources */,
 				83B81ED32860F26F00115E56 /* AuthorizationEmailInput.swift in Sources */,
 				2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */,
@@ -783,6 +782,7 @@
 				7A038C18284F383900B1376F /* OnBoardingPagesModel.swift in Sources */,
 				2AD95C1728587E3600E220E8 /* SearchBarView.swift in Sources */,
 				7A038C39284F806500B1376F /* NotificationsPermissionModel.swift in Sources */,
+				2AD0E3032861B73000DD58D7 /* CompleteCourseView.swift in Sources */,
 				7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */,
 				B7E0D5C22855432E0051E70B /* RadioButtonList.swift in Sources */,
 				2A79FC502860ACB5002F737F /* SearchView.swift in Sources */,
