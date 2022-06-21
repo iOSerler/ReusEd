@@ -11,26 +11,28 @@ struct CourseListView: View {
     @State var courses: [Course]
     @State private var searchText: String = ""
     var pageSettings: ViewAssets
-    var coursesListType: CoursesListType
+    @ObservedObject var coursesViewModel: CoursesViewModel
+    var coursesListType: String
+    
     var displayCourses: [Course] {
         switch coursesListType {
-        case .popular:
-            return courses.filter { $0.isPopular && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
-        case .saved:
-            return courses.filter { $0.isSaved && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
-        case .category:
-            return courses.filter { searchText.isEmpty ? true : $0.title.contains(searchText) }
+        case "popular":
+            return courses.filter { $0.isPopular! && (searchText.isEmpty ? true : $0.title!.contains(searchText)) }
+        case "saved":
+            return courses.filter { $0.isSaved! && (searchText.isEmpty ? true : $0.title!.contains(searchText)) }
+        default:
+            return courses.filter { searchText.isEmpty ? true : $0.title!.contains(searchText) }
         }
     }
     
     var title = String()
     var title2: String {
         switch coursesListType {
-        case .popular:
+        case "popular":
             return "Popular Courses"
-        case .saved:
+        case "saved":
             return "Saved Courses"
-        case .category:
+        default:
             return title
         }
     }
@@ -42,9 +44,9 @@ struct CourseListView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 10) {
                     ForEach(displayCourses) { course in
-                        NavigationLink {
-                            CourseDetailView(courseId: course.id, settings: pageSettings, isText: false, detail: course.detail)
-                        } label: {
+                        NavigationLink (destination:
+                                            CourseDetailView(course: course, settings: pageSettings, coursesViewModel: coursesViewModel, isText: false))
+                        {
                             CourseListCellView(settings: pageSettings, course: course)
                         }
                         Divider()
@@ -58,8 +60,8 @@ struct CourseListView: View {
     }
 }
 
-struct CourseListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseListView(courses: courses, pageSettings: viewAssets, coursesListType: .popular)
-    }
-}
+//struct CourseListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CourseListView(courses: courses, pageSettings: viewAssets, coursesListType: .popular)
+//    }
+//}

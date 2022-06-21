@@ -12,6 +12,7 @@ struct ProfileHeaderView: View {
     var text1: String
     var text2: String
     var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var showSearchView: Bool = false
     var body: some View {
         HStack {
@@ -33,7 +34,7 @@ struct ProfileHeaderView: View {
             }
             Spacer()
             
-            NavigationLink(destination: SearchView(settings: settings)) {
+            NavigationLink(destination: SearchView(settings: settings, coursesViewModel: coursesViewModel)) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(settings.mainTextColor))
                     .padding(.trailing, 10)

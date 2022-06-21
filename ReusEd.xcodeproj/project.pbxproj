@@ -73,11 +73,12 @@
 		7A91B213285DCC970049CE8C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B212285DCC970049CE8C /* ForgotPasswordView.swift */; };
 		7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */; };
 		7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */; };
-		7AF7450A2859F2C20075B429 /* CoursesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745092859F2C20075B429 /* CoursesDetailModel.swift */; };
 		7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */; };
 		7AFB162C2861AC6F00E9515E /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB16292861AC6F00E9515E /* categories.json */; };
 		7AFB162D2861AC6F00E9515E /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162A2861AC6F00E9515E /* lessons.json */; };
 		7AFB162E2861AC6F00E9515E /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162B2861AC6F00E9515E /* courses.json */; };
+		7AFB16332862199B00E9515E /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB16322862199B00E9515E /* UrlImageView.swift */; };
+		7AFB1635286219A300E9515E /* UrlImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB1634286219A300E9515E /* UrlImageModel.swift */; };
 		83B81EC12860F26800115E56 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC02860F26800115E56 /* AuthorizationView.swift */; };
 		83B81ED12860F26F00115E56 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC32860F26F00115E56 /* AuthorizationHeader.swift */; };
 		83B81ED22860F26F00115E56 /* AuthorizationInputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EC52860F26F00115E56 /* AuthorizationInputItem.swift */; };
@@ -176,11 +177,12 @@
 		7A91B212285DCC970049CE8C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailTopicCellView.swift; sourceTree = "<group>"; };
 		7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailSectionCellView.swift; sourceTree = "<group>"; };
-		7AF745092859F2C20075B429 /* CoursesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDetailModel.swift; sourceTree = "<group>"; };
 		7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCoursesData.swift; sourceTree = "<group>"; };
 		7AFB16292861AC6F00E9515E /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		7AFB162A2861AC6F00E9515E /* lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lessons.json; sourceTree = "<group>"; };
 		7AFB162B2861AC6F00E9515E /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
+		7AFB16322862199B00E9515E /* UrlImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
+		7AFB1634286219A300E9515E /* UrlImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlImageModel.swift; sourceTree = "<group>"; };
 		83B81EC02860F26800115E56 /* AuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		83B81EC32860F26F00115E56 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
 		83B81EC52860F26F00115E56 /* AuthorizationInputItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInputItem.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		7A038C11284F357B00B1376F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AFB16312862197F00E9515E /* Helpers */,
 				7A038C4928508F1600B1376F /* Home */,
 				7A038C41285086F500B1376F /* Onboarding */,
 				7A038C422850870B00B1376F /* Authorization */,
@@ -334,7 +337,6 @@
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
 				2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */,
 				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
-				7AF745092859F2C20075B429 /* CoursesDetailModel.swift */,
 				7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */,
 				2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */,
 			);
@@ -493,6 +495,15 @@
 				7A91B20C285B63ED0049CE8C /* TextImageView.swift */,
 			);
 			path = TextImageLessons;
+			sourceTree = "<group>";
+		};
+		7AFB16312862197F00E9515E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7AFB16322862199B00E9515E /* UrlImageView.swift */,
+				7AFB1634286219A300E9515E /* UrlImageModel.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		83B81EC22860F26F00115E56 /* Common */ = {
@@ -726,6 +737,7 @@
 				7A91B20B285B622D0049CE8C /* TextImageLessonSectionView.swift in Sources */,
 				83B81EE42860F27500115E56 /* SignInView.swift in Sources */,
 				2ADB39A62859FA2400A7992D /* VideoLessonView.swift in Sources */,
+				7AFB1635286219A300E9515E /* UrlImageModel.swift in Sources */,
 				83B81EEF2860F30500115E56 /* AuthorizationResult.swift in Sources */,
 				2AD95C1428587D4E00E220E8 /* CourseSectionView.swift in Sources */,
 				7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */,
@@ -753,6 +765,7 @@
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,
 				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,
 				7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */,
+				7AFB16332862199B00E9515E /* UrlImageView.swift in Sources */,
 				2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */,
 				83B81EEB2860F2D600115E56 /* AuthorizationViewModel.swift in Sources */,
 				7A91B213285DCC970049CE8C /* ForgotPasswordView.swift in Sources */,
@@ -773,7 +786,6 @@
 				2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */,
 				7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */,
 				2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */,
-				7AF7450A2859F2C20075B429 /* CoursesDetailModel.swift in Sources */,
 				7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */,
 				7A1227802859088700536CC5 /* ProfileView.swift in Sources */,
 				83B81EEA2860F2D600115E56 /* AuthorizationViewConfiguration.swift in Sources */,
@@ -922,7 +934,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T824455WAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -939,7 +951,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -958,7 +970,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T824455WAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -975,7 +987,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

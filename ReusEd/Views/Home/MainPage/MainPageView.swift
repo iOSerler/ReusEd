@@ -17,14 +17,18 @@ struct MainPageView: View {
                 ProfileHeaderView(image: "Anna",
                                   text1: "Hello 👋",
                                   text2: "Anna Dluzhinskaya",
-                                  settings: settings)
+                                  settings: settings,
+                                  coursesViewModel: coursesViewModel
+                )
                 
-                FilterBarView(showCategory: $showCategory,
+                FilterBarView(coursesViewModel: coursesViewModel,
+                              showCategory: $showCategory,
                               settings: settings,
                               filterButtonImage: icons.filterButtonImage)
                 
                 ScrollCourseSectionView(settings: settings,
-                                        categoriesId: Array(coursesViewModel.categoryCourses.keys).sorted(by: <),
+                                        categories: coursesViewModel.categories,
+                                        coursesViewModel: coursesViewModel,
                                         showCategory: $showCategory)
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -34,12 +38,12 @@ struct MainPageView: View {
     }
 }
 
-struct MainPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPageView(settings: viewAssets,
-                     coursesViewModel: CoursesViewModel(
-                        courses: courses,
-                        categories: categories,
-                        categoryCourses: categoryCourses))
-    }
-}
+//struct MainPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainPageView(settings: viewAssets,
+//                     coursesViewModel: CoursesViewModel(
+//                        courses: courses,
+//                        categories: categories,
+//                        categoryCourses: categoryCourses))
+//    }
+//}

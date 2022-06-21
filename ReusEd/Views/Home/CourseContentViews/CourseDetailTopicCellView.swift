@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CourseDetailTopicCellView: View {
-    @State var topic: CourseTopic
+    @State var lesson: Lesson
     var settings: ViewAssets
     
     var icon: String {
-        switch topic.type {
-        case .document:
-            return icons.videoIcon
-        case .video:
+        switch lesson.type {
+        case "text":
             return icons.documentIcon
-        case .quiz:
+        case "video":
+            return icons.videoIcon
+        default:
             return icons.quizIcon
         }
     }
@@ -27,20 +27,20 @@ struct CourseDetailTopicCellView: View {
             Image(icon)
                 .padding(.trailing, 10)
             VStack(alignment: .leading) {
-                Text(topic.title)
+                Text(lesson.title!)
                     .font(.custom(settings.titleFont, size: 14))
                     .foregroundColor(Color(settings.mainTextColor))
-                Text(topic.description)
+                Text(lesson.description!)
                     .font(.custom(settings.descriptionFont, size: 12))
                     .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.leading)
                 HStack(alignment: .center) {
                     
-                    ProgressView(value: topic.progress * 100, total: 100)
-                        .accentColor(topic.progress != 1 ? Color(settings.primaryColor) : Color(.green))
+                    ProgressView(value: lesson.progress! * 100, total: 100)
+                        .accentColor(lesson.progress != 1 ? Color(settings.primaryColor) : Color(.green))
                         .padding(.trailing, 20)
                     
-                    Text("\(Int((topic.progress * 100).rounded())) %")
+                    Text("\(Int((lesson.progress! * 100).rounded())) %")
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.trailing, 20)

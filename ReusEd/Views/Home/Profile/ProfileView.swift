@@ -12,10 +12,10 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ProfileHeaderView(image: "Anna",
-                                  text1: "Hello 👋",
-                                  text2: "Anna Dluzhinskaya",
-                                  settings: settings)
+//                ProfileHeaderView(image: "Anna",
+//                                  text1: "Hello 👋",
+//                                  text2: "Anna Dluzhinskaya",
+//                                  settings: settings)
                 Text("Hello, World! This is Profile View")
                 Spacer()
             }

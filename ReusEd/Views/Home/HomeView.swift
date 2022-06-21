@@ -10,16 +10,14 @@ import SwiftUI
 struct HomeView: View {
     var settings: ViewAssets
     var tabBarSettings: TabBarData
+    @StateObject var coursesViewModel = CoursesViewModel()
     @State private var selection = 0
     var body: some View {
         
         TabView(selection: $selection) {
             
             MainPageView(settings: settings,
-                         coursesViewModel: CoursesViewModel(
-                            courses: courses,
-                            categories: categories,
-                            categoryCourses: categoryCourses))
+                         coursesViewModel: coursesViewModel)
             .tabItem {
                 selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
                 Text(tabBar.tab1Title)
@@ -35,7 +33,7 @@ struct HomeView: View {
                 }
                 .tag(1)
             
-            SavedCoursesListView(courses: courses, settings: settings, coursesListType: .saved)
+            SavedCoursesListView(courses: coursesViewModel.courses, settings: settings, coursesViewModel: coursesViewModel)
                 .tabItem {
                     //                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
                     selection == 2 ?
