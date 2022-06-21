@@ -10,7 +10,7 @@ import SwiftUI
 struct FilterView: View {
     var settings: ViewAssets
     @Binding var applyFilter: Bool
-    @State var type: CoursesListType = .popular
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -20,7 +20,7 @@ struct FilterView: View {
             
             Button(
                 action: {
-                    self.type = .saved
+                    print("sdfhsdfh")
                 }, label: {
                     Text("Show me saved")
                         .font(Font.custom(settings.titleFont, size: 16))
@@ -34,9 +34,9 @@ struct FilterView: View {
             
             Button(
                 action: {
-                    if self.type != .popular {
-                        self.applyFilter.toggle()
-                    }
+//                    if self.type != .popular {
+//                        self.applyFilter.toggle()
+//                    }
                     dismiss()
                     
                 }, label: {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TextImageView: View {
     var settings: ViewAssets
-    var textImage: TextImage
+    var textImage: TextLessonData
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,8 +21,8 @@ struct TextImageView: View {
                     .multilineTextAlignment(.leading)
             }
             if let image = textImage.image {
-                Image(image)
-                    .resizable()
+                UrlImageView(urlString: image)
+//                    .resizable()
                     .aspectRatio(contentMode: .fit)
             }
         }

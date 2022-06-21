@@ -10,7 +10,7 @@ import AVKit
 
 struct VideoStampsIView: View {
     var settings: ViewAssets
-    var stamps: [Stamp]
+    var stamps: [VideoLessonStamp]
     @Binding var player: AVPlayer
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {

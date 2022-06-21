@@ -13,12 +13,13 @@ struct CourseListCellView: View {
     var body: some View {
         VStack(alignment: .center) {
             HStack(alignment: .center) {
-                Image(course.posterSmall)
+                UrlImageView(urlString: course.posterSmall!)
+                    .frame(width: UIScreen.main.bounds.width / 5.3, height: UIScreen.main.bounds.width / 5.3)
                 VStack(alignment: .leading) {
-                    Text(course.title)
+                    Text(course.title!)
                         .font(.custom(settings.titleFont, size: 14))
                         .foregroundColor(Color(settings.mainTextColor))
-                    Text(course.description)
+                    Text(course.shortDescription!)
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.descriptionTextColor))
                         .multilineTextAlignment(.leading)
@@ -27,17 +28,17 @@ struct CourseListCellView: View {
                     Spacer()
                     HStack(alignment: .center, spacing: 1) {
                         Image(icons.timeImage)
-                        Text(course.duration)
+                        Text(course.duration!)
                             .font(.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(Color(settings.primaryLightColor))
                             .padding(.leading, 5)
                         Spacer()
-                        ProgressView(value: course.progress * 100, total: 100)
+                        ProgressView(value: course.progress! * 100, total: 100)
                             .scaleEffect(1.5, anchor: .center)
                             .accentColor(Color(settings.primaryLightColor))
                             .frame(width: UIScreen.main.bounds.width / 5)
                             .padding(.trailing, 30)
-                        Text("\(Int((course.progress * 100).rounded())) %")
+                        Text("\(Int((course.progress! * 100).rounded())) %")
                             .font(.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(Color(settings.mainTextColor))
                     }

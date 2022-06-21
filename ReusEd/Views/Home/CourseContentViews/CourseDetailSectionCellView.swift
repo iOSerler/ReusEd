@@ -10,6 +10,8 @@ import SwiftUI
 struct CourseDetailSectionCellView: View {
     var settings: ViewAssets
     @State var section: CourseSection
+    @State var courseId: Int
+    @ObservedObject var coursesViewModel: CoursesViewModel
     var body: some View {
         
         HStack {
@@ -17,15 +19,30 @@ struct CourseDetailSectionCellView: View {
                 Text(section.title)
                     .font(.custom(settings.descriptionFont, size: 14))
                     .foregroundColor(Color(settings.detailsTextColor))
-                ForEach(section.topics) { topic in
-                    NavigationLink(destination: TextImageLessonView(settings: settings, textImageLesson: textImageLesson)) {
-                        CourseDetailTopicCellView(topic: topic, settings: settings)
-                            .padding(.vertical, 10)
+                ForEach(
+                    coursesViewModel.getLessonsBySection(
+                        courseId: courseId,
+                        sectionId: section.id
+                    )
+                )
+                { lesson in
+                    if lesson.type == "text" {
+                        NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson)) {
+                            CourseDetailTopicCellView(lesson: lesson, settings: settings)
+                                .padding(.vertical, 10)
+                        }
+                    } else {
+                        NavigationLink(destination: VideoLessonView(settings: settings, videoLesson: lesson)) {
+                            CourseDetailTopicCellView(lesson: lesson, settings: settings)
+                                .padding(.vertical, 10)
+                            
+                        }
                     }
-//                    NavigationLink(destination: VideoLessonView(settings: settings)) {
-//                        CourseDetailTopicCellView(topic: topic, settings: settings)
-//                            .padding(.vertical, 10)
-//                    }
+                   
+                    
+                   
+                    
+                    
                     Divider()
                 }
                 

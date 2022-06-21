@@ -9,15 +9,15 @@ import SwiftUI
 
 struct TextImageLessonSectionView: View {
     var settings: ViewAssets
-    @State var textImageSection: TextImageSection
+    @State var section: TextLessonSection
     var body: some View {
         VStack(alignment: .leading) {
-            Text(textImageSection.title)
+            Text(section.title)
                 .font(.custom(settings.titleFont, size: 16))
                 .padding(.bottom, 1)
             
-            ForEach(0..<textImageSection.textImages.count, id: \.self) { ind in
-                TextImageView(settings: settings, textImage: textImageSection.textImages[ind])
+            ForEach(section.data) { data in
+                TextImageView(settings: settings, textImage: data)
             }
         }
         .padding(.bottom, 30)

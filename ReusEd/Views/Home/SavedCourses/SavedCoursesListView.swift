@@ -10,8 +10,9 @@ import SwiftUI
 struct SavedCoursesListView: View {
     @State var courses: [Course]
     var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var selectedSegment = 0
-    var coursesListType: CoursesListType
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -23,14 +24,18 @@ struct SavedCoursesListView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                CourseListView(courses: courses, pageSettings: settings, coursesListType: {
+                CourseListView(
+                    courses: courses,
+                    pageSettings: settings,
+                    coursesViewModel: coursesViewModel,
+                    coursesListType: {
                     switch selectedSegment {
                     case 0:
-                        return .saved
+                        return "saved"
                     case 1:
-                        return .popular
+                        return "popular"
                     default:
-                        return .saved
+                        return "category"
                     }
                 }())
             }

@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct CourseDetailView: View {
-    @State var courseId: Int
+    @State var course: Course
     var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State var isText: Bool = true
-    @State var detail: CourseDetail?
     var body: some View {
         if isText {
-            Text("course id \(courseId)")
+            Text("course id \(course.id!)")
         } else {
             ZStack {
                 VStack {
                     
                     
-                    Image(icons.courseDetailBackground)
-                        .resizable()
+                    UrlImageView(urlString: course.posterBig!)
+//                        .resizable()
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.all)
                     
                     
                     Spacer()
                     
-                    CourseDetailMainView(settings: settings, detail: detail)
+                    CourseDetailMainView(settings: settings, coursesViewModel: coursesViewModel, course: course)
                     
                         .offset(y: -UIScreen.main.bounds.height / 5)
                         .padding(.bottom, -UIScreen.main.bounds.height / 3.9)
@@ -59,30 +59,31 @@ struct CourseDetailView: View {
 
 struct CourseDetailMainView: View {
     var settings: ViewAssets
-    @State var detail: CourseDetail?
+    @ObservedObject var coursesViewModel: CoursesViewModel
+    @State var course: Course
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                if let detail = detail {
-                    Text(detail.title)
+                if let detail = course {
+                    Text(detail.title!)
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
                     
-                    Text(detail.description)
+                    Text(detail.longDescription!)
                         .font(.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.descriptionTextColor))
                         .padding(.top, 20)
                     
                     HStack {
                         Image(icons.authorIcon)
-                        Text(detail.authorName)
+                        Text(detail.author!)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
                         Image(icons.durationOffIcon)
                             .padding(.leading, 20)
-                        Text(detail.duration)
+                        Text(detail.duration!)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
@@ -93,8 +94,8 @@ struct CourseDetailMainView: View {
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.top, 30)
-                    ForEach(detail.sections) { section in
-                        CourseDetailSectionCellView(settings: settings, section: section)
+                    ForEach(detail.sections!) { section in
+                        CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id!, coursesViewModel: coursesViewModel)
                     }
                 }
                 Spacer()

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct SearchView: View {
     var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     var body: some View {
         VStack {
-            CourseListView(courses: courses, pageSettings: settings, coursesListType: .category)
+            CourseListView(courses: coursesViewModel.courses, pageSettings: settings, coursesViewModel: coursesViewModel, coursesListType: "category")
         }
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView(settings: viewAssets)
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView(settings: viewAssets)
+//    }
+//}

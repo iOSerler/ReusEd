@@ -9,10 +9,7 @@ import SwiftUI
 
 struct FilterBarView: View {
     
-    @ObservedObject var coursesViewModel = CoursesViewModel(
-        courses: courses,
-        categories: categories,
-        categoryCourses: categoryCourses)
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @State private var showingSheet: Bool = false
     @State private var applyFilter: Bool = false
     
@@ -46,8 +43,8 @@ struct FilterBarView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(coursesViewModel.categories) {category in
-                        FilterButtonView(id: category.id,
-                                         title: category.filterTitle!,
+                        FilterButtonView(id: category.id!,
+                                         title: category.title!,
                                          titleFont: settings.descriptionFont,
                                          titleColor: settings.descriptionTextColor,
                                          pressColor: settings.primaryLighterColor,

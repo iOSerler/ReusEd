@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ScrollCourseSectionView: View {
     var settings: ViewAssets
-    var categoriesId: [Int]
+    var categories: [Category]
+    @ObservedObject var coursesViewModel: CoursesViewModel
     @Binding var showCategory: Set<Int>
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 30) {
-                ForEach(categoriesId, id: \.self) {ind in
+                ForEach(categories) { category in
                     showCategory.count == 0 ?
-                    CourseSectionView(settings: settings, categoryId: ind) :
-                    (showCategory.contains(ind) ?
-                     CourseSectionView(settings: settings, categoryId: ind) : nil)
+                    CourseSectionView(settings: settings, category: category, coursesViewModel: coursesViewModel) :
+                    (showCategory.contains(category.id!) ?
+                     CourseSectionView(settings: settings, category: category, coursesViewModel: coursesViewModel) : nil)
                     
                 }
             }

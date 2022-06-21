@@ -8,55 +8,64 @@
 import Foundation
 
 
-
-
-
-struct Course: Identifiable {
+struct CourseSection: Identifiable, Decodable {
     var id: Int
     var title: String
-    var description: String
-    var posterBig: String
-    var posterSmall: String
-    var duration: String
-    var progress: Double = 0.5
-    var isSaved: Bool = true
-    var isPopular: Bool = false
-    var detail: CourseDetail?
+    var lessons: [Int]
 }
 
-struct Category: Identifiable {
+
+struct Course: Identifiable, Decodable {
+    var id: Int?
+    var title: String?
+    var shortDescription: String?
+    var longDescription: String?
+    var duration: String?
+    var progress: Double?
+    var posterSmall: String?
+    var posterBig: String?
+    var isSaved: Bool?
+    var isPopular: Bool?
+    var categories: [Int]?
+    var author: String?
+    var sections: [CourseSection]?
+    
+}
+
+struct Category: Identifiable, Decodable {
+    var id: Int?
+    var title: String?
+    var courses: [Int]?
+}
+
+
+struct TextLessonData: Identifiable, Decodable {
+    var id: Int?
+    var text: String?
+    var image: String?
+}
+struct TextLessonSection: Identifiable, Decodable {
     var id: Int
     var title: String
-    var filterTitle: String?
+    var data: [TextLessonData]
 }
-var categories = [
-    Category(
-        id: 1,
-        title: "New Courses",
-        filterTitle: "🔥 New"
-    ),
-    Category(
-        id: 2,
-        title: "Programming",
-        filterTitle: "⌨️ Programming"
-    ),
-    Category(
-        id: 3,
-        title: "Design",
-        filterTitle: "🎨 Design"
-    )
-]
 
+struct VideoLessonStamp: Decodable {
+    var seconds: Double
+    var textTime: String
+    var textDescription: String
+}
 
-
-var categoryCourses = [
-    1: [1, 3, 4],
-    2: [2, 5, 7],
-    3: [6]
-]
-
-enum CoursesListType {
-    case saved
-    case popular
-    case category
+struct Lesson: Identifiable, Decodable {
+    var id: Int?
+    var type: String?
+    var title: String?
+    var description: String?
+    var duration: String?
+    var progress: Double?
+    var background: String?
+    var sections: [TextLessonSection]?
+    var url: String?
+    var stamps: [VideoLessonStamp]?
+    
 }

@@ -10,11 +10,15 @@ import AVKit
 
 struct VideoLessonView: View {
     var settings: ViewAssets
+    var videoLesson: Lesson
     
+    @State var player: AVPlayer
     
-    var info: VideoLesson = videoLesson
-    
-    @State var player = AVPlayer()
+    init( settings: ViewAssets, videoLesson: Lesson) {
+        self.settings = settings
+        self.videoLesson = videoLesson
+        self.player = AVPlayer(url: URL(string: videoLesson.url!)!)
+    }
     
     var body: some View {
         VStack {
@@ -28,13 +32,13 @@ struct VideoLessonView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     
                     VideoDescriptionView(settings: settings,
-                                         title: info.title,
+                                         title: videoLesson.title!,
                                          durationImage: icons.timeImage,
-                                         duration: info.duration,
-                                         description: info.description)
+                                         duration: videoLesson.duration!,
+                                         description: videoLesson.description!)
                     
                     VideoStampsIView(settings: settings,
-                                     stamps: info.stamps,
+                                     stamps: videoLesson.stamps!,
                                      player: $player)
                     
                     LessonFooterView(settings: settings)
@@ -46,7 +50,7 @@ struct VideoLessonView: View {
             
         }
         .onAppear {
-            self.player = AVPlayer(url: URL(string: info.url)!)
+            print(videoLesson.url!)
         }
     }
 }
