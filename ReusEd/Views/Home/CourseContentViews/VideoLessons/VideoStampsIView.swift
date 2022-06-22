@@ -31,8 +31,10 @@ struct VideoStampsIView: View {
                         .font(Font.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.primaryColor))
                         .onTapGesture {
-                            player.seek(to: CMTime(seconds: stamps[ind].seconds,
-                                                   preferredTimescale: 1))
+                            DispatchQueue.main.async {
+                                player.seek(to: CMTime(seconds: stamps[ind].seconds,
+                                                       preferredTimescale: 1))
+                            }
                         }
                     
                     Text(": "+String(stamps[ind].textDescription))

@@ -45,7 +45,7 @@ struct CompleteCourseView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     HStack(alignment: .firstTextBaseline) {
-                        StarsView(color: Color(viewAssets.primaryColor), rating: 4.2)
+                        StarsView(color: Color(viewAssets.primaryColor), rating: Float(completionRate))
                         Text(String(completionRate))
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.primaryColor))
@@ -62,7 +62,7 @@ struct CompleteCourseView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("32 Points")
+                    Text(String(numPoints) + " Points")
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.primaryColor))
                     
