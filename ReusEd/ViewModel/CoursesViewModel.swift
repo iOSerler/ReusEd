@@ -79,10 +79,12 @@ class CoursesViewModel: ObservableObject {
     
     
     func updateLessonProgress(lessonId: Int, progress: Double) {
-        if progress > 0.9 {
-            lessons[lessonId - 1].progress = 1.0
-        } else {
-            lessons[lessonId - 1].progress = progress
+        DispatchQueue.main.async {
+            if progress > 0.9 {
+                self.lessons[lessonId - 1].progress = 1.0
+            } else {
+                self.lessons[lessonId - 1].progress = progress
+            }
         }
     }
     

@@ -10,6 +10,7 @@ import SwiftUI
 struct CourseDetailTopicCellView: View {
     @State var lesson: Lesson
     var settings: ViewAssets
+    @ObservedObject var coursesViewModel: CoursesViewModel
     
     var icon: String {
         switch lesson.type {
@@ -36,11 +37,11 @@ struct CourseDetailTopicCellView: View {
                     .multilineTextAlignment(.leading)
                 HStack(alignment: .center) {
                     
-                    ProgressView(value: lesson.progress * 100, total: 100)
+                    ProgressView(value: coursesViewModel.lessons[lesson.id-1].progress * 100, total: 100)
                         .accentColor(lesson.progress != 1 ? Color(settings.primaryColor) : Color(.green))
                         .padding(.trailing, 20)
                     
-                    Text("\(Int((lesson.progress * 100).rounded())) %")
+                    Text("\(Int((coursesViewModel.lessons[lesson.id-1].progress * 100).rounded())) %")
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.trailing, 20)
