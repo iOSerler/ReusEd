@@ -5,7 +5,7 @@
         "title": "Control Flow",
         "description": "Learn how to build control flow into your python code by including if, else, and elif statements.",
         "duration": "3h 45min",
-        "progress": 0.5,
+        "progress": 0,
         "background": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/textLessonBackground.png",
         "sections": [
             {
@@ -58,7 +58,7 @@
         "title": "Variables and Data Types",
         "description": "Learn how to build control flow into your python code by including if, else, and elif statements.",
         "duration": "3h 45min",
-        "progress": 0.5,
+        "progress": 0,
         "background": "https://raw.githubusercontent.com/ahrorjabborov/reused_data/main/textLessonBackground.png",
         "sections": [
             {
@@ -111,7 +111,7 @@
         "title": "Loops",
         "description": "Python programming language provides the following types of loops to handle looping requirements. Python provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.",
         "duration": "3h 45min",
-        "progress": 0.5,
+        "progress": 0,
         "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
         "stamps": [
             {
@@ -152,7 +152,7 @@
         "title": "Final Quiz",
         "description": "Python programming language provides the following types of loops to handle looping requirements. Python provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.",
         "duration": "3h 45min",
-        "progress": 0.5,
+        "progress": 0,
         "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
         "stamps": [
             {
