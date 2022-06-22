@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CourseSection: Identifiable, Decodable {
     var id: Int
     var title: String
@@ -67,7 +66,7 @@ struct Lesson: Identifiable, Decodable {
     var sections: [TextLessonSection]?
     var url: String?
     var stamps: [VideoLessonStamp]?
-    
+    var currentTime: Double?
 }
 
 struct LessonFooter {

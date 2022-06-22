@@ -27,7 +27,6 @@ struct MainPageView: View {
                               filterButtonImage: icons.filterButtonImage)
                 
                 ScrollCourseSectionView(settings: settings,
-                                        categories: coursesViewModel.categories,
                                         coursesViewModel: coursesViewModel,
                                         showCategory: $showCategory)
             }

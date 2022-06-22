@@ -27,12 +27,12 @@ struct CourseDetailSectionCellView: View {
                 ) { lesson in
                     if lesson.type == "text" {
                         NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson)) {
-                            CourseDetailTopicCellView(lesson: lesson, settings: settings)
+                            CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                         }
                     } else {
-                        NavigationLink(destination: VideoLessonView(settings: settings, videoLesson: lesson)) {
-                            CourseDetailTopicCellView(lesson: lesson, settings: settings)
+                        NavigationLink(destination: VideoLessonView(settings: settings, videoLesson: lesson, coursesViewModel: coursesViewModel)) {
+                            CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                             
                         }
