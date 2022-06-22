@@ -64,6 +64,7 @@
 		7A1227802859088700536CC5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12277F2859088700536CC5 /* ProfileView.swift */; };
 		7A122782285908D200536CC5 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A122781285908D200536CC5 /* ScoresView.swift */; };
 		7A12278528590DCB00536CC5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12278428590DCB00536CC5 /* NotificationsView.swift */; };
+		7A7F49CC2863181E00B6AEB9 /* ScrollViewProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */; };
 		7A91B209285B5EB50049CE8C /* TextImageLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B208285B5EB50049CE8C /* TextImageLessonView.swift */; };
 		7A91B20B285B622D0049CE8C /* TextImageLessonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B20A285B622D0049CE8C /* TextImageLessonSectionView.swift */; };
 		7A91B20D285B63ED0049CE8C /* TextImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B20C285B63ED0049CE8C /* TextImageView.swift */; };
@@ -165,6 +166,7 @@
 		7A12277F2859088700536CC5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		7A122781285908D200536CC5 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		7A12278428590DCB00536CC5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewProportion.swift; sourceTree = "<group>"; };
 		7A91B208285B5EB50049CE8C /* TextImageLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageLessonView.swift; sourceTree = "<group>"; };
 		7A91B20A285B622D0049CE8C /* TextImageLessonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageLessonSectionView.swift; sourceTree = "<group>"; };
 		7A91B20C285B63ED0049CE8C /* TextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageView.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			children = (
 				7AFB16322862199B00E9515E /* UrlImageView.swift */,
 				7AFB1634286219A300E9515E /* UrlImageModel.swift */,
+				7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				83B81ED32860F26F00115E56 /* AuthorizationEmailInput.swift in Sources */,
 				2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
+				7A7F49CC2863181E00B6AEB9 /* ScrollViewProportion.swift in Sources */,
 				2A5A80E9285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift in Sources */,
 				83B81ED72860F26F00115E56 /* ColorButton.swift in Sources */,
 				7A038C3B284F81F000B1376F /* DailyNotificationsPermissionView.swift in Sources */,
@@ -922,7 +926,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T824455WAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -939,7 +943,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -958,7 +962,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReusEd/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T824455WAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReusEd/Info.plist;
@@ -975,7 +979,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSerler.ReusEd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
