@@ -43,8 +43,8 @@ struct FilterBarView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(coursesViewModel.categories) {category in
-                        FilterButtonView(id: category.id!,
-                                         title: category.title!,
+                        FilterButtonView(id: category.id,
+                                         title: category.title,
                                          titleFont: settings.descriptionFont,
                                          titleColor: settings.descriptionTextColor,
                                          pressColor: settings.primaryLighterColor,

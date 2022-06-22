@@ -26,7 +26,7 @@ struct ContentView: View {
                     case .personalizationPages:
                         PersonalizationQuestionView(settings: viewAssets, question: questions[0], progress: $progress).transition(.opacity)
                     case .authorization:
-                        AuthorizationView() {
+                        AuthorizationView {
                             viewRouter.completeAuthorization(with: $0)
                         }
                         .navigationBarHidden(true)

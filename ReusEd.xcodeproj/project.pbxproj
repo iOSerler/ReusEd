@@ -10,7 +10,6 @@
 		2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0A2851DCF100DB971B /* TabBarModel.swift */; };
 		2A1B302C2860595500A2F20D /* ViewAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */; };
 		2A37E6BF2850B6CD00D9E739 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */; };
-		2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */; };
 		2A5A80E9285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E8285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift */; };
 		2A5A80EB285B5CC500809CB2 /* VideoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EA285B5CC500809CB2 /* VideoDescriptionView.swift */; };
 		2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */; };
@@ -57,7 +56,6 @@
 		7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4C28509DDD00B1376F /* HomeView.swift */; };
 		7A038C542850A05600B1376F /* PersonalizationQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */; };
 		7A038C5A2850A07E00B1376F /* CheckboxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C592850A07E00B1376F /* CheckboxList.swift */; };
-		7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C5C2850B12A00B1376F /* TestViewModel1.swift */; };
 		7A1227722858BE9900536CC5 /* CourseListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227712858BE9900536CC5 /* CourseListCellView.swift */; };
 		7A1227752858BFD100536CC5 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227742858BFD100536CC5 /* CourseListView.swift */; };
 		7A1227782858CA5400536CC5 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227772858CA5400536CC5 /* CourseDetailView.swift */; };
@@ -73,7 +71,6 @@
 		7A91B213285DCC970049CE8C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B212285DCC970049CE8C /* ForgotPasswordView.swift */; };
 		7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */; };
 		7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */; };
-		7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */; };
 		7AFB162C2861AC6F00E9515E /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB16292861AC6F00E9515E /* categories.json */; };
 		7AFB162D2861AC6F00E9515E /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162A2861AC6F00E9515E /* lessons.json */; };
 		7AFB162E2861AC6F00E9515E /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB162B2861AC6F00E9515E /* courses.json */; };
@@ -111,7 +108,6 @@
 		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssetsModel.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
-		2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsModel.swift; sourceTree = "<group>"; };
 		2A5A80E8285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotateVideoPlayerView.swift; sourceTree = "<group>"; };
 		2A5A80EA285B5CC500809CB2 /* VideoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionView.swift; sourceTree = "<group>"; };
 		2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStampsIView.swift; sourceTree = "<group>"; };
@@ -161,7 +157,6 @@
 		7A038C4C28509DDD00B1376F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationQuestionView.swift; sourceTree = "<group>"; };
 		7A038C592850A07E00B1376F /* CheckboxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxList.swift; sourceTree = "<group>"; };
-		7A038C5C2850B12A00B1376F /* TestViewModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel1.swift; sourceTree = "<group>"; };
 		7A1227712858BE9900536CC5 /* CourseListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCellView.swift; sourceTree = "<group>"; };
 		7A1227742858BFD100536CC5 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		7A1227772858CA5400536CC5 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
@@ -177,7 +172,6 @@
 		7A91B212285DCC970049CE8C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		7AF745052859E8A30075B429 /* CourseDetailTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailTopicCellView.swift; sourceTree = "<group>"; };
 		7AF745072859F1D30075B429 /* CourseDetailSectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailSectionCellView.swift; sourceTree = "<group>"; };
-		7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCoursesData.swift; sourceTree = "<group>"; };
 		7AFB16292861AC6F00E9515E /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		7AFB162A2861AC6F00E9515E /* lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lessons.json; sourceTree = "<group>"; };
 		7AFB162B2861AC6F00E9515E /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
@@ -335,9 +329,7 @@
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
 				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
-				2A5A80E6285A1D6100809CB2 /* LessonsModel.swift */,
 				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
-				7AF7450B2859FBC40075B429 /* SampleCoursesData.swift */,
 				2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */,
 			);
 			path = Models;
@@ -436,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				83B81EE72860F2D600115E56 /* Authorization */,
-				7A038C5C2850B12A00B1376F /* TestViewModel1.swift */,
 				2AD95C1E2858A7A300E220E8 /* CoursesViewModel.swift */,
 			);
 			path = ViewModel;
@@ -764,7 +755,6 @@
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,
 				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,
-				7AF7450C2859FBC40075B429 /* SampleCoursesData.swift in Sources */,
 				7AFB16332862199B00E9515E /* UrlImageView.swift in Sources */,
 				2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */,
 				83B81EEB2860F2D600115E56 /* AuthorizationViewModel.swift in Sources */,
@@ -783,13 +773,11 @@
 				7A1227752858BFD100536CC5 /* CourseListView.swift in Sources */,
 				83B81EDA2860F26F00115E56 /* AuthorizationIcon.swift in Sources */,
 				7A038C03284F324300B1376F /* ReusEdApp.swift in Sources */,
-				2A5A80E7285A1D6100809CB2 /* LessonsModel.swift in Sources */,
 				7AF745082859F1D30075B429 /* CourseDetailSectionCellView.swift in Sources */,
 				2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */,
 				7AF745062859E8A30075B429 /* CourseDetailTopicCellView.swift in Sources */,
 				7A1227802859088700536CC5 /* ProfileView.swift in Sources */,
 				83B81EEA2860F2D600115E56 /* AuthorizationViewConfiguration.swift in Sources */,
-				7A038C5D2850B12A00B1376F /* TestViewModel1.swift in Sources */,
 				7A122782285908D200536CC5 /* ScoresView.swift in Sources */,
 				7A038C18284F383900B1376F /* OnBoardingPagesModel.swift in Sources */,
 				2AD95C1728587E3600E220E8 /* SearchBarView.swift in Sources */,

@@ -18,7 +18,7 @@ struct ScrollCourseSectionView: View {
                 ForEach(categories) { category in
                     showCategory.count == 0 ?
                     CourseSectionView(settings: settings, category: category, coursesViewModel: coursesViewModel) :
-                    (showCategory.contains(category.id!) ?
+                    (showCategory.contains(category.id) ?
                      CourseSectionView(settings: settings, category: category, coursesViewModel: coursesViewModel) : nil)
                     
                 }

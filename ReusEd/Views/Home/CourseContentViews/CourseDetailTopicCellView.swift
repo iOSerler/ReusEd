@@ -27,20 +27,20 @@ struct CourseDetailTopicCellView: View {
             Image(icon)
                 .padding(.trailing, 10)
             VStack(alignment: .leading) {
-                Text(lesson.title!)
+                Text(lesson.title)
                     .font(.custom(settings.titleFont, size: 14))
                     .foregroundColor(Color(settings.mainTextColor))
-                Text(lesson.description!)
+                Text(lesson.description)
                     .font(.custom(settings.descriptionFont, size: 12))
                     .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.leading)
                 HStack(alignment: .center) {
                     
-                    ProgressView(value: lesson.progress! * 100, total: 100)
+                    ProgressView(value: lesson.progress * 100, total: 100)
                         .accentColor(lesson.progress != 1 ? Color(settings.primaryColor) : Color(.green))
                         .padding(.trailing, 20)
                     
-                    Text("\(Int((lesson.progress! * 100).rounded())) %")
+                    Text("\(Int((lesson.progress * 100).rounded())) %")
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.trailing, 20)

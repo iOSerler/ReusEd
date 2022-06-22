@@ -22,7 +22,7 @@ class CoursesViewModel: ObservableObject {
     func loadCourses() {
         guard let url = Bundle.main.url(forResource: "courses", withExtension: "json")
         else {
-            print("Json file not found")
+            print("courses json file not found")
             return
         }
         
@@ -35,7 +35,7 @@ class CoursesViewModel: ObservableObject {
     func loadCategories() {
         guard let url = Bundle.main.url(forResource: "categories", withExtension: "json")
         else {
-            print("Json file not found")
+            print("categories json file not found")
             return
         }
         
@@ -48,7 +48,7 @@ class CoursesViewModel: ObservableObject {
     func loadLessons() {
         guard let url = Bundle.main.url(forResource: "lessons", withExtension: "json")
         else {
-            print("Json file not found")
+            print("lessons json file not found")
             return
         }
         
@@ -60,11 +60,9 @@ class CoursesViewModel: ObservableObject {
     
     func getCoursesByCategory(categoryId: Int) -> [Course] {
         var coursesArr = [Course]()
-        
-        if let coursesTemp = categories[categoryId - 1].courses {
-            for courseInd in coursesTemp {
-                coursesArr.append(self.courses[courseInd-1])
-            }
+        let coursesTemp = categories[categoryId - 1].courses
+        for courseInd in coursesTemp {
+            coursesArr.append(self.courses[courseInd-1])
         }
         
         return coursesArr
@@ -72,11 +70,10 @@ class CoursesViewModel: ObservableObject {
     
     func getLessonsBySection(courseId: Int, sectionId: Int) -> [Lesson] {
         var lessonsArr = [Lesson]()
-        let lessonsIds = courses[courseId - 1].sections![sectionId - 1].lessons
+        let lessonsIds = courses[courseId - 1].sections[sectionId - 1].lessons
         for ind in lessonsIds {
             lessonsArr.append(self.lessons[ind - 1])
         }
-        
         return lessonsArr
     }
     

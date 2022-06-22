@@ -37,13 +37,3 @@ struct MainPageView: View {
         }
     }
 }
-
-//struct MainPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainPageView(settings: viewAssets,
-//                     coursesViewModel: CoursesViewModel(
-//                        courses: courses,
-//                        categories: categories,
-//                        categoryCourses: categoryCourses))
-//    }
-//}

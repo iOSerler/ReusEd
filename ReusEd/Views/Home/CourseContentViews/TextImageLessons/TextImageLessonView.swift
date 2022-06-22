@@ -12,14 +12,14 @@ struct TextImageLessonView: View {
     var textLesson: Lesson
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            Text(textLesson.description!)
+            Text(textLesson.description)
                 .font(.custom(settings.descriptionFont, size: 14))
                 .foregroundColor(Color(settings.descriptionTextColor))
                 .multilineTextAlignment(.leading)
             HStack {
                 Image(icons.durationOffIcon)
                 
-                Text(textLesson.duration!)
+                Text(textLesson.duration)
                     .font(.custom(settings.descriptionFont, size: 14))
                     .foregroundColor(Color(settings.detailsTextColor))
                     .padding(.leading, 10)
@@ -31,7 +31,7 @@ struct TextImageLessonView: View {
                 ForEach(textLesson.sections!) { section in
                     TextImageLessonSectionView(settings: settings, section: section)
                 }
-            }.navigationTitle(textLesson.title!)
+            }.navigationTitle(textLesson.title)
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.horizontal, 20)
         }

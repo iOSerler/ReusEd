@@ -28,7 +28,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ) {
         completionHandler([.banner, .sound])
     }
-
+    
     // allows you to do some action when entering the application by clicking on the notification
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
@@ -37,7 +37,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ) {
         let info = response.notification.request.content.categoryIdentifier
         print(info)
-
+        
         completionHandler()
     }
 }
