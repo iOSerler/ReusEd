@@ -14,14 +14,13 @@ struct CourseDetailView: View {
     @State var isText: Bool = true
     var body: some View {
         if isText {
-            Text("course id \(course.id!)")
+            Text("course id \(course.id)")
         } else {
             ZStack {
                 VStack {
                     
                     
-                    UrlImageView(urlString: course.posterBig!)
-//                        .resizable()
+                    UrlImageView(urlString: course.posterBig)
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.all)
                     
@@ -66,24 +65,24 @@ struct CourseDetailMainView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 if let detail = course {
-                    Text(detail.title!)
+                    Text(detail.title)
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
                     
-                    Text(detail.longDescription!)
+                    Text(detail.longDescription)
                         .font(.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.descriptionTextColor))
                         .padding(.top, 20)
                     
                     HStack {
                         Image(icons.authorIcon)
-                        Text(detail.author!)
+                        Text(detail.author)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
                         Image(icons.durationOffIcon)
                             .padding(.leading, 20)
-                        Text(detail.duration!)
+                        Text(detail.duration)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
@@ -94,8 +93,8 @@ struct CourseDetailMainView: View {
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.top, 30)
-                    ForEach(detail.sections!) { section in
-                        CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id!, coursesViewModel: coursesViewModel)
+                    ForEach(detail.sections) { section in
+                        CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id, coursesViewModel: coursesViewModel)
                     }
                 }
                 Spacer()

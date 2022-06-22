@@ -17,7 +17,7 @@ struct CourseSectionView: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: 20) {
             HStack {
-                Text(category.title!)
+                Text(category.title)
                     .font(Font.custom(settings.titleFont, size: 16))
                     .foregroundColor(Color(settings.mainTextColor))
                     .multilineTextAlignment(.center)
@@ -25,11 +25,11 @@ struct CourseSectionView: View {
                     .padding(.leading, 10)
                 Spacer()
                 NavigationLink(destination: CourseListView(
-                    courses: coursesViewModel.getCoursesByCategory(categoryId: category.id!),
+                    courses: coursesViewModel.getCoursesByCategory(categoryId: category.id),
                     pageSettings: settings,
                     coursesViewModel: coursesViewModel,
                     coursesListType: "category",
-                    title: category.title!)) {
+                    title: category.title)) {
                         Text("View All")
                             .font(Font.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.primaryLightColor))
@@ -42,7 +42,7 @@ struct CourseSectionView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: UIScreen.main.bounds.width/20) {
-                    ForEach(coursesViewModel.getCoursesByCategory(categoryId: category.id!)) { course in
+                    ForEach(coursesViewModel.getCoursesByCategory(categoryId: category.id)) { course in
                         CourseCardView(course: course, settings: settings, coursesViewModel: coursesViewModel, timeImage: icons.timeImage)
                     }
                 }.frame(height: UIScreen.main.bounds.height/3.9)

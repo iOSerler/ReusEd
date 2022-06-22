@@ -17,11 +17,11 @@ struct CourseListView: View {
     var displayCourses: [Course] {
         switch coursesListType {
         case "popular":
-            return courses.filter { $0.isPopular! && (searchText.isEmpty ? true : $0.title!.contains(searchText)) }
+            return courses.filter { $0.isPopular && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         case "saved":
-            return courses.filter { $0.isSaved! && (searchText.isEmpty ? true : $0.title!.contains(searchText)) }
+            return courses.filter { $0.isSaved && (searchText.isEmpty ? true : $0.title.contains(searchText)) }
         default:
-            return courses.filter { searchText.isEmpty ? true : $0.title!.contains(searchText) }
+            return courses.filter { searchText.isEmpty ? true : $0.title.contains(searchText) }
         }
     }
     
@@ -45,11 +45,11 @@ struct CourseListView: View {
                 VStack(alignment: .center, spacing: 10) {
                     ForEach(displayCourses) { course in
                         NavigationLink(destination:
-                                            CourseDetailView(course: course,
-                                                             settings: pageSettings,
-                                                             coursesViewModel: coursesViewModel,
-                                                             isText: false
-                                                            )
+                                        CourseDetailView(course: course,
+                                                         settings: pageSettings,
+                                                         coursesViewModel: coursesViewModel,
+                                                         isText: false
+                                                        )
                         ) {
                             CourseListCellView(settings: pageSettings, course: course)
                         }
@@ -58,8 +58,10 @@ struct CourseListView: View {
                     }
                 }
             }
-        }.navigationTitle(title2)
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        .navigationTitle(title2)
+        .navigationBarTitleDisplayMode(.inline)
+        
         
     }
 }

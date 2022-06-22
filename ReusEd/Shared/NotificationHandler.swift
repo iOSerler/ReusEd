@@ -18,7 +18,7 @@ class NotificationHandler {
                         viewRouter.completeNotificationPermission()
                     }
                 }
-
+                
             } else if let error = error {
                 print(error.localizedDescription)
                 
@@ -32,7 +32,7 @@ class NotificationHandler {
             }
         }
     }
-
+    
     func sendNotification(
         date: Date,
         repeats: Bool,
@@ -41,18 +41,18 @@ class NotificationHandler {
         content: UNMutableNotificationContent
     ) {
         var trigger: UNNotificationTrigger?
-
+        
         if type == "date"{
             let dateComponente = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponente, repeats: repeats)
         } else if type == "time"{
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
         }
-
+        
         content.sound = UNNotificationSound.default
-
+        
         let request = UNNotificationRequest(identifier: content.categoryIdentifier, content: content, trigger: trigger)
-
+        
         UNUserNotificationCenter.current().add(request)
     }
 }

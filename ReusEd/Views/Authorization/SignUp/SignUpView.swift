@@ -70,6 +70,4 @@ struct SingUpView_Previews: PreviewProvider {
         }
     }
 }
-//
-//sdgsdgsg@sdggf.com
-//Gdsfghsdfg68sg
+

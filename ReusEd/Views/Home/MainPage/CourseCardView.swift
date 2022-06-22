@@ -18,16 +18,16 @@ struct CourseCardView: View {
             destination: CourseDetailView(course: course, settings: settings, coursesViewModel: coursesViewModel, isText: false)
         ) {
             VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
-                UrlImageView(urlString: course.posterBig!)
+                UrlImageView(urlString: course.posterBig)
                 
                 VStack(alignment: .leading, spacing: UIScreen.main.bounds.height/65) {
-                    Text(course.title!)
+                    Text(course.title)
                         .font(Font.custom(settings.titleFont, size: 14))
                         .foregroundColor(Color(settings.mainTextColor))
                         .multilineTextAlignment(.leading)
                         .padding(.leading, 7)
                     
-                    Text(course.shortDescription!)
+                    Text(course.shortDescription)
                         .font(Font.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.descriptionTextColor))
                         .multilineTextAlignment(.leading)
@@ -35,7 +35,7 @@ struct CourseCardView: View {
                     
                     HStack {
                         Image(timeImage)
-                        Text(course.duration!)
+                        Text(course.duration)
                             .font(Font.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(Color(settings.primaryLightColor))
                             .padding(.leading, 5)

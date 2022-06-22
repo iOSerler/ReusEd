@@ -32,10 +32,10 @@ struct VideoLessonView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     
                     VideoDescriptionView(settings: settings,
-                                         title: videoLesson.title!,
+                                         title: videoLesson.title,
                                          durationImage: icons.timeImage,
-                                         duration: videoLesson.duration!,
-                                         description: videoLesson.description!)
+                                         duration: videoLesson.duration,
+                                         description: videoLesson.description)
                     
                     VideoStampsIView(settings: settings,
                                      stamps: videoLesson.stamps!,

@@ -12,31 +12,31 @@ class UrlImageModel: ObservableObject {
     @Published var image: UIImage?
     var urlString: String?
     
-    init(urlString: String?){
+    init(urlString: String?) {
         self.urlString = urlString
         loadImage()
     }
     
-    func loadImage(){
+    func loadImage() {
         loadImageFromUrl()
     }
     
-    func loadImageFromUrl(){
-        guard urlString != "" else{
+    func loadImageFromUrl() {
+        guard urlString != "" else {
             return
         }
         
-        guard let urlString1 = urlString else{
+        guard let urlString1 = urlString else {
             return
         }
         
         let url = URL(string: urlString1)!
         let task = URLSession.shared.dataTask(with: url, completionHandler:
-            getImageFromResponse(data:response:error:))
+                                                getImageFromResponse(data:response:error:))
         task.resume()
     }
     
-    func getImageFromResponse(data: Data?, response: URLResponse?, error: Error?){
+    func getImageFromResponse(data: Data?, response: URLResponse?, error: Error?) {
         guard error == nil else {
             print("Error: \(error!)")
             return
@@ -48,7 +48,7 @@ class UrlImageModel: ObservableObject {
         }
         
         DispatchQueue.main.async {
-            guard let loadedImage = UIImage(data: data) else{
+            guard let loadedImage = UIImage(data: data) else {
                 return
             }
             
