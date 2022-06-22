@@ -26,7 +26,7 @@ struct CourseDetailSectionCellView: View {
                     )
                 ) { lesson in
                     if lesson.type == "text" {
-                        NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson)) {
+                        NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson, coursesViewModel: coursesViewModel)) {
                             CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                         }
