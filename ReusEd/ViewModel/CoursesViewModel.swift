@@ -77,4 +77,27 @@ class CoursesViewModel: ObservableObject {
         return lessonsArr
     }
     
+    
+    func updateLessonProgress(lessonId: Int, progress: Double) {
+        if progress > 0.9 {
+            lessons[lessonId - 1].progress = 1.0
+        } else {
+            lessons[lessonId - 1].progress = progress
+        }
+    }
+    
+    func updateCourseProgress(courseId: Int) {
+        let course = courses[courseId - 1]
+        var courseProgress = 0.0
+        var counter = 0
+        for section in course.sections {
+            let lessonInSection = getLessonsBySection(courseId: course.id, sectionId: section.id)
+            for lesson in lessonInSection {
+                courseProgress += lesson.progress
+                counter += 1
+            }
+        }
+        courses[courseId - 1].progress = courseProgress / Double(counter)
+    }
+    
 }
