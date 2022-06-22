@@ -24,8 +24,7 @@ struct CourseDetailSectionCellView: View {
                         courseId: courseId,
                         sectionId: section.id
                     )
-                )
-                { lesson in
+                ) { lesson in
                     if lesson.type == "text" {
                         NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson)) {
                             CourseDetailTopicCellView(lesson: lesson, settings: settings)
@@ -38,10 +37,7 @@ struct CourseDetailSectionCellView: View {
                             
                         }
                     }
-                   
-                    
-                   
-                    
+
                     
                     Divider()
                 }

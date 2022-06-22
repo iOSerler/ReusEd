@@ -58,6 +58,7 @@ struct Icons {
     var checkboxEmpty: String
     var eyeCrossed: String
     var completeCourseIcon: String
+    var placeholder: String
 }
 
 
@@ -81,5 +82,6 @@ var icons = Icons(
     checkboxFull: "checkbox-full",
     checkboxEmpty: "checkbox-empty",
     eyeCrossed: "eye-crossed",
-    completeCourseIcon: "Trophy"
+    completeCourseIcon: "Trophy",
+    placeholder: "placeholder"
 )

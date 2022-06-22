@@ -33,7 +33,7 @@ struct CourseListView: View {
         case "saved":
             return "Saved Courses"
         default:
-            return title
+            return "In Progress"
         }
     }
     var body: some View {
@@ -44,9 +44,13 @@ struct CourseListView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 10) {
                     ForEach(displayCourses) { course in
-                        NavigationLink (destination:
-                                            CourseDetailView(course: course, settings: pageSettings, coursesViewModel: coursesViewModel, isText: false))
-                        {
+                        NavigationLink(destination:
+                                            CourseDetailView(course: course,
+                                                             settings: pageSettings,
+                                                             coursesViewModel: coursesViewModel,
+                                                             isText: false
+                                                            )
+                        ) {
                             CourseListCellView(settings: pageSettings, course: course)
                         }
                         Divider()
@@ -59,9 +63,3 @@ struct CourseListView: View {
         
     }
 }
-
-//struct CourseListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CourseListView(courses: courses, pageSettings: viewAssets, coursesListType: .popular)
-//    }
-//}

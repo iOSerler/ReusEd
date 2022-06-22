@@ -16,7 +16,7 @@ struct ReusEdApp: App {
         WindowGroup {
             ContentView(settings: viewAssets)
                 .environmentObject(ViewRouter())
-                .onAppear () {
+                .onAppear() {
                     FirebaseApp.configure()
                 }
         }
