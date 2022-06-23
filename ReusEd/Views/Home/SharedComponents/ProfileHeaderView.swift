@@ -40,7 +40,7 @@ struct ProfileHeaderView: View {
                     .padding(.trailing, 10)
             }
             
-            NavigationLink(destination: NotificationsView()) {
+            NavigationLink(destination: NotificationsView(settings: settings)) {
                 Image(icons.notificationIcon)
                     .foregroundColor(Color(settings.mainTextColor))
                     .padding(.trailing, 20)
