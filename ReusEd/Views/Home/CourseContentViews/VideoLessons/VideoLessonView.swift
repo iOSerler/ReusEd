@@ -28,18 +28,24 @@ struct VideoLessonView: View {
             AutoRotateVideoPlayerView(player: $player)
                 .onAppear {
                     DispatchQueue.main.async {
-                        if self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime != nil {
-                            player.seek(to: CMTime(seconds: self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime!, preferredTimescale: player.currentTime().timescale))
-                        } else {
-                            player.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
-                        }
+                        
+                        let progress = coursesViewModel.getLessonProgress(userId: 1, lessonId: self.videoLesson.id)
+                        
+                        player.seek(to: CMTime(seconds: progress * CMTimeGetSeconds(player.currentItem!.asset.duration), preferredTimescale: 1))
+                        //                        if self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime != nil {
+                        //                            player.seek(to: CMTime(seconds: self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime!, preferredTimescale: player.currentTime().timescale))
+                        //                        } else {
+                        //                            player.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+                        //                        }
                     }
                 }
-                .onDisappear {
+                .onWillDisappear {
                     DispatchQueue.main.async {
-                        self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime = CMTimeGetSeconds(player.currentTime())
-                        self.coursesViewModel.updateLessonProgress(lessonId: videoLesson.id, progress: CMTimeGetSeconds(player.currentTime())/CMTimeGetSeconds(player.currentItem!.asset.duration))
-                        print(self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime!, self.coursesViewModel.lessons[self.videoLesson.id-1].progress)
+                        coursesViewModel.saveLessonProgress(userId: 1, lessonId: self.videoLesson.id, progress: CMTimeGetSeconds(player.currentTime())/CMTimeGetSeconds(player.currentItem!.asset.duration))
+                        
+                        //                        self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime = CMTimeGetSeconds(player.currentTime())
+                        //                        self.coursesViewModel.updateLessonProgress(lessonId: videoLesson.id, progress: CMTimeGetSeconds(player.currentTime())/CMTimeGetSeconds(player.currentItem!.asset.duration))
+                        //                        print(self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime!, self.coursesViewModel.lessons[self.videoLesson.id-1].progress)
                     }
                 }
             
