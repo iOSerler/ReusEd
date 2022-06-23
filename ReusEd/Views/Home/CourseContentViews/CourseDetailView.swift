@@ -60,6 +60,7 @@ struct CourseDetailMainView: View {
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
     @State var course: Course
+    @State var progress: Double = 0.0
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
@@ -89,6 +90,20 @@ struct CourseDetailMainView: View {
                         Spacer()
                     }
                     .padding(.top, 20)
+                    
+                    HStack(alignment: .center) {
+                        
+                        ProgressView(value: self.progress * 100, total: 100)
+                            .accentColor(self.progress != 1 ? Color(settings.primaryColor) : Color(.green))
+                            .padding(.trailing, 20)
+                        
+                        Text("\(Int((self.progress * 100).rounded())) %")
+                            .font(.custom(settings.descriptionFont, size: 12))
+                            .foregroundColor(Color(settings.mainTextColor))
+                            .padding(.trailing, 20)
+                    }
+                    
+                    
                     Text("Lessons & Topics")
                         .font(.custom(settings.titleFont, size: 20))
                         .foregroundColor(Color(settings.mainTextColor))
@@ -122,6 +137,10 @@ struct CourseDetailMainView: View {
         }
         .background(.white)
         .cornerRadius(25)
+        .onDidAppear {
+            self.progress = coursesViewModel.saveCourseProgress(userId: 1, courseId: self.course.id)
+//            self.progress = coursesViewModel.getCourseProgress(userId: 1, courseId: self.course.id)
+        }
     }
     
 }

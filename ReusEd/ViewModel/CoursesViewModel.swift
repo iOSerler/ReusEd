@@ -102,4 +102,44 @@ class CoursesViewModel: ObservableObject {
         courses[courseId - 1].progress = courseProgress / Double(counter)
     }
     
+    func saveCourseProgress(userId: Int, courseId: Int) -> Double {
+        var sum = 0.0
+        var counter = 0
+        let course = courses[courseId - 1]
+        for section in course.sections {
+            for lessonId in section.lessons {
+                let progress = getLessonProgress(userId: userId, lessonId: lessonId)
+                sum += progress
+                counter += 1
+            }
+        }
+        let key = "course_\(userId)_\(courseId)"
+        UserDefaults.standard.set(sum / Double(counter), forKey: key)
+        return sum / Double(counter)
+    }
+    
+    
+//    func getCourseProgress(userId: Int, courseId: Int) -> Double {
+//        let key = "course_\(userId)_\(courseId)"
+//        let progress = UserDefaults.standard.value(forKey: key)
+//        if let progress = progress as? Double {
+//            return progress
+//        }
+//        return 0.0
+//    }
+    
+    func saveLessonProgress(userId: Int, lessonId: Int, progress: Double) {
+        let key = "lesson_\(userId)_\(lessonId)"
+        print("new progress is \(progress)")
+        UserDefaults.standard.set(progress, forKey: key)
+    }
+    
+    func getLessonProgress(userId: Int, lessonId: Int) -> Double {
+        let key = "lesson_\(userId)_\(lessonId)"
+        print(key)
+        let progress = UserDefaults.standard.value(forKey: key) as? Double ?? 0.0
+        print(progress)
+        return progress
+    }
+    
 }

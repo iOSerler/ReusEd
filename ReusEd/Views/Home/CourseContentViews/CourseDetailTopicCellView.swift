@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CourseDetailTopicCellView: View {
     @State var lesson: Lesson
+    @State var progress: Double = 0.0
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
     
@@ -37,11 +38,11 @@ struct CourseDetailTopicCellView: View {
                     .multilineTextAlignment(.leading)
                 HStack(alignment: .center) {
                     
-                    ProgressView(value: coursesViewModel.lessons[lesson.id-1].progress * 100, total: 100)
-                        .accentColor(lesson.progress != 1 ? Color(settings.primaryColor) : Color(.green))
+                    ProgressView(value: self.progress * 100, total: 100)
+                        .accentColor(self.progress != 1 ? Color(settings.primaryColor) : Color(.green))
                         .padding(.trailing, 20)
                     
-                    Text("\(Int((coursesViewModel.lessons[lesson.id-1].progress * 100).rounded())) %")
+                    Text("\(Int((self.progress * 100).rounded())) %")
                         .font(.custom(settings.descriptionFont, size: 12))
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.trailing, 20)
@@ -51,5 +52,63 @@ struct CourseDetailTopicCellView: View {
             
             Spacer()
         }
+        
+        .onDidAppear {
+            
+                self.progress = coursesViewModel.getLessonProgress(userId: 1, lessonId: self.lesson.id)
+            
+        }
     }
+}
+
+
+
+extension View {
+  func onDidAppear(_ perform: @escaping (() -> Void)) -> some View {
+    self.modifier(ViewDidAppearModifier(callback: perform))
+  }
+}
+
+struct ViewDidAppearModifier: ViewModifier {
+  let callback: () -> Void
+
+  func body(content: Content) -> some View {
+    content
+      .background(ViewDidAppearHandler(onDidAppear: callback))
+  }
+}
+
+struct ViewDidAppearHandler: UIViewControllerRepresentable {
+  func makeCoordinator() -> ViewDidAppearHandler.Coordinator {
+    Coordinator(onDidAppear: onDidAppear)
+  }
+
+  let onDidAppear: () -> Void
+
+  func makeUIViewController(context: UIViewControllerRepresentableContext<ViewDidAppearHandler>) -> UIViewController {
+    context.coordinator
+  }
+
+  func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<ViewDidAppearHandler>) {
+  }
+
+  typealias UIViewControllerType = UIViewController
+
+  class Coordinator: UIViewController {
+    let onDidAppear: () -> Void
+
+    init(onDidAppear: @escaping () -> Void) {
+      self.onDidAppear = onDidAppear
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      onDidAppear()
+    }
+  }
 }
