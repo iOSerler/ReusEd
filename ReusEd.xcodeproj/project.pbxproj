@@ -65,6 +65,10 @@
 		7A122782285908D200536CC5 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A122781285908D200536CC5 /* ScoresView.swift */; };
 		7A12278528590DCB00536CC5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12278428590DCB00536CC5 /* NotificationsView.swift */; };
 		7A7F49CC2863181E00B6AEB9 /* ScrollViewProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */; };
+		7A8A16432864B85C00F0B16A /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16402864B85C00F0B16A /* NotificationDetailView.swift */; };
+		7A8A16442864B85C00F0B16A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16412864B85C00F0B16A /* ListView.swift */; };
+		7A8A16452864B85C00F0B16A /* NotificationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16422864B85C00F0B16A /* NotificationCellView.swift */; };
+		7A8A16472864B88900F0B16A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16462864B88900F0B16A /* NotificationModel.swift */; };
 		7A91B209285B5EB50049CE8C /* TextImageLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B208285B5EB50049CE8C /* TextImageLessonView.swift */; };
 		7A91B20B285B622D0049CE8C /* TextImageLessonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B20A285B622D0049CE8C /* TextImageLessonSectionView.swift */; };
 		7A91B20D285B63ED0049CE8C /* TextImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91B20C285B63ED0049CE8C /* TextImageView.swift */; };
@@ -167,6 +171,10 @@
 		7A122781285908D200536CC5 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		7A12278428590DCB00536CC5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewProportion.swift; sourceTree = "<group>"; };
+		7A8A16402864B85C00F0B16A /* NotificationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDetailView.swift; sourceTree = "<group>"; };
+		7A8A16412864B85C00F0B16A /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		7A8A16422864B85C00F0B16A /* NotificationCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellView.swift; sourceTree = "<group>"; };
+		7A8A16462864B88900F0B16A /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		7A91B208285B5EB50049CE8C /* TextImageLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageLessonView.swift; sourceTree = "<group>"; };
 		7A91B20A285B622D0049CE8C /* TextImageLessonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageLessonSectionView.swift; sourceTree = "<group>"; };
 		7A91B20C285B63ED0049CE8C /* TextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageView.swift; sourceTree = "<group>"; };
@@ -325,6 +333,7 @@
 		7A038C12284F359400B1376F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A8A16462864B88900F0B16A /* NotificationModel.swift */,
 				83B81EEC2860F30500115E56 /* AppUser.swift */,
 				83B81EED2860F30500115E56 /* AuthorizationResult.swift */,
 				7A038C17284F383900B1376F /* OnBoardingPagesModel.swift */,
@@ -475,6 +484,9 @@
 		7A12278328590DB600536CC5 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				7A8A16412864B85C00F0B16A /* ListView.swift */,
+				7A8A16422864B85C00F0B16A /* NotificationCellView.swift */,
+				7A8A16402864B85C00F0B16A /* NotificationDetailView.swift */,
 				7A12278428590DCB00536CC5 /* NotificationsView.swift */,
 			);
 			path = Notifications;
@@ -755,6 +767,7 @@
 				7A038C44285088E400B1376F /* ViewRouter.swift in Sources */,
 				83B81ED52860F26F00115E56 /* AuthorizationPasswordInput.swift in Sources */,
 				83B81ED62860F26F00115E56 /* AuthorizationFooter.swift in Sources */,
+				7A8A16442864B85C00F0B16A /* ListView.swift in Sources */,
 				2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,
@@ -764,7 +777,9 @@
 				83B81EEB2860F2D600115E56 /* AuthorizationViewModel.swift in Sources */,
 				7A91B213285DCC970049CE8C /* ForgotPasswordView.swift in Sources */,
 				7A91B209285B5EB50049CE8C /* TextImageLessonView.swift in Sources */,
+				7A8A16472864B88900F0B16A /* NotificationModel.swift in Sources */,
 				2AD95C212858C20500E220E8 /* FilterButtonView.swift in Sources */,
+				7A8A16452864B85C00F0B16A /* NotificationCellView.swift in Sources */,
 				83B81EE32860F27500115E56 /* SignInInputs.swift in Sources */,
 				7A038C05284F324300B1376F /* ContentView.swift in Sources */,
 				7A1227782858CA5400536CC5 /* CourseDetailView.swift in Sources */,
@@ -789,6 +804,7 @@
 				2AD0E3032861B73000DD58D7 /* CompleteCourseView.swift in Sources */,
 				7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */,
 				B7E0D5C22855432E0051E70B /* RadioButtonList.swift in Sources */,
+				7A8A16432864B85C00F0B16A /* NotificationDetailView.swift in Sources */,
 				2A79FC502860ACB5002F737F /* SearchView.swift in Sources */,
 				7A12277C285900D700536CC5 /* FilterView.swift in Sources */,
 				83B81EE62860F27500115E56 /* SignUpView.swift in Sources */,
