@@ -21,6 +21,7 @@ struct ViewAssets {
     var primaryLighterColor: UIColor
     var buttonTextColor: UIColor
     var borderColor: UIColor
+    var completeProgressColor: UIColor
 }
 
 var viewAssets = ViewAssets(
@@ -35,7 +36,8 @@ var viewAssets = ViewAssets(
     primaryLightColor: #colorLiteral(red: 0.5058823529, green: 0.4196078431, blue: 0.8196078431, alpha: 1),
     primaryLighterColor: #colorLiteral(red: 0.8745098039, green: 0.8549019608, blue: 0.9568627451, alpha: 1),
     buttonTextColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-    borderColor: #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9529411765, alpha: 1))
+    borderColor: #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9529411765, alpha: 1),
+    completeProgressColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1))
 
 struct Icons {
     var timeImage: String

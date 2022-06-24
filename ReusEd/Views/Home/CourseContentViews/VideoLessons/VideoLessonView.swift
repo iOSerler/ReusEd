@@ -31,11 +31,11 @@ struct VideoLessonView: View {
                         
                         let progress = coursesViewModel.getLessonProgress(userId: 1, lessonId: self.videoLesson.id)
                         
-                        player.seek(to: CMTime(seconds: progress * CMTimeGetSeconds(player.currentItem!.asset.duration), preferredTimescale: 1))
+                        player.seek(to: CMTime(seconds: progress * CMTimeGetSeconds(player.currentItem!.asset.duration), preferredTimescale: player.currentTime().timescale))
                         //                        if self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime != nil {
                         //                            player.seek(to: CMTime(seconds: self.coursesViewModel.lessons[self.videoLesson.id-1].currentTime!, preferredTimescale: player.currentTime().timescale))
                         //                        } else {
-                        //                            player.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+                        //                            player.seek(to: CMTime(seconds: 0, preferredTimescale: player.currentTime().timescale))
                         //                        }
                     }
                 }

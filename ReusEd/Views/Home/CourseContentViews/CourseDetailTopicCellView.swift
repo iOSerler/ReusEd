@@ -39,7 +39,7 @@ struct CourseDetailTopicCellView: View {
                 HStack(alignment: .center) {
                     
                     ProgressView(value: self.progress * 100, total: 100)
-                        .accentColor(self.progress != 1 ? Color(settings.primaryColor) : Color(.green))
+                        .accentColor(self.progress != 1 ? Color(settings.primaryColor) : Color(settings.completeProgressColor))
                         .padding(.trailing, 20)
                     
                     Text("\(Int((self.progress * 100).rounded())) %")
