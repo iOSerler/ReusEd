@@ -71,8 +71,5 @@ struct VideoLessonView: View {
             }
             
         }
-        .onAppear {
-            print(videoLesson.url!)
-        }
     }
 }

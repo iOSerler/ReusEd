@@ -77,7 +77,7 @@ struct CompleteCourseView: View {
             
             Button(
                 action: {
-                    //
+                    NavigationUtil.popToRootView()
                 }, label: {
                     Text("Done")
                         .font(Font.custom(settings.titleFont, size: 16))
@@ -120,13 +120,13 @@ struct StarsView: View {
 
   var body: some View {
       HStack(spacing: 2) {
-      ForEach(0..<fullCount) { _ in
+          ForEach(0..<fullCount, id: \.self) { _ in
          self.fullStar
        }
-       ForEach(0..<halfFullCount) { _ in
+       ForEach(0..<halfFullCount, id: \.self) { _ in
          self.halfFullStar
        }
-       ForEach(0..<emptyCount) { _ in
+       ForEach(0..<emptyCount, id: \.self) { _ in
          self.emptyStar
        }
      }
@@ -142,5 +142,29 @@ struct StarsView: View {
 
   private var emptyStar: some View {
       Image(systemName: "star").foregroundColor(self.color)
+  }
+}
+
+
+struct NavigationUtil {
+  static func popToRootView() {
+    findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
+      .popToRootViewController(animated: true)
+  }
+
+  static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {
+    guard let viewController = viewController else {
+      return nil
+    }
+
+    if let navigationController = viewController as? UINavigationController {
+      return navigationController
+    }
+
+    for childViewController in viewController.children {
+      return findNavigationController(viewController: childViewController)
+    }
+
+    return nil
   }
 }
