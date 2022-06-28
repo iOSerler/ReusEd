@@ -90,6 +90,7 @@ struct CompleteCourseView: View {
             )
             
         }.padding()
+            .navigationBarHidden(true)
     }
 }
 
