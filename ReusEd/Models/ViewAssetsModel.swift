@@ -65,6 +65,7 @@ struct Icons {
     var asteriks: String
     var asteriksCircle: String
     var questionMark: String
+    var quizHeader: String
 }
 
 
@@ -93,5 +94,6 @@ var icons = Icons(
     cross: "cross",
     asteriks: "asteriks",
     asteriksCircle: "asteriks-circle",
-    questionMark: "questionMark"
+    questionMark: "questionMark",
+    quizHeader: "quizHeader"
 )
