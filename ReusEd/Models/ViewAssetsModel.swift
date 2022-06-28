@@ -22,6 +22,11 @@ struct ViewAssets {
     var buttonTextColor: UIColor
     var borderColor: UIColor
     var completeProgressColor: UIColor
+    var pinkAccentColor: UIColor
+    var successMain: Color
+    var successLighter: Color
+    var errorMain: Color
+    var errorLighter: Color
 }
 
 var viewAssets = ViewAssets(
@@ -37,7 +42,14 @@ var viewAssets = ViewAssets(
     primaryLighterColor: #colorLiteral(red: 0.8745098039, green: 0.8549019608, blue: 0.9568627451, alpha: 1),
     buttonTextColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
     borderColor: #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9529411765, alpha: 1),
-    completeProgressColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1))
+    completeProgressColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1),
+    pinkAccentColor: #colorLiteral(red: 0.8784313725, green: 0.4470588235, blue: 0.6431372549, alpha: 1),
+    successMain: Color(#colorLiteral(red: 0.09219645709, green: 0.7787792087, blue: 0.4071886837, alpha: 1)),
+    successLighter: Color(#colorLiteral(red: 0.8235294118, green: 0.9490196078, blue: 0.8666666667, alpha: 1)),
+    errorMain: Color(#colorLiteral(red: 0.8392156863, green: 0.2509803922, blue: 0.2705882353, alpha: 1)),
+    errorLighter: Color(#colorLiteral(red: 0.968627451, green: 0.8509803922, blue: 0.8549019608, alpha: 1))
+    
+)
 
 struct Icons {
     var timeImage: String
@@ -97,3 +109,4 @@ var icons = Icons(
     questionMark: "questionMark",
     quizHeader: "quizHeader"
 )
+
