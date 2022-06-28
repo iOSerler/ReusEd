@@ -77,11 +77,6 @@ class CoursesViewModel: ObservableObject {
         return lessonsArr
     }
     
-    
-
-    
-  
-    
     func saveCourseProgress(userId: Int, courseId: Int) -> Double {
         var sum = 0.0
         var counter = 0
@@ -122,4 +117,17 @@ class CoursesViewModel: ObservableObject {
         return progress
     }
     
+    func getQuizPoints(lessonId: Int) -> Int {
+        let lesson = self.lessons[lessonId - 1]
+        var count = 0
+        
+        if lesson.type == "quiz"{
+            for question in lesson.quizData!.quizQuestions {
+                count += question.points
+            }
+            return count
+        } else {
+            return 0
+        }
+    }
 }
