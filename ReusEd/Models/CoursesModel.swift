@@ -20,7 +20,6 @@ struct Course: Identifiable, Decodable {
     var shortDescription: String
     var longDescription: String
     var duration: String
-    var progress: Double
     var posterSmall: String
     var posterBig: String
     var isSaved: Bool
@@ -59,9 +58,9 @@ struct Lesson: Identifiable, Decodable {
     var id: Int
     var type: String
     var title: String
-    var description: String
-    var duration: String
-    var progress: Double
+    var description: String?
+    var duration: String?
+    var quizData: QuizData?
     var background: String?
     var sections: [TextLessonSection]?
     var url: String?
@@ -84,3 +83,40 @@ var lessonFooter = LessonFooter(
     priviousButtonText: "Previous",
     nextButtonText: "Next"
 )
+
+
+
+enum QuizQuestionType: Decodable {
+    case multipleChoice
+    case checkbox
+    case shortAnswer
+}
+
+struct QuizData: Identifiable, Decodable {
+    var id: Int
+    var title: String
+    var description: String
+    var quizQuestions: [QuizQuestion]
+}
+
+struct QuizQuestion: Identifiable, Decodable {
+    var id: Int
+    var title: String
+    var type: QuizQuestionType
+    var points: Int
+    var questionContent: QuizQuestionContent
+}
+
+
+struct QuizQuestionContent: Identifiable, Decodable {
+    var id: Int
+    var title: String
+    var question: String
+    var answers: [QuizQuestionAnswer]?
+    var correctAnswer: [QuizQuestionAnswer]
+}
+
+struct QuizQuestionAnswer: Identifiable, Decodable {
+    var id: Int
+    var answer: String
+}

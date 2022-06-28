@@ -10,6 +10,8 @@ import SwiftUI
 struct CourseListCellView: View {
     var settings: ViewAssets
     @State var course: Course
+    @State var progress: Double = 0.0
+    @ObservedObject var coursesViewModel: CoursesViewModel
     var body: some View {
         VStack(alignment: .center) {
             HStack(alignment: .center) {
@@ -33,12 +35,12 @@ struct CourseListCellView: View {
                             .foregroundColor(Color(settings.primaryLightColor))
                             .padding(.leading, 5)
                         Spacer()
-                        ProgressView(value: course.progress * 100, total: 100)
+                        ProgressView(value: self.progress * 100, total: 100)
                             .scaleEffect(1.5, anchor: .center)
                             .accentColor(Color(settings.primaryLightColor))
                             .frame(width: UIScreen.main.bounds.width / 5)
                             .padding(.trailing, 30)
-                        Text("\(Int((course.progress * 100).rounded())) %")
+                        Text("\(Int((self.progress * 100).rounded())) %")
                             .font(.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(Color(settings.mainTextColor))
                     }
@@ -52,6 +54,10 @@ struct CourseListCellView: View {
             .padding(.horizontal, 20)
             .frame(height: 100)
             
+        }
+        .onDidAppear {
+//            self.progress = coursesViewModel.saveCourseProgress(userId: 1, courseId: self.course.id)
+            self.progress = coursesViewModel.getCourseProgress(userId: 1, courseId: self.course.id)
         }
     }
 }

@@ -32,7 +32,7 @@ struct CourseDetailTopicCellView: View {
                 Text(lesson.title)
                     .font(.custom(settings.titleFont, size: 14))
                     .foregroundColor(Color(settings.mainTextColor))
-                Text(lesson.description)
+                Text(lesson.description!)
                     .font(.custom(settings.descriptionFont, size: 12))
                     .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.leading)
