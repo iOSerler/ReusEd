@@ -8,6 +8,46 @@
 import SwiftUI
 import PersonalizationKit
 
+struct Storage: PersonalizationStorage {
+    func addCheckedOption(_ question: QuestionData, option: OptionData) {
+        
+        let storageID = "checkBoxQuestionID_\(question.id)"
+        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
+        checkedOptions.add(option.id)
+        UserDefaults.standard.set(checkedOptions, forKey: storageID)
+                
+    }
+
+    func removeCheckedOption(_ question: QuestionData, option: OptionData) {
+        let storageID = "checkBoxQuestionID_\(question.id)"
+        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
+        checkedOptions.remove(option.id)
+        UserDefaults.standard.set(checkedOptions, forKey: storageID)
+    }
+    
+    func isOptionChecked(_ question: QuestionData, option: OptionData) -> Bool {
+        let storageID = "checkBoxQuestionID_\(question.id)"
+        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
+        let isOptionChecked = checkedOptions.contains(option.id)
+        
+        return isOptionChecked
+    }
+    
+    func getChosenOption(_ question: QuestionData) -> Int {
+        let storageID = "checkBoxQuestionID_\(question.id)"
+        let chosenOption = UserDefaults.standard.integer(forKey: storageID)
+        return chosenOption
+    }
+    
+    func setChosenOption(_ question: QuestionData, option: OptionData) {
+        let storageID = "checkBoxQuestionID_\(question.id)"
+        UserDefaults.standard.set(option.id, forKey: storageID)
+    }
+}
+
+
+// FIXME: move to a json file and parse
+
 var questions = [question1, question2, question3, question4]
 
 var question1 = QuestionData(
@@ -66,6 +106,3 @@ var question4 = QuestionData(
     description: "Welcome to ReusEd and enjoy your learning with our personalized courses.",
     optionsData: [OptionData]()
 )
-
-
-var personalizationQuestionSelectedItemsDict: [Int: Set<Int>] = [1: [], 2: [], 3: []]

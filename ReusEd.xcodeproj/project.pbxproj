@@ -102,7 +102,7 @@
 		83B81EEE2860F30500115E56 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EEC2860F30500115E56 /* AppUser.swift */; };
 		83B81EEF2860F30500115E56 /* AuthorizationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B81EED2860F30500115E56 /* AuthorizationResult.swift */; };
 		83B81EF12860F59200115E56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B81EF02860F59200115E56 /* GoogleService-Info.plist */; };
-		B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */; };
+		B7E0D5C02854AF2E0051E70B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* Storage.swift */; };
 		F889E44EEDB64B288FE6FEE7 /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A78A68C92BD3D1EBBC7DD38 /* Pods_ReusEd.framework */; };
 /* End PBXBuildFile section */
 
@@ -206,7 +206,7 @@
 		83B81EEC2860F30500115E56 /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		83B81EED2860F30500115E56 /* AuthorizationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationResult.swift; sourceTree = "<group>"; };
 		83B81EF02860F59200115E56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationStorage.swift; sourceTree = "<group>"; };
+		B7E0D5BF2854AF2E0051E70B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		EB7E0B1E5426EA9E37842849 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,7 +300,7 @@
 				7A038C02284F324300B1376F /* ReusEdApp.swift */,
 				7A038C43285088E400B1376F /* ViewRouter.swift */,
 				7A038C04284F324300B1376F /* ContentView.swift */,
-				B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */,
+				B7E0D5BF2854AF2E0051E70B /* Storage.swift */,
 				7A038C08284F324700B1376F /* Preview Content */,
 				7A91B210285DB36F0049CE8C /* Launch Screen.storyboard */,
 			);
@@ -766,7 +766,7 @@
 				2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */,
 				7A038C40284F856800B1376F /* AppDelegate.swift in Sources */,
 				7A12277A2858E44E00536CC5 /* SavedCoursesListView.swift in Sources */,
-				B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */,
+				B7E0D5C02854AF2E0051E70B /* Storage.swift in Sources */,
 				7AFB16332862199B00E9515E /* UrlImageView.swift in Sources */,
 				2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */,
 				83B81EEB2860F2D600115E56 /* AuthorizationViewModel.swift in Sources */,
