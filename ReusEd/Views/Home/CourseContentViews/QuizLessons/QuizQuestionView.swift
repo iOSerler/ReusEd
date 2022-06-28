@@ -9,25 +9,29 @@ import SwiftUI
 
 struct QuizQuestionView: View {
     var settings: ViewAssets
-    @State var progress: Double = 10.0
-
+    var quizQuestions: [QuizQuestion]
+    @State var currentQuestion: QuizQuestion
+    @State var questionCounter: Int = 0
     @State var showResult: Bool = false
+    @State var isFinished: Bool = false
+    @State var hasSelectedAnswer: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(alignment: .center) {
             HStack {
                 Button {
-                    print("X pressed")
+                    // save progress
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image(icons.cross)
                 }
-                .disabled(true)
-                
-                ProgressView(value: self.progress, total: 100)
-                    .accentColor(self.progress != 100 ? Color(settings.primaryColor) : Color(.green))
+
+                ProgressView(value: Double(self.questionCounter + 1), total: Double(quizQuestions.count))
+                    .accentColor( Color(settings.primaryColor))
                     .padding(.horizontal, 20)
                 HStack {
                     Image(icons.asteriks)
-                    Text("12")
+                    Text("\(currentQuestion.points)")
                         .font(.custom(settings.titleFont, size: 14))
                         .foregroundColor(.white)
                 }
@@ -38,15 +42,14 @@ struct QuizQuestionView: View {
             }
             
             HStack {
-                Text("Question \(2) of \(10)")
+                Text("Question \(currentQuestion.id + 1) of \(quizQuestions.count)")
                     .font(.custom(settings.descriptionFont, size: 14))
                     .foregroundColor(Color(settings.detailsTextColor))
                     .padding(.top, 10)
                 Spacer()
             }
-            
-            
-            Text("What is a correct syntax to output \"Hello World\" in Python?")
+
+            Text(currentQuestion.questionContent.question)
                 .font(.custom(settings.titleFont, size: 16))
                 .foregroundColor(Color(settings.mainTextColor))
                 .padding(.top, 10)
@@ -55,39 +58,60 @@ struct QuizQuestionView: View {
             VStack {
                 SingleChoiceButtonList(
                     settings: settings,
-                    answers: ["dsfbhsdf", "sdfg", "sdfgsdfg", "sdfgsdf"],
-                    correctAnswer: ["sdfg"],
-                    showResult: showResult)
+                    answers: currentQuestion.questionContent.answers!,
+                    correctAnswer: currentQuestion.questionContent.correctAnswer,
+                    showResult: showResult,
+                    hasSelectedAnswer: $hasSelectedAnswer
+                )
             }
             .disabled(showResult ? true : false)
             
             Spacer()
-            
-            Button(
-                action: {
-                    self.showResult = true
-                }, label: {
-                    Text(showResult ? "Next Question" : "Check Answer")
-                        .font(Font.custom(viewAssets.titleFont, size: 16))
-                        .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                        .background(Color(viewAssets.primaryColor))
-                        .accentColor(Color(viewAssets.buttonTextColor))
-                        .cornerRadius(UIScreen.main.bounds.width/35)
-                        .padding(.bottom, UIScreen.main.bounds.height/30)
+            NavigationLink(
+                isActive: $isFinished,
+                destination: {
+                    CompleteCourseView(settings: settings, courseTitle: "sdfsdfg", completionRate: 4, numPoints: 15)
+                },
+                label: {
+                    Button(
+                        action: {
+                            if hasSelectedAnswer {
+                                if showResult {
+                                    if self.questionCounter == quizQuestions.count - 1 {
+                                        self.isFinished = true
+                                        // save progress
+                                    } else {
+                                        self.questionCounter += 1
+                                        self.currentQuestion = quizQuestions[questionCounter]
+                                        self.showResult = false
+                                        self.hasSelectedAnswer = false
+                                    }
+                                } else {
+                                    self.showResult = true
+                                }
+                            }
+                        }, label: {
+                            Text(showResult ? (questionCounter == quizQuestions.count - 1 ? "Finish Attempt" : "Next Question") : "Check Answer")
+                                .font(Font.custom(viewAssets.titleFont, size: 16))
+                                .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
+                                .background(Color(viewAssets.primaryColor))
+                                .accentColor(Color(viewAssets.buttonTextColor))
+                                .cornerRadius(UIScreen.main.bounds.width/35)
+                                .padding(.bottom, UIScreen.main.bounds.height/30)
+                        }
+                    )
                 }
             )
-
-            
         }
         .padding(.horizontal, 20)
+        .onAppear {
+            self.currentQuestion = quizQuestions[questionCounter]
+        }
+        .navigationBarHidden(true)
     }
 }
 
-struct QuizQuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizQuestionView(settings: viewAssets)
-    }
-}
+
 
 struct SingleChoiceButtonList: View {
     var settings: ViewAssets
@@ -95,6 +119,7 @@ struct SingleChoiceButtonList: View {
     let correctAnswer: [String]
     @State var chosenAnswer: String = ""
     var showResult: Bool
+    @Binding var hasSelectedAnswer: Bool
     
     var body: some View {
         ScrollView {
@@ -103,6 +128,7 @@ struct SingleChoiceButtonList: View {
                     settings: settings,
                     answer: answer,
                     tapAction: {
+                        hasSelectedAnswer = true
                         self.chosenAnswer = answer
                     },
                     chosen: chosenAnswer == answer,
@@ -112,11 +138,15 @@ struct SingleChoiceButtonList: View {
             }
             .padding(0)
         }
+        .onAppear {
+            hasSelectedAnswer = false
+            print(correctAnswer)
+        }
     }
     
     func isCorrect(answer: String) -> Bool {
         for ans in self.correctAnswer where answer == ans {
-                return true
+            return true
         }
         return false
     }
@@ -147,11 +177,11 @@ struct SingleChoiceButtonRow: View {
                 .overlay(RoundedRectangle(cornerRadius: 12)
                     .stroke(
                         showResult ? (isCorrect ? settings.successMain : (chosen ? settings.errorMain : Color(settings.borderColor))) :
-                                        (chosen ? Color(settings.primaryColor) : Color(settings.borderColor)), lineWidth: 2))
+                            (chosen ? Color(settings.primaryColor) : Color(settings.borderColor)), lineWidth: 2))
                 
                 .background(
                     showResult ? (isCorrect ? settings.successLighter : (chosen ? settings.errorLighter : .white)) : (chosen ? Color(settings.primaryLighterColor) : .white))
-                    
+                
             }
         )
         .cornerRadius(12)

@@ -95,7 +95,7 @@ struct QuizView: View {
                 }.padding(.horizontal)
             }
             
-            NavigationLink(destination: QuizQuestionView(), label: {
+            NavigationLink(destination: QuizQuestionView(settings: settings, quizQuestions: lesson.quizData!.quizQuestions, currentQuestion: lesson.quizData!.quizQuestions[0]), label: {
                 Text("Start Attempt")
                     .font(Font.custom(settings.titleFont, size: 16))
                     .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
