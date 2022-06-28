@@ -51,7 +51,7 @@ struct CourseListView: View {
                                                          isText: false
                                                         )
                         ) {
-                            CourseListCellView(settings: pageSettings, course: course)
+                            CourseListCellView(settings: pageSettings, course: course, coursesViewModel: coursesViewModel)
                         }
                         Divider()
                             .padding(.horizontal, 20)

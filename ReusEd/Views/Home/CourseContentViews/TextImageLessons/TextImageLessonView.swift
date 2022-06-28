@@ -16,14 +16,14 @@ struct TextImageLessonView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                Text(textLesson.description)
+                Text(textLesson.description!)
                     .font(.custom(settings.descriptionFont, size: 14))
                     .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.leading)
                 HStack {
                     Image(icons.durationOffIcon)
                     
-                    Text(textLesson.duration)
+                    Text(textLesson.duration!)
                         .font(.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.detailsTextColor))
                         .padding(.leading, 10)

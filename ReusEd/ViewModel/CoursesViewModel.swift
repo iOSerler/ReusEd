@@ -78,29 +78,9 @@ class CoursesViewModel: ObservableObject {
     }
     
     
-    func updateLessonProgress(lessonId: Int, progress: Double) {
-        DispatchQueue.main.async {
-            if progress > 0.9 {
-                self.lessons[lessonId - 1].progress = 1.0
-            } else {
-                self.lessons[lessonId - 1].progress = progress
-            }
-        }
-    }
+
     
-    func updateCourseProgress(courseId: Int) {
-        let course = courses[courseId - 1]
-        var courseProgress = 0.0
-        var counter = 0
-        for section in course.sections {
-            let lessonInSection = getLessonsBySection(courseId: course.id, sectionId: section.id)
-            for lesson in lessonInSection {
-                courseProgress += lesson.progress
-                counter += 1
-            }
-        }
-        courses[courseId - 1].progress = courseProgress / Double(counter)
-    }
+  
     
     func saveCourseProgress(userId: Int, courseId: Int) -> Double {
         var sum = 0.0
@@ -119,14 +99,14 @@ class CoursesViewModel: ObservableObject {
     }
     
     
-//    func getCourseProgress(userId: Int, courseId: Int) -> Double {
-//        let key = "course_\(userId)_\(courseId)"
-//        let progress = UserDefaults.standard.value(forKey: key)
-//        if let progress = progress as? Double {
-//            return progress
-//        }
-//        return 0.0
-//    }
+    func getCourseProgress(userId: Int, courseId: Int) -> Double {
+        let key = "course_\(userId)_\(courseId)"
+        let progress = UserDefaults.standard.value(forKey: key)
+        if let progress = progress as? Double {
+            return progress
+        }
+        return 0.0
+    }
     
     func saveLessonProgress(userId: Int, lessonId: Int, progress: Double) {
         let key = "lesson_\(userId)_\(lessonId)"
