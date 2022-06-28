@@ -49,6 +49,6 @@ public struct AuthorizationView: View {
 struct AuthorizationView_Previews: PreviewProvider {
 
     static var previews: some View {
-        AuthorizationView() { _ in }
+        AuthorizationView { _ in }
     }
 }

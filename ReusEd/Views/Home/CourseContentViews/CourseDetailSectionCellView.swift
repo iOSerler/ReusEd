@@ -30,8 +30,14 @@ struct CourseDetailSectionCellView: View {
                             CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                         }
-                    } else {
+                    } else if lesson.type == "video"{
                         NavigationLink(destination: VideoLessonView(settings: settings, videoLesson: lesson, coursesViewModel: coursesViewModel)) {
+                            CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
+                                .padding(.vertical, 10)
+                            
+                        }
+                    } else {
+                        NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel)) {
                             CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                             
