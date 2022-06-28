@@ -33,7 +33,7 @@ struct VideoStampsIView: View {
                         .onTapGesture {
                             DispatchQueue.main.async {
                                 player.seek(to: CMTime(seconds: stamps[ind].seconds,
-                                                       preferredTimescale: 1))
+                                                       preferredTimescale: player.currentTime().timescale))
                             }
                         }
                     

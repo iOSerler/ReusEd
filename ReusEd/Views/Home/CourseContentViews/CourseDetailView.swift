@@ -113,8 +113,8 @@ struct CourseDetailMainView: View {
                     }
                     
                     
-                    course.progress > 0.9 ?
-                    NavigationLink(destination: CompleteCourseView(settings: settings, courseTitle: course.title, completionRate: course.progress * 5, numPoints: 15), label: {
+                    self.progress > 0.9 ?
+                    NavigationLink(destination: CompleteCourseView(settings: settings, courseTitle: course.title, completionRate: (self.progress * 500).rounded()/100, numPoints: 15), label: {
                         Text("Finish Course")
                             .font(Font.custom(settings.titleFont, size: 16))
                             .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)

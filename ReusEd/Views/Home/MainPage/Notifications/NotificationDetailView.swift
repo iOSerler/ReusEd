@@ -9,10 +9,10 @@ import SwiftUI
 
 struct NotificationDetailView: View {
     var settings: ViewAssets
-    var item : NewsItem
+    @Binding var item: NewsItem?
     var body: some View {
         VStack {
-            Text(item.title)
+            Text(self.item!.title)
         }
     }
 }

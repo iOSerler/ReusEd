@@ -15,6 +15,7 @@
 		2A5A80ED285B5DCE00809CB2 /* VideoStampsIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */; };
 		2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */; };
 		2A79FC502860ACB5002F737F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79FC4F2860ACB5002F737F /* SearchView.swift */; };
+		2A8113B128699988008FD2A0 /* onBoardingPages.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A8113B028699988008FD2A0 /* onBoardingPages.json */; };
 		2AD0E3032861B73000DD58D7 /* CompleteCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */; };
 		2AD42CEF285C6D7B00A92B4C /* ScrollCourseSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */; };
 		2AD42CF1285C963400A92B4C /* CustomProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */; };
@@ -118,6 +119,7 @@
 		2A5A80EC285B5DCE00809CB2 /* VideoStampsIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStampsIView.swift; sourceTree = "<group>"; };
 		2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFooterView.swift; sourceTree = "<group>"; };
 		2A79FC4F2860ACB5002F737F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2A8113B028699988008FD2A0 /* onBoardingPages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onBoardingPages.json; sourceTree = "<group>"; };
 		2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteCourseView.swift; sourceTree = "<group>"; };
 		2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCourseSectionView.swift; sourceTree = "<group>"; };
 		2AD42CF0285C963400A92B4C /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		7A038C14284F35A900B1376F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A8113B028699988008FD2A0 /* onBoardingPages.json */,
 				7AFB16292861AC6F00E9515E /* categories.json */,
 				7AFB162B2861AC6F00E9515E /* courses.json */,
 				7AFB162A2861AC6F00E9515E /* lessons.json */,
@@ -651,6 +654,7 @@
 				7AFB162E2861AC6F00E9515E /* courses.json in Resources */,
 				7A038C2E284F3B0F00B1376F /* Rubik-MediumItalic.ttf in Resources */,
 				7A038C2C284F3B0F00B1376F /* Rubik-Regular.ttf in Resources */,
+				2A8113B128699988008FD2A0 /* onBoardingPages.json in Resources */,
 				7A038C29284F3B0F00B1376F /* Rubik-Italic.ttf in Resources */,
 				7AFB162D2861AC6F00E9515E /* lessons.json in Resources */,
 				7A038C0A284F324700B1376F /* Preview Assets.xcassets in Resources */,

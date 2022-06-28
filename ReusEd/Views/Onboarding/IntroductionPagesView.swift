@@ -11,10 +11,11 @@ struct IntroductionPagesView: View {
     var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
     @State private var selectedIndex: Int = 0
+    var pagesData = Pages(name: "onBoardingPages")
     var body: some View {
         VStack {
             TabView(selection: $selectedIndex) {
-                ForEach(introductionPagesData) { page in
+                ForEach(pagesData.introductionPagesData) { page in
                     GeometryReader { geom in
                         VStack(alignment: .center) {
                             Image(page.image)
@@ -45,7 +46,7 @@ struct IntroductionPagesView: View {
             
             HStack(spacing: 12) {
                 
-                ForEach(0..<introductionPagesData.count, id: \.self) { index in
+                ForEach(0..<pagesData.introductionPagesData.count, id: \.self) { index in
                     Capsule()
                         .foregroundColor(
                             selectedIndex == index ?
@@ -57,7 +58,7 @@ struct IntroductionPagesView: View {
             }
             
             Button(action: {
-                if selectedIndex < introductionPagesData.count - 1 {
+                if selectedIndex < pagesData.introductionPagesData.count - 1 {
                     withAnimation {
                         selectedIndex += 1
                     }
@@ -70,7 +71,7 @@ struct IntroductionPagesView: View {
                 }
             }, label: {
                 HStack {
-                    Text(selectedIndex != introductionPagesData.count - 1 ? "Next" : "Get Started")
+                    Text(selectedIndex != pagesData.introductionPagesData.count - 1 ? "Next" : "Get Started")
                         .font(.custom(settings.titleFont, size: 16))
                         .foregroundColor(Color(settings.buttonTextColor))
                     
@@ -95,11 +96,11 @@ struct IntroductionPagesView: View {
         }, label: {
             Text("skip")
                 .foregroundColor(
-                    selectedIndex != introductionPagesData.count - 1 ?
+                    selectedIndex != pagesData.introductionPagesData.count - 1 ?
                     Color(settings.descriptionTextColor) : Color.clear
                 )
                 .font(.custom(settings.descriptionFont, size: 14))
-        }).disabled(selectedIndex == introductionPagesData.count - 1)
+        }).disabled(selectedIndex == pagesData.introductionPagesData.count - 1)
                             
                             
         )

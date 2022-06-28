@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewsItem: Identifiable{
+struct NewsItem: Identifiable {
     var id: Int
     var title: String
     var image: String?

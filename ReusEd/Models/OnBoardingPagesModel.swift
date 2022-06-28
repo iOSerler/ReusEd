@@ -8,37 +8,26 @@
 import Foundation
 
 
-struct Page: Identifiable {
+struct Page: Identifiable, Decodable {
     var id: Int
     var image: String
     var title: String
     var description: String
 }
 
-var introductionPagesData = [
-    Page(
-        id: 0,
-        image: "Book lover-bro 1",
-        title: "Learn on your own pace",
-        description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
-        "Lorem Ipsum has been the industry's standard dummy text ever."
-    ),
-    Page(
-        id: 1,
-        image: "Push notifications-amico 1",
-        title: "Get Daily Reminders",
-        description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
-        "Lorem Ipsum has been the industry's standard dummy text ever."
-    ),
-    Page(
-        id: 2,
-        image: "Grades-bro 1",
-        title: "Earn Scores and Shop",
-        description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
-        "Lorem Ipsum has been the industry's standard dummy text ever."
+struct Pages {
+    var introductionPagesData: [Page]
+    
+    init(name: String) {
+        guard let url = Bundle.main.url(forResource: name, withExtension: "json")
+        else {
+            print(name+" json file not found")
+            self.introductionPagesData = []
+            return
+        }
         
-    )
-]
+        let data = try? Data(contentsOf: url)
+        let pages = try? JSONDecoder().decode([Page].self, from: data!)
+        self.introductionPagesData = pages!
+    }
+}

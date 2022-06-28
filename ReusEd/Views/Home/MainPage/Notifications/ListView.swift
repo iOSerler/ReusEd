@@ -10,7 +10,7 @@ import SwiftUI
 struct ListView: View {
     var pageSettings: ViewAssets
     var listType: String
-    
+    @State var selectedEntry: NewsItem?
     var displayList: [NewsItem] {
         switch listType {
         case "notifications":
@@ -32,11 +32,12 @@ struct ListView: View {
                             item: item)
                         .onTapGesture {
                             self.showDetails.toggle()
+                            self.selectedEntry = item
                         }
                         .sheet(isPresented: $showDetails, content: {
                             NotificationDetailView(
                                 settings: pageSettings,
-                                item: item)
+                                item: $selectedEntry)
                         })
                         
                         Divider()
