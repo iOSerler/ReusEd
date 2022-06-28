@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PersonalizationKit
 
 var questions = [question1, question2, question3, question4]
 
