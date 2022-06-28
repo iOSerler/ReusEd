@@ -63,6 +63,8 @@ struct Icons {
     var placeholder: String
     var cross: String
     var asteriks: String
+    var asteriksCircle: String
+    var questionMark: String
 }
 
 
@@ -89,5 +91,7 @@ var icons = Icons(
     completeCourseIcon: "Trophy",
     placeholder: "placeholder",
     cross: "cross",
-    asteriks: "asteriks"
+    asteriks: "asteriks",
+    asteriksCircle: "asteriks-circle",
+    questionMark: "questionMark"
 )
