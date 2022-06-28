@@ -344,7 +344,6 @@
 				83B81EED2860F30500115E56 /* AuthorizationResult.swift */,
 				7A038C17284F383900B1376F /* OnBoardingPagesModel.swift */,
 				7A038C38284F806500B1376F /* NotificationsPermissionModel.swift */,
-				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 				2A105B0A2851DCF100DB971B /* TabBarModel.swift */,
 				2AD95C1828587E7200E220E8 /* CoursesModel.swift */,
 				2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */,
@@ -434,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */,
+				2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */,
 				7A038C532850A05600B1376F /* PersonalizationQuestionView.swift */,
 				7A038C592850A07E00B1376F /* CheckboxList.swift */,
 				B7E0D5C12855432E0051E70B /* RadioButtonList.swift */,

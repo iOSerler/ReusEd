@@ -23,14 +23,14 @@ struct QuizQuestionView: View {
                     // save progress
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Image(icons.cross)
+                    Image(viewAssets.cross)
                 }
 
                 ProgressView(value: Double(self.questionCounter + 1), total: Double(quizQuestions.count))
                     .accentColor( Color(settings.primaryColor))
                     .padding(.horizontal, 20)
                 HStack {
-                    Image(icons.asteriks)
+                    Image(viewAssets.asteriks)
                     Text("\(currentQuestion.points)")
                         .font(.custom(settings.titleFont, size: 14))
                         .foregroundColor(.white)

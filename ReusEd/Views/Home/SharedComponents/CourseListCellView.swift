@@ -29,7 +29,7 @@ struct CourseListCellView: View {
                     
                     Spacer()
                     HStack(alignment: .center, spacing: 1) {
-                        Image(icons.timeImage)
+                        Image(viewAssets.timeImage)
                         Text(course.duration)
                             .font(.custom(settings.descriptionFont, size: 12))
                             .foregroundColor(Color(settings.primaryLightColor))

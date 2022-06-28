@@ -16,7 +16,7 @@ struct CompleteCourseView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
             
-            Image(icons.completeCourseIcon)
+            Image(viewAssets.completeCourseIcon)
                 .padding(.top, 30)
             
             Text("Congratulations!")

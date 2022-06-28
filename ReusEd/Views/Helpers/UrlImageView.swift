@@ -14,7 +14,7 @@ struct UrlImageView: View {
         urlImageModel = UrlImageModel(urlString: urlString)
     }
     
-    static var defaultImage = UIImage(named: icons.placeholder)
+    static var defaultImage = UIImage(named: viewAssets.placeholder)
     var body: some View {
         VStack {
             Image(uiImage: urlImageModel.image ?? UrlImageView.defaultImage!)
