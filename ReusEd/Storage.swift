@@ -12,25 +12,35 @@ struct Storage: PersonalizationStorage {
     func addCheckedOption(_ question: QuestionData, option: OptionData) {
         
         let storageID = "checkBoxQuestionID_\(question.id)"
-        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
-        checkedOptions.add(option.id)
-        UserDefaults.standard.set(checkedOptions, forKey: storageID)
+        if var checkedOptions = UserDefaults.standard.array(forKey: storageID) as? [Int] {
+            checkedOptions.append(option.id)
+            checkedOptions = Array(Set(checkedOptions))
+            UserDefaults.standard.set(checkedOptions, forKey: storageID)
+        } else {
+            UserDefaults.standard.set([option.id], forKey: storageID)
+        }
+        UserDefaults.standard.synchronize()
                 
     }
 
     func removeCheckedOption(_ question: QuestionData, option: OptionData) {
         let storageID = "checkBoxQuestionID_\(question.id)"
-        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
-        checkedOptions.remove(option.id)
-        UserDefaults.standard.set(checkedOptions, forKey: storageID)
+        if var checkedOptions = UserDefaults.standard.array(forKey: storageID) as? [Int] {
+            var set = Set(checkedOptions)
+            set.remove(option.id)
+            checkedOptions = Array(set)
+            UserDefaults.standard.set(checkedOptions, forKey: storageID)
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func isOptionChecked(_ question: QuestionData, option: OptionData) -> Bool {
         let storageID = "checkBoxQuestionID_\(question.id)"
-        let checkedOptions = UserDefaults.standard.mutableSetValue(forKey: storageID)
-        let isOptionChecked = checkedOptions.contains(option.id)
-        
-        return isOptionChecked
+        if let checkedOptions = UserDefaults.standard.array(forKey: storageID) as? [Int] {
+            let set = Set(checkedOptions)
+            return set.contains(option.id)
+        }
+        return false
     }
     
     func getChosenOption(_ question: QuestionData) -> Int {
@@ -42,6 +52,7 @@ struct Storage: PersonalizationStorage {
     func setChosenOption(_ question: QuestionData, option: OptionData) {
         let storageID = "checkBoxQuestionID_\(question.id)"
         UserDefaults.standard.set(option.id, forKey: storageID)
+        UserDefaults.standard.synchronize()
     }
 }
 
