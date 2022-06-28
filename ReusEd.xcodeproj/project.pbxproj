@@ -66,6 +66,8 @@
 		7A122782285908D200536CC5 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A122781285908D200536CC5 /* ScoresView.swift */; };
 		7A12278528590DCB00536CC5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12278428590DCB00536CC5 /* NotificationsView.swift */; };
 		7A7F49CC2863181E00B6AEB9 /* ScrollViewProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */; };
+		7A875921286AF27B00A01256 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A875920286AF27B00A01256 /* QuizView.swift */; };
+		7A875923286AF36600A01256 /* QuizQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A875922286AF36600A01256 /* QuizQuestionView.swift */; };
 		7A8A16432864B85C00F0B16A /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16402864B85C00F0B16A /* NotificationDetailView.swift */; };
 		7A8A16442864B85C00F0B16A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16412864B85C00F0B16A /* ListView.swift */; };
 		7A8A16452864B85C00F0B16A /* NotificationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A16422864B85C00F0B16A /* NotificationCellView.swift */; };
@@ -173,6 +175,8 @@
 		7A122781285908D200536CC5 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		7A12278428590DCB00536CC5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		7A7F49CB2863181E00B6AEB9 /* ScrollViewProportion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewProportion.swift; sourceTree = "<group>"; };
+		7A875920286AF27B00A01256 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		7A875922286AF36600A01256 /* QuizQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionView.swift; sourceTree = "<group>"; };
 		7A8A16402864B85C00F0B16A /* NotificationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDetailView.swift; sourceTree = "<group>"; };
 		7A8A16412864B85C00F0B16A /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		7A8A16422864B85C00F0B16A /* NotificationCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellView.swift; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 		7A1227762858CA3D00536CC5 /* CourseContentViews */ = {
 			isa = PBXGroup;
 			children = (
+				7A87591F286AF26300A01256 /* QuizLessons */,
 				7A91B207285B5E8E0049CE8C /* TextImageLessons */,
 				2ADB39A42859F9C800A7992D /* VideoLessons */,
 				7A1227772858CA5400536CC5 /* CourseDetailView.swift */,
@@ -493,6 +498,15 @@
 				7A12278428590DCB00536CC5 /* NotificationsView.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		7A87591F286AF26300A01256 /* QuizLessons */ = {
+			isa = PBXGroup;
+			children = (
+				7A875920286AF27B00A01256 /* QuizView.swift */,
+				7A875922286AF36600A01256 /* QuizQuestionView.swift */,
+			);
+			path = QuizLessons;
 			sourceTree = "<group>";
 		};
 		7A91B207285B5E8E0049CE8C /* TextImageLessons */ = {
@@ -756,6 +770,7 @@
 				83B81ED32860F26F00115E56 /* AuthorizationEmailInput.swift in Sources */,
 				2AD95C232858CE9F00E220E8 /* ProfileHeaderView.swift in Sources */,
 				7A038C3E284F824500B1376F /* NotificationHandler.swift in Sources */,
+				7A875921286AF27B00A01256 /* QuizView.swift in Sources */,
 				7A7F49CC2863181E00B6AEB9 /* ScrollViewProportion.swift in Sources */,
 				2A5A80E9285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift in Sources */,
 				83B81ED72860F26F00115E56 /* ColorButton.swift in Sources */,
@@ -766,6 +781,7 @@
 				7A91B20D285B63ED0049CE8C /* TextImageView.swift in Sources */,
 				83B81EE52860F27500115E56 /* SignUpInputs.swift in Sources */,
 				7A038C5A2850A07E00B1376F /* CheckboxList.swift in Sources */,
+				7A875923286AF36600A01256 /* QuizQuestionView.swift in Sources */,
 				2ADB399F2859C63900A7992D /* FilterBarView.swift in Sources */,
 				83B81ED12860F26F00115E56 /* AuthorizationHeader.swift in Sources */,
 				7A038C44285088E400B1376F /* ViewRouter.swift in Sources */,
