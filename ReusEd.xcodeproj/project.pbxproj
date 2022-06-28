@@ -108,11 +108,11 @@
 		83B81EF12860F59200115E56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B81EF02860F59200115E56 /* GoogleService-Info.plist */; };
 		B7E0D5C02854AF2E0051E70B /* PersonalizationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */; };
 		B7E0D5C22855432E0051E70B /* RadioButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0D5C12855432E0051E70B /* RadioButtonList.swift */; };
-		CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */; };
+		F889E44EEDB64B288FE6FEE7 /* Pods_ReusEd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A78A68C92BD3D1EBBC7DD38 /* Pods_ReusEd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
+		0A78A68C92BD3D1EBBC7DD38 /* Pods_ReusEd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReusEd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A105B0A2851DCF100DB971B /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssetsModel.swift; sourceTree = "<group>"; };
 		2A37E6BE2850B6CD00D9E739 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		2AD95C222858CE9F00E220E8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2ADB399E2859C63900A7992D /* FilterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 		2ADB39A52859FA2400A7992D /* VideoLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonView.swift; sourceTree = "<group>"; };
-		39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReusEd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		644AADD40DB7DC79F4703C5E /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
 		7A038BFF284F324300B1376F /* ReusEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReusEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A038C02284F324300B1376F /* ReusEdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusEdApp.swift; sourceTree = "<group>"; };
 		7A038C04284F324300B1376F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		83B81EEC2860F30500115E56 /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		83B81EED2860F30500115E56 /* AuthorizationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationResult.swift; sourceTree = "<group>"; };
 		83B81EF02860F59200115E56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.debug.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.debug.xcconfig"; sourceTree = "<group>"; };
 		B7E0D5BF2854AF2E0051E70B /* PersonalizationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizationStorage.swift; sourceTree = "<group>"; };
 		B7E0D5C12855432E0051E70B /* RadioButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonList.swift; sourceTree = "<group>"; };
+		EB7E0B1E5426EA9E37842849 /* Pods-ReusEd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReusEd.release.xcconfig"; path = "Target Support Files/Pods-ReusEd/Pods-ReusEd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,21 +225,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6964D5F98E8107B7C0301D /* Pods_ReusEd.framework in Frameworks */,
+				F889E44EEDB64B288FE6FEE7 /* Pods_ReusEd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EE1280EB741DC4B55AC01E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				39A4757AD3116871EB0FB7A3 /* Pods_ReusEd.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2AD95C1028587C1600E220E8 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,13 +271,21 @@
 			path = VideoLessons;
 			sourceTree = "<group>";
 		};
+		3CD896FF3EAD4372B5911C8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A78A68C92BD3D1EBBC7DD38 /* Pods_ReusEd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A038BF6284F324300B1376F = {
 			isa = PBXGroup;
 			children = (
 				7A038C01284F324300B1376F /* ReusEd */,
 				7A038C00284F324300B1376F /* Products */,
 				E2F9127AB2743844FAA99DBE /* Pods */,
-				0EE1280EB741DC4B55AC01E1 /* Frameworks */,
+				3CD896FF3EAD4372B5911C8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -594,8 +594,8 @@
 		E2F9127AB2743844FAA99DBE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */,
-				0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */,
+				644AADD40DB7DC79F4703C5E /* Pods-ReusEd.debug.xcconfig */,
+				EB7E0B1E5426EA9E37842849 /* Pods-ReusEd.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -607,12 +607,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A038C0D284F324700B1376F /* Build configuration list for PBXNativeTarget "ReusEd" */;
 			buildPhases = (
-				3D64452A49C27152FA137508 /* [CP] Check Pods Manifest.lock */,
+				ED091C635D4B8DC92A970B76 /* [CP] Check Pods Manifest.lock */,
 				833C462D2853D1DB00FAA3E7 /* SwiftLint */,
 				7A038BFB284F324300B1376F /* Sources */,
 				7A038BFC284F324300B1376F /* Frameworks */,
 				7A038BFD284F324300B1376F /* Resources */,
-				3139D02739458BD4B3190657 /* [CP] Embed Pods Frameworks */,
+				B316B685B16F64CF9B5EE076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -689,7 +689,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3139D02739458BD4B3190657 /* [CP] Embed Pods Frameworks */ = {
+		833C462D2853D1DB00FAA3E7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B316B685B16F64CF9B5EE076 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -706,7 +724,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReusEd/Pods-ReusEd-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D64452A49C27152FA137508 /* [CP] Check Pods Manifest.lock */ = {
+		ED091C635D4B8DC92A970B76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -727,24 +745,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		833C462D2853D1DB00FAA3E7 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -954,7 +954,7 @@
 		};
 		7A038C0E284F324700B1376F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD5D6652375AACB2697713E6 /* Pods-ReusEd.debug.xcconfig */;
+			baseConfigurationReference = 644AADD40DB7DC79F4703C5E /* Pods-ReusEd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -990,7 +990,7 @@
 		};
 		7A038C0F284F324700B1376F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0584069E9A9D07CC58F32757 /* Pods-ReusEd.release.xcconfig */;
+			baseConfigurationReference = EB7E0B1E5426EA9E37842849 /* Pods-ReusEd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

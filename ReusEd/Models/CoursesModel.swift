@@ -27,7 +27,6 @@ struct Course: Identifiable, Decodable {
     var categories: [Int]
     var author: String
     var sections: [CourseSection]
-    
 }
 
 struct Category: Identifiable, Decodable {
@@ -65,7 +64,6 @@ struct Lesson: Identifiable, Decodable {
     var sections: [TextLessonSection]?
     var url: String?
     var stamps: [VideoLessonStamp]?
-    var currentTime: Double?
 }
 
 struct LessonFooter {
@@ -84,14 +82,6 @@ var lessonFooter = LessonFooter(
     nextButtonText: "Next"
 )
 
-
-
-enum QuizQuestionType: Decodable {
-    case multipleChoice
-    case checkbox
-    case shortAnswer
-}
-
 struct QuizData: Identifiable, Decodable {
     var id: Int
     var title: String
@@ -101,22 +91,15 @@ struct QuizData: Identifiable, Decodable {
 
 struct QuizQuestion: Identifiable, Decodable {
     var id: Int
-    var title: String
-    var type: QuizQuestionType
+    var type: String
     var points: Int
     var questionContent: QuizQuestionContent
 }
 
 
-struct QuizQuestionContent: Identifiable, Decodable {
-    var id: Int
-    var title: String
+struct QuizQuestionContent:  Decodable {
+    var topic: String
     var question: String
-    var answers: [QuizQuestionAnswer]?
-    var correctAnswer: [QuizQuestionAnswer]
-}
-
-struct QuizQuestionAnswer: Identifiable, Decodable {
-    var id: Int
-    var answer: String
+    var answers: [String]?
+    var correctAnswer: [String]
 }
