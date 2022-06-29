@@ -12,7 +12,8 @@ struct QuizView: View {
     var settings: ViewAssets
     var lesson: Lesson
     @ObservedObject var coursesViewModel: CoursesViewModel
-    
+    var courseId: Int
+    var courseProgress: Double = 0.0
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
             ZStack(alignment: .center) {
@@ -95,7 +96,14 @@ struct QuizView: View {
                 }.padding(.horizontal)
             }
             
-            NavigationLink(destination: QuizQuestionView(settings: settings, quizQuestions: lesson.quizData!.quizQuestions, currentQuestion: lesson.quizData!.quizQuestions[0]), label: {
+            NavigationLink(destination: QuizQuestionView(
+                settings: settings,
+                quizQuestions: lesson.quizData!.quizQuestions,
+                currentQuestion: lesson.quizData!.quizQuestions[0],
+                coursesViewModel: coursesViewModel,
+                courseId: courseId,
+                lessonId: lesson.id
+            ), label: {
                 Text("Start Attempt")
                     .font(Font.custom(settings.titleFont, size: 16))
                     .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)

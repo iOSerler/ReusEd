@@ -37,7 +37,12 @@ struct CourseDetailSectionCellView: View {
                             
                         }
                     } else {
-                        NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel)) {
+                        NavigationLink(destination: QuizView(
+                            settings: settings,
+                            lesson: lesson,
+                            coursesViewModel: coursesViewModel,
+                            courseId: courseId
+                        )) {
                             CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                 .padding(.vertical, 10)
                             

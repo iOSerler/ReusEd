@@ -105,15 +105,12 @@ class CoursesViewModel: ObservableObject {
     
     func saveLessonProgress(userId: Int, lessonId: Int, progress: Double) {
         let key = "lesson_\(userId)_\(lessonId)"
-        print("new progress is \(progress)")
         UserDefaults.standard.set(progress, forKey: key)
     }
     
     func getLessonProgress(userId: Int, lessonId: Int) -> Double {
         let key = "lesson_\(userId)_\(lessonId)"
-        print(key)
         let progress = UserDefaults.standard.value(forKey: key) as? Double ?? 0.0
-        print(progress)
         return progress
     }
     
@@ -129,5 +126,12 @@ class CoursesViewModel: ObservableObject {
         } else {
             return 0
         }
+    }
+    
+    func getCourseNameFromId(courseId: Int) -> String {
+        for course in courses where course.id == courseId {
+            return course.title
+        }
+        return ""
     }
 }
