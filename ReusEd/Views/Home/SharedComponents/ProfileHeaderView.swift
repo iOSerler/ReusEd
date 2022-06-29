@@ -13,6 +13,7 @@ struct ProfileHeaderView: View {
     var text2: String
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
+    @ObservedObject var notificationViewModel: NotificationViewModel
     @State private var showSearchView: Bool = false
     var body: some View {
         HStack {
@@ -40,7 +41,7 @@ struct ProfileHeaderView: View {
                     .padding(.trailing, 10)
             }
             
-            NavigationLink(destination: NotificationsView(settings: settings)) {
+            NavigationLink(destination: NotificationsView(settings: settings, notificationViewModel: notificationViewModel)) {
                 Image(viewAssets.notificationIcon)
                     .foregroundColor(Color(settings.mainTextColor))
                     .padding(.trailing, 20)
