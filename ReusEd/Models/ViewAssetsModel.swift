@@ -56,6 +56,8 @@ struct ViewAssets: PersonalizationAssets {
     var questionMark: String
     var quizHeader: String
     var notificationBell: String
+    var quizPopup: String
+    var quizPopupImage: String
 }
 
 var viewAssets = ViewAssets(
@@ -103,5 +105,7 @@ var viewAssets = ViewAssets(
     asteriksCircle: "asteriks-circle",
     questionMark: "questionMark",
     quizHeader: "quizHeader",
-    notificationBell: "notification-bell"
+    notificationBell: "notification-bell",
+    quizPopup: "quizPopup",
+    quizPopupImage: "quizPopupImage"
 )
