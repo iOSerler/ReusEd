@@ -12,6 +12,7 @@ struct CourseDetailView: View {
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
     @State var isText: Bool = true
+    @State var showAlert: Bool = false
     var body: some View {
         if isText {
             Text("course id \(course.id)")
@@ -27,7 +28,7 @@ struct CourseDetailView: View {
                     
                     Spacer()
                     
-                    CourseDetailMainView(settings: settings, coursesViewModel: coursesViewModel, course: course)
+                    CourseDetailMainView(settings: settings, coursesViewModel: coursesViewModel, course: course, showAlert: $showAlert)
                     
                         .offset(y: -UIScreen.main.bounds.height / 5)
                         .padding(.bottom, -UIScreen.main.bounds.height / 3.9)
@@ -50,6 +51,15 @@ struct CourseDetailView: View {
                     
                 }
                 
+                if showAlert {
+                    ZStack {
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+                            .background(.black)
+                            .opacity(0.3)
+                        QuizAlertView(settings: settings, showAlert: $showAlert)
+                    }.ignoresSafeArea()
+                }
             }
             
         }
@@ -61,6 +71,7 @@ struct CourseDetailMainView: View {
     @ObservedObject var coursesViewModel: CoursesViewModel
     @State var course: Course
     @State var progress: Double = 0.0
+    @Binding var showAlert: Bool
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
@@ -109,7 +120,8 @@ struct CourseDetailMainView: View {
                         .foregroundColor(Color(settings.mainTextColor))
                         .padding(.top, 30)
                     ForEach(detail.sections) { section in
-                        CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id, coursesViewModel: coursesViewModel)
+                        CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id, showAlert: $showAlert,
+                                                    progress: $progress, coursesViewModel: coursesViewModel)
                     }
                     
                     

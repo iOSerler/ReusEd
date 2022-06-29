@@ -10,6 +10,7 @@ import SwiftUI
 struct MainPageView: View {
     var settings: ViewAssets
     @ObservedObject var coursesViewModel: CoursesViewModel
+    @ObservedObject var notificationViewModel: NotificationViewModel
     @State private var showCategory: Set<Int> = []
     var body: some View {
         NavigationView {
@@ -18,7 +19,8 @@ struct MainPageView: View {
                                   text1: "Hello 👋",
                                   text2: "Anna Dluzhinskaya",
                                   settings: settings,
-                                  coursesViewModel: coursesViewModel
+                                  coursesViewModel: coursesViewModel,
+                                  notificationViewModel: notificationViewModel
                 )
                 
                 FilterBarView(coursesViewModel: coursesViewModel,

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    @State var courses: [Course] = []
     var settings: ViewAssets
-    @ObservedObject var coursesViewModel: CoursesViewModel = CoursesViewModel()
     @State private var selectedSegment = 0
+    @ObservedObject var notificationViewModel: NotificationViewModel
     
     var body: some View {
         NavigationView {
@@ -24,17 +23,8 @@ struct NotificationsView: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 
-                ListView(pageSettings: settings,
-                         listType: {
-                            switch selectedSegment {
-                            case 0:
-                                return "notifications"
-                            case 1:
-                                return "news"
-                            default:
-                                return ""
-                            }
-                }())
+                selectedSegment == 0 ? ListView(pageSettings: settings, listType: "notifications", notificationViewModel: notificationViewModel) :
+                ListView(pageSettings: settings, listType: "news", notificationViewModel: notificationViewModel)
             }
         }
     }
