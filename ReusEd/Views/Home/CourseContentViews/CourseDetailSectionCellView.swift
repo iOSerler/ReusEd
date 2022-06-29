@@ -15,6 +15,7 @@ struct CourseDetailSectionCellView: View {
     @Binding var progress: Double
     @ObservedObject var coursesViewModel: CoursesViewModel
     var body: some View {
+
             HStack {
                 VStack(alignment: .leading) {
                     Text(section.title)
@@ -38,7 +39,7 @@ struct CourseDetailSectionCellView: View {
                                 
                             }
                         } else if lesson.type == "finalQuiz"{
-                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel)) {
+                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel, courseId: courseId)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                                 
@@ -49,7 +50,7 @@ struct CourseDetailSectionCellView: View {
                                  }
                              }
                         } else {
-                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel)) {
+                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel, courseId: courseId)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                                 
