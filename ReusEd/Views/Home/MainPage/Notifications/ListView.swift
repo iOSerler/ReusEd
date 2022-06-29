@@ -10,20 +10,12 @@ import SwiftUI
 struct ListView: View {
     var pageSettings: ViewAssets
     var listType: String
-    var displayList: [NewsItem]{
-        switch listType {
-        case "notifications":
-            return notifications
-        case "news":
-            return news
-        default:
-            return []
-        }
-    }
+    @ObservedObject var notificationViewModel: NotificationViewModel
+    
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            if displayList.count != 0 {
-                NotEmptyListView(pageSettings: pageSettings, displayList: displayList)
+            if notificationViewModel.getData(type: listType).count != 0 {
+                NotEmptyListView(pageSettings: pageSettings, listType: listType, notificationViewModel: notificationViewModel)
             } else {
                 EmptyListView(settings: pageSettings, listType: listType)
             }
@@ -37,32 +29,40 @@ struct ListView: View {
 
 struct NotEmptyListView: View {
     var pageSettings: ViewAssets
-    var displayList: [NewsItem]
+    var listType: String
+    @ObservedObject var notificationViewModel: NotificationViewModel
     @State var showDetails: Bool = false
     @State var selectedEntry: NewsItem?
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .center, spacing: 10) {
-                ForEach(displayList) { item in
-                    NotificationCellView(
+        List {
+            ForEach(notificationViewModel.getData(type: listType)) { item in
+                NotificationCellView(
+                    settings: pageSettings,
+                    item: item)
+                .listRowSeparator(.visible, edges: .bottom)
+                .listRowSeparator(.hidden, edges: .all)
+                .onTapGesture {
+                    self.showDetails.toggle()
+                    self.selectedEntry = item
+                }
+                .sheet(isPresented: $showDetails, content: {
+                    NotificationDetailView(
                         settings: pageSettings,
-                        item: item)
-                    .onTapGesture {
-                        self.showDetails.toggle()
-                        self.selectedEntry = item
-                    }
-                    .sheet(isPresented: $showDetails, content: {
-                        NotificationDetailView(
-                            settings: pageSettings,
-                            item: $selectedEntry)
-                    })
-                    
-                    Divider()
-                        .padding(.horizontal, 20)
+                        item: $selectedEntry)
+                })
+            }.onDelete { (indexSet) in
+                switch listType {
+                case "notifications":
+                    self.notificationViewModel.notifications.remove(atOffsets: indexSet)
+                case "news":
+                    self.notificationViewModel.news.remove(atOffsets: indexSet)
+                default:
+                    print("No such type")
                 }
             }
-        }
+            
+        }.listStyle(.plain)
     }
 }
 

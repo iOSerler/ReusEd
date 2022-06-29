@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    @State var courses: [Course] = []
     var settings: ViewAssets
     @State private var selectedSegment = 0
+    @ObservedObject var notificationViewModel: NotificationViewModel
     
     var body: some View {
         NavigationView {
@@ -23,8 +23,8 @@ struct NotificationsView: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 
-                selectedSegment == 0 ? ListView(pageSettings: settings, listType: "notifications") :
-                ListView(pageSettings: settings, listType: "news")
+                selectedSegment == 0 ? ListView(pageSettings: settings, listType: "notifications", notificationViewModel: notificationViewModel) :
+                ListView(pageSettings: settings, listType: "news", notificationViewModel: notificationViewModel)
             }
         }
     }
