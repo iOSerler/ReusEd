@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
+import PersonalizationKit
 
 struct ContentView: View {
     var settings: ViewAssets
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var progress: Int = 1
     var body: some View {
         
         VStack {
@@ -24,7 +24,13 @@ struct ContentView: View {
                     case .notificationPermission:
                         DailyNotificationsPermissionView(settings: viewAssets).navigationBarHidden(true).transition(.opacity.animation(.easeIn))
                     case .personalizationPages:
-                        PersonalizationQuestionView(settings: viewAssets, question: questions[0], progress: $progress).transition(.opacity)
+                        PersonalizationQuestionView(
+                            assets: viewAssets,
+                            completePersonalization: viewRouter.completePersonalization,
+                            questions: questions,
+                            storage: Storage(),
+                            question: questions[0]
+                        ).transition(.opacity)
                     case .authorization:
                         AuthorizationView {
                             viewRouter.completeAuthorization(with: $0)

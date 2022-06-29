@@ -81,16 +81,6 @@ class ViewRouter: ObservableObject {
     }
     
     func showPersonalization() {
-        for ind in personalizationQuestionSelectedItemsDict.keys {
-            if let answers  = UserDefaults.standard.value(forKey: "checkBoxQuestionID_\(ind)") as? [Int] {
-                
-                for answer in answers {
-                    //                    print(ind, answer)
-                    personalizationQuestionSelectedItemsDict[ind]?.insert(answer)
-                }
-            }
-            
-        }
         currentPage = .personalizationPages
     }
     

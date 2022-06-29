@@ -21,7 +21,7 @@ struct TextImageLessonView: View {
                     .foregroundColor(Color(settings.descriptionTextColor))
                     .multilineTextAlignment(.leading)
                 HStack {
-                    Image(icons.durationOffIcon)
+                    Image(viewAssets.durationOffIcon)
                     
                     Text(textLesson.duration!)
                         .font(.custom(settings.descriptionFont, size: 14))

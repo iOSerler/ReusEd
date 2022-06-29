@@ -75,7 +75,7 @@ struct IntroductionPagesView: View {
                         .font(.custom(settings.titleFont, size: 16))
                         .foregroundColor(Color(settings.buttonTextColor))
                     
-                    Image(icons.onBoardingButtonIcon)
+                    Image(viewAssets.onBoardingButtonIcon)
                         .padding(.leading, 20)
                 }
                 

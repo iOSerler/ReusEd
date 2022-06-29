@@ -43,7 +43,7 @@ struct CourseSectionView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: UIScreen.main.bounds.width/20) {
                     ForEach(coursesViewModel.getCoursesByCategory(categoryId: category.id)) { course in
-                        CourseCardView(course: course, settings: settings, coursesViewModel: coursesViewModel, timeImage: icons.timeImage)
+                        CourseCardView(course: course, settings: settings, coursesViewModel: coursesViewModel, timeImage: viewAssets.timeImage)
                     }
                 }.frame(height: UIScreen.main.bounds.height/3.9)
             }

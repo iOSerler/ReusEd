@@ -16,7 +16,7 @@ struct QuizView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
             ZStack(alignment: .center) {
-                Image(icons.quizHeader)
+                Image(viewAssets.quizHeader)
                     .resizable()
                     .scaledToFit()
                 
@@ -37,7 +37,7 @@ struct QuizView: View {
                     HStack {
                         Spacer()
                         
-                        Image(icons.questionMark)
+                        Image(viewAssets.questionMark)
                         Text(String(lesson.quizData!.quizQuestions.count)+" Questions")
                             .font(.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.mainTextColor))
@@ -51,7 +51,7 @@ struct QuizView: View {
                     HStack {
                         Spacer()
                         
-                        Image(icons.asteriksCircle)
+                        Image(viewAssets.asteriksCircle)
                         Text(String(coursesViewModel.getQuizPoints(lessonId: lesson.id))+" Points")
                             .font(.custom(settings.descriptionFont, size: 14))
                         .foregroundColor(Color(settings.mainTextColor))

@@ -16,11 +16,11 @@ struct CourseDetailTopicCellView: View {
     var icon: String {
         switch lesson.type {
         case "text":
-            return icons.documentIcon
+            return viewAssets.documentIcon
         case "video":
-            return icons.videoIcon
+            return viewAssets.videoIcon
         default:
-            return icons.quizIcon
+            return viewAssets.quizIcon
         }
     }
     

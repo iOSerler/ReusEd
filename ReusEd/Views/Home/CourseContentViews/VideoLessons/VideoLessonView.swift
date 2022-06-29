@@ -47,7 +47,7 @@ struct VideoLessonView: View {
                     
                     VideoDescriptionView(settings: settings,
                                          title: videoLesson.title,
-                                         durationImage: icons.timeImage,
+                                         durationImage: viewAssets.timeImage,
                                          duration: videoLesson.duration!,
                                          description: videoLesson.description!)
                     

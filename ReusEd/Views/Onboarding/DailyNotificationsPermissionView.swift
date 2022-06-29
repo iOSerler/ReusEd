@@ -31,7 +31,7 @@ struct DailyNotificationsView: View {
             
             VStack(alignment: .center) {
                 VStack(alignment: .center, spacing: UIScreen.main.bounds.width / 7) {
-                    Image(icons.bookLogo)
+                    Image(viewAssets.bookLogo)
                     
                     Text(notificationPermissionData.title)
                         .font(Font.custom(settings.titleFont, size: 20))

@@ -37,7 +37,7 @@ struct CourseDetailView: View {
                         Text("Continue")
                             .font(.custom(settings.titleFont, size: 14))
                             .foregroundColor(Color(settings.buttonTextColor))
-                        Image(icons.beginCourseButtonIcon)
+                        Image(viewAssets.beginCourseButtonIcon)
                             .padding(.leading, 10)
                     }
                     
@@ -76,12 +76,12 @@ struct CourseDetailMainView: View {
                         .padding(.top, 20)
                     
                     HStack {
-                        Image(icons.authorIcon)
+                        Image(viewAssets.authorIcon)
                         Text(detail.author)
                             .font(.custom(settings.descriptionFont, size: 14))
                             .foregroundColor(Color(settings.detailsTextColor))
                         
-                        Image(icons.durationOffIcon)
+                        Image(viewAssets.durationOffIcon)
                             .padding(.leading, 20)
                         Text(detail.duration)
                             .font(.custom(settings.descriptionFont, size: 14))
