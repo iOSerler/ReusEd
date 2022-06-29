@@ -189,7 +189,7 @@
     },
     {
         "id": 5,
-        "type": "quiz",
+        "type": "finalQuiz",
         "title": "Final Quiz",
         "description": "Solve the quiz to test your knowledge!",
         "quizData": {
