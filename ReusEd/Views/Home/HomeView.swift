@@ -11,13 +11,15 @@ struct HomeView: View {
     var settings: ViewAssets
     var tabBarSettings: TabBarData
     @StateObject var coursesViewModel = CoursesViewModel()
+    @StateObject var notificationViewModel: NotificationViewModel = NotificationViewModel(notifications: notifications, news: news)
     @State private var selection = 0
     var body: some View {
         
         TabView(selection: $selection) {
             
             MainPageView(settings: settings,
-                         coursesViewModel: coursesViewModel)
+                         coursesViewModel: coursesViewModel,
+                         notificationViewModel: notificationViewModel)
             .tabItem {
                 selection == 0 ? Image(tabBar.tab1OnImage) : Image(tabBar.tab1OffImage)
                 Text(tabBar.tab1Title)
