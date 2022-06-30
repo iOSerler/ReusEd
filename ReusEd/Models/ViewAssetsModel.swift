@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 import PersonalizationKit
-
-struct ViewAssets: PersonalizationAssets {
+import OnBoardingKit
+struct ViewAssets: PersonalizationAssets, OnBoardingAssets {
     var titleFont: String
     var descriptionFont: String
     var mainTextColor: UIColor

@@ -15,8 +15,8 @@
 		2A5A80EF285B68AB00809CB2 /* LessonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */; };
 		2A79FC502860ACB5002F737F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79FC4F2860ACB5002F737F /* SearchView.swift */; };
 		2A8113B128699988008FD2A0 /* onBoardingPages.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A8113B028699988008FD2A0 /* onBoardingPages.json */; };
-		2A8113B6286C5564008FD2A0 /* QuizAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8113B5286C5564008FD2A0 /* QuizAlertView.swift */; };
 		2A8113B4286C4DDB008FD2A0 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8113B3286C4DDB008FD2A0 /* NotificationViewModel.swift */; };
+		2A8113B6286C5564008FD2A0 /* QuizAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8113B5286C5564008FD2A0 /* QuizAlertView.swift */; };
 		2AD0E3032861B73000DD58D7 /* CompleteCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */; };
 		2AD42CEF285C6D7B00A92B4C /* ScrollCourseSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */; };
 		2AD95C1228587CC000E220E8 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD95C1128587CC000E220E8 /* MainPageView.swift */; };
@@ -55,6 +55,7 @@
 		7A038C44285088E400B1376F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C43285088E400B1376F /* ViewRouter.swift */; };
 		7A038C4628508ADB00B1376F /* IntroductionPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4528508ADB00B1376F /* IntroductionPagesView.swift */; };
 		7A038C4D28509DDD00B1376F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A038C4C28509DDD00B1376F /* HomeView.swift */; };
+		7A08F099286DEF9B006442BF /* OnBoardingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7A08F098286DEF9B006442BF /* OnBoardingKit */; };
 		7A1227722858BE9900536CC5 /* CourseListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227712858BE9900536CC5 /* CourseListCellView.swift */; };
 		7A1227752858BFD100536CC5 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227742858BFD100536CC5 /* CourseListView.swift */; };
 		7A1227782858CA5400536CC5 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1227772858CA5400536CC5 /* CourseDetailView.swift */; };
@@ -118,8 +119,8 @@
 		2A5A80EE285B68AB00809CB2 /* LessonFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFooterView.swift; sourceTree = "<group>"; };
 		2A79FC4F2860ACB5002F737F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2A8113B028699988008FD2A0 /* onBoardingPages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onBoardingPages.json; sourceTree = "<group>"; };
-		2A8113B5286C5564008FD2A0 /* QuizAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAlertView.swift; sourceTree = "<group>"; };
 		2A8113B3286C4DDB008FD2A0 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		2A8113B5286C5564008FD2A0 /* QuizAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAlertView.swift; sourceTree = "<group>"; };
 		2AD0E3022861B73000DD58D7 /* CompleteCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteCourseView.swift; sourceTree = "<group>"; };
 		2AD42CEE285C6D7B00A92B4C /* ScrollCourseSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCourseSectionView.swift; sourceTree = "<group>"; };
 		2AD95C1128587CC000E220E8 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A08F099286DEF9B006442BF /* OnBoardingKit in Frameworks */,
 				F889E44EEDB64B288FE6FEE7 /* Pods_ReusEd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +604,9 @@
 			dependencies = (
 			);
 			name = ReusEd;
+			packageProductDependencies = (
+				7A08F098286DEF9B006442BF /* OnBoardingKit */,
+			);
 			productName = ReusEd;
 			productReference = 7A038BFF284F324300B1376F /* ReusEd.app */;
 			productType = "com.apple.product-type.application";
@@ -630,6 +635,9 @@
 				Base,
 			);
 			mainGroup = 7A038BF6284F324300B1376F;
+			packageReferences = (
+				7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */,
+			);
 			productRefGroup = 7A038C00284F324300B1376F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1026,6 +1034,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iOSerler/OnBoardingKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A08F098286DEF9B006442BF /* OnBoardingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */;
+			productName = OnBoardingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A038BF7284F324300B1376F /* Project object */;
 }

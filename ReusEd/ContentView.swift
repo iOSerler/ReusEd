@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PersonalizationKit
+import OnBoardingKit
 
 struct ContentView: View {
     var settings: ViewAssets
@@ -20,7 +21,12 @@ struct ContentView: View {
                 NavigationView {
                     switch viewRouter.currentPage {
                     case .introductionPages:
-                        IntroductionPagesView(settings: viewAssets).navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
+//                        IntroductionPagesView(settings: viewAssets).navigationBarTitleDisplayMode(.large).transition(.opacity.animation(.easeIn))
+                        IntroductionPagesView(settings: settings, completeAction: {
+                            viewRouter.completeIntroduction()
+                        }, navigateAction: {
+                            viewRouter.showNotificationPermission()
+                        }, jsonName: "onBoardingPages")
                     case .notificationPermission:
                         DailyNotificationsPermissionView(settings: viewAssets).navigationBarHidden(true).transition(.opacity.animation(.easeIn))
                     case .personalizationPages:
