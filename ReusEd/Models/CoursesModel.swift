@@ -97,7 +97,7 @@ struct QuizQuestion: Identifiable, Decodable {
 }
 
 
-struct QuizQuestionContent:  Decodable {
+struct QuizQuestionContent: Decodable {
     var topic: String
     var question: String
     var answers: [String]?

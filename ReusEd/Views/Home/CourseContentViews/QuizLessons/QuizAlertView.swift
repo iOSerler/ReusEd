@@ -52,9 +52,3 @@ struct QuizAlertView: View {
         }.frame(width: UIScreen.main.bounds.height/2.5, height: UIScreen.main.bounds.height/2.5, alignment: .center)
     }
 }
-
-//struct QuizAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QuizAlertView(settings: viewAssets)
-//    }
-//}

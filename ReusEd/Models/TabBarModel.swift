@@ -28,7 +28,7 @@ var tabBar = TabBarData(
     tab1Title: "Courses",
     tab2OnImage: "tab2OnImage",
     tab2OffImage: "tab2OffImage",
-    tab2Title: "Scores",
+    tab2Title: "Store",
     tab3OnImage: "tab3OnImage",
     tab3OffImage: "tab3OffImage",
     tab3Title: "My Courses",

@@ -14,7 +14,7 @@ struct NewsItem: Identifiable {
     var time: String
     var description: String
 }
-//var notifications = [
+// var notifications = [
 //         NewsItem(
 //             id: 0,
 //             title: "Notification 1",
@@ -40,7 +40,7 @@ struct NewsItem: Identifiable {
 //             title: "Notification 5",
 //             time: "20:15",
 //             description: "vvfa fuahihvadbvrb skadhjbejhvfqf sdsfbjehbfjwe dkabhevblqhvadb abvjdbva")
-//]
+// ]
 
 var notifications: [NewsItem] = []
 

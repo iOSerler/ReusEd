@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "fi-rr-trophy.png",
+      "filename" : "fi-rr-shop.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "fi-rr-trophy@2x.png",
+      "filename" : "fi-rr-shop@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "fi-rr-trophy@3x.png",
+      "filename" : "fi-rr-shop@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

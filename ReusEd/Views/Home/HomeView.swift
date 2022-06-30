@@ -37,9 +37,9 @@ struct HomeView: View {
             
             SavedCoursesListView(courses: coursesViewModel.courses, settings: settings, coursesViewModel: coursesViewModel)
                 .tabItem {
-                    //                            selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
-                    selection == 2 ?
-                    Image(systemName: "arrow.down.to.line.circle") : Image(systemName: "arrow.down.to.line")
+                    selection == 2 ? Image( tabBar.tab3OnImage) : Image(tabBar.tab3OffImage)
+                    
+                    
                     Text(tabBar.tab3Title)
                         .font(.custom(settings.descriptionFont, size: 14))
                 }

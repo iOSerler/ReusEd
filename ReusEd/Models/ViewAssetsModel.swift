@@ -91,7 +91,7 @@ var viewAssets = ViewAssets(
     courseDetailBackground: "courseBackground",
     onBoardingButtonIcon: "arrow-right",
     bookLogo: "bookLogo",
-    notificationIcon: "tab3OffImage",
+    notificationIcon: "bell",
     email: "envelope",
     password: "lock",
     user: "user",
