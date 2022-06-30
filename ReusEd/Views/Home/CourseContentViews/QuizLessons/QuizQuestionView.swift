@@ -15,12 +15,20 @@ struct QuizQuestionView: View {
     @State var showResult: Bool = false
     @State var isFinished: Bool = false
     @State var hasSelectedAnswer: Bool = false
+    @State var chosenAnswer: String = ""
+    @State var score: Int = 0
+    @ObservedObject var coursesViewModel: CoursesViewModel
+    var courseId: Int
+    var lessonId: Int
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(alignment: .center) {
             HStack {
                 Button {
                     // save progress
+                    print("ON X \(Double(questionCounter) / Double(quizQuestions.count))")
+                    
+                    coursesViewModel.saveLessonProgress(userId: 1, lessonId: lessonId, progress: (Double(questionCounter) / Double(quizQuestions.count)))
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image(viewAssets.cross)
@@ -59,7 +67,7 @@ struct QuizQuestionView: View {
                 SingleChoiceButtonList(
                     settings: settings,
                     answers: currentQuestion.questionContent.answers!,
-                    correctAnswer: currentQuestion.questionContent.correctAnswer,
+                    correctAnswer: currentQuestion.questionContent.correctAnswer, chosenAnswer: $chosenAnswer,
                     showResult: showResult,
                     hasSelectedAnswer: $hasSelectedAnswer
                 )
@@ -70,7 +78,12 @@ struct QuizQuestionView: View {
             NavigationLink(
                 isActive: $isFinished,
                 destination: {
-                    CompleteCourseView(settings: settings, courseTitle: "sdfsdfg", completionRate: 4, numPoints: 15)
+                    CompleteCourseView(
+                        settings: settings,
+                        courseTitle: coursesViewModel.getCourseNameFromId(courseId: courseId),
+                        completionRate: ((coursesViewModel.saveCourseProgress(userId: 1, courseId: courseId) * 100).rounded() * 5) / 100,
+                        numPoints: score
+                    )
                 },
                 label: {
                     Button(
@@ -79,6 +92,7 @@ struct QuizQuestionView: View {
                                 if showResult {
                                     if self.questionCounter == quizQuestions.count - 1 {
                                         self.isFinished = true
+                                        coursesViewModel.saveLessonProgress(userId: 1, lessonId: lessonId, progress: 1.0)
                                         // save progress
                                     } else {
                                         self.questionCounter += 1
@@ -87,6 +101,7 @@ struct QuizQuestionView: View {
                                         self.hasSelectedAnswer = false
                                     }
                                 } else {
+                                    updateScore()
                                     self.showResult = true
                                 }
                             }
@@ -105,9 +120,24 @@ struct QuizQuestionView: View {
         }
         .padding(.horizontal, 20)
         .onAppear {
-            self.currentQuestion = quizQuestions[questionCounter]
+            questionCounter = Int((coursesViewModel.getLessonProgress(userId: 1, lessonId: lessonId) * Double(quizQuestions.count)).rounded()) % quizQuestions.count
+            print(questionCounter)
+//            0.0 -> 0
+//            0.33 -> 1
+//            0.66 -> 2
+//            1.0 -> 0
+          
+           
+            currentQuestion = quizQuestions[questionCounter]
         }
         .navigationBarHidden(true)
+    }
+    
+    func updateScore() {
+        for answer in currentQuestion.questionContent.correctAnswer where chosenAnswer == answer {
+                self.score += currentQuestion.points
+        }
+        print(score)
     }
 }
 
@@ -117,7 +147,7 @@ struct SingleChoiceButtonList: View {
     var settings: ViewAssets
     let answers: [String]
     let correctAnswer: [String]
-    @State var chosenAnswer: String = ""
+    @Binding var chosenAnswer: String
     var showResult: Bool
     @Binding var hasSelectedAnswer: Bool
     
@@ -140,7 +170,6 @@ struct SingleChoiceButtonList: View {
         }
         .onAppear {
             hasSelectedAnswer = false
-            print(correctAnswer)
         }
     }
     
