@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PersonalizationKit
+import PersonalizationQuestionsKit
 
 struct Storage: PersonalizationStorage {
     func addCheckedOption(_ question: QuestionData, option: OptionData) {

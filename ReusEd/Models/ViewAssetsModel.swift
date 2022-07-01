@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import PersonalizationKit
+import PersonalizationQuestionsKit
 import OnBoardingKit
 struct ViewAssets: PersonalizationAssets, OnBoardingAssets {
     var titleFont: String

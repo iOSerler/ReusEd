@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PersonalizationKit
+import PersonalizationQuestionsKit
 import OnBoardingKit
 
 struct ContentView: View {

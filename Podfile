@@ -10,6 +10,5 @@ target 'ReusEd' do
   pod 'FirebaseAuth'
   pod 'FirebaseAnalytics'
   pod 'FirebaseFirestore'
-  pod 'PersonalizationKit', :path => "./PersonalizationKit"
 
 end
