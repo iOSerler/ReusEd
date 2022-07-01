@@ -19,11 +19,11 @@ enum ViewRouterOptions {
 class ViewRouter: ObservableObject {
     
     @Published var currentPage: ViewRouterOptions = .introductionPages
-    private var isAppBeingTested = true
+    private var isAppBeingTested = false
     
     func setStartingPage() {
         if isAppBeingTested {
-            showPersonalization()
+            showIntroduction()
         } else {
             
             let introductionPagesPassed = UserDefaults.standard.bool(forKey: "IntroductionPagesPassed")
