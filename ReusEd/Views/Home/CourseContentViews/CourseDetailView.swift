@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LessonKit
 
 struct CourseDetailView: View {
     @State var course: Course
@@ -123,22 +124,6 @@ struct CourseDetailMainView: View {
                         CourseDetailSectionCellView(settings: settings, section: section, courseId: detail.id, showAlert: $showAlert,
                                                     progress: $progress, coursesViewModel: coursesViewModel)
                     }
-                    
-                    
-                    self.progress > 0.9 ?
-                    NavigationLink(destination: CompleteCourseView(settings: settings, courseTitle: course.title, completionRate: (self.progress * 500).rounded()/100, numPoints: 15), label: {
-                        Text("Finish Course")
-                            .font(Font.custom(settings.titleFont, size: 16))
-                            .frame(width: UIScreen.main.bounds.width - 60, height: 50, alignment: .center)
-                            .background(Color(settings.primaryColor))
-                            .accentColor(Color(settings.buttonTextColor))
-                            .cornerRadius(UIScreen.main.bounds.width/35)
-                            .padding(.leading, UIScreen.main.bounds.width/40)
-                        
-                    }) : nil
-                    
-                       
-                    
                     
                 }
                 Spacer()

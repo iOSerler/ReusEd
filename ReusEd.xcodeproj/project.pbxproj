@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A105B0B2851DCF100DB971B /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A105B0A2851DCF100DB971B /* TabBarModel.swift */; };
+		2A1506A92872EB790029DD9A /* LessonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1506A82872EB790029DD9A /* LessonKit */; };
+		2A1506AC2872F6E90029DD9A /* CourseCompletionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1506AB2872F6E90029DD9A /* CourseCompletionKit */; };
 		2A1B302C2860595500A2F20D /* ViewAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B302B2860595500A2F20D /* ViewAssetsModel.swift */; };
 		2A5A80E9285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80E8285B2C8E00809CB2 /* AutoRotateVideoPlayerView.swift */; };
 		2A5A80EB285B5CC500809CB2 /* VideoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A80EA285B5CC500809CB2 /* VideoDescriptionView.swift */; };
@@ -220,7 +222,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1506A92872EB790029DD9A /* LessonKit in Frameworks */,
 				7A08F099286DEF9B006442BF /* OnBoardingKit in Frameworks */,
+				2A1506AC2872F6E90029DD9A /* CourseCompletionKit in Frameworks */,
 				F889E44EEDB64B288FE6FEE7 /* Pods_ReusEd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +610,8 @@
 			name = ReusEd;
 			packageProductDependencies = (
 				7A08F098286DEF9B006442BF /* OnBoardingKit */,
+				2A1506A82872EB790029DD9A /* LessonKit */,
+				2A1506AB2872F6E90029DD9A /* CourseCompletionKit */,
 			);
 			productName = ReusEd;
 			productReference = 7A038BFF284F324300B1376F /* ReusEd.app */;
@@ -637,6 +643,8 @@
 			mainGroup = 7A038BF6284F324300B1376F;
 			packageReferences = (
 				7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */,
+				2A1506A72872EB790029DD9A /* XCRemoteSwiftPackageReference "LessonKit" */,
+				2A1506AA2872F6E90029DD9A /* XCRemoteSwiftPackageReference "CourseCompletionKit" */,
 			);
 			productRefGroup = 7A038C00284F324300B1376F /* Products */;
 			projectDirPath = "";
@@ -1036,6 +1044,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A1506A72872EB790029DD9A /* XCRemoteSwiftPackageReference "LessonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iOSerler/LessonKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		2A1506AA2872F6E90029DD9A /* XCRemoteSwiftPackageReference "CourseCompletionKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iOSerler/CourseCompletionKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iOSerler/OnBoardingKit";
@@ -1047,6 +1071,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A1506A82872EB790029DD9A /* LessonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1506A72872EB790029DD9A /* XCRemoteSwiftPackageReference "LessonKit" */;
+			productName = LessonKit;
+		};
+		2A1506AB2872F6E90029DD9A /* CourseCompletionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1506AA2872F6E90029DD9A /* XCRemoteSwiftPackageReference "CourseCompletionKit" */;
+			productName = CourseCompletionKit;
+		};
 		7A08F098286DEF9B006442BF /* OnBoardingKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7A08F097286DEF9B006442BF /* XCRemoteSwiftPackageReference "OnBoardingKit" */;
