@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CourseCompletionKit
 
 struct ListView: View {
     var pageSettings: ViewAssets

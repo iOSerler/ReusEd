@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import LessonKit
+import CourseCompletionKit
 
 struct CourseDetailSectionCellView: View {
     var settings: ViewAssets
@@ -13,7 +15,9 @@ struct CourseDetailSectionCellView: View {
     @State var courseId: Int
     @Binding var showAlert: Bool
     @Binding var progress: Double
+    @StateObject var lessonViewModel: LessonViewModel = LessonViewModel()
     @ObservedObject var coursesViewModel: CoursesViewModel
+    @State var numPoints: Int = 0
     var body: some View {
 
             HStack {
@@ -28,18 +32,18 @@ struct CourseDetailSectionCellView: View {
                         )
                     ) { lesson in
                         if lesson.type == "text" {
-                            NavigationLink(destination: TextImageLessonView(settings: settings, textLesson: lesson, coursesViewModel: coursesViewModel)) {
+                            NavigationLink(destination: TextImageLessonView(settings: settings, jsonName: "lessons", lessonId: lesson.id, lessonViewModel: lessonViewModel)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                             }
                         } else if lesson.type == "video"{
-                            NavigationLink(destination: VideoLessonView(settings: settings, videoLesson: lesson, coursesViewModel: coursesViewModel)) {
+                            NavigationLink(destination: VideoLessonView(settings: settings, jsonName: "lessons", lessonId: lesson.id, lessonViewModel: lessonViewModel)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                                 
                             }
                         } else if lesson.type == "finalQuiz"{
-                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel, courseId: courseId)) {
+                            NavigationLink(destination: QuizView(settings: settings, jsonName: "lessons", lessonId: lesson.id, lessonViewModel: lessonViewModel, nextView: CompleteCourseView(settings: settings, courseTitle: coursesViewModel.courses[courseId-1].title, completionRate: $progress, numPoints: $numPoints), numPoints: $numPoints)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                                 
@@ -50,7 +54,7 @@ struct CourseDetailSectionCellView: View {
                                  }
                              }
                         } else {
-                            NavigationLink(destination: QuizView(settings: settings, lesson: lesson, coursesViewModel: coursesViewModel, courseId: courseId)) {
+                            NavigationLink(destination: QuizView(settings: settings, jsonName: "lessons", lessonId: lesson.id, lessonViewModel: lessonViewModel, nextView: EmptyView(), numPoints: $numPoints)) {
                                 CourseDetailTopicCellView(lesson: lesson, settings: settings, coursesViewModel: coursesViewModel)
                                     .padding(.vertical, 10)
                                 
@@ -62,6 +66,8 @@ struct CourseDetailSectionCellView: View {
                 }
                 
                 Spacer()
+            }.onAppear {
+                self.numPoints = 0
             }
     }
 }

@@ -235,7 +235,7 @@
      },
     {
         "id": 6,
-        "type": "quiz",
+        "type": "finalQuiz",
         "title": "Quiz",
         "description": "Solve the quiz to test your knowledge!",
         "quizData": {
